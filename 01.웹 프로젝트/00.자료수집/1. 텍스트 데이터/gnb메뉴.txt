@@ -1,0 +1,108 @@
+ROOMS
+	Luxury
+	Magnifique
+	Luxury Lake
+	Club Luxury
+	Magnifique Family
+	Prestige Suite
+	Prestige Family Suite
+	Opera Suite
+	Presidential Suite
+	Studio
+	1 Bedroom Signature Suite
+	2 Bedroom Executive Suite
+_______________________
+DINING
+	Fait Maison
+	MIO
+	Jardin D’Hiver
+	L’Espace
+	Latitude32
+_______________________
+OFFERS
+            Room Packages
+            Dining offers
+
+_______________________
+PROGRAMS
+	Candle Ritual
+	Sofitel Vélo
+	Sofitel Seoul Art Tour
+	French Bouquet Class
+_______________________
+FACILITIES
+	Club Millésime(라운지)
+	Business Corner
+	Kids Lounge
+	Pool
+	Fitness
+	Sofitel Spa By Beauté BR
+_______________________ 
+ABOUT
+	Notice
+	Contact(Location)
+
+
+
+
+
+원본
+ROOMS & SUITES
+	Luxury
+	Magnifique
+	Luxury Lake
+	Club Luxury
+	Magnifique Family
+	Prestige Suite
+	Prestige Family Suite
+	Opera Suite
+	Presidential Suite
+SERVICED RESIDENCES
+	Studio
+	1 Bedroom Signature Suite
+	2Bedroo	m Executive Suite
+DINING
+	Fait Maison
+	MIO
+	Jardin D’Hiver
+	L’Espace
+	Latitude32
+ROOM PACKAGES
+	Sunday Package | Le Bon Dimanche
+	Winter Package | Paris Discovery
+	Party Package | Night At Sofitel
+	Romance Package | Romance, The French Way
+	Spa Package | Relax,The French Way
+	Weekdays Package | 30 Hours In Joy
+DINING OFFERS
+	Year-End Specials | Festive Dining
+	Jadin D’Hiver | Valrhona Chocolate Fondue
+	Jadin D’Hiver | Galettes Des Rois
+	Fait Maison | 2023 Le Bon Marché
+	L’Espace | Festive Le Goûter
+	L’Espace | Royal Afternoon Tea
+	L’Espace | Vin Gourmand
+SOFITEL PROGRAMS
+	Candle Ritual
+	Sofitel Vélo
+	Sofitel Seoul Art Tour
+	French Bouquet Class
+FACILITIES
+	Club Millésime
+	Business Corner
+	Kids Lounge
+EVENTS
+	Grand Ballroom Vendôme
+	Bastille Room
+	Concorde Room
+WEDDINGS
+WELLNESS
+	Pool
+	Sofitel Fitness
+	Sofitel Spa By Beauté BR
+NOTICE & INFORMATION
+	Guest Information
+	Luminarie At Seokchon Lake
+LIFESTYLE MEMBERSHIP
+LOCATION
+SOFITEL BOUTIQUE
