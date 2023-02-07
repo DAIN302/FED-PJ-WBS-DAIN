@@ -1,2 +1,7 @@
 @charset "UTF-8";
 /* 웹폰트, 공통 클래스 세팅 CSS - core.css */
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}

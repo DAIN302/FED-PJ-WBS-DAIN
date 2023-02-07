@@ -28,3 +28,6 @@
 .menu_top {
     display: flex;
 }
+.menu_top>li>a {
+    color: #fff;
+}
