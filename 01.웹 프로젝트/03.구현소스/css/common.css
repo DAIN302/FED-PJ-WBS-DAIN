@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/* 공통 모듈 디자인 CSS */
+
+/* 1. 상단 */
+
+#top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.top {
+    display: flex;
+    padding: 50px 0;
+}
+/* 1-1. 상단로고 */
+.logo {
+    width: 190px;
+    margin: 0 30px;
+}
+
+.logo img {
+    max-width: 190px;
+}
+
+/* 1-2. gnb */
+.menu_top {
+    display: flex;
+}
