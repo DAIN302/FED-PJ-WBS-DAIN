@@ -8,9 +8,33 @@
     position: fixed;
     z-index: 9999;
     width: 100%;
+    height: 140px;
     top: 0;
     left: 0;
+    transition: .3s;
 }
+
+/* 가상요소로 흰 배경 만들기 */
+#top::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    transition: height .3s ease-in-out;
+}
+
+/* 마우스 오버시 흰 배경 내려오기 */
+#top:hover::before {
+    border-top: 1px solid #ddd;
+    height: 140px;
+}
+
+
+
 .top {
     display: flex;
     padding: 50px 0;
@@ -19,6 +43,7 @@
 }
 /* 1-1. 상단로고 */
 .logo {
+    position: relative;
     max-width: 190px;
     margin: 0 30px;
 }
@@ -26,10 +51,20 @@
 .logo img {
     width: 100%;
 }
+.logo img:nth-child(2) {
+    display: none;
+}
+
+#top:hover .logo img {
+    display: none;
+}
+
+#top:hover .logo img:nth-child(2) {
+    display: inline;
+}
 
 /* 1-2. gnb */
 .gnb {
-
 }
 .menu_top {
     display: flex;
@@ -40,6 +75,12 @@
 .menu_top>li>a {
     color: #fff;
     font-size: 1.8rem;
+    transition: color .3s;
+}
+
+/* 탑메뉴에 마우스 오버시 a요소 색 변경 */
+#top:hover .menu_top>li>a {
+    color: #555;
 }
 
 /* 1-3. 예약버튼 */
@@ -63,7 +104,8 @@
     transition: .5s;
 }
 
-.res:hover a{
-    color : #000;
-    background-color: #fff;
+
+/* 오버시 배경색 및 글씨색 변경 */
+#top:hover .res a{
+    background-color: var(--scl);
 }
