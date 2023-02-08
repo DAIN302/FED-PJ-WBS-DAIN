@@ -1,7 +1,19 @@
 @charset "UTF-8";
 /* 웹폰트, 공통 클래스 세팅 CSS - core.css */
 
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&family=Source+Code+Pro:wght@400;700&display=swap');
+/* 
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+*/
+
+
 html, body {
     width: 100vw;
     height: 100vh;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif
 }
