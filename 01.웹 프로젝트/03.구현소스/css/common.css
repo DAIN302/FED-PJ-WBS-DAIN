@@ -83,6 +83,11 @@
     color: #555;
 }
 
+/* a요소에 마우스 오버시 색 변경 */
+#top>.top>.gnb>.menu_top>li>a:hover {
+    color : var(--scl);
+}
+
 /* 1-3. 예약버튼 */
 .res {
     position: absolute;
