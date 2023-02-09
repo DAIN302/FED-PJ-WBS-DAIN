@@ -8,9 +8,6 @@
 @import url(common.css);
 
 /* 메인 */
-body {
-    /* background-color: rgba(0,0,0,0.5); */
-}
 .cont {
     width: 100vw;
     /* background-color: rgba(0,0,0,0.5); */
@@ -22,6 +19,7 @@ body {
 /* 메인페이지 */
 .main_page {
     height: 100vh;
+    /* */
 }
 
 /* 1번 페이지 */

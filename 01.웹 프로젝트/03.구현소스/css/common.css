@@ -14,8 +14,16 @@
     transition: .3s;
 }
 
+
+.top {
+    display: flex;
+    padding: 50px 0;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+}
+
 /* 가상요소로 흰 배경 만들기 */
-#top::before {
+/* .top::before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -25,22 +33,14 @@
     height: 0;
     background-color: #fff;
     transition: height .3s ease-in-out;
-}
+} */
 
 /* 마우스 오버시 흰 배경 내려오기 */
-#top:hover::before {
+/* .top:hover::before {
     border-top: 1px solid #ddd;
     height: 140px;
-}
+} */
 
-
-
-.top {
-    display: flex;
-    padding: 50px 0;
-    align-items: center;
-    font-family: 'Source Code Pro', monospace;
-}
 /* 1-1. 상단로고 */
 .logo {
     position: relative;
@@ -64,8 +64,6 @@
 }
 
 /* 1-2. gnb */
-.gnb {
-}
 .menu_top {
     display: flex;
     width: 60vw;
@@ -87,6 +85,41 @@
 #top>.top>.gnb>.menu_top>li>a:hover {
     color : var(--scl);
 }
+
+/* GNB 서브메뉴 배경 상위메뉴 li 에 가상요소로 만들기 */
+.menu_top::before {
+    content: '';
+    position: absolute;
+    /* 부모는? .top */
+    top: 0;
+    left: 0;
+    /* z-index: -1; */
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    transition: height .3s ease-out;
+}
+
+/* 상위메뉴 li 오버시 서브메뉴 보이기 */
+.menu_top:hover::before {
+    height: 500px;
+}
+
+
+/* 서브메뉴 */
+.menu_sub {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 140px;
+}
+
+.menu_sub_dn {
+    /* 모바일 화면에서만 나타나기 */
+    display: none;
+}
+
+
 
 /* 1-3. 예약버튼 */
 .res {
