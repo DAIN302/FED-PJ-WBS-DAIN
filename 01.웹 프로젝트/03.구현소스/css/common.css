@@ -8,7 +8,6 @@
     position: fixed;
     z-index: 9999;
     width: 100%;
-    height: 140px;
     top: 0;
     left: 0;
     transition: .3s;
@@ -17,29 +16,11 @@
 
 .top {
     display: flex;
-    padding: 50px 0;
+    padding: 20px 0;
+    height: 140px;
     align-items: center;
     font-family: 'Source Code Pro', monospace;
 }
-
-/* 가상요소로 흰 배경 만들기 */
-/* .top::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: #fff;
-    transition: height .3s ease-in-out;
-} */
-
-/* 마우스 오버시 흰 배경 내려오기 */
-/* .top:hover::before {
-    border-top: 1px solid #ddd;
-    height: 140px;
-} */
 
 /* 1-1. 상단로고 */
 .logo {
@@ -55,19 +36,25 @@
     display: none;
 }
 
-#top:hover .logo img {
+/* #top:hover .logo img {
     display: none;
 }
 
 #top:hover .logo img:nth-child(2) {
     display: inline;
-}
+} */
 
 /* 1-2. gnb */
+
 .menu_top {
     display: flex;
     width: 60vw;
     justify-content: space-around;
+}
+
+.menu_top>li {
+    margin-top: 40px;
+    padding-bottom: 40px;
 }
 
 .menu_top>li>a {
@@ -78,7 +65,7 @@
 
 /* 탑메뉴에 마우스 오버시 a요소 색 변경 */
 #top:hover .menu_top>li>a {
-    color: #555;
+    /* color: #555; */
 }
 
 /* a요소에 마우스 오버시 색 변경 */
@@ -87,22 +74,29 @@
 }
 
 /* GNB 서브메뉴 배경 상위메뉴 li 에 가상요소로 만들기 */
-.menu_top::before {
+.menu_top li.sm::before {
     content: '';
     position: absolute;
     /* 부모는? .top */
     top: 0;
     left: 0;
-    /* z-index: -1; */
+    z-index: -1;
     width: 100%;
     height: 0;
     background-color: #fff;
     transition: height .3s ease-out;
 }
 
+/* .menu_top li:hover .menu_top>li.sm>a {
+    color: #555;
+} */
+
 /* 상위메뉴 li 오버시 서브메뉴 보이기 */
-.menu_top:hover::before {
-    height: 500px;
+.menu_top li:first-child:hover::before {
+    height: 350px;
+}
+.menu_top li:first-child:hover .menu_sub {
+    height: 150px;
 }
 
 
@@ -112,11 +106,38 @@
     justify-content: space-around;
     position: absolute;
     top: 140px;
+    height: 0;
+    overflow: hidden;
+    transition: heigth .3s;
 }
 
 .menu_sub_dn {
     /* 모바일 화면에서만 나타나기 */
     display: none;
+}
+
+.menu_sub>li+li {
+    margin-right: 60px;
+}
+.menu_sub>li {
+
+}
+.menu_sub>li>a {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    transition: color .3s;
+}
+
+.menu_sub>li>ol>li>a {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #777;
+    transition: color .3sl
+}
+
+.menu_sub>li>a:hover, 
+.menu_sub>li>ol>li>a:hover {
+    color : var(--scl);
 }
 
 
@@ -144,6 +165,6 @@
 
 
 /* 오버시 배경색 및 글씨색 변경 */
-#top:hover .res a{
+.res a:hover {
     background-color: var(--scl);
 }
