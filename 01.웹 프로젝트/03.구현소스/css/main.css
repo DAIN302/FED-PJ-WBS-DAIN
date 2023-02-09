@@ -16,10 +16,15 @@ body {
     /* background-color: rgba(0,0,0,0.5); */
 }
 
+/* 페이지 이동 인디케이터 */
+
+
+/* 메인페이지 */
 .main_page {
     height: 100vh;
 }
 
+/* 1번 페이지 */
 #pg1 {
     width: 100%;
     position: relative;
