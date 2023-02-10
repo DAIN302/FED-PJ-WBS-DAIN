@@ -9,9 +9,13 @@
 */
 /* 공사중표시 */
 body * {
-    outline: 1px dashed #eee;
+    /* outline: 1px dashed #eee; */
 }
 
+html {
+    scroll-behavior: smooth;
+    /* #아이디명 스크롤 이동 시 부드럽게 애니메이션 이동함 */
+}
 html, body {
     width: 100vw;
 }

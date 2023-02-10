@@ -61,16 +61,21 @@
 }
 
 .menu_top>li {
-    margin: 40px 20px 0;
-    padding-bottom: 40px;
+    margin: 40px 0 0;
+    padding:0 20px 40px;
 }
 
 .menu_top>li>a {
+    display: block;
+    width: 100%;
     color: #fff;
     font-size: min(1.6vw, 16px);
     transition: color .3s;
 }
 
+.top.top_on>.gnb>.menu_top>li>a {
+    color : #555;
+}
 .top.top_on>.gnb>.menu_top>li>a {
     color : #555;
 }
@@ -85,19 +90,7 @@
     color : var(--scl);
 }
 
-/* GNB 서브메뉴 배경 상위메뉴 li 에 가상요소로 만들기 */
-.menu_top li.sm::before {
-    content: '';
-    position: absolute;
-    /* 부모는? .top */
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100vw;
-    height: 0;
-    background-color: #fff;
-    transition: height .3s ease-out;
-}
+
 
 /* .menu_top li:hover .menu_top>li.sm>a {
     color: #555;
@@ -142,6 +135,20 @@
 .menu_sub>li>a:hover, 
 .menu_sub>li>ol>li>a:hover {
     color : var(--scl);
+}
+
+/* GNB 서브메뉴 배경 상위메뉴 li 에 가상요소로 만들기 */
+.menu_top li.sm::before {
+    content: '';
+    position: absolute;
+    /* 부모는? .top */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 0;
+    background-color: #fff;
+    transition: height .3s ease-out;
 }
 
 /* 상위메뉴 li 오버시 서브메뉴 보이기 */

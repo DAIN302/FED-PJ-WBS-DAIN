@@ -13,10 +13,24 @@ const menuList = document.querySelectorAll(".menu_top li");
 const topHeader = document.querySelector(".top");
 
 // console.log(menuList);
-console.log(topHeader);
+console.log(menuList);
+
 
 // 2. 마우스 오버 이벤트 설정
-menuList.onmouseenter = () => {
-    topHeader.classList.toggle("top_on");
-} // 마우스 오버 이벤트 함수
+
+for(x of menuList) {
+    x.onmouseover = addClassTop;
+    x.onmouseout = removeClassTop;
+}
+// menuList.onmouseover = addClassTop;
+
+function addClassTop() {
+    // console.log("메롱");
+    topHeader.classList.add("top_on");
+};
+
+function removeClassTop() {
+    topHeader.classList.remove("top_on");
+}
+
 
