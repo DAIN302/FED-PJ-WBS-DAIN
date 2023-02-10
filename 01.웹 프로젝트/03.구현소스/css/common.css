@@ -22,6 +22,10 @@
     font-family: 'Source Code Pro', monospace;
 }
 
+.top.top_on {
+    background-color: #fff;
+}
+
 /* 1-1. 상단로고 */
 .logo {
     position: relative;
@@ -106,7 +110,6 @@
     left: 250px;
     height: 0;
     overflow: hidden;
-    transition: height .3s;
     white-space: nowrap;
 }
 
@@ -142,20 +145,22 @@
     content: '';
     position: absolute;
     /* 부모는? .top */
-    top: 0;
+    top: 140px;
     left: 0;
     z-index: -1;
     width: 100vw;
     height: 0;
     background-color: #fff;
-    transition: height .3s ease-out;
+    /* transition: height .3s ease-out; */
 }
 
 /* 상위메뉴 li 오버시 서브메뉴 보이기 */
 .menu_top li:first-child:hover::before {
-    height: 350px;
+    transition: height .3s ease-out;
+    height: 200px;
 }
 .menu_top li:first-child:hover .menu_sub {
+    transition: height .3s ease-out;
     height: 150px;
 }
 
@@ -163,7 +168,8 @@
 .menu_top li:nth-child(3):hover::before, 
 .menu_top li:nth-child(4):hover::before,
 .menu_top li:last-child:hover::before {
-    height: 200px;
+    height: 80px;
+    transition: height .3s ease-out;
 }
 
 .menu_top li:nth-child(2):hover .menu_sub, 
@@ -171,13 +177,16 @@
 .menu_top li:nth-child(4):hover .menu_sub,
 .menu_top li:last-child:hover .menu_sub {
     height: 50px;
+    transition: height .3s ease-out;
 }
 
 .menu_top li:nth-child(5):hover::before {
-    height: 280px;
+    height: 150px;
+    transition: height .3s ease-out;
 }
 .menu_top li:nth-child(5):hover .menu_sub {
     height: 120px;
+    transition: height .3s ease-out;
 }
 
 
@@ -200,13 +209,13 @@
     color: #fff;
     border: 1px solid #fff;
     box-sizing: border-box;
-    transition: .5s;
 }
 
 
 /* 오버시 배경색 및 글씨색 변경 */
 .res a:hover {
     background-color: var(--scl);
+    transition: .5s;
 }
 
 .top.top_on .res a {
