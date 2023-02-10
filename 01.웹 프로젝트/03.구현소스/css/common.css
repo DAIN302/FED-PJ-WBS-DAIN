@@ -95,13 +95,16 @@
 .menu_top li:first-child:hover::before {
     height: 350px;
 }
-.menu_top li:first-child:hover .menu_sub,
-.menu_top li:nth-child(2):hover .menu_sub {
+.menu_top li:first-child:hover .menu_sub {
     height: 150px;
 }
 
 .menu_top li:nth-child(2):hover::before {
     height: 200px;
+}
+
+.menu_top li:nth-child(2):hover .menu_sub {
+    height: 50px;
 }
 
 
