@@ -38,3 +38,10 @@
     z-index: -1;
     filter : brightness(70%);
 }
+
+.main_res {
+    position: absolute;
+    color: #fff;
+    top: 60%;
+    left: 50%;
+}

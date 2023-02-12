@@ -13,7 +13,6 @@ const menuList = document.querySelectorAll(".menu_top li");
 const topHeader = document.querySelector(".top");
 
 // console.log(menuList);
-console.log(menuList);
 
 
 // 2. 마우스 오버 이벤트 설정
