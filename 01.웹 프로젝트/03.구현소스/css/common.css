@@ -180,6 +180,11 @@
     transition: height .3s ease-out;
 }
 
+/* ABOUT 부분의 오버 시 떨어지는 부분 방지 위해 가로 크기 100%로 정함 */
+.menu_sub>li:last-child {
+    width: 100vw;
+}
+
 .menu_top li:nth-child(5):hover::before {
     height: 150px;
     transition: height .3s ease-out;

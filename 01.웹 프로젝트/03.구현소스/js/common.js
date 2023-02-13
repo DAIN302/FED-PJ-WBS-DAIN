@@ -17,11 +17,13 @@ const topHeader = document.querySelector(".top");
 
 // 2. 마우스 오버 이벤트 설정
 
-for(x of menuList) {
+for(let x of menuList) {
+    // 1. 마우스 오버된 li에 클래스 "on" 넣기
     x.onmouseover = addClassTop;
+
+    // 2. 마우스 아웃된 li에 클래스 "on" 제거
     x.onmouseout = removeClassTop;
 }
-// menuList.onmouseover = addClassTop;
 
 function addClassTop() {
     // console.log("메롱");
