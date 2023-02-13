@@ -258,7 +258,17 @@
 }
 
 /* 3-2. sns 링크 연결 */
+.bsns {
+    padding-left: 40px;
+    width: 300px;
+}
 .bsns ul {
     display: flex;
-    width: 300px;   
+    width: 100%;   
+    justify-content: space-evenly;
+}
+
+.bsns a {
+    color:var(--scl);
+    font-size: 5rem;
 }
