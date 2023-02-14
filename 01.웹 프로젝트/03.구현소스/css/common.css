@@ -287,6 +287,7 @@
 /* 3-3. 하단링크 */
 .blink { 
     max-width: 600px;
+    margin-left: auto;
     
 }
 .blink ul {
@@ -303,6 +304,8 @@
 }
 /* 3-4. 회사정보 */
 .binfo {
+    margin-left: auto;
     max-width: 600px;
-    color : #fff
+    color : #fff;
+    font-size: 1.2rem;
 }
