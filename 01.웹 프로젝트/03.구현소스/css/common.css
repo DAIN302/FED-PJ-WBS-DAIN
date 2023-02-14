@@ -233,6 +233,7 @@
 }
 
 .info { 
+    position: relative;
     height: 300px;
     background-color: #000;
 }
@@ -266,15 +267,42 @@
 .bsns ul {
     display: flex;
     width: 100%;   
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.bsns li+li {
+    margin-left: 10px;
 }
 
 .bsns a {
     color:var(--scl);
-    font-size: 5rem;
+    font-size: 3rem;
     transition: opacity .3s;
 }
 
 .bsns a:hover {
     opacity: 0.8;
+}
+
+/* 3-3. 하단링크 */
+.blink { 
+    max-width: 600px;
+    
+}
+.blink ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blink li+li {
+    margin-left: 20px;
+}
+.blink a {
+    color: #ddd;
+    font-size: 1.4rem;
+}
+/* 3-4. 회사정보 */
+.binfo {
+    max-width: 600px;
+    color : #fff
 }
