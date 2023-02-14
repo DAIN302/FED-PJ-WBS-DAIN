@@ -17,7 +17,7 @@
 .top {
     display: flex;
     padding: 20px 0;
-    height: 140px;
+    min-height: 140px;
     align-items: center;
     font-family: 'Source Code Pro', monospace;
 }
@@ -259,6 +259,7 @@
 
 /* 3-2. sns 링크 연결 */
 .bsns {
+    padding-top: 10px;
     padding-left: 40px;
     width: 300px;
 }
@@ -271,4 +272,9 @@
 .bsns a {
     color:var(--scl);
     font-size: 5rem;
+    transition: opacity .3s;
+}
+
+.bsns a:hover {
+    opacity: 0.8;
 }
