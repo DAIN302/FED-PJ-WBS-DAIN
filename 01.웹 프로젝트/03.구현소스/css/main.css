@@ -80,6 +80,10 @@
     filter : brightness(70%);
 }
 
+.main_txt {
+    color: #fff;
+}
+
 /***** 3번 페이지 *****/
 
 /***** 4번 페이지 *****/
@@ -93,3 +97,44 @@
     background: url(../images/main/main5.jpg) no-repeat center/cover;
     filter : brightness(70%);
 }
+
+/* 컨택트 페이지 이동 아이콘 */
+.ctmove {
+    position: fixed;
+    bottom: 2vh;
+    left: 2vw;
+    width: min(30px, 3vw);
+    overflow: hidden;
+    transition: width .3s;
+}
+
+.ctmove a::after {
+    content: 'CONTACT';
+    position: absolute;
+    /* display: none; */
+    margin-left: 1vw;
+    width: 0;
+    bottom: 5px;
+    color: #eee;
+    font-size: min(18px, 2vw);
+    transition : .5s;
+}
+
+.ctmove a {
+    display: block;
+    font-size: min(30px, 3vw);
+    color: #fff;
+    transition : color .5s;
+}
+
+.ctmove:hover {
+    width: 150px;
+}
+
+.ctmove:hover a {
+    color : var(--scl);
+}
+
+
+
+
