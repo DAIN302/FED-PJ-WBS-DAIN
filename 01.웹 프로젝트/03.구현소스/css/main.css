@@ -45,15 +45,23 @@
 
 /* 메인페이지 */
 .main_page {
+    position: relative;
     height: 100vh;
     width: 100%;
 }
 
-/***** 1번 페이지 *****/
-#pg1 {
-    /* width: 100%; */
+/* 메인페이지 백그라운드 이미지 공통 */
+.main_back_img {
     position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    filter: brightness(70%);
 }
+
+
+/***** 1번 페이지 *****/
 
 #mvid {
     position: absolute;
@@ -74,35 +82,35 @@
 }
 
 /***** 2번 페이지 *****/
-#pg2 {
-    background: url(../images/main/main2.jpg) no-repeat center/cover;
-    /* width: 100%; */
-    filter : brightness(70%);
+#pg2 .main_back_img {
+    position: relative;
+    background-image: url(../images/main/main2.jpg);
 }
 
 .main_txt {
+    position: absolute;
+    top: 20%;
+    left: 5%;
     color: #fff;
 }
 
 /***** 3번 페이지 *****/
 
 /***** 4번 페이지 *****/
-#pg4 {
-    background: url(../images/main/main4.jpg) no-repeat top/cover;
-    filter : brightness(70%);
+#pg4 .main_back_img {
+    background-image: url(../images/main/main4.jpg);
 }
-/***** 5번 페이지 *****/
 
-#pg5 {
-    background: url(../images/main/main5.jpg) no-repeat center/cover;
-    filter : brightness(70%);
+/***** 5번 페이지 *****/
+#pg5 .main_back_img {
+    background-image: url(../images/main/main5.jpg);
 }
 
 /* 컨택트 페이지 이동 아이콘 */
 .ctmove {
     position: fixed;
     bottom: 2vh;
-    left: 2vw;
+    right: 2vw;
     width: min(30px, 3vw);
     overflow: hidden;
     transition: width .3s;

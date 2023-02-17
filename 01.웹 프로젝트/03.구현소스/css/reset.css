@@ -38,3 +38,8 @@ img {
     /* 박스 이미지 하단간극 없애기(약4px)
     값으로 top, middle등 도 효과있음! */
 }
+
+/* h태그 기본 글씨 굵기 초기화 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
