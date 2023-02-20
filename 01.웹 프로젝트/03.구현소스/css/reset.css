@@ -43,3 +43,8 @@ img {
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
+
+/* 포커스 아웃라인 제거 - 모든 브라우저에 기본 포커스 아웃라인 세팅됨 */
+input:focus {
+    outline: none;
+}

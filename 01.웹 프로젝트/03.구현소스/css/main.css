@@ -77,11 +77,71 @@
     filter : brightness(70%);
 }
 
+/* 예약선택폼 */
 .main_res {
     position: absolute;
     color: #fff;
-    top: 60%;
+    top: 62%;
     left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+}
+
+.main_res_cont {
+    display: flex;
+    gap: 10px;
+}
+
+.main_res_cont span {
+    display: inline-block;
+    padding: 5px 0 10px;
+}
+
+/* 체크인/아웃 박스 */
+.main_res_chk {
+    position: relative;
+}
+
+/* 체크인/아웃 박스에 가상요소로 경계선 그리기 */
+.main_res_chk::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 1px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    background: #dddddd;
+}
+
+/* 체크인/아웃 박스 날짜선택 인풋 디자인 */
+.main_res_chk input {
+    background-color: transparent;
+    border: none;
+    color : #fff
+}
+
+#sbtn {
+    margin-left: 10px;
+}
+
+/* 서치버튼 디자인 */
+#sbtn > input {
+    width: min(16vw, 200px);
+    height: 60px;
+    border: none;
+    background-color: #fff;
+    color:#000;
+    font-size: min(1.6vw, 16px);
+    font-family: 'Source Code Pro', monospace;
+    transition: color .4s ease-in-out, background-color .4s ease-in-out;
+}
+
+/* 서치버튼 마우스 오버시 디자인 변경 */
+#sbtn > input:hover {
+    background-color: #000;
+    color :#fff;
 }
 
 /***** 2번 페이지 *****/
@@ -97,6 +157,10 @@
 }
 
 /***** 3번 페이지 *****/
+#pg3 .main_back_img {
+    background-image: url(../images/main/main3.jpg);
+}
+
 
 /***** 4번 페이지 *****/
 #pg4 .main_back_img {
