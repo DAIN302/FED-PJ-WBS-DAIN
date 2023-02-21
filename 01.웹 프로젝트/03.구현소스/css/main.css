@@ -122,6 +122,20 @@
     color : #fff
 }
 
+/* 객실/인원 수 선택박스  */
+.main_res_cont select {
+    background-color: transparent;
+    color : #fff;
+    border: none;
+}
+
+.main_res_cont select option {
+    background-color: #fff;
+    color : #000;
+    border: none;
+}
+
+
 #sbtn {
     margin-left: 10px;
 }

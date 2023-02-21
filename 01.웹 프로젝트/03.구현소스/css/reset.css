@@ -48,3 +48,15 @@ h1, h2, h3, h4, h5, h6 {
 input:focus {
     outline: none;
 }
+
+select:focus {
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select {
+    appearance: none;
+}

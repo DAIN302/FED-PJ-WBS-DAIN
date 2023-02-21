@@ -9,7 +9,7 @@
 */
 /* 공사중표시 */
 body * {
-    /* outline: 1px dashed #eee; */
+    outline: 1px dashed #eee;
 }
 
 html {
