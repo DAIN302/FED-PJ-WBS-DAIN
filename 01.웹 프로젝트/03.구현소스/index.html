@@ -208,25 +208,63 @@
                 </div>
                 <div>
                   <span>ADULT</span>
-                  <select name="adultsel" id="adultsel">
+                  <!-- <select name="adultsel" id="adultsel">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                  </select>
+                  </select> -->
+                  <!-- 성인 선택 박스 : div, ul, li 로 select:option 태그처럼 구현 -->
+                  <div class="main_select" id="main_adultsel">
+                    <div class="main_selected">
+                      <!-- 선택된 값 보여주는곳 -->
+                      <div class="main_select_value">1</div>
+                      <!-- 화살표디자인 -->
+                      <div class="main_select_arrow">
+                        <span class="fa-solid fa-chevron-down"></span>
+                      </div>
+                    </div>
+                    <!-- 선택옵션 -->
+                    <ul>
+                      <li class="option">1</li>
+                      <li class="option">2</li>
+                      <li class="option">3</li>
+                      <li class="option">4</li>
+                      <li class="option">5</li>
+                    </ul>
+                  </div>                  
                 </div>
                 <div>
                   <span>CHILDREN</span>
                   <!-- <span class="fa-solid fa-circle-info"></span> -->
-                  <select name="childsel" id="childsel">
+                  <!-- <select name="childsel" id="childsel">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                  </select>
+                  </select> -->
+                  <!-- 어린이 선택 박스 : div, ul, li 로 select:option 태그처럼 구현 -->
+                  <div class="main_select" id="main_childsel">
+                    <div class="main_selected">
+                      <!-- 선택된 값 보여주는곳 -->
+                      <div class="main_select_value">1</div>
+                      <!-- 화살표디자인 -->
+                      <div class="main_select_arrow">
+                        <span class="fa-solid fa-chevron-down"></span>
+                      </div>
+                    </div>
+                    <!-- 선택옵션 -->
+                    <ul>
+                      <li class="option">1</li>
+                      <li class="option">2</li>
+                      <li class="option">3</li>
+                      <li class="option">4</li>
+                      <li class="option">5</li>
+                    </ul>
+                  </div> 
                 </div>
                 <div id="sbtn">
                   <input type="submit" value="SEARCH"/>

@@ -147,7 +147,7 @@
 }
 /* 선택된 값 보여주는 곳 */
 .main_select_value {
-    width: 70px;
+    width: 77px;
     text-align: center;
     padding: 5px 0;
 }
@@ -155,24 +155,35 @@
 /* 화살표 */
 .main_select_arrow {
     position: absolute;
-    right: 15px;
-    top: 3px;
+    right: 18px;
+    top: 5px;
+    width: 10px;
+    height: 5px;
+    
 }
 
 .main_select_arrow span {
     display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     font-size: 10px;
-    line-height: 10px;
+    transition : transform .4s;
 }
 /* 선택옵션 */
 .main_select ul {
+    display: none;
     position: absolute;
     /* left: 50%; */
-    width: 70px;
+    width: 77px;
     background-color: #fff;
     color: #555;
     cursor: pointer;
     text-align: center;
+}
+
+.main_select.on ul {
+    display: block;
 }
 
 .main_select ul li {
