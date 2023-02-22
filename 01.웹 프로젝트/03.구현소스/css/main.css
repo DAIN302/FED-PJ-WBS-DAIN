@@ -85,7 +85,7 @@
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Source Code Pro', monospace;
-    font-size: 14px;
+    font-size: 1.6rem;
 }
 
 .main_res_cont {
@@ -156,13 +156,21 @@
 .main_select_arrow {
     position: absolute;
     right: 15px;
+    top: 3px;
+}
+
+.main_select_arrow span {
+    display: inline-block;
+    font-size: 10px;
+    line-height: 10px;
 }
 /* 선택옵션 */
 .main_select ul {
-    width: 70px;
     position: absolute;
+    /* left: 50%; */
+    width: 70px;
     background-color: #fff;
-    color: #000;
+    color: #555;
     cursor: pointer;
     text-align: center;
 }
