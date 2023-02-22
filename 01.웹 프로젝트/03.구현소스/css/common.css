@@ -74,15 +74,13 @@
     width: 100%;
     color: #fff;
     font-size: min(1.6vw, 16px);
-    transition: color .3s;
 }
 
 .top.top_on>.gnb>.menu_top>li>a {
     color : #555;
+    transition: color .3s;
 }
-.top.top_on>.gnb>.menu_top>li>a {
-    color : #555;
-}
+
 
 /* 탑메뉴에 마우스 오버시 a요소 색 변경 */
 #top:hover .menu_top>li>a {
@@ -132,7 +130,7 @@
     font-size: 1.5rem;
     line-height: 1.6;
     color: #777;
-    transition: color .3sl
+    transition: color .3s;
 }
 
 .menu_sub>li>a:hover, 

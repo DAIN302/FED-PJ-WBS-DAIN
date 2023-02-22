@@ -168,29 +168,37 @@
     width: 100%;
     height: 100%;
     font-size: 10px;
-    transition : transform .4s;
+    transition : transform .3s;
+}
+
+.main_select_list {
+    position: relative;
+    height: 0;
+    width: 77px;
+    overflow: hidden;
 }
 /* 선택옵션 */
-.main_select ul {
-    display: none;
+.main_select_list ul {
+    /* display: none; */
     position: absolute;
-    /* left: 50%; */
     width: 77px;
+    /* height: 0; */
+    /* overflow: hidden; */
     background-color: #fff;
     color: #555;
     cursor: pointer;
     text-align: center;
 }
 
-.main_select.on ul {
+/* .main_select.on ul {
     display: block;
-}
+} */
 
-.main_select ul li {
+.main_select_list ul li {
     padding : 5px 0;
 }
 
-.main_select ul li:hover {
+.main_select_list ul li:hover {
     background-color: #e9e9e9;
 }
 
