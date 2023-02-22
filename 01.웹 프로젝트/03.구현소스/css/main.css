@@ -121,7 +121,7 @@
     border: none;
     color : #fff
 }
-
+/************select************/
 /* 객실/인원 수 선택박스  */
 .main_res_cont select {
     background-color: transparent;
@@ -133,6 +133,46 @@
     background-color: #fff;
     color : #000;
     border: none;
+}
+/************select************/
+/* div, ul, li로 구현한 선택박스 */
+.main_select {
+    display: inline-block;
+    width: 70px;
+}
+
+.main_selected {
+    display: flex;
+    position: relative;
+}
+/* 선택된 값 보여주는 곳 */
+.main_select_value {
+    width: 70px;
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* 화살표 */
+.main_select_arrow {
+    position: absolute;
+    right: 15px;
+}
+/* 선택옵션 */
+.main_select ul {
+    width: 70px;
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    text-align: center;
+}
+
+.main_select ul li {
+    padding : 5px 0;
+}
+
+.main_select ul li:hover {
+    background-color: #e9e9e9;
 }
 
 
