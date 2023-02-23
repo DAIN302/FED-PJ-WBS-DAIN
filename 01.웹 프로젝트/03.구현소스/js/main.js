@@ -31,22 +31,31 @@ for(let x of mainSel) {
         // 화살표아이콘 방향변경
         selArrow.style.transform = "rotate(-180deg)";
         console.log(selHeight, mainSelList.offsetHeight);
-        // 한번 더 클릭 시 옵션선택박스 닫히가
-        if(mainSelList.offsetHeight > 1) {
-            mainSelList.style.height = "0";
-            selArrow.style.transform = "rotate(0)";
+
+        // 옵션선택박스 닫힘 함수
+        const closeOpt = () => {
+            if(mainSelList.offsetHeight > 1) {
+                mainSelList.style.height = "0";
+                selArrow.style.transform = "rotate(0)";
+            }
         }
-    }
+
+        // 한번 더 누르거나 바깥, 다른 요소 클릭 시 옵션선택박스 닫힘
+        document.addEventListener("click", ()=> closeOpt())
+    } //// 클릭 이벤트(상단 숫자 클릭 시)
+
     // 옵션선택박스에서 누른 숫자 적용
     // 대상선정 
     const selVal = x.querySelector(".main_select_value");
     const selOpt = mainSelList.querySelectorAll(".option");
+
     // 숫자 적용 함수
-    const chSel = function(val) {
+    const chSel = val => {
         selVal.innerHTML = val.innerText
     }
 
-    selOpt.forEach(function(option){
+    // 옵션 클릭시 숫자 적용
+    selOpt.forEach(option => {
         option.addEventListener("click", function(){chSel(option)})
-    }) 
-}
+    }) /// 클릭 이벤트(옵션 클릭 시)
+} ////// for of문 

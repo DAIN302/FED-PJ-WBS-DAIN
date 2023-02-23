@@ -42,6 +42,13 @@
     background-color: rgba(255,255,255,0.8);
 }
 
+/* 해당되는 페이지의 인디케이터 디자인 변경 */
+.main_nav li.on a {
+    border: 2px solid #fff;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
 
 /* 메인페이지 */
 .main_page {
@@ -139,6 +146,7 @@
 .main_select {
     display: inline-block;
     width: 70px;
+    cursor: pointer;
 }
 
 .main_selected {
@@ -168,7 +176,7 @@
     width: 100%;
     height: 100%;
     font-size: 10px;
-    transition : transform .3s;
+    transition : transform .3s ease-in-out;
 }
 
 .main_select_list {
@@ -240,6 +248,28 @@
 /***** 3번 페이지 *****/
 #pg3 .main_back_img {
     background-image: url(../images/main/main3.jpg);
+}
+
+.main_room {
+    position: relative;
+    color: #fff;
+}
+
+.main_room_cont {
+    display: flex;
+}
+
+.main_room_cont>div {
+    flex : 1;
+}
+
+.main_room_img {
+    height: 100vh;
+}
+.main_room_img img {
+    width: 100%;
+    height: 100%;
+
 }
 
 
