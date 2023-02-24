@@ -16,7 +16,7 @@
 
 .top {
     display: flex;
-    padding: 20px 0;
+    /* padding: 20px 0; */
     min-height: 140px;
     align-items: center;
     font-family: 'Source Code Pro', monospace;
@@ -65,8 +65,8 @@
 }
 
 .menu_top>li {
-    margin: 40px 0 0;
-    padding:0 20px 40px;
+    margin: 60px 0 0;
+    padding:0 20px 60px;
 }
 
 .menu_top>li>a {
