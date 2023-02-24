@@ -272,11 +272,11 @@
 /* 이미지부분 */
 .main_room_img {
     position: relative;
-    top: 20%;
+    top: 10%;
 }
 
 .main_room_img li {
-    height: 60vh;
+    height: 80vh;
 }
 
 .main_room_img img {
@@ -286,7 +286,7 @@
 /* 이미지 넘기기 버튼 */
 .main_room_btn {
     position: absolute;
-    top: 33%;
+    top: 40%;
     left: 5%;
     width: 90%;
     transform: translateY(-50%);
@@ -297,9 +297,34 @@
 .main_room_btn button {
     border: none;
     background-color: transparent;
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: normal;
-    color : #fff;
+    color : rgba(255,255,255,0.5);
+    transition: color .3s;
+    cursor: pointer;
+}
+.main_room_btn button:hover {
+    color : rgba(255,255,255,1);
+}
+
+/* 이미지 진행시간 애니메이션 */
+.main_room_time {
+    position: absolute;
+    width: 200px;
+    height: 10px;
+    right: 5px;
+}
+/* 
+.main_room_time span {
+    position: absolute;
+} */
+.main_room_timebar {
+    position: absolute;
+    width: 150px;
+    height: 5px;
+    bottom: 23%;
+    right: 5%;
+    background-color: rgba(255,255,255,0.2);
 }
 
 
