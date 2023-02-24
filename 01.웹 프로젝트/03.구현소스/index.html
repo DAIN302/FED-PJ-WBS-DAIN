@@ -314,9 +314,24 @@
             <div class="main_room_cont">
               <div class="main_room_img">
                 <!-- 가로 슬라이드 배너 예정 -->
-                <img src="./images/main/room/room1.jpg" alt="객실이미지">
+                <ul>
+                  <li>
+                    <img src="./images/main/room/room1.jpg" alt="객실이미지">
+                  </li>
+                </ul>
                 <!-- 이미지 넘기기 버튼 -->
-                <button></button>
+                <div class="main_room_btn">
+                  <!-- 이전으로 -->
+                  <button class="main_room_btnpre">
+                    <span class="fa-solid fa-chevron-left"></span>
+                  </button>
+                  <!-- 다음으로 -->
+                  <button class="main_room_btnnext">
+                    <span class="fa-solid fa-chevron-right"></span>
+                  </button>
+                </div>
+                <!-- 이미지 진행시간 애니메이션 바 -->
+                <div class="main_room_time"></div>
               </div>
               <div class="main_room_txt">
                 <!-- 화면에 넘어왔을 때 글자 등장액션 -->
