@@ -314,6 +314,7 @@
             <div class="main_room_cont">
               <div class="main_room_img">
                 <!-- 가로 슬라이드 배너 예정 -->
+                <!-- 6초마다 슬라이드 이미지 변경 -->
                 <ul>
                   <li>
                     <img src="./images/main/room/room1.jpg" alt="객실이미지">
@@ -330,11 +331,15 @@
                     <span class="fa-solid fa-chevron-right"></span>
                   </button>
                 </div>
-                <!-- 이미지 진행시간 애니메이션 바 -->
+                <!-- 이미지 진행시간 애니메이션 바 박스 -->
                 <div class="main_room_time">
-                  <span>1</span>
-                  <span class="main_room_timebar"></span>
-                  <span>5</span>
+                  <!-- 현재 슬라이드 번호 -->
+                  <!-- 슬라이드가 넘어갈때마다 해당되는 번호로 바뀜 -->
+                  <div>1</div>
+                  <!-- 이미지 진행시간 애니메이션 바 -->
+                  <div class="main_room_timebar"></div>
+                  <!-- 전체 슬라이드 번호 -->
+                  <div>5</div>
                 </div>
               </div>
               <div class="main_room_txt">
