@@ -173,16 +173,19 @@
           <div class="main_res">
             <form action="" method="get" class="main_res_form">
               <div class="main_res_cont">
+                <!-- 날짜선택 : 체크인 -->
                 <div class="main_res_chk">
                   <span>CHECK IN</span>
                   <input type="text" value="날짜 선택" />
                 </div>
+                <!-- 날짜선택 : 체크아웃 -->
                 <div class="main_res_chk">
                   <span>CHECK OUT</span>
                   <input type="text" value="날짜 선택" />
                 </div>
-                <div>
-                  <span>ROOM</span>
+                <!-- 객실 수 선택 -->
+                <div class="main_res_select">
+                  <div>ROOM</div>
                   <!-- <select name="roomsel" id="roomsel">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -208,8 +211,9 @@
                     </div>
                   </div>
                 </div>
-                <div>
-                  <span>ADULT</span>
+                <!-- 성인 인원 수 선택 -->
+                <div class="main_res_select">
+                  <div>ADULT</div>
                   <!-- <select name="adultsel" id="adultsel">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -239,9 +243,12 @@
                     </div>
                   </div>
                 </div>
-                <div>
-                  <span>CHILDREN</span>
-                  <!-- <span class="fa-solid fa-circle-info"></span> -->
+                <!-- 어린이 인원 수 선택 -->
+                <div class="main_res_select">
+                  <div>
+                    CHILDREN
+                    <!-- <span class="fa-solid fa-circle-info"></span> -->
+                  </div>
                   <!-- <select name="childsel" id="childsel">
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -318,7 +325,7 @@
                 <!-- 6초마다 슬라이드 이미지 변경 -->
                 <ul>
                   <li>
-                    <img src="./images/main/room/room1.jpg" alt="객실이미지">
+                    <img src="./images/main/room/room1.jpg" alt="객실이미지" />
                   </li>
                 </ul>
                 <!-- 이미지 넘기기 버튼 -->
@@ -338,7 +345,7 @@
                   <!-- 슬라이드가 넘어갈때마다 해당되는 번호로 바뀜 -->
                   <div>1</div>
                   <!-- 이미지 진행시간 애니메이션 바 -->
-                  <div class="main_room_timebar"></div>
+                  <div class="main_timebar"></div>
                   <!-- 전체 슬라이드 번호 -->
                   <div>5</div>
                 </div>
@@ -348,15 +355,17 @@
                 <!-- 화면에 넘어왔을 때 글자 등장액션 -->
                 <div class="main_txt">
                   <!-- 글자 등장액션 : 밑에서부터 글자 하나씩 올라오는 액션 -->
-                  <h2>ROOM<span class="fa-solid fa-chevron-right"></span></h2>
+                  <h2>ROOM<a class="fa-solid fa-chevron-right"></a></h2>
                   <!-- 글자 등장액션 : 투명 -> 불투명   -->
-                  <p>프렌치 시크 인테리어 디자인과 파노라믹 스카이라인 뷰가 매력적인
-                    소피텔 앰배서더 서울은<br>
-                    스위트 룸 59객실을 포함한 호텔 403객실,
-                    서비스드 레지던스 160객실로 구성되어 있어<br>
-                    안락하면서도 완벽한 하루의 휴식을 만들어드립니다. <br><br>
-                    모던 프렌치 라이프를 경험하실 수 있는 호텔 객실과
-                    장기 체류에 최적화된 서비스드 레지던스에서<br>
+                  <p>
+                    프렌치 시크 인테리어 디자인과 파노라믹 스카이라인 뷰가
+                    매력적인 소피텔 앰배서더 서울은<br />
+                    스위트 룸 59객실을 포함한 호텔 403객실, 서비스드 레지던스
+                    160객실로 구성되어 있어<br />
+                    안락하면서도 완벽한 하루의 휴식을 만들어드립니다.
+                    <br /><br />
+                    모던 프렌치 라이프를 경험하실 수 있는 호텔 객실과 장기
+                    체류에 최적화된 서비스드 레지던스에서<br />
                     소피텔만의 특별한 서비스를 제안합니다.
                   </p>
                 </div>
@@ -375,17 +384,61 @@
               <div class="main_dining_txt">
                 <div class="main_txt">
                   <!-- 글자 등장액션 : 밑에서부터 글자 하나씩 올라오는 액션 -->
-                  <h2>DINING<span class="fa-solid fa-chevron-right"></span></h2>
+                  <h2>DINING</h2>
                   <!-- 글자 등장액션 : 투명 -> 불투명   -->
                   <p>
-                    5곳의 레스토랑과 바에서 오감을 사로잡는 환상적인 미식의 세계를 경험해 보십시오.<br>
-                    세련된 시크 비스트로 ‘페메종(Fait Maison)’, 모던 일식 가스트로노미 ‘미오(MIO)’, 고메 카페 ‘쟈뎅 디베르(Jardin d’Hiver)’, 파리지앵 라운지 ‘레스파스(L’Espace)’, 32층에 위치한 루프 바 ‘라티튜드32(Latitude32)’ 에서 품격있는 다이닝을 경험하실 수 있습니다. 
+                    5곳의 레스토랑과 바에서 오감을 사로잡는 환상적인 미식의
+                    세계를 경험해 보십시오.<br />
+                    세련된 시크 비스트로 ‘페메종(Fait Maison)’, 모던 일식
+                    가스트로노미 ‘미오(MIO)’, 고메 카페 ‘쟈뎅 디베르(Jardin
+                    d’Hiver)’, 파리지앵 라운지 ‘레스파스(L’Espace)’, 32층에
+                    위치한 루프 바 ‘라티튜드32(Latitude32)’ 에서 품격있는
+                    다이닝을 경험하실 수 있습니다.
                   </p>
-                </div>                
+                </div>
               </div>
               <!-- 다이닝 이미지 박스 -->
               <div class="main_dining_img">
-                <img src="./images/main/dining/fa.jpg" alt="다이닝이미지">
+                <!-- 다이닝 이미지 -->
+                <img src="./images/main/dining/fa.jpg" alt="다이닝이미지" />
+                <!-- 다이닝 이름 -->
+                <nav class="main_dining_name">
+                  <ul>
+                    <li>
+                      <!-- 다이닝 이미지 시간 진행바
+                           색이 다 채워지면 다음 이미지로 넘어감 -->
+                      <div class="main_dining_time">
+                        <div class="main_timebar"></div>
+                      </div>
+                      <!-- a요소를 누르면 해당되는 이미지로 전환 -->
+                      <a href="#">Fait Maison</a>
+                    </li>
+                    <li>
+                      <div class="main_dining_time">
+                        <div class="main_timebar"></div>
+                      </div>
+                      <a href="#">MIO</a>
+                    </li>
+                    <li>
+                      <div class="main_dining_time">
+                        <div class="main_timebar"></div>
+                      </div>
+                      <a href="#">Jardin D’Hiver</a>
+                    </li>
+                    <li>
+                      <div class="main_dining_time">
+                        <div class="main_timebar"></div>
+                      </div>
+                      <a href="#">L’Espace</a>
+                    </li>
+                    <li>
+                      <div class="main_dining_time">
+                        <div class="main_timebar"></div>
+                      </div>
+                      <a href="#">Latitude32</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </section>
@@ -393,7 +446,7 @@
         <!-- 2-5. 5번 메인페이지 : 오퍼 소개 -->
         <div class="main_page" id="pg5">
           <!-- 백그라운드 박스 -->
-          <!-- 화면 넘어왔을 시 점점 확대되다가 멈추는 애니 -->          
+          <!-- 화면 넘어왔을 시 점점 확대되다가 멈추는 애니 -->
           <div class="main_back_img"></div>
           <section class="main_offer"></section>
         </div>
