@@ -442,7 +442,17 @@
     background-image: url(../images/main/main5.jpg);
 }
 
-/* 컨택트 페이지 이동 아이콘 */
+/* 다이닝 이미지 박스 */
+.main_offer_cont {
+    /* position: absolute; */
+    background-color: #fff;
+    width: 80%;
+    height: 40%;
+}
+
+
+
+/************* 컨택트 페이지 이동 아이콘 *************/
 .ctmove {
     position: fixed;
     bottom: 2vh;
