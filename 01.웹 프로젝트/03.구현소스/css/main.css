@@ -284,11 +284,15 @@
 /* 이미지부분 */
 .main_room_img {
     position: relative;
-    top: 10%;
+    height: 100vh;
 }
 
 .main_room_img li {
-    height: 80vh;
+    position: absolute;
+    height: 60vh;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .main_room_img img {
@@ -299,7 +303,7 @@
 /* 이미지 넘기기 버튼 */
 .main_room_btn {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 5%;
     width: 90%;
     transform: translateY(-50%);
