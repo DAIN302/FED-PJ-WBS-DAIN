@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+/* 메인페이지 CSS - main.css */
+@import url(./reset.css);
+@import url(./common.css);
+
+#cont {
+    position: relative;
+    height: 788px;
+}
+
+#screen {
+    position: relative;
+    top: 136px;
+    left: 257px;
+    width: 701px;
+    height: 398px;
+    background-color: #000;
+}
+
+#screen iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.mlist {
+    position: absolute;
+    bottom: 60px;
+    left: 250px;
+    overflow: hidden;
+}
+
+.mlist ul>li {
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.mlist img {
+    width: 99px;
+    height: 140px;
+}
+
+.movtxt {
+    position: absolute;
+    top: 100%;
+    width: 99px;
+    height: 140px;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    list-style: 25px;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    transition: top .4s ease-out;
+}
+
+.mlist>ul>li:hover .movtxt {
+    top: 0;
+}
+
+.movtxt li {
+    float: none;
+}
+
+.movtxt li:first-child {
+    margin-top: 30px;
+    color: aqua;
+    font-size: 17px;
+    letter-spacing: -1px;
+}

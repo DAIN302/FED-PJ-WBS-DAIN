@@ -124,6 +124,7 @@
 
 /* 체크인/아웃 박스 날짜선택 인풋 디자인 */
 .main_res_chk input {
+    display: block;
     background-color: transparent;
     border: none;
     color : #fff
@@ -442,12 +443,22 @@
     background-image: url(../images/main/main5.jpg);
 }
 
-/* 다이닝 이미지 박스 */
+/* 패키지 이미지 박스 */
 .main_offer_cont {
-    /* position: absolute; */
+    position: absolute;
     background-color: #fff;
     width: 80%;
     height: 40%;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main_offer_cont figure {
+    width: 30%;
+}
+.main_offer_cont figure>img {
+    width: 100%;
 }
 
 
