@@ -129,7 +129,9 @@
     border-radius: 50%;
 }
 
-.mcha_list li:hover .mcha_beam span{
+/* 오버시 빛나게 */
+.mcha_list li:hover .mcha_beam span,
+.mcha_contwrap:hover .mcha_beam span {
     background-color: rgba(255,255,255,1);
     box-shadow: 0 0 5px 1px #fff;
     transition: .5s;
@@ -143,5 +145,75 @@
 .mcha_list li:hover h4 {
     color : rgba(255,255,255,0.8);
     transition: color .5s;
+}
+
+/* 캐릭터 소개 출력용 박스 */
+.mcha_cont {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.mcha_cont::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    width: 200%;
+    height: 110vh;
+    z-index: -1;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.mcha_contbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+.mcha_contwrap {
+    display: flex;
+    border-radius: 20px;
+}
+.mcha_cont_img {
+    width: 800px;
+}
+.mcha_cont_img img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.mcha_cont_txt {
+    width: 400px;
+    padding: 10px 20px;
+    background-color: #1d1e1f;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* 닫기버튼 */
+.cbtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    background-color: transparent;
+    color : #fff;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
