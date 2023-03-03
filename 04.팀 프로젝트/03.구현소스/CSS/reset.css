@@ -10,11 +10,3 @@ a{
 ul,ol{
     list-style: none;
 }
-ol::after,ul::after{
-    content: '';
-    display: block;
-    clear: both;
-}
-li{
-    float: left;
-}

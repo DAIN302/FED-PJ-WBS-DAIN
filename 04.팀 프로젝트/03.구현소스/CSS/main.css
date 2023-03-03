@@ -4,6 +4,15 @@
 @import url(./reset.css);
 @import url(./common.css);
 
+ol::after,ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+li{
+    float: left;
+}
+
 #cont {
     position: relative;
     height: 788px;
