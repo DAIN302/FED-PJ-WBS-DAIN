@@ -26,6 +26,7 @@ const cdata = {
         imglink : "c3po.jpeg",
         desc : "C-3PO longs for more peaceful times, but his continued service to the Resistance — and his knowledge of more than seven million forms of communication — keeps the worry-prone droid in the frontlines of galactic conflict. Programmed for etiquette and protocol, Threepio was built by a young Anakin Skywalker, and has been a constant companion to astromech R2-D2. Over the years, he was involved in some of the galaxy’s most defining moments and thrilling battles. Since the Empire’s defeat, C-3PO has served Leia Organa, head of a Resistance spy ring aimed at undermining the First Order.",
     },
+
     "r2d2" : {
         name : "R2-D2",
         imglink : "r2d2.jpeg",
@@ -51,4 +52,8 @@ const cdata = {
         imglink : "dooku.jpeg",
         desc : "Count Dooku was a menacing Sith Lord and central figure in the Clone Wars. Once a Jedi -- trained by Yoda -- he became disillusioned with the Jedi Order and thirsted for greater power. Dooku voluntarily left the light side behind and became Darth Sidious’ dark side disciple, taking the secret name Darth Tyranus and leading the Separatist army. Dooku advanced Sidious’s secret plot to take over the galaxy, but forgot that betrayal is the nature of the Sith.",
     },
+}
+
+const vdata = {
+
 }

@@ -86,11 +86,16 @@
     color : #fff;
 }
 
-.mcha>h2 {
-    padding: 50px 0;
+.msubtit {
+    padding: 50px 0 10px;
+    color : #fff;
+    border-bottom: 1px solid #555;
 }
 
 /* 캐릭터 목록 */
+.mcha_list {
+    padding-top: 20px;
+}
 .mcha_list ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -131,7 +136,8 @@
 
 /* 오버시 빛나게 */
 .mcha_list li:hover .mcha_beam span,
-.mcha_contwrap:hover .mcha_beam span {
+.mcha_contwrap:hover .mcha_beam span,
+.mvideo_cont li:hover .mcha_beam span {
     background-color: rgba(255,255,255,1);
     box-shadow: 0 0 5px 1px #fff;
     transition: .5s;
@@ -217,3 +223,58 @@
     font-weight: bold;
 }
 
+/* 비디오 */
+.mvideo_cont {
+    width: 1200px;
+    overflow-x: hidden;
+    color: #fff;
+    /* background-color: #fff; */
+}
+.mvideo_cont ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px 20px;
+}
+
+.mvideo_cont li {
+    cursor: pointer;
+}
+
+.mvideo_imgbx {
+    position: relative;
+    width: 360px;
+}
+.mvideo_imgbx img{
+    width: 100%;
+}
+.mvideo_imgbx div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.mvideo_imgbx>div span:first-child{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.5);
+    transform: translate(-50%, -50%);
+}
+
+.mvideo_imgbx>div span:nth-child(2) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 20px;
+    
+}
