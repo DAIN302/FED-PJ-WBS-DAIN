@@ -7,9 +7,15 @@ function loadFn() {
     const chaList = document.querySelector(".mcha_list ul");
     const chaDatabx = document.querySelector(".mcha_data");
     // 2. 함수생성 : ul에 데이터 세팅
+
+    /*
+        함수이름 : characList
+        기능 
+        1. 캐릭터 리스트에 cdata에 있는 캐릭터 객체 정보 담기
+        2. 캐릭터 리스트 클릭 시 해당되는 캐릭터의 정보 박스 열기
+    */
     function characList () {
         let hcode = "";
-        let dcode = "";
         // for in문으로 캐릭터 리스트 넣기
         for(let x in cdata) {
             let data = cdata[x];
@@ -25,19 +31,17 @@ function loadFn() {
                         <span></span>
                     </div>
                     <h4>${data.name}</h4>
-                </div>
-            </li>`
+                    </div>
+                    </li>`
         } // for in
         chaList.innerHTML = hcode;
-
-        // forEach로 캐릭터 클릭 시 캐릭터 소개 박스 나오게 하기
         const chaData = chaList.querySelectorAll("li");
         chaData.forEach((ele)=>{
+            // console.log(ldata.name);
             ele.onclick = () => {
                 let ltxt = ele.querySelector("img").alt
                 let ldata = cdata[ltxt];
-                console.log(ldata.name);
-                dcode += `
+                chaDatabx.innerHTML = `
                 <div class="mcha_cont">
                         <div class="mcha_contwrap">
                             <div class="mcha_cont_img">
@@ -55,11 +59,11 @@ function loadFn() {
                         <button class="cbtn">×</button>
                     </div>
                 `;
-                chaDatabx.innerHTML = dcode;
                 // console.log(cbtn);
+                 
                 // 버튼 클릭 시 캐릭터 소개 박스 제거
-                const chaCont = chaDatabx.querySelector(".mcha_cont");
-                const cbtn = chaCont.querySelector(".cbtn");
+                let chaCont = chaDatabx.querySelector(".mcha_cont");
+                let cbtn = chaCont.querySelector(".cbtn");
                 const closeChabx = () => {
                     console.log("닫혀라!");
                     chaCont.remove()
@@ -68,8 +72,11 @@ function loadFn() {
                 cbtn.addEventListener("click", closeChabx);        
             } // click
         }) // forEach
+
     } /// characList 힘수
     
     // 호출
     characList();
+    
+
 } // 로드함수
