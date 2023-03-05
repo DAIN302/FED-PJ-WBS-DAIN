@@ -56,9 +56,9 @@ const cdata = {
 
 const vdata = {
     "first" : {
-        title : "Star Wars: Episode II Attack of the Clones - Opening Crawl",
+        titname : "Star Wars: Episode II Attack of the Clones - Opening Crawl",
         imglink : "1.webp",
         videotime : "1:27",
-        videolink : "https://secure.disney.com/embed/4fb999cac4e68b32908cee25?domain=www.starwars.com" allowfullscreen frameborder="0"></iframe><br/><a href="https://www.starwars.com/video/star-wars-episode-ii-attack-of-the-clones-opening-crawl",
+        // videolink : "https://secure.disney.com/embed/4fb999cac4e68b32908cee25?domain=www.starwars.com" allowfullscreen frameborder="0"></iframe><br/><a href="https://www.starwars.com/video/star-wars-episode-ii-attack-of-the-clones-opening-crawl",
     },
 }
