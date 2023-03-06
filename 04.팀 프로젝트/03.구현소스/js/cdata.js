@@ -61,4 +61,34 @@ const vdata = {
         videotime : "1:27",
         videolink : "4fb999cac4e68b32908cee25",
     },
+    "collection" : {
+        titname : "Attack of the Clones - Star Wars: The Digital Movie Collection",
+        imglink : "2.webp",
+        videotime : "1:09",
+        videolink : "512d99ffcca4f4c3cb2e7a69",
+    },
+    "teaser" : {
+        titname : "Episode II Teaser: Breathing",
+        imglink : "3.webp",
+        videotime : "1:07",
+        videolink : "4e35415839c0acc9fce2bc2f",
+    },
+    "concept" : {
+        titname : "Episode II: Yoda Proof-of-Concept",
+        imglink : "4.jpeg",
+        videotime : "2:59",
+        videolink : "4e37fab62c0280dd33f20402",
+    },
+    "rain" : {
+        titname : "Rumble in the Rain",
+        imglink : "5.webp",
+        videotime : "1:25",
+        videolink : "4e3625507645e20c341c602d",
+    },
+    "finale" : {
+        titname : "Execution Arena Finale",
+        imglink : "6.webp",
+        videotime : "1:57",
+        videolink : "4e3632c283ba8a6b5b906326",
+    },
 }

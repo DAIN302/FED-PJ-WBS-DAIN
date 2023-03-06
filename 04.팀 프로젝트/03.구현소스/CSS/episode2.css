@@ -192,6 +192,7 @@
 .mcha_cont_img {
     width: 800px;
 }
+
 .mcha_cont_img img{
     width: 100%;
     height: 100%;
@@ -229,6 +230,7 @@
     overflow-x: hidden;
     color: #fff;
     position: relative;
+    padding-top: 20px;
     /* background-color: #fff; */
 }
 
@@ -246,6 +248,7 @@
     font-size: 20px;
     line-height: 25px;
     cursor: pointer;
+    transition: .4s;
 }
 
 .vlist_btn:hover {
@@ -274,16 +277,32 @@
 
 .mvideo_cont li {
     cursor: pointer;
-    outline: 2px dashed gray;
+    /* outline: 2px dashed gray; */
 }
 
 .mvideo_imgbx {
     position: relative;
     width: 360px;
 }
+
+/* 가상요소로 그라데이션 주기 */
+.mvideo_imgbx::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /* min-height: 4em; */
+    display: block;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(1,5,15,0.65), rgba(1,5,15,0) 40px);
+}
+
 .mvideo_imgbx img{
     width: 100%;
-    /* border-radius: 10px; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .mvideo_imgbx div {
     position: absolute;
@@ -311,19 +330,22 @@
 .mvideo_imgbx>div span:nth-child(2) {
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     font-size: 12px;
     background-color: rgba(0,0,0,0.5);
     padding: 5px 10px;
     border-radius: 20px;
+    z-index: 2;
 }
 
 /* 비디오 타이틀 박스 */
 .mvideo_txtbx {
-    padding: 10px 0 20px;
+    height: 105px;
+    padding: 10px 10px;
     background-color:#1d1e1f;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-sizing: border-box;
 }
 
 .mvideo_txtbx h4 {

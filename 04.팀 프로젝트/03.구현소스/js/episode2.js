@@ -6,6 +6,7 @@ function loadFn() {
     // 1. 대상선정
     const chaList = document.querySelector(".mcha_list ul");
     const chaDatabx = document.querySelector(".mcha_data");
+    const vidList = document.querySelector(".mvideo_cont ul");
     // 2. 함수생성 : ul에 데이터 세팅
 
     /*
@@ -72,11 +73,78 @@ function loadFn() {
                 cbtn.addEventListener("click", closeChabx);        
             } // click
         }) // forEach
-
     } /// characList 힘수
     
     // 호출
     characList();
+
+    function videoList () {
+        let hcode = "";
+        // for in문으로 캐릭터 리스트 넣기
+        for(let x in vdata) {
+            let data = vdata[x];
+            // console.log(data);
+            hcode += `
+            <li>
+                <div class="mvideo_imgbx">
+                    <img src="./subimg/video/${data.imglink}" alt="${x}">
+                    <div>
+                        <span>
+                            <span class="fa-solid fa-play"></span>
+                        </span>
+                        <span>${data.videotime}</span>
+                    </div>
+                </div>
+                <div class="mvideo_txtbx">
+                    <div class="mcha_beam">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h4>${data.titname}</h4>
+                </div>
+            </li>`
+        } // for in
+        vidList.innerHTML = hcode;
+        //const chaData = chaList.querySelectorAll("li");
+        //chaData.forEach((ele)=>{
+            // console.log(ldata.name);
+          //  ele.onclick = () => {
+            //    let ltxt = ele.querySelector("img").alt
+              //  let ldata = cdata[ltxt];
+                //chaDatabx.innerHTML = `
+                //<div class="mcha_cont">
+                  //      <div class="mcha_contwrap">
+                    //        <div class="mcha_cont_img">
+                      //          <img src="./subimg/character/${ldata.imglink}" alt="${ldata}">
+                       //     </div>
+                        //    <div class="mcha_cont_txt">
+                         //       <h4>${ldata.name}</h4>
+                          //      <div class="mcha_beam">
+                           //         <span></span>
+                            //        <span></span>
+                             //   </div>
+                              //  <p>${ldata.desc}</p>
+                            //</div>
+                        //</div>
+                       // <button class="cbtn">×</button>
+                   // </div>
+             //   `;
+                // console.log(cbtn);
+                 
+                // 버튼 클릭 시 캐릭터 소개 박스 제거
+         //       let chaCont = chaDatabx.querySelector(".mcha_cont");
+           //     let cbtn = chaCont.querySelector(".cbtn");
+             //   const closeChabx = () => {
+               //     console.log("닫혀라!");
+               //     chaCont.remove()
+               // }
+                
+              //  cbtn.addEventListener("click", closeChabx);        
+           // } // click
+      //  }) // forEach
+    } /// videoList 힘수    
+
+    videoList();
     
 
 } // 로드함수
