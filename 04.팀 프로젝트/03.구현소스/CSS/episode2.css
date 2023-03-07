@@ -399,14 +399,20 @@
     color: #ccc;
 }
 
+.gall_subbx .btn_pre {
+    display: inline-block;
+}
+
 .gall_subbx ul {
     display: flex;
     position: relative;
     left: 0;
+    overflow: hidden;
 }
 
-.gall_subbx li {
+.gall_wrap {
     display: flex;
+    /* width: 1200px; */
 }
 
 /* 공통 이미지 박스 */
@@ -426,6 +432,11 @@
     background-color:#1d1e1f;
     padding: 20px 20px 0;
     box-sizing: border-box;
+}
+
+.gall_cnt {
+    font-size: 14px;
+    padding-bottom: 10px;
 }
 
 

@@ -92,3 +92,48 @@ const vdata = {
         videolink : "4e3632c283ba8a6b5b906326",
     },
 }
+
+const gdata = {
+    story : [
+        "Senator Amidala returns to Coruscant for a most important vote that will determine if the Republic will create an army to oppose the rise of the Separatists. Amidala wants a peaceful resolution to the crisis, and fears an army will only provoke a full galactic war.",
+        "Handmaiden Corde, posing as Senator Padmé Amidala, is killed when the Naboo cruiser is blown apart by an explosion. A mysterious assassin is targeting Padmé. She believes it to be Count Dooku.",
+        "The Jedi Council warns Chancellor Palpatine that one wrong move could start a war between the Republic and the Separatists. Mace Windu reminds the Chancellor that the Jedi are not soldiers, but peacekeepers.",
+        "Jedi Master Obi-Wan Kenobi and Padawan Anakin Skywalker are sent by the Jedi Council to protect Padmé Amidala and investigate who is trying to kill her. For Anakin, it is the first time seeing Padmé in ten years.",
+        "Bounty hunter Jango Fett gives assassin Zam Wesell a tube filled with deadly kouhuns to use to kill Senator Padmé Amidala.",
+        "While guarding Padmé, Obi-Wan and Anakin sense something wrong, burst into her bedroom and kill the poisonous kouhuns slithering on her bed.",
+        "Obi-Wan spots an assassin droid and crashes through Padmé's window to capture it. Anakin chases down Obi-Wan in a `borrowed` airspeeder. ",
+        "Obi-Wan and Anakin track Zam Wesell to a seedy nightclub. With a blaster aimed at his back, Obi-Wan severs Zam's arm with his lightsaber. When the Jedi try to question the injured Zam in the alley, she's shot with a mysterious dart. An armored bounty hunter with a rocket pack flies away from the scene.",
+        "With Padmé's life threatened, the Jedi Council and the Supreme Chancellor both decide she needs protection. Anakin Skywalker is assigned to escort her back to a secure retreat on Naboo. They travel undercover, as refugee peasants, on a passenger liner.",
+        "Meanwhile, Obi-Wan visits Dexter Jettster, owner of Dex's Diner, and a streetsmart source of rumor and information. With Dex's help, Obi-Wan identifies the weapon that killed that Zam: a Kamino saberdart.",
+        "To locate the mysterious world of Kamino, Obi-Wan consults the Jedi Temple's Archives Library only to discover that Kamino doesn't exist in the records. ",
+        "Obi-Wan interrupts Yoda as he teaches a class of students to ask the Master's advice regarding his search for the missing planet of Kamino. One of the students suggests that someone must have erased it from the archive memory. Yoda advises Obi-Wan go to the center of the gravity's pull -- where Kamino should be but isn't -- to find the planet.",
+        "Obi-Wan voyages to Kamino and visits Tipoca City where he's greeted by Taun We, a Kaminoan. Prime Minister Lama Su informs Obi-Wan of the progress of the clone army for the Republic ordered by Master Sifo-Dyas. Obi-Wan plays along, pretending to know what the Kaminoans are talking about. ",
+        "Each clone is a perfect biological replica of bounty hunter Jango Fett, modified to grow at twice the rate of normal human aging. The clone army, begun 10 years ago, is nearing readiness for deployment. Jango lives in the Kamino facility with an un-accelerated clone that he treats as his son, Boba. Obi-Wan visits Jango to ask him of his recent whereabouts on Coruscant.",
+        "Meanwhile on Naboo, Anakin Skywalker professes his love to Padmé Amidala during their stay at the romantic lake retreat. Padmé reminds him their love could never work since the Jedi aren't allowed to marry, and he could be expelled from the Order.",
+        "Anakin has a terrible nightmare of his mother Shmi suffering and in pain. He tells Padmé he must go help his mother and she agrees to go with him to Tatooine.",
+        "Jango and Boba, wary of the Jedi, flee from Obi-Wan to their ship, Slave I. Obi-Wan tries to stop Jango, leading to a fight on the landing platform. Before the Slave I escapes, Obi-Wan places a tracking device on the ship's hull.",
+        "On Tatooine, Anakin and Padmé find Watto, his former owner, and discover that he sold Shmi to a moisture farmer named Cliegg Lars who then freed her and married her. Anakin and Padmé visit the Lars homestead where they are greeted by Anakin's protocol droid creation, C-3PO. Cliegg, along with his son Owen and Owen's girlfriend Beru, tell Anakin that Shmi was kidnapped by Tusken Raiders.",
+        "Riding Owen's swoop bike, Anakin goes in search for his mother only to find her being held captive in a Tusken Raider camp. But it was too late. She died in his arms from her injuries inflicted by the Tuskens. Overwhelmed by grief and rage, Anakin sought revenge on those who tortured his mother, and he massacred the entire camp.",
+        "Anakin returns to the Lars homestead with his mother's body for burial. Anakin reveals to Padmé that he killed the entire camp of Tusken Raiders and swears that one day he will be the most powerful Jedi ever.",
+        "Obi-Wan chases Jango Fett's Slave I into an asteroid field above the planet Geonosis. Jango fires seismic charges at Obi-Wan's ship. After Jango launches a guided aerial torpedo at his starfighter, Obi-Wan tricks him into thinking he's hit, and then follows Jango unnoticed to Geonosis.",
+        "While on Geonosis, Obi-Wan stumbles upon a secret meeting with Viceroy of the Trade Federation Nute Gunray, Count Dooku, several Senators, as well as leaders from the Commerce Guilds, the Corporate Alliance and the InterGalactic Banking Clan who agreed to wage war against the Republic.",
+        "Obi-Wan sends a holographic message to the Jedi Temple on Coruscant to inform them of the growing Separatist droid army, Viceroy Gunray's involvement in the assassination attempts on Padmé, and the commerce guilds pledge of loyalty to Count Dooku. ",
+        "Obi-Wan Kenobi is captured by the Geonosians, and held prisoner by Count Dooku who attempts to recruit Obi-Wan to the Separatist cause by informing him that the Senate is being manipulated by a Sith Lord called Darth Sidious.",
+        "Anakin and Padmé, along with R2-D2 and C-3PO, travel to Geonosis to rescue Obi-Wan Kenobi against the Jedi Council's orders. While there, they stumble upon a droid factory where they are attacked by winged Geonosians."
+    ],
+    behind : [
+        "Full-size prop of Obi-Wan's Jedi starship.",
+        "Stunt coordinator Nick Gillard (left) and Ewan McGregor (right) practice lightsaber-duel choreography.",
+        "Anthony Daniels returns in-costume as C-3PO.",
+        "Hayden Christensen on-set as Anakin Skywalker. ",
+        "Natalie Portman gets last-minute hair and makeup for a Naboo scene in Como, Italy.",
+        "Aides inside the Chancellor's office between takes.",
+        "ILM's John Knoll and Jason Snell prepare for a shot on a Geonosis miniature.",
+        "Shooting the 'Rumble in the Rain' between Jango Fett and Obi-Wan Kenobi.",
+        "Jedi charge the Separatists' droid army to start the climactic Battle of Geonosis, with a background to be added digitally.",
+        "Hayden Christensen and Natalie Portman in Como, Italy.",
+        "Bonnie Piesse (Beru Lars), Joel Edgerton (Owen Lars), and Jack Thompson (Cliegg Lars) relax during filming in Tunisia.",
+        "R2-D2 prop at the Lars homestead in Tunisia.",
+        "Filming an astromech droid in Tunisia."
+    ],
+}

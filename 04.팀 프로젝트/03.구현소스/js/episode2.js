@@ -8,6 +8,8 @@ function loadFn() {
     const chaDatabx = document.querySelector(".mcha_data");
     const vidList = document.querySelector(".mvideo_cont ul");
     const vidDatabx = document.querySelector(".mvid_data");
+    const gallStBx = document.querySelector(".gall_story ul");
+    const gallBhBx = document.querySelector(".gall_behind ul");
     // 2. 함수생성 : ul에 데이터 세팅
 
     /*
@@ -15,6 +17,7 @@ function loadFn() {
         기능 
         1. 캐릭터 리스트에 cdata에 있는 캐릭터 객체 정보 담기
         2. 캐릭터 리스트 클릭 시 해당되는 캐릭터의 정보 박스 열기
+        3. 열린 캐릭터 정보 박스의 닫기 버튼 누르면 박스 없어짐
     */
     function characList () {
         let hcode = "";
@@ -84,7 +87,13 @@ function loadFn() {
     const pageSlide = (ele, lf) => {
         ele.style.left = lf+"%"
     }
-
+    /*
+        함수이름 : videoList
+        기능 
+        1. 비디오에 vdata에 있는 비디오 객체 정보 담기
+        2. 비디오 리스트 클릭 시 해당되는 비디오 박스 열기
+        3. 열린 비디오 박스의 닫기 버튼 누르면 박스 없어짐
+    */
     function videoList () {
         let hcode = "";
         // for in문으로 캐릭터 리스트 넣기
@@ -155,6 +164,46 @@ function loadFn() {
     } /// videoList 힘수    
 
     videoList();
+
+    /*
+        함수이름 : gallList
+        기능 
+        1. 갤러리 이미지 박스에 이미지 출력
+        2. 갤러리 텍스트 박스에 gdata에 있는 배열 정보 출력
+        3. 이미지 순서에 해당하는 번호 출력(ex. 1 of 25)
+        4. 이전 혹은 다음 버튼 클릭 시 페이드 효과로 다음 이미지 출력
+    */
+   // console.log(gdata.story[0]);
+   console.log(gdata.story.length);
+   function gallList(ele, cls, lik) {
+    let hcode = "";
+        for(let i = 0; i < ele.length; i++) {
+            hcode += `
+            <li>
+                <div class="gall_wrap">
+                    <div class="gall_imgbx">
+                        <img src="./subimg/gallery/${lik}/${i+1}.jpeg" alt="${lik}">
+                    </div>
+                    <div class="gall_txtbx">
+                        <div class="gall_cnt">
+                            <span>${i+1}</span>
+                              of  
+                            <span>${ele.length}</span>
+                        </div>
+                        <div class="mcha_beam">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p>${ele[i]}</p>
+                    </div>
+                </div>
+            </li>  
+            `;
+        }
+        cls.innerHTML = hcode;
+   }
+   gallList(gdata.story, gallStBx, "story");
+   gallList(gdata.behind, gallBhBx, "behind");
     
 
 } // 로드함수
