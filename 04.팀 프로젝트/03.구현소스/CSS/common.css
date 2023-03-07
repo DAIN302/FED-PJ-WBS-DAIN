@@ -40,6 +40,9 @@ body {
     bottom: 15px;
     right: 15px;
 }
+.gnb ul {
+    display: flex;
+}
 
 .gnb li {
     position: relative;
