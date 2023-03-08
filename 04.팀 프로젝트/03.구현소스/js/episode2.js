@@ -4,10 +4,13 @@ window.addEventListener("DOMContentLoaded", loadFn);
 
 function loadFn() {
     // 1. 대상선정
+    // 캐릭터박스
     const chaList = document.querySelector(".mcha_list ul");
     const chaDatabx = document.querySelector(".mcha_data");
+    // 비디오박스
     const vidList = document.querySelector(".mvideo_cont ul");
     const vidDatabx = document.querySelector(".mvid_data");
+    // 갤러리박스
     const gallStBx = document.querySelector(".gall_story ul");
     const gallBhBx = document.querySelector(".gall_behind ul");
     // 2. 함수생성 : ul에 데이터 세팅
@@ -174,33 +177,81 @@ function loadFn() {
         4. 이전 혹은 다음 버튼 클릭 시 페이드 효과로 다음 이미지 출력
     */
    // console.log(gdata.story[0]);
-   console.log(gdata.story.length);
+   // console.log(gdata.story.length);
    function gallList(ele, cls, lik) {
-    let hcode = "";
-        for(let i = 0; i < ele.length; i++) {
-            hcode += `
-            <li>
-                <div class="gall_wrap">
-                    <div class="gall_imgbx">
-                        <img src="./subimg/gallery/${lik}/${i+1}.jpeg" alt="${lik}">
-                    </div>
-                    <div class="gall_txtbx">
-                        <div class="gall_cnt">
-                            <span>${i+1}</span>
-                              of  
-                            <span>${ele.length}</span>
-                        </div>
-                        <div class="mcha_beam">
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <p>${ele[i]}</p>
-                    </div>
-                </div>
-            </li>  
-            `;
+    let gnum = 0;
+    const gbtn = cls.parentElement.querySelectorAll(".glist_btn");
+    // 이미지출력
+    const gimgBx = cls.querySelector(".gall_imgbx");
+    const gtxtBx = cls.querySelector(".gall_txtbx p");
+    const gcntbx = cls.querySelectorAll(".gall_cnt span"); 
+    
+    // 컨텐츠 넣기 함수
+    const gCont = (val) => {
+        gimgBx.innerHTML = `<img src="./subimg/gallery/${lik}/${val+1}.jpeg" alt="${lik}">`;
+        gtxtBx.innerText = `${ele[val]}`;
+        gcntbx[0].innerText = val+1;
+    }
+
+    // 초기값 세팅
+    if(gnum===0) {
+        gCont(0);
+        gcntbx[1].innerText = ele.length;
+    }
+
+    // 이미지 및 텍스트 넘어가기 함수
+    const goImg = (seq) => {
+        if(seq) {
+            console.log("다음!",gnum);
+            gnum++
+            if(gnum>ele.length-1) {
+                gnum = 0;
+            }
+            gCont(gnum);
         }
-        cls.innerHTML = hcode;
+        else {
+            console.log("이전!",gnum);
+            gnum--
+            if(gnum<0) {
+                gnum = ele.length-1;
+            }
+            gCont(gnum);
+        }
+    }
+    
+    gbtn.forEach((bb, idx)=>{
+        bb.onclick = () =>{
+            // console.log("gd", idx);
+            goImg(idx);
+        }
+    })
+    
+
+    // let hcode = "";
+    //     for(let i = 0; i < ele.length; i++) {
+    //         hcode += `
+    //         <li>
+    //             <div class="gall_wrap">
+    //                 <div class="gall_imgbx">
+    //                     <img src="./subimg/gallery/${lik}/${i+1}.jpeg" alt="${lik}">
+    //                 </div>
+    //                 <div class="gall_txtbx">
+    //                     <div class="gall_cnt">
+    //                         <span>${i+1}</span>
+    //                           of  
+    //                         <span>${ele.length}</span>
+    //                     </div>
+    //                     <div class="mcha_beam">
+    //                         <span></span>
+    //                         <span></span>
+    //                     </div>
+    //                     <p>${ele[i]}</p>
+    //                 </div>
+    //             </div>
+    //         </li>  
+    //         `;
+    //     }
+    //     cls.innerHTML = hcode;
    }
    gallList(gdata.story, gallStBx, "story");
    gallList(gdata.behind, gallBhBx, "behind");
