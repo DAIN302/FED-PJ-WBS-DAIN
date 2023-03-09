@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/* 서브페이지(episode2) 미디어쿼리 CSS - epi2media.css */
+
+/* 1200px 이하 사이즈 시작 */
+@media screen and (max-width:1200px) {
+    /* 메인이미지 박스 */
+    /* .mimg {
+        position: relative;
+        aspect-ratio: 1200 / 515;
+        margin: 0 auto;
+    } */
+   
+}
+/* 1200px 이하 사이즈 종료 */

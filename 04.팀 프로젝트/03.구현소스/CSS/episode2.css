@@ -29,9 +29,12 @@ body {
 /* 메인이미지 박스 */
 .mimg {
     position: relative;
-    width: 1200px;
-    height: 515px;
+    width: min(80vw, 1200px);
     margin: 0 auto;
+}
+
+.mimg_img {
+    margin: 40px;
 }
 
 .mimg figure img {
@@ -39,6 +42,7 @@ body {
     height: 100%;
 }
 
+/* 가상요소로 메인이미지에 어두운 그라데이션 배경 */
 .mimg_img::before {
     content: '';
     position: absolute;
@@ -52,7 +56,7 @@ body {
 
 .mimg_tit {
     position: absolute;
-    width: 36%;
+    width: min(30vw, 450px);
     bottom: 5%;
     left: 5%;
     text-align: center;
@@ -60,9 +64,10 @@ body {
     z-index: 2;
 }
 
+/* 타이틀 이미지 밑에 글씨 */
 .mimg_tit figcaption {
     padding-top: 20px;
-    font-size: 20px;
+    font-size: min(2vw, 20px);
 }
 
 /* 2. 영화소개란 */
@@ -75,6 +80,10 @@ body {
     width: 477px;
 }
 
+.mposter figure {
+    margin: 40px;
+}
+
 .mposter img {
     width: 100%;
     height: 100%;
@@ -83,8 +92,25 @@ body {
 
 /* 영화소개텍스트 */
 .mtxt {
-    color : #fff;
     width: 800px;
+    color : #b5b7b7;
+}
+
+.mtxt h2 {
+    font-size: 36px;
+    color : #fff;
+}
+
+.mtxt h3{
+    font-size: 14px;
+}
+
+.mtxt h3 span:nth-child(2) {
+    font-weight: normal;
+}
+
+.mtxt p {
+    font-size: 16px;
 }
 
 /* 3. 캐릭터 */
@@ -115,7 +141,7 @@ body {
 }
 
 .mcha_list li:hover .mcha_wrap>div img {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .mcha_wrap>div:first-child {
@@ -177,28 +203,17 @@ body {
     z-index: 999;
 }
 
+/* 가상요소로 뒷배경 검은거 */
 .mcha_cont::before, .mvid_dtcont::before {
     content: '';
     position: absolute;
-    top: -100%;
+    top: -110%;
     left: -50%;
     width: 200%;
-    height: 110vh;
+    height: 120vh;
     z-index: -1;
     background-color: rgba(0,0,0,0.5);
 }
-
-/* .mcha_contbg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.5);
-} */
-
 
 .mcha_contwrap {
     display: flex;
@@ -324,7 +339,7 @@ body {
 }
 
 .mvideo_cont li:hover .mvideo_imgbx img{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .mvideo_imgbx div {
     position: absolute;
@@ -444,6 +459,7 @@ body {
 .gall_imgbx img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 /* 공통 텍스트 박스 */
