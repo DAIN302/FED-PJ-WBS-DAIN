@@ -302,7 +302,7 @@
     object-fit: cover;
 }
 /* 이미지 넘기기 버튼 */
-.main_room_btn {
+.main_room_btn, .main_offer_btn {
     position: absolute;
     top: 50%;
     left: 5%;
@@ -380,8 +380,8 @@
 /* 다이닝 이미지 박스 */
 .main_dining_img {
     position: absolute;
-    width: 80%;
-    height: 40%;
+    width: 90vw;
+    height: 40vh;
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
@@ -447,18 +447,42 @@
 .main_offer_cont {
     position: absolute;
     background-color: #fff;
-    width: 80%;
-    height: 40%;
+    width: 90vw;
+    height: 35vh;
+    padding: 2vh 5vw;
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
+    box-sizing: border-box;
 }
 
-.main_offer_cont figure {
-    width: 30%;
+/* 목록 넘기기 버튼 */
+.main_offer_btn {
+    width: 100%;
+    left: 0;
+}
+
+.main_offer_btn button {
+    border: none;
+    background-color: transparent;
+    font-size: 6rem;
+    font-weight: normal;
+    color :#aaa;
+    transition: color .3s;
+    cursor: pointer;
+}
+
+.main_offer_cont>ul {
+    display: flex;
+    gap: 0 50px;
+}
+
+.main_offer_contwrap {
+    width: 100%;
 }
 .main_offer_cont figure>img {
     width: 100%;
+    object-fit: cover;
 }
 
 

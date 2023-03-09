@@ -132,27 +132,27 @@
         <nav class="main_nav">
           <ul>
             <li class="on">
-              <a href="#">
+              <a href="#pg1">
                 <span class="ir">pg1</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#pg2">
                 <span class="ir">pg2</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#pg3">
                 <span class="ir">pg3</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#pg4">
                 <span class="ir">pg4</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#pg5">
                 <span class="ir">pg5</span>
               </a>
             </li>
@@ -176,21 +176,16 @@
                 <!-- 날짜선택 : 체크인 -->
                 <div class="main_res_chk">
                   <span>CHECK IN</span>
-                  <input type="text" value="날짜 선택" disabled/>
+                  <input type="text" value="날짜 선택" disabled />
                 </div>
                 <!-- 날짜선택 : 체크아웃 -->
                 <div class="main_res_chk">
                   <span>CHECK OUT</span>
-                  <input type="text" value="날짜 선택" disabled/>
+                  <input type="text" value="날짜 선택" disabled />
                 </div>
                 <!-- 객실 수 선택 -->
                 <div class="main_res_select">
                   <div>ROOM</div>
-                  <!-- <select name="roomsel" id="roomsel">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select> -->
                   <!-- 객실 선택 박스 : div, ul, li 로 select:option 태그처럼 구현 -->
                   <div class="main_select" id="main_roomsel">
                     <div class="main_selected">
@@ -214,13 +209,6 @@
                 <!-- 성인 인원 수 선택 -->
                 <div class="main_res_select">
                   <div>ADULT</div>
-                  <!-- <select name="adultsel" id="adultsel">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select> -->
                   <!-- 성인 선택 박스 : div, ul, li 로 select:option 태그처럼 구현 -->
                   <div class="main_select" id="main_adultsel">
                     <div class="main_selected">
@@ -249,14 +237,6 @@
                     CHILDREN
                     <!-- <span class="fa-solid fa-circle-info"></span> -->
                   </div>
-                  <!-- <select name="childsel" id="childsel">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select> -->
                   <!-- 어린이 선택 박스 : div, ul, li 로 select:option 태그처럼 구현 -->
                   <div class="main_select" id="main_childsel">
                     <div class="main_selected">
@@ -456,28 +436,155 @@
                 <h2>ROOM PACKAGES</h2>
                 <!-- 글자 등장액션 : 투명 -> 불투명   -->
                 <p>
-                  소피텔 앰배서더 서울에서 경험하는 "Live the French Way"는 모두에게 일상 속의 즐거움, 그 이상의 가치를 선사합니다.<br>
+                  소피텔 앰배서더 서울에서 경험하는 "Live the French Way"는
+                  모두에게 일상 속의 즐거움, 그 이상의 가치를 선사합니다.<br />
                   다양한 객실 패키지 상품으로 여행의 품격을 높여드립니다.
                 </p>
               </div>
             </div>
             <!-- 패키지 목록 박스 -->
             <div class="main_offer_cont">
+              <!-- 이미지 넘기기 버튼 -->
+              <div class="main_offer_btn">
+                <!-- 이전으로 -->
+                <button class="main_offer_btnpre">
+                  <span class="fa-solid fa-chevron-left"></span>
+                </button>
+                <!-- 다음으로 -->
+                <button class="main_offer_btnnext">
+                  <span class="fa-solid fa-chevron-right"></span>
+                </button>
+              </div>
               <ul>
                 <li>
                   <a href="#">
-                    <figure>
-                      <img src="./images/main/offer/01.jpg" alt="패키지이미지">
-                    </figure>
-                    <h3>CONCEPT ROOM</h3>
-                    <h4>SOFITEL WITH MON PETIT TIGO</h4>
-                    <div>
-                      <span>예약기간</span>
-                      <span>23.01.01~23.06.30</span>
+                    <div class="main_offer_contwrap">
+                      <figure>
+                        <img
+                          src="./images/main/offer/01.jpg"
+                          alt="패키지이미지"
+                        />
+                      </figure>
+                      <h3>CONCEPT ROOM</h3>
+                      <h4>SOFITEL WITH MON PETIT TIGO</h4>
+                      <div>
+                        <span>예약기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                      <div>
+                        <span>투숙기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
                     </div>
-                    <div>
-                      <span>투숙기간</span>
-                      <span>23.01.01~23.06.30</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="main_offer_contwrap">
+                      <figure>
+                        <img
+                          src="./images/main/offer/01.jpg"
+                          alt="패키지이미지"
+                        />
+                      </figure>
+                      <h3>CONCEPT ROOM</h3>
+                      <h4>SOFITEL WITH MON PETIT TIGO</h4>
+                      <div>
+                        <span>예약기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                      <div>
+                        <span>투숙기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="main_offer_contwrap">
+                      <figure>
+                        <img
+                          src="./images/main/offer/01.jpg"
+                          alt="패키지이미지"
+                        />
+                      </figure>
+                      <h3>CONCEPT ROOM</h3>
+                      <h4>SOFITEL WITH MON PETIT TIGO</h4>
+                      <div>
+                        <span>예약기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                      <div>
+                        <span>투숙기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="main_offer_contwrap">
+                      <figure>
+                        <img
+                          src="./images/main/offer/01.jpg"
+                          alt="패키지이미지"
+                        />
+                      </figure>
+                      <h3>CONCEPT ROOM</h3>
+                      <h4>SOFITEL WITH MON PETIT TIGO</h4>
+                      <div>
+                        <span>예약기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                      <div>
+                        <span>투숙기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="main_offer_contwrap">
+                      <figure>
+                        <img
+                          src="./images/main/offer/01.jpg"
+                          alt="패키지이미지"
+                        />
+                      </figure>
+                      <h3>CONCEPT ROOM</h3>
+                      <h4>SOFITEL WITH MON PETIT TIGO</h4>
+                      <div>
+                        <span>예약기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                      <div>
+                        <span>투숙기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="main_offer_contwrap">
+                      <figure>
+                        <img
+                          src="./images/main/offer/01.jpg"
+                          alt="패키지이미지"
+                        />
+                      </figure>
+                      <h3>CONCEPT ROOM</h3>
+                      <h4>SOFITEL WITH MON PETIT TIGO</h4>
+                      <div>
+                        <span>예약기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
+                      <div>
+                        <span>투숙기간</span>
+                        <span>23.01.01~23.06.30</span>
+                      </div>
                     </div>
                   </a>
                 </li>
