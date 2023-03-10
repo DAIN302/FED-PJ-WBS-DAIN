@@ -59,6 +59,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
+    overflow: hidden;
 }
 
 /* 메인페이지 백그라운드 이미지 공통 */
@@ -72,6 +73,16 @@ body {
     width: 100%;
     height: 100%;
     filter: brightness(70%);
+    /* JS로 해당페이지 왔을때 애니메이션 줄 예정 */
+    /* animation : backAni 10s linear forwards; */
+}
+
+/* 메인페이지 백그라운드 이미지 애니메이션 */
+@keyframes backAni {
+    to {
+        transform: scale(1.2);
+    }
+    
 }
 
 
@@ -133,20 +144,8 @@ body {
     border: none;
     color : #fff
 }
-/************select************/
-/* 객실/인원 수 선택박스  */
-.main_res_cont select {
-    background-color: transparent;
-    color : #fff;
-    border: none;
-}
 
-.main_res_cont select option {
-    background-color: #fff;
-    color : #000;
-    border: none;
-}
-/************select************/
+/* 숫자선택공통박스 */
 .main_res_select {
     width: 80px;
 }
@@ -255,11 +254,24 @@ body {
     background-image: url(../images/main/main2.jpg);
 }
 
+/* 텍스트 공통 */
 .main_txt {
     position: absolute;
     top: 20%;
     left: 5%;
     color: #fff;
+}
+
+/* 소제목 공통 */
+.main_txt h2 {
+    font-size: 3rem;
+    padding-bottom: 20px;
+}
+
+/* 텍스트 공통 */
+.main_txt p {
+    font-size: 1.6rem;
+    line-height: 2;
 }
 
 /***** 3번 페이지 *****/
@@ -370,6 +382,10 @@ body {
 }
 
 /* 객실 소개 텍스트 박스 */
+.main_room_txt .main_txt {
+    width: 80%;
+}
+
 .main_room_txt a {
     color: #fff;
     cursor: pointer;
@@ -436,8 +452,9 @@ body {
 
 /* 다이닝 소개 텍스트 */
 .main_dining_txt .main_txt {
-    top: 44%;
-    left: 11%;
+    width: 90vw;
+    top: 30%;
+    left: 5%;
 }
 
 
@@ -446,6 +463,8 @@ body {
 #pg5 .main_back_img {
     background-image: url(../images/main/main5.jpg);
 }
+
+/* 패키지 텍스트 박스 */
 
 /* 패키지 이미지 박스 */
 .main_offer_cont {
