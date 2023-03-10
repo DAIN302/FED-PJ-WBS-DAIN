@@ -1,5 +1,9 @@
 // 공통 js
 
+window.addEventListener("DOMContentLoaded", loadFn);
+
+function loadFn() {
+
 /*
     구현내용 : .menu_top의 직계 li.sm에 마우스 오버시 header에 top_on 클래스가 추가되며
     a요소 전체 색상 변경 및 로고 이미지변경
@@ -34,4 +38,5 @@ function removeClassTop() {
     topHeader.classList.remove("top_on");
 }
 
+}
 

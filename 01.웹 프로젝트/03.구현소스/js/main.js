@@ -1,6 +1,10 @@
 // 메인페이지 JS - main.js
 
-// 예약선택폼
+window.addEventListener("DOMContentLoaded", mainFn);
+
+function mainFn() {
+
+// 예약선택폼 ////////////////////////
 /*
     구현내용 : 
     ul과 li의 디자인을 select태그처럼 함
@@ -59,3 +63,7 @@ for(let x of mainSel) {
         option.addEventListener("click", function(){chSel(option)})
     }) /// 클릭 이벤트(옵션 클릭 시)
 } ////// for of문 
+// 예약선택폼 ////////////////////////
+
+
+} // mainFn

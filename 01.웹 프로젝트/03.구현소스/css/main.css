@@ -7,6 +7,10 @@
 @import url(core.css);
 @import url(common.css);
 
+body {
+    overflow: hidden;
+}
+
 /* 메인 */
 .cont {
     width: 100%;
@@ -302,7 +306,7 @@
     object-fit: cover;
 }
 /* 이미지 넘기기 버튼 */
-.main_room_btn, .main_offer_btn {
+.main_room_btn {
     position: absolute;
     top: 50%;
     left: 5%;
@@ -454,31 +458,45 @@
     left: 50%;
     transform: translateX(-50%);
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* 목록 넘기기 버튼 */
 .main_offer_btn {
-    width: 100%;
-    left: 0;
-}
-
-.main_offer_btn button {
+    position: absolute;
+    height: 100%;
+    background-color: #fff;
+    color :#aaa;
+    z-index: 2;
+    top: 0;
     border: none;
-    background-color: transparent;
     font-size: 6rem;
     font-weight: normal;
-    color :#aaa;
-    transition: color .3s;
     cursor: pointer;
+    transition: color .3s;
+}
+
+.main_offer_btnpre {
+    left: 0;
+}
+.main_offer_btnnext {
+    right: 0;
+}
+
+.main_offer_btn:hover {
+    color :#000;
 }
 
 .main_offer_cont>ul {
+    position: relative;
+    left: 0;
     display: flex;
-    gap: 0 50px;
+    justify-content: space-between;
+    gap: 0 3vw;
 }
 
 .main_offer_contwrap {
-    width: 100%;
+    width: 25vw;
 }
 .main_offer_cont figure>img {
     width: 100%;
