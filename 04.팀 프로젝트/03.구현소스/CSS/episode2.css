@@ -26,17 +26,14 @@ body {
     padding: 0 20px;
 }
 
-/* 메인이미지 박스 */
+/* 1. 메인이미지 박스 */
 .mimg {
     position: relative;
-    width: min(80vw, 1200px);
+    width: min(70vw, 1200px);
     margin: 0 auto;
 }
 
-.mimg_img {
-    margin: 40px;
-}
-
+/* 메인이미지 */
 .mimg figure img {
     width: 100%;
     height: 100%;
@@ -54,9 +51,10 @@ body {
     z-index: 1;
 }
 
+/* 타이틀 이미지 */
 .mimg_tit {
     position: absolute;
-    width: min(30vw, 450px);
+    width: min(25vw, 450px);
     bottom: 5%;
     left: 5%;
     text-align: center;
@@ -73,31 +71,31 @@ body {
 /* 2. 영화소개란 */
 .mcont {
     display: flex;
+    margin-top: 40px;
 }
 
 /* 포스터 */
 .mposter {
-    width: 477px;
-}
-
-.mposter figure {
-    margin: 40px;
+    width: min(30vw, 450px);
 }
 
 .mposter img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 
 /* 영화소개텍스트 */
 .mtxt {
-    width: 800px;
+    width: min(60vw, 800px);
+    padding:0 20px 0 40px;
+    box-sizing: border-box;
     color : #b5b7b7;
 }
 
 .mtxt h2 {
-    font-size: 36px;
+    font-size: 34px;
     color : #fff;
 }
 
@@ -207,10 +205,10 @@ body {
 .mcha_cont::before, .mvid_dtcont::before {
     content: '';
     position: absolute;
-    top: -110%;
+    top: -200%;
     left: -50%;
     width: 200%;
-    height: 120vh;
+    height: 200vh;
     z-index: -1;
     background-color: rgba(0,0,0,0.5);
 }
@@ -228,6 +226,7 @@ body {
     height: 100%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    object-fit: cover;
 }
 
 .mcha_cont_txt {
@@ -272,7 +271,7 @@ body {
     color: #000;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: 99;
     background-color: #fff;
     border-radius: 50%;
     font-size: 20px;
@@ -288,17 +287,24 @@ body {
 
 .btn_next {
     right: 0;
-    /* display: none; */
+}
+
+.btn_next.btn_off{
+    display: none;
 }
 
 .btn_pre {
+    /* display: none; */
+}
+.btn_pre.btn_off{
     display: none;
 }
+
 
 .mvideo_cont ul{
     display: flex;
     justify-content: space-between;
-    gap: 20px 40px;
+    gap: 20px 0;
     position: relative;
     top: 0;
     left: 0;
@@ -311,9 +317,26 @@ body {
 }
 
 
+
+.mvideo_cont li:first-child {
+    padding:0 40px 0 40px;
+}
+
+.mvideo_cont li:nth-child(4) {
+    padding: 0 40px 0 30px;
+}
+
+.mvideo_cont li:nth-child(2), li:nth-child(3), li:nth-child(5){
+    padding-right: 40px;
+}
+
+
+
+
+
 .mvideo_imgbx {
     position: relative;
-    width: 360px;
+    width: 350px;
     overflow: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -336,6 +359,7 @@ body {
 .mvideo_imgbx img{
     width: 100%;
     transition: .3s;
+    object-fit: cover;
 }
 
 .mvideo_cont li:hover .mvideo_imgbx img{
@@ -439,7 +463,6 @@ body {
 }
 
 .gall_subbx ul {
-    display: flex;
     position: relative;
     left: 0;
     overflow: hidden;

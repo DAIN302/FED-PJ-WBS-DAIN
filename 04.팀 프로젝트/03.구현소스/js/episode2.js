@@ -8,7 +8,8 @@ function loadFn() {
     const chaList = document.querySelector(".mcha_list ul");
     const chaDatabx = document.querySelector(".mcha_data");
     // 비디오박스
-    const vidList = document.querySelector(".mvideo_cont ul");
+    const vidCont = document.querySelector(".mvideo_cont");
+    const vidList = vidCont.querySelector("ul");
     const vidDatabx = document.querySelector(".mvid_data");
     // 갤러리박스
     const gallStBx = document.querySelector(".gall_story ul");
@@ -88,7 +89,7 @@ function loadFn() {
 
     // 페이지 넘기기 함수
     const pageSlide = (ele, lf) => {
-        ele.style.left = lf+"%"
+        ele.style.left = (lf * -100)+"%"
     }
     /*
         함수이름 : videoList
@@ -125,23 +126,94 @@ function loadFn() {
         } // for in
         vidList.innerHTML = hcode;
 
-        // 버튼 클릭 시 다음 비디오 목록으로 넘어가기
-        const vbtn = document.querySelectorAll(".vlist_btn");
+        // 대상선정 : li
+        const vidData = vidList.querySelectorAll("li");
+        
+        // 키운트변수
+        let vidIndex = 0;
+        // console.log(vidLiCnt);
 
-        vbtn[0].onclick = () => {
-            pageSlide(vidList, "-97");
-            vbtn[0].style.display = "none";
-            vbtn[1].style.display = "inline-block";
+        // 버튼 클릭 시 다음 비디오 목록으로 넘어가기        
+        const vbtn = document.querySelectorAll(".vlist_btn");
+        // 클래스 온오프 함수
+        const nextBtnOff = () =>{
+            vbtn[0].classList.add("btn_off");
+            vbtn[1].classList.remove("btn_off");
+        }
+
+        const prevBtnOff = () => {
+            vbtn[1].classList.add("btn_off");
+            vbtn[0].classList.remove("btn_off");
+        }
+
+        let timer;
+
+        let wWidth = window.innerWidth;
+        console.log("전역", wWidth)
+        
+        // 브라우저 크기변화 감지
+        window.addEventListener('resize', function(){
+            clearTimeout(timer);
+            timer = setTimeout(()=>{
+                wWidth = window.innerWidth;
+                console.log("지역", wWidth);
+                // 1200px 이상
+                vidFn();
+            }, 300)
+        })
+
+        // 페이지 사이즈 반응에 따른 버튼 함수
+        function vidFn() {
+            if(wWidth > 1200) {
+                console.log("ㅎㅇㅎㅇ", wWidth);
+                vidSlide();
+                if(vidIndex > 0) {
+                    nextBtnOff();
+                }
+            }
+        }
+
+        vidSlide();
+        // 버튼 클릭 함수
+        function vidSlide() {
+            // >(다음)버튼 클릭 시
+            vbtn[0].onclick = () => {
+                vidIndex++;
+                pageSlide(vidList, vidIndex);
+                // 1200px 이상일때
+                vidFn();
+                // 1200px 이하, 1000px이상일때
+                // else if(vidcontWid===1000) {
+                //     console.log(vidIndex);
+                //     if(vidIndex > 1) {
+                //         vbtn[0].classList.add("btn_off");
+                //         vbtn[1].classList.remove("btn_off");
+                //     }
+                // }
+            }
+            // <(이전)버튼 클릭 시
+            vbtn[1].onclick = () => {
+                vidIndex--;
+                pageSlide(vidList, vidIndex);
+                    console.log(vidIndex);
+                    if(vidIndex-1 < 0) {
+                        prevBtnOff();
+                    }
+                
+                // 1200px 이하, 1000px이상일때
+                // else if(vidcontWid===1000) {
+                //     if(vidIndex-1 < 0) {
+                //         vbtn[1].classList.add("btn_off");
+                //         vbtn[0].classList.remove("btn_off");
+                //     }
+                // }
+                // vbtn[1].classList.add("btn_off");
+                // vbtn[0].classList.remove("btn_off"); 
+            }
+        
         }
         
-        vbtn[1].onclick = () => {
-            pageSlide(vidList, "0");
-            vbtn[0].style.display = "inline-block";
-            vbtn[1].style.display = "none";    
-        }
-
         // 비디오 이미지 클릭 시 해당되는 비디오 화면에 출력
-        const vidData = vidList.querySelectorAll("li");
         console.log(vidData);
         vidData.forEach((ele) =>{
             ele.onclick = () => {

@@ -4,12 +4,42 @@
 
 /* 1200px 이하 사이즈 시작 */
 @media screen and (max-width:1200px) {
-    /* 메인이미지 박스 */
-    /* .mimg {
-        position: relative;
-        aspect-ratio: 1200 / 515;
-        margin: 0 auto;
-    } */
-   
+    /* 메인 */
+    .cont {
+        max-width: 1000px;
+        background-color: #000;
+        padding: 0 20px;
+    }
+
+    /* 캐릭터 목록 */
+    .mcha_list ul {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* 캐릭터 소개 출력용 박스 */
+    .mcha_cont_img {
+        width: 600px;
+    }
+
+    .mcha_cont_txt {
+        width: 400px;
+    }
+
+    /* 비디오 */
+    .mvideo_cont {
+        width: 1000px;
+    }
+    
+    .mvideo_imgbx {
+        width: 440px;
+    }
+
+    .mvideo_cont li:nth-child(odd) {
+        padding:0 40px 0 40px;
+    }
+    .mvideo_cont li:nth-child(even) {
+        padding: 0 40px 0 0;
+    }
+    
 }
 /* 1200px 이하 사이즈 종료 */
