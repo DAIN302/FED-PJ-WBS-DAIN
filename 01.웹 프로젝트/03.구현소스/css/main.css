@@ -465,31 +465,39 @@ body {
 }
 
 /* 패키지 텍스트 박스 */
+.main_offer_txt .main_txt {
+    top: 38%;
+    left: 10%;
+}
 
 /* 패키지 이미지 박스 */
 .main_offer_cont {
     position: absolute;
-    background-color: #fff;
+    /* background-color: #fff; */
     width: 90vw;
-    height: 35vh;
+    height: 40vh;
     padding: 2vh 5vw;
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 /* 목록 넘기기 버튼 */
 .main_offer_btn {
     position: absolute;
-    height: 100%;
-    background-color: #fff;
-    color :#aaa;
+    width: 6rem;
+    height: 6rem;
+    background-color: #000;
+    color :#fff;
     z-index: 2;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
     border: none;
-    font-size: 6rem;
+    font-size: 4.5rem;
+    line-height: 3rem;
     font-weight: normal;
     cursor: pointer;
     transition: color .3s;
@@ -502,25 +510,66 @@ body {
     right: 0;
 }
 
-.main_offer_btn:hover {
-    color :#000;
-}
-
 .main_offer_cont>ul {
     position: relative;
     left: 0;
     display: flex;
     justify-content: space-between;
-    gap: 0 3vw;
+    gap: 0 6vw;
+}
+.main_offer_cont>ul>li {
+    transition: box-shadow .3s ease-in-out;
 }
 
-.main_offer_contwrap {
-    width: 25vw;
+.main_offer_cont>ul>li:hover {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4);
 }
+
+.main_offer_cont>ul>li a{
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+
+.main_offer_contwrap {
+    width: 20vw;
+}
+
 .main_offer_cont figure>img {
     width: 100%;
     object-fit: cover;
 }
+
+.main_offer_cont h3 {
+    font-size: min(2vw, 2.2rem);
+    padding: 2rem 0 0.5rem 0;
+}
+.main_offer_cont h4 {
+    font-size: min(1.8vw, 1.8rem);
+    padding-bottom: 2rem;
+    color : #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.main_offer_prd {
+    font-size: min(1.2vw, 1.4rem);
+    padding-top: 2rem;
+}
+
+.main_offer_prd>div:first-child {
+    padding-bottom: 0.5rem;
+}
+
+.main_offer_day span:nth-child(2) {
+    color : #555;
+}
+
+
 
 
 
