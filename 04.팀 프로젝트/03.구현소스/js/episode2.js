@@ -14,13 +14,11 @@ function loadFn() {
     // 갤러리박스
     const gallStBx = document.querySelector(".gall_story ul");
     const gallBhBx = document.querySelector(".gall_behind ul");
-    // 2. 함수생성 : ul에 데이터 세팅
 
     /*
         함수이름 : characList
         기능 
         1. 캐릭터 리스트에 cdata에 있는 캐릭터 객체 정보 담기
-        2. 캐릭터 리스트 클릭 시 해당되는 캐릭터의 정보 박스 열기
         3. 열린 캐릭터 정보 박스의 닫기 버튼 누르면 박스 없어짐
     */
     function characList () {
@@ -95,7 +93,6 @@ function loadFn() {
         함수이름 : videoList
         기능 
         1. 비디오에 vdata에 있는 비디오 객체 정보 담기
-        2. 비디오 리스트 클릭 시 해당되는 비디오 박스 열기
         3. 열린 비디오 박스의 닫기 버튼 누르면 박스 없어짐
     */
     function videoList () {
@@ -157,18 +154,49 @@ function loadFn() {
             timer = setTimeout(()=>{
                 wWidth = window.innerWidth;
                 console.log("지역", wWidth);
-                // 1200px 이상
                 vidFn();
             }, 300)
         })
 
         // 페이지 사이즈 반응에 따른 버튼 함수
         function vidFn() {
+            // 1200px 이상일 때
             if(wWidth > 1200) {
-                console.log("ㅎㅇㅎㅇ", wWidth);
-                vidSlide();
+                // console.log("ㅎㅇㅎㅇ", wWidth);
+                // vidSlide();
                 if(vidIndex > 0) {
                     nextBtnOff();
+                }
+                if(vidIndex-1 < 0) {
+                    prevBtnOff();
+                }
+            }
+            // 1200px이하, 850px이상일때
+            else if(wWidth <= 1200 && wWidth > 850) {
+                if(vidIndex === 0) {
+                    vbtn[0].classList.remove("btn_off");
+                } else if(vidIndex === 1) {
+                    vbtn[1].classList.remove("btn_off")
+                } else if(vidIndex === 2) {
+                    vbtn[0].classList.add("btn_off");
+                }      
+                if(vidIndex-1 < 0) {
+                    vbtn[1].classList.add("btn_off");
+                } 
+                
+            }
+            // 850px 이하일때
+            else if(wWidth <= 850) {
+                if(vidIndex > 0) {
+                    vbtn[1].classList.remove("btn_off")
+                }
+                if(vidIndex === 5) {
+                    vbtn[0].classList.add("btn_off");
+                } else if(vidIndex === 4) {
+                    vbtn[0].classList.remove("btn_off");
+                } 
+                if(vidIndex-1 < 0) {
+                    vbtn[1].classList.add("btn_off");
                 }
             }
         }
@@ -180,35 +208,16 @@ function loadFn() {
             vbtn[0].onclick = () => {
                 vidIndex++;
                 pageSlide(vidList, vidIndex);
-                // 1200px 이상일때
+                console.log(vidIndex);
                 vidFn();
-                // 1200px 이하, 1000px이상일때
-                // else if(vidcontWid===1000) {
-                //     console.log(vidIndex);
-                //     if(vidIndex > 1) {
-                //         vbtn[0].classList.add("btn_off");
-                //         vbtn[1].classList.remove("btn_off");
-                //     }
-                // }
+               
             }
             // <(이전)버튼 클릭 시
             vbtn[1].onclick = () => {
                 vidIndex--;
                 pageSlide(vidList, vidIndex);
-                    console.log(vidIndex);
-                    if(vidIndex-1 < 0) {
-                        prevBtnOff();
-                    }
-                
-                // 1200px 이하, 1000px이상일때
-                // else if(vidcontWid===1000) {
-                //     if(vidIndex-1 < 0) {
-                //         vbtn[1].classList.add("btn_off");
-                //         vbtn[0].classList.remove("btn_off");
-                //     }
-                // }
-                // vbtn[1].classList.add("btn_off");
-                // vbtn[0].classList.remove("btn_off"); 
+                console.log(vidIndex);
+                vidFn();
             }
         
         }
@@ -244,7 +253,6 @@ function loadFn() {
         함수이름 : gallList
         기능 
         1. 갤러리 이미지 박스에 이미지 출력
-        2. 갤러리 텍스트 박스에 gdata에 있는 배열 정보 출력
         3. 이미지 순서에 해당하는 번호 출력(ex. 1 of 25)
         4. 이전 혹은 다음 버튼 클릭 시 페이드 효과로 다음 이미지 출력
     */
@@ -274,7 +282,7 @@ function loadFn() {
     // 이미지 및 텍스트 넘어가기 함수
     const goImg = (seq) => {
         if(seq) {
-            console.log("다음!",gnum);
+            // console.log("다음!",gnum);
             gnum++
             if(gnum>ele.length-1) {
                 gnum = 0;
@@ -282,7 +290,7 @@ function loadFn() {
             gCont(gnum);
         }
         else {
-            console.log("이전!",gnum);
+            // console.log("이전!",gnum);
             gnum--
             if(gnum<0) {
                 gnum = ele.length-1;
@@ -298,32 +306,6 @@ function loadFn() {
         }
     })
     
-
-    // let hcode = "";
-    //     for(let i = 0; i < ele.length; i++) {
-    //         hcode += `
-    //         <li>
-    //             <div class="gall_wrap">
-    //                 <div class="gall_imgbx">
-    //                     <img src="./subimg/gallery/${lik}/${i+1}.jpeg" alt="${lik}">
-    //                 </div>
-    //                 <div class="gall_txtbx">
-    //                     <div class="gall_cnt">
-    //                         <span>${i+1}</span>
-    //                           of  
-    //                         <span>${ele.length}</span>
-    //                     </div>
-    //                     <div class="mcha_beam">
-    //                         <span></span>
-    //                         <span></span>
-    //                     </div>
-    //                     <p>${ele[i]}</p>
-    //                 </div>
-    //             </div>
-    //         </li>  
-    //         `;
-    //     }
-    //     cls.innerHTML = hcode;
    }
    gallList(gdata.story, gallStBx, "story");
    gallList(gdata.behind, gallBhBx, "behind");
