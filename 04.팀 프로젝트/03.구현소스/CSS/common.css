@@ -23,22 +23,30 @@ body {
 
 #top {
     position: relative;
-    height: 80px;
+    height: 160px;
     z-index: 99;
+    background-color: #000;
 }
 
 .tit {
     text-align: center;
-    font: 40px/4 'Noto Sans KR';
+    height: 80px;
+    padding: 20px 0;
+    /* font: 40px/4 'Noto Sans KR';
     color: cyan;
     text-shadow: 0 0 0px aquamarine;
-    animation: titani 2s ease-in-out infinite alternate;
+    animation: titani 2s ease-in-out infinite alternate; */
+}
+
+.tit img {
+    height: 100%;
 }
 
 .gnb {
     position: absolute;
     bottom: 15px;
-    right: 15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .gnb ul {
     display: flex;
@@ -51,9 +59,16 @@ body {
 
 .gnb a {
     font-family: 'Noto Sans KR';
+    color : #b5b7b7;
+    transition: color .3s;
+    font-size: 16px;
+    white-space: nowrap;
+}
+.gnb a:hover {
+    color : #fff;
 }
 
-.smenu {
+/* .smenu {
     position: absolute;
     top: 27px;
     left: 50%;
@@ -62,97 +77,9 @@ body {
     width: 110px;
     font-size: 11px;
     display: none;
-}
+} */
 
-.gnb>ul>li:hover .smenu {
-    display: block;
-}
-
-.smenu li {
-    float: none;
-}
-
-.smenu a {
-    display: inline-block;
-    width: 100%;
-}
-
-.smenu a:hover {
-    color: cyan;
-}
-
-.smenu a::after {
-    content: '☞';
-    font-size: 14px;
-    float: right;
-    transform: translateY(-4px);
-    opacity: 0;
-}
-
-.smenu::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-bottom: 10px solid rgb(255, 255, 255);
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    left: 50%;
-    top: -5px;
-    transform: translateX(-50%);
-}
-
-.smenu ol {
-    border: 2px solid #ccc;
-    padding: 10px 0;
-}
-
-.smenu a:hover::after {
-    opacity: 1;
-}
-
-.hline {
-    border-top: 2px solid #ccc;
-    padding-top: 9px;
-}
-
-#cam {
-    transform: scale(1);
-    position: absolute;
-    bottom: 0px;
-    right: -25px;
-}
-
-#cam img {
-    position: relative;
-    z-index: 1;
-    width: 50px;
-    transform: rotate(15deg);
-    transition: transform .5s .3s;
-}
-
-.bim {
-    position: absolute;
-    top: -17px;
-    right: 7%;
-    width: 0;
-    height: 71px;
-    background: url(../img/light.png) no-repeat;
-    background-position: right/center;
-    background-size: auto 100%;
-    transition: width .5s linear;
-}
-
-#cam:hover .bim {
-    transition-delay: .5s;
-    width: 290px;
-}
-
-#cam:hover img {
-    transform: rotate(0deg);
-    transition-delay: 0;
-}
+/* ㄴㅅ */
 
 
 
@@ -188,6 +115,7 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
+    display: flex;
 }
 
 .bld {
@@ -200,7 +128,6 @@ body {
 .sns li {
     width: 34px;
     height: 34px;
-    float: left;
     margin: 2px;
     background: url(../img/sprites_logo.png) no-repeat;
 }

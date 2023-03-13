@@ -4,6 +4,10 @@
 
 /* 1200px 이하 사이즈 시작 */
 @media screen and (max-width:1200px) {
+    .part {
+        width: 1000px;
+    }
+
     /* 메인 */
     .cont {
         max-width: 1000px;
@@ -39,12 +43,40 @@
     .mvideo_cont li:nth-child(even) {
         padding: 0 40px 0 0;
     }
+
+    /* 하단 */
+    #info {
+        height: 150px;
+    }
+
+    #info address {
+        padding-top: 80px;
+    }
+
+    .int {
+        margin-left: 0;
+        /* text-align: center; */
+    }
+
+    #info address img {
+        top: -25%;
+        margin-right: 0;
+        margin-top: 0;
+        left: -5%;
+    }
+
+    .sns {
+        bottom: 0;
+    }
     
 }
 /* 1200px 이하 사이즈 종료 */
 
 /* 1000px 이하 사이즈 시작 */
 @media screen and (max-width:1000px) {
+    .part {
+        width: 800px;
+    }
     /* 메인 */
     .cont {
         max-width: 800px;
@@ -80,6 +112,13 @@
 
 /* 850px 이하 사이즈 시작 */
 @media screen and (max-width:850px) {
+    .part {
+        width: 600px;
+    }
+
+    .gnb a {
+        font-size: 14px;
+    }
     /* 메인 */
     .cont {
         max-width: 600px;
@@ -169,6 +208,14 @@
 
 /* 650px 이하 사이즈 시작 */
 @media screen and (max-width:650px) {
+        .part {
+            width: 450px;
+        }
+
+        .gnb a {
+            font-size: 10px;
+        }
+    
         /* 메인 */
         .cont {
             max-width: 450px;
@@ -244,6 +291,10 @@
 
 /* 500px 이하 사이즈 시작 */
 @media screen and (max-width:500px) {
+        .part {
+            width: 300px;
+        }
+    
         /* 메인 */
         .cont {
             max-width: 300px;
