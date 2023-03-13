@@ -86,7 +86,7 @@ roomImgCont();
 
 // 5번 페이지(ROOM PACKAGE) 요소 li 넣어서 슬라이드 리스트 만들기
 // 대상선정 -> .main_offer_cont 하위 ul
-const packCont = document.querySelector(".main_offer_cont ul");
+const packCont = document.querySelector(".main_offer_cont .listslide");
 // 버튼
 const offerBtn = document.querySelectorAll(".main_offer_btn");
 // console.log(offerBtn[1]);
@@ -94,9 +94,16 @@ const offerBtn = document.querySelectorAll(".main_offer_btn");
 // 함수 기능 : packCont 내부에 객체 데이터를 이용해서 리스트 넣기
 function roomPack() {
     let hcode = "";
+
+    // 임시순번변수
+    let temp = 0;
+    
     for(let x in pdata) {
         let data = pdata[x];
         console.log(x);
+
+        if(temp===0||temp===3)hcode += "<ul>";
+        
         hcode += `
         <li>
             <a href="#">
@@ -122,14 +129,21 @@ function roomPack() {
                 </div>
             </a>
          </li>
-        `
-        packCont.innerHTML = hcode;
-    } // for in
+        `;
 
+        
+        if(temp===2||temp===5)hcode += "</ul>";
+
+        // temp증감
+        temp++;
+
+    } // for in
+    
+    packCont.innerHTML = hcode;
     // 버튼 클릭시 다음 슬라이드로 넘어가기 기능
     // 다음 버튼
     offerBtn[1].onclick = () => {
-        packCont.style.left = -85.5 + "vw";
+        packCont.style.left = "-100%";
         packCont.style.transition = "left .6s";
         offerBtn[1].style.display = "none";
         offerBtn[0].style.display = "inline-block";

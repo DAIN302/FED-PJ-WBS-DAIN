@@ -150,12 +150,15 @@ function loadFn() {
         
         // 브라우저 크기변화 감지
         window.addEventListener('resize', function(){
-            clearTimeout(timer);
-            timer = setTimeout(()=>{
-                wWidth = window.innerWidth;
-                console.log("지역", wWidth);
-                vidFn();
-            }, 300)
+            wWidth = window.innerWidth;
+            vidSlide();
+            vidList.setAttribute("style","");
+            // clearTimeout(timer);
+            // timer = setTimeout(()=>{
+            //     wWidth = window.innerWidth;
+            //     console.log("지역", wWidth);
+            //     vidFn();
+            // }, 300)
         })
 
         // 페이지 사이즈 반응에 따른 버튼 함수
