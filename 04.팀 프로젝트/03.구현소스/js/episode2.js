@@ -355,8 +355,6 @@ function loadFn() {
        window.addEventListener("scroll", ()=> {
         for(let x of setit) showIt(x);
        })
-
-
    }
     
    scrollShow();
