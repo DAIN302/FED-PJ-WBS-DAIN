@@ -70,7 +70,7 @@ const rdata = {
         },
         presidential : {
             tit : "PRESIDENTIAL SUITE",
-            capa : "4명",
+            capa : "6명",
             bed : "더블",
             view : "호수뷰",
             size : "426㎡",
