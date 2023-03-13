@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+/* 서브페이지 CSS - room.css */
+
+/* 공통 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+.cont {
+    min-height: 600px;
+}

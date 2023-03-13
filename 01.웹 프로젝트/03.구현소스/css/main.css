@@ -280,6 +280,7 @@ body {
 .main_txt h2 {
     font-size: 3rem;
     overflow: hidden;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .main_txt h2 span {
@@ -420,10 +421,6 @@ body {
     width: 80%;
 }
 
-.main_room_txt a {
-    color: #fff;
-    cursor: pointer;
-}
 
 .main_room_txt h4 {
     font-size: 1.4rem;
@@ -431,8 +428,12 @@ body {
 }
 
 .main_room_txt h4 a {
+    color: #fff;
+    cursor: pointer;
     display: inline-block;
+    font-family: 'Source Code Pro', monospace;
 }
+
 .main_room_txt h4 a::after {
     content: '';
     display: block;
@@ -489,6 +490,9 @@ body {
     white-space: nowrap;
 }
 
+.main_dining_name li.on a {
+    color:#fff
+}
 .main_dining_name a:hover {
     color: rgba(255,255,255,1);
 }
@@ -498,6 +502,15 @@ body {
     left: auto;
     width: 80%;
     bottom: auto;
+}
+
+/* 클래스 on이 없으면 시간 바 애니메이션 멈춤 */
+.main_dining_name li .main_timebar::before {
+    animation-play-state: paused;
+}
+/* 클래스 on이 들어가면 시간 바 애니메이션 */
+.main_dining_name li.on .main_timebar::before {
+    animation-play-state: running;
 }
 
 /* 다이닝 소개 텍스트 */
@@ -524,9 +537,8 @@ body {
 /* 패키지 이미지 박스 */
 .main_offer_cont {
     position: absolute;
-    /* background-color: #fff; */
     width: 90vw;
-    height: 45vh;
+    height: 450px;
     padding: 2vh 5vw;
     bottom: 5%;
     left: 50%;
@@ -556,9 +568,16 @@ body {
 
 .main_offer_btnpre {
     left: 0;
+    display: none;
 }
 .main_offer_btnnext {
     right: 0;
+}
+
+.main_offer_listwrap {
+    position: absolute;
+    max-width: 1200px;
+    height: 450px;
 }
 
 .main_offer_cont>ul {

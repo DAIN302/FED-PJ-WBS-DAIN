@@ -213,11 +213,13 @@
 /* 오버시 배경색 및 글씨색 변경 */
 .res a:hover {
     background-color: var(--scl);
+    border: 1px solid rgba(255,255,255,0);
     transition: .5s;
 }
 
 .top.top_on .res a,
 .top.on .res a {
+    border: 1px solid rgba(255,255,255,0);
     background-color: var(--scl);
 }
 

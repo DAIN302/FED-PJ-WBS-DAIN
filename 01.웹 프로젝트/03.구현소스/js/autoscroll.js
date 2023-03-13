@@ -117,7 +117,7 @@ function scrollFn() {
         let tCode = "";
         let tnum = 0 // 시간순번변수
         for(let x of txtTit) {
-            if(x===" ") x = "&nbsp;&nbsp";
+            if(x===" ") x = "&nbsp";
             tCode += `<span style="transition-delay: ${tnum*0.1}s">${x}</span>`
             tnum++;
         }
