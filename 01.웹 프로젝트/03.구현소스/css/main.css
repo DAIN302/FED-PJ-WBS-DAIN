@@ -42,9 +42,18 @@ body {
     transition: background-color .5s;
 }
 
+.main_nav.on a {
+    background-color: rgba(5,5,5,0.5);
+}
+
 .main_nav a:hover {
     background-color: rgba(255,255,255,0.8);
 }
+.main_nav.on a:hover {
+    background-color: rgba(5,5,5,0.8);
+}
+
+
 
 /* 해당되는 페이지의 인디케이터 디자인 변경 */
 .main_nav li.on a {
@@ -52,9 +61,12 @@ body {
     background-color: transparent;
     box-sizing: border-box;
 }
+.main_nav.on li.on a {
+    border: 2px solid #555;
+}
 
 
-/* 메인페이지 */
+/* 메인페이지 공통 */
 .main_page {
     position: relative;
     height: 100vh;
@@ -73,8 +85,11 @@ body {
     width: 100%;
     height: 100%;
     filter: brightness(70%);
-    /* JS로 해당페이지 왔을때 애니메이션 줄 예정 */
-    /* animation : backAni 10s linear forwards; */
+}
+
+/* JS로 해당페이지 왔을때 애니메이션 */
+.main_back_img.main_back_ani {
+    animation : backAni 10s linear forwards;
 }
 
 /* 메인페이지 백그라운드 이미지 애니메이션 */
@@ -82,7 +97,6 @@ body {
     to {
         transform: scale(1.2);
     }
-    
 }
 
 
@@ -265,13 +279,33 @@ body {
 /* 소제목 공통 */
 .main_txt h2 {
     font-size: 3rem;
-    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.main_txt h2 span {
+    display: inline-block;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: .5s cubic-bezier(0.25,1,0.5,1);
+}
+
+.main_txt.on h2 span {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /* 텍스트 공통 */
 .main_txt p {
+    padding-top: 10px;
     font-size: 1.6rem;
     line-height: 2;
+    transform: translateY(10%);
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+.main_txt.on p {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /***** 3번 페이지 *****/
@@ -391,10 +425,26 @@ body {
     cursor: pointer;
 }
 
+.main_room_txt h4 {
+    font-size: 1.4rem;
+    padding-top: 40px;
+}
+
+.main_room_txt h4 a {
+    display: inline-block;
+}
+.main_room_txt h4 a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
+
 
 /***** 4번 페이지 *****/
-#pg4 .main_back_img {
-    background-image: url(../images/main/main4.jpg);
+#pg4 .main_page {
+    background-color: #fff;
 }
 
 /* 다이닝 이미지 박스 */
@@ -455,6 +505,7 @@ body {
     width: 90vw;
     top: 30%;
     left: 5%;
+    color: #222;
 }
 
 
@@ -475,9 +526,9 @@ body {
     position: absolute;
     /* background-color: #fff; */
     width: 90vw;
-    height: 40vh;
+    height: 45vh;
     padding: 2vh 5vw;
-    bottom: 10%;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     box-sizing: border-box;
@@ -522,7 +573,7 @@ body {
 }
 
 .main_offer_cont>ul>li:hover {
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.6);
 }
 
 .main_offer_cont>ul>li a{
@@ -594,12 +645,18 @@ body {
     font-size: min(18px, 2vw);
     transition : .5s;
 }
+.ctmove.on a::after {
+    color: #222;
+}
 
 .ctmove a {
     display: block;
     font-size: min(30px, 3vw);
     color: #fff;
     transition : color .5s;
+}
+.ctmove.on a {
+    color: #222;
 }
 
 .ctmove:hover {

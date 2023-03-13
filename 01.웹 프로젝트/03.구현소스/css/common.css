@@ -22,8 +22,12 @@
     font-family: 'Source Code Pro', monospace;
 }
 
-.top.top_on {
+.top.top_on, .top.on {
     background-color: #fff;
+}
+
+.top.on {
+    transition: .6s .3s;
 }
 
 /* 1-1. 상단로고 */
@@ -40,21 +44,13 @@
     display: none;
 }
 
-.top.top_on .logo img {
+.top.top_on .logo img, .top.on .logo img {
     display: none;
 }
 
-.top.top_on .logo img:nth-child(2) {
+.top.top_on .logo img:nth-child(2), .top.on .logo img:nth-child(2) {
     display: inline-block;
 }
-
-/* #top:hover .logo img {
-    display: none;
-}
-
-#top:hover .logo img:nth-child(2) {
-    display: inline;
-} */
 
 /* 1-2. gnb */
 
@@ -76,7 +72,8 @@
     font-size: min(1.6vw, 16px);
 }
 
-.top.top_on>.gnb>.menu_top>li>a {
+.top.top_on>.gnb>.menu_top>li>a,
+.top.on>.gnb>.menu_top>li>a {
     color : #555;
     transition: color .3s;
 }
@@ -219,8 +216,13 @@
     transition: .5s;
 }
 
-.top.top_on .res a {
+.top.top_on .res a,
+.top.on .res a {
     background-color: var(--scl);
+}
+
+.top.on .res a {
+    transition: .6s .3s;
 }
 
 /* 3. 하단 */

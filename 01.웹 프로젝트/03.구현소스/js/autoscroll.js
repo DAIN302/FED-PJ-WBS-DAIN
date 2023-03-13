@@ -18,7 +18,8 @@ function scrollFn() {
     // (1) 전체 페이지 변수 
     let pgnum = 0;
     // (2) 전체 페이지 수
-    const pgcnt = document.querySelectorAll(".page").length;
+    const pg =  document.querySelectorAll(".page");
+    const pgcnt = pg.length;
     // console.log(pgcnt);
     // (3) 광스크롤 금지변수 0-허용 1-불허용
     let prot_sc = 0;
@@ -60,6 +61,16 @@ function scrollFn() {
         updatePg(indic);
     }
 
+    // 메뉴 클릭 시 해당 위치로 이동
+    function movePg(seq, obj) {
+        // 기본기능막기
+        event.preventDefault();
+        //페이지번호 업데이트
+        pgnum = seq
+        // 함수호출
+        updatePg(indic);
+    }
+    
     /// 페이지 이동 설정갑 업데이트
     function updatePg(obj) {
         // console.log("ㅎㅇㅎㅇ");
@@ -73,16 +84,71 @@ function scrollFn() {
         
         // 해당 메뉴에 클래스 넣기
         obj[pgnum].parentElement.classList.add("on");
+
+        // 페이지 배경 애니메이션 클래스 넣기
+        let pgAni = pg[pgnum].querySelector(".main_back_img");
+        if(pgAni) {
+            pgAni.classList.add("main_back_ani");
+        }
+
+        // 글자 등장 액션 함수
+        const titBx = pg[pgnum].querySelector(".main_txt");
+        console.log(titBx);
+        if(titBx) {
+            showTxt(pgnum);
+        } 
+        chgColor(pgnum);
     }
 
-    // 메뉴 클릭 시 해당 위치로 이동
-    function movePg(seq, obj) {
-        // 기본기능막기
-        event.preventDefault();
-        //페이지번호 업데이트
-        pgnum = seq
-        // 함수호출
-        updatePg(indic);
+    // 글자 등장 액션
+    function showTxt(seq) {
+        // 1. 대상선정 
+        // (1) 텍스트박스
+        const titBx = pg[seq].querySelector(".main_txt");
+        // (2) 제목
+        const titStage = pg[seq].querySelector(".main_txt h2");
+
+        // 2. 글자 변수 할당
+        const txtTit = titStage.innerText;
+        console.log(txtTit);
+        // 글자 초기화
+        titStage.innerText = "";
+        // 코드 저장 변수
+        let tCode = "";
+        let tnum = 0 // 시간순번변수
+        for(let x of txtTit) {
+            if(x===" ") x = "&nbsp;&nbsp";
+            tCode += `<span style="transition-delay: ${tnum*0.1}s">${x}</span>`
+            tnum++;
+        }
+        titStage.innerHTML = tCode;
+
+        setTimeout(()=>{
+            titBx.classList.add("on");
+        },500);
+    }
+
+    // 4번페이지만 글씨색 다르게 하기 
+    function chgColor (c) {
+        // 1. 대상선정
+        // (1) 상단
+        const top = document.querySelector(".top");
+        // (2) 인디케이터 
+        const ind = document.querySelector(".main_nav");
+        // (3) 컨택트 아이콘
+        const ctmove = document.querySelector(".ctmove");
+
+        // 2. 클래스 넣기
+        if(c===3) {
+            top.classList.add("on");
+            ind.classList.add("on"); 
+            ctmove.classList.add("on");
+        }
+        else {
+            top.classList.remove("on");
+            ind.classList.remove("on");
+            ctmove.classList.remove("on");
+        }
     }
 
 }
