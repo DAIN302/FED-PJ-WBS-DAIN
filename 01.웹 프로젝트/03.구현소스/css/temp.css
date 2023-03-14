@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* 서브페이지 CSS - room.css */
+
+/* 공통 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+.cont {
+    margin-top: 140px;
+    max-width: 1920px;
+    min-height: 1000px;
+}
+
+/* 제목 */
+.tit {
+    padding-left: 20px;
+}
+.tit h2 {
+    color : #000;
+    font-size: 4rem;
+    padding : 15px 0;
+}
+.tit p {
+    color : #555;
+    font-size: 1.8rem;
+    width: 1000px;
+}

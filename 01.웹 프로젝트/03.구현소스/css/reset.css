@@ -7,7 +7,7 @@
 
 /* 1. 마진, 패딩 초기화 */
 html, body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol,
-dl, dt, dd, figure, figcaption {
+dl, dt, dd, figure, figcaption, section {
     margin: 0;
     padding: 0;
 }
@@ -42,6 +42,7 @@ img {
 /* h태그 기본 글씨 굵기 초기화 */
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
+    font-size: 10px;
 }
 
 /* 포커스 아웃라인 제거 - 모든 브라우저에 기본 포커스 아웃라인 세팅됨 */

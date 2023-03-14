@@ -8,5 +8,191 @@
 @import url(common.css);
 
 .cont {
-    min-height: 600px;
+    margin-top: 140px;
+    max-width: 1920px;
+    min-height: 1000px;
+    padding: 0 50px;
+    overflow: hidden;
 }
+
+/* 1. 타이틀 부분 */
+.tit {
+    padding-bottom: 40px;
+}
+.tit h2 {
+    color : #000;
+    font-size: 4rem;
+    padding : 15px 0;
+}
+.tit p {
+    color : #555;
+    font-size: 1.8rem;
+    width: 1000px;
+}
+
+/* 2. lnb */
+.lnb {
+    position: relative;
+    width: 100%;
+    padding: 40px 0;
+    /* overflow: hidden; */
+}
+
+/* 가상요소로 배경색 넣기 */
+.lnb::after {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-color: #F8F8F8;
+    top: 0;
+    left: -50px;
+    z-index: -1;
+
+}
+
+.lnb ul {
+    display: flex;
+    gap : 0 50px;
+}
+
+.lnb li {
+    position: relative;
+}
+
+/* 가상요소로 구분선 넣기 */
+.lnb li::before {
+    content: '';
+    position: absolute;
+    width: 1.5px;
+    height: 1rem;
+    top: 50%;
+    left: -25px;
+    transform: translate(0, -50%);
+    background: #d7d7d7;
+}
+
+.lnb li:first-child::before {
+    display: none;
+}
+
+.lnb a {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    color : #bbb;
+    transition: color .5s;
+}
+
+/* 클래스 on추가시 검정색 */
+.lnb li.on a {
+    color : #000;
+}
+
+/* 오버시 검정색 */
+.lnb a:hover {
+    color : #000;
+}
+
+/* 3. 객실 소개 */
+.rcont {
+    padding-top: 60px;
+}
+
+.rcont ul {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+}
+.rcont ul>li {
+    margin-bottom: 100px;
+    width: 47%;
+}
+
+/* 홀수 번째 li에 오른쪽 마진 줘서 간격 주기 */
+.rcont ul>li:nth-child(odd) {
+    margin-right: 5%;
+}
+
+/* 이미지 부분 */
+.rcont figure {
+    aspect-ratio: 585/390;
+    position: relative;
+}
+
+.rcont figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rcont figcaption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--sclo);
+    text-align: center;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.rcont ul>li:hover figcaption {
+    opacity: 1;
+}
+
+.rcont_imgtxt {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color : #fff;
+    font-size: 1.4rem;
+    
+}
+
+.rcont_desc {
+    padding: 0 50px 20px;
+}
+
+.rcont_btn span{
+    display: inline-block;
+    padding: 10px 30px;
+    border : 1px solid #fff;
+}
+
+/* 텍스트 부분 */
+.rcont_txt {
+    padding-top: 20px;
+}
+.rcont_txt h3 {
+    font-size: 1.5rem;
+    color : #777;
+}
+.rcont_txt h4 {
+    font-size: 2.8rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 객실 요약 */
+.rcont_txtsub {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top : 15px;
+
+}
+
+.rcont_txtsub>li {
+    width: 50%;
+    font-size: 1.4rem;
+    padding-bottom: 10px;
+}
+.rcont_txtsub>li span{
+    display: inline-block;
+}
+.rcont_txtsub>li span:nth-child(2) {
+    color : #777;
+    padding-left: 20px;
+}
+
+
