@@ -8,9 +8,6 @@ function roomsFn() {
    // All누를시에 뒤에 /로 시작하는 하위 주소 X
    // 해당 기능 gnb메뉴에서도 구현해야함
 
-   // 넘어온 url 받기
-   let pm = location.href
-
    // 대상선정
    // 서브메뉴
    const lnb =  document.querySelectorAll(".lnb a");
@@ -21,6 +18,8 @@ function roomsFn() {
    let allRoom = rdata["all"];
    // console.log(allRoom.luxury["tit"]);
 
+
+    // 리스트 만들기 함수
    function rlist(rv) {
         let hcode = "";
         for(let key in rv) {
@@ -79,26 +78,33 @@ function roomsFn() {
         rcont.innerHTML = hcode; 
    }
 
+   
+
    for(let x of lnb) {
        // 클릭이벤트 설정
-    x.onclick = () => {
-        event.preventDefault();
+    x.onclick = (e) => {
+        e.preventDefault();
+        rcont.innerHTML = ""; 
         let atxt = x.innerText.toLowerCase().trim();
-        console.log(atxt);
+        // console.log(atxt);
         let rinfo = rdata[atxt];
-        console.log(rinfo);
+        // console.log(rinfo);
         
        
         if(atxt==="all") {
             location.href = "rooms.html";
             rlist(allRoom);
         } else {
-            rcont.innerHTML = ""; 
+            console.log(rinfo);
+            rlist(rdata[atxt]);
             location.href = "rooms.html?cat="+atxt;
-            rlist(rinfo);
         }
+
+        return false;
 
     } // 클릭이벤트
 
    }
+
+   rlist(allRoom);
 }
