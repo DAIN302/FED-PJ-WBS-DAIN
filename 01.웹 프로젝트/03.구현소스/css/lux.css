@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/* 서브페이지 CSS - lux.css */
+
+/* 공통 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+.cont {
+    max-width: 1920px;
+    min-height: 1000px;
+}
+.sub_cont {
+    position: relative;
+    overflow: hidden;
+}
+
+.sub_back_img {
+    background: url(../images/sub/lux/luxury.jpg) no-repeat center/cover;
+    height: 100vh;
+    filter: brightness(70%);
+    transform: scale(1.2);
+    animation: backAni .8s ease-in-out forwards;
+}
+
+@keyframes backAni {
+    to {
+        transform: scale(1);
+    }
+}
+
+.sub_cont_txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color : #fff;
+    text-align: center;
+}
+
+.sub_cont_txt h2 {
+    font-size: 6rem;
+    font-family: 'Source Code Pro', monospace;
+    text-shadow: 1px 1px 10px #777;
+}
+
+.sub_cont_txt p {
+    font-size: 1.8rem;
+    padding-top: 3%;
+    width: 60vw;
+    color : #eee;
+    text-shadow: 1px 1px 5px #777;
+}

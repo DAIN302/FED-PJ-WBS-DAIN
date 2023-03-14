@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* 서브페이지 CSS - room.css */
+/* 서브페이지 CSS - rooms.css */
 
 /* 공통 외부 CSS 합치기 */
 @import url(reset.css);
@@ -21,8 +21,9 @@
 }
 .tit h2 {
     color : #000;
-    font-size: 4rem;
+    font-size: 5rem;
     padding : 15px 0;
+    font-family: 'Source Code Pro', monospace;
 }
 .tit p {
     color : #555;
@@ -81,7 +82,7 @@
     height: 100%;
     font-size: 1.5rem;
     color : #bbb;
-    transition: color .5s;
+    font-family: 'Source Code Pro', monospace;
 }
 
 /* 클래스 on추가시 검정색 */
@@ -92,6 +93,7 @@
 /* 오버시 검정색 */
 .lnb a:hover {
     color : #000;
+    transition: color .5s;
 }
 
 /* 3. 객실 소개 */
@@ -167,11 +169,13 @@
 .rcont_txt h3 {
     font-size: 1.5rem;
     color : #777;
+    font-family: 'Source Code Pro', monospace;
 }
 .rcont_txt h4 {
     font-size: 2.8rem;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
+    font-family: 'Source Code Pro', monospace;
 }
 
 /* 객실 요약 */
