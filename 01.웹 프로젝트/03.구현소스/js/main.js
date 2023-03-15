@@ -144,7 +144,7 @@ function roomPack() {
     // 다음 버튼
     offerBtn[1].onclick = () => {
         packCont.style.left = "-100%";
-        packCont.style.transition = "left .6s";
+        packCont.style.transition = "left .2s";
         offerBtn[1].style.display = "none";
         offerBtn[0].style.display = "inline-block";
     }

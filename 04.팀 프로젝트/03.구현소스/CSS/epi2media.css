@@ -44,30 +44,7 @@
         padding: 0 40px 0 0;
     }
 
-    /* 하단 */
-    #info {
-        height: 150px;
-    }
 
-    #info address {
-        padding-top: 80px;
-    }
-
-    .int {
-        margin-left: 0;
-        /* text-align: center; */
-    }
-
-    #info address img {
-        top: -25%;
-        margin-right: 0;
-        margin-top: 0;
-        left: -5%;
-    }
-
-    .sns {
-        bottom: 0;
-    }
     
 }
 /* 1200px 이하 사이즈 종료 */
@@ -202,6 +179,26 @@
         width: 600px;
         height: 260px;
     }
+
+    /* 하단 */
+    #info {
+        flex-direction: column;
+        height: auto;
+        gap: 10px 0;
+        }
+    
+        .blogo {
+            margin-right: 0;
+        }
+    
+        #info address {
+            text-align: center;
+        }
+    
+    
+        .sns {
+            margin-left: 0;
+        }
     
 }
 /* 850px 이하 사이즈 종료 */
