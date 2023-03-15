@@ -164,16 +164,44 @@
 
 /* 객실 이미지 */
 .sub_cont_img {
-    width: 100%;
+    position: relative;
+    width: 70vw;
     overflow: hidden;
+    margin: 0 auto;
+}
+
+/* 이미지 넘기기 버튼 */
+.sub_cont_txt .sub_cont_btn {
+    top: 50%;
+    z-index: 2;
+    left: 0;
+    transform: translateX(0);
+    bottom: auto;
+}
+
+/* 다음 버튼 */
+.sub_cont_btn_btnnext {
+    /* position: absolute;
+    right: 0; */
+}
+.sub_cont_btn button {
+    background-color: transparent;
+    border : none;
+    color : #fff;
+}
+
+.sub_cont_imglist {
+    width: 200%;
 }
 .sub_cont_img ol {
     display: flex;
     position: relative;
+    left: 0;
 }
 
 .sub_cont_img li {
-    aspect-ratio: 845/634;
+    aspect-ratio: 333/250;
+    width: 100%;
 }
 
 .sub_cont_img img {
