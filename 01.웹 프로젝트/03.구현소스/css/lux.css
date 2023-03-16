@@ -13,6 +13,7 @@
 }
 .sub_cont {
     position: relative;
+    width: 100vw;
     overflow: hidden;
 }
 
@@ -148,7 +149,7 @@
     height: 100%;
     color: #fff;
     font-family: 'Source Code Pro', monospace;
-    line-height: 4.5vh;
+    line-height: 2.5;
     transition: color .5s ease-in-out;
 }
 
@@ -336,6 +337,7 @@
     font-size: min(1.4vw, 1.4rem);
     color : #777;
     padding: 20px 0 20px 30px;
+    background-color: #fefefe;
     border-left: 1px solid #d8d8d8;
     border-bottom: 1px solid #d8d8d8;
     line-height: 2;
