@@ -7,7 +7,8 @@
 
 /* 1. 마진, 패딩 초기화 */
 html, body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol,
-dl, dt, dd, figure, figcaption, section {
+dl, dt, dd, figure, figcaption, section, address, table, thead, tbody,
+tfoot, tr, th, td, article {
     margin: 0;
     padding: 0;
 }
@@ -60,4 +61,14 @@ select::-ms-expand {
 
 select {
     appearance: none;
+}
+
+/* 테이블 요소 초기회 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th {
+    font-weight: normal;
 }

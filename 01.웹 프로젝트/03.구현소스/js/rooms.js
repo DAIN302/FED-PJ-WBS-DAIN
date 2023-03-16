@@ -18,6 +18,7 @@ function roomsFn() {
    // 기본값 세팅
    let allRoom = rdata["all"];
    // console.log(allRoom.luxury["tit"]);
+   scrollShow();
 
 
     // 리스트 만들기 함수
@@ -78,7 +79,7 @@ function roomsFn() {
         }
         hcode += "</ul>";
         rcont.innerHTML = hcode; 
-   }
+   } // 리스트 만들기 함수
 
    
 
@@ -110,17 +111,20 @@ function roomsFn() {
 
         // 클릭되는 요소 클래스 넣기
         x.parentElement.classList.add("on");
+
+        rcontList = document.querySelectorAll(".rcont>ul>li");
+        // 처음 두게는 처음부터 보이게 하기
+        rcontList[0].classList.add("on");
+        rcontList[1].classList.add("on");
     } // 클릭이벤트
-
-
-   }
+   } // for of
 
    // 초기 세팅
    rlist(allRoom);
 
 
    // 스크롤 시 하위메뉴 나타나기
-   const rcontList = document.querySelectorAll(".rcont>ul>li");
+   let rcontList = document.querySelectorAll(".rcont>ul>li");
    // console.log(rcontList);
 
    
@@ -160,9 +164,11 @@ function roomsFn() {
       window.addEventListener("scroll", ()=> {
       for(let x of rcontList) showIt(x);
       })
-    }
- 
-    scrollShow();
+   } // scrollShow 함수
+
+   const goTop = document.querySelector(".gotop span");
+   console.log(goTop);
+   goTop.onclick = () => window.scrollTo(0,0);
 
 
-}
+} // 로드 함수

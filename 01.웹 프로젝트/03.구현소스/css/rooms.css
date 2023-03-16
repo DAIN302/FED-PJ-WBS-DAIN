@@ -228,4 +228,19 @@
     padding-left: 20px;
 }
 
+/* 위로가기 버튼 */
+.gotop {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.gotop span {
+    font-size: 5rem;
+    color : #555;
+    cursor: pointer;
+    transition: color .3s;
+}
+.gotop span:hover {
+    color : var(--scl);
+}
 

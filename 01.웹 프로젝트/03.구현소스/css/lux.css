@@ -43,6 +43,7 @@
 }
 
 .sub_cont_tit h3 {
+    font-family: 'Source Code Pro', monospace;
     font-size: 2rem;
     color : #d7d7d7;
     text-shadow: 1px 1px 5px #777;
@@ -79,6 +80,7 @@
 }
 
 .sub_cont_tit p {
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 1.8rem;
     padding-top: 3%;
     width: 60vw;
@@ -105,34 +107,76 @@
 }
 .sub_cont_btn span{
     color : #fff;
-    font-size: 3rem;
+    font-size: 4rem;
     cursor: pointer;
-    
+    transition:color .3s;
+}
+
+.sub_cont_btn:hover span {
+    color :rgba(255,255,255,0.7);
 }
 
 
 /* 2번 페이지 */
 .sub_cont_txt {
-    padding-top: 140px;
+    width: 90vw;
+    margin : 0 auto;
+    padding-top: 70px;
     height: auto;
+    
 }
 
 /* 예약페이지 이동 버튼 */
 .sub_cont_res {
+    margin: 0 auto;
     text-align: center;
-}
-.sub_cont_res a{
-    display: inline-block;
-    /* width: 100%;
-    height: 100%; */
-    padding: 1.2vh 2vw;
-    font-size: min(1.6vw, 16px);
+    position: relative;
+    width: min(15vw, 180px);
+    height: min(4.5vh, 45px);
     background-color: var(--scl);
     border: 1px solid var(--scl);
-    color: #fff;
     box-sizing: border-box;
-    font-family: 'Source Code Pro', monospace;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border .3s ease-in-out;
 }
+.sub_cont_res a{
+    position: absolute;
+    display: block;
+    font-size: min(1.6vw, 16px);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Source Code Pro', monospace;
+    line-height: 4.5vh;
+    transition: color .5s ease-in-out;
+}
+
+.sub_cont_res::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -300%;
+    width : 200%;
+    height : 100%;
+    background-color: #fff;
+    transform: skew(-45deg);
+    transition : left .8s ease-in-out;
+}
+
+.sub_cont_res:hover {
+    border: 1px solid #000;
+}
+
+.sub_cont_res:hover::before {
+    left : -30%;
+}
+
+.sub_cont_res:hover a {
+    color : #000;
+}
+
+
 
 /* 객실 개요 */
 
@@ -168,26 +212,49 @@
     width: 70vw;
     overflow: hidden;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
 
 /* 이미지 넘기기 버튼 */
-.sub_cont_txt .sub_cont_btn {
+.sub_cont_imgbtn {
+    position: absolute;
+    width: 100%;
     top: 50%;
     z-index: 2;
-    left: 0;
-    transform: translateX(0);
-    bottom: auto;
+    left: 0; 
+}
+
+.sub_cont_imgbtn>div {
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+/* 이전 버튼 */
+.sub_cont_pbtn {
+    left: 5%;
+}
+
+.sub_cont_pbtn button {
+    display: none;
 }
 
 /* 다음 버튼 */
-.sub_cont_btn_btnnext {
-    /* position: absolute;
-    right: 0; */
+.sub_cont_nbtn {
+    right : 5%;
 }
-.sub_cont_btn button {
+
+
+.sub_cont_imgbtn button {
     background-color: transparent;
     border : none;
     color : #fff;
+    font-size: min(4vw, 4rem);
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.sub_cont_imgbtn button:hover {
+    color :rgba(255,255,255,0.7);
 }
 
 .sub_cont_imglist {
@@ -208,4 +275,131 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* 어메니티 */
+.sub_cont_ame, .sub_cont_ser {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.sub_cont_ame h2 {
+    font-size: min(3vw, 3rem);
+    font-family: 'Source Code Pro', monospace;
+    padding-bottom: 30px;
+}
+
+.sub_cont_ament table {
+    width: 100%;
+}
+
+/* 테이블 제목 */
+.sub_cont_ament th {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 2rem;    
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 20px 0;
+    width: 33.33%;
+}
+
+/* 가상요소에 아이콘 넣기 */
+.ico::before {
+    content: '';
+    display: inline-block;
+    background-image: url(../images/ico.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+/* bed room 아이콘 */
+.i-bed::before {
+    background-position: 0 -120px;
+    width: 46px;
+    height: 33px;
+}
+/* bath room 아이콘 */
+.i-bath::before {
+    background-position: -50px -120px;
+    width: 37px;
+    height: 33px;
+}
+
+/* mini-bar 아이콘 */
+.i-bar::before {
+    background-position: -90px -120px;
+    width: 37px;
+    height: 33px;
+}
+
+/* 테이블 본문 */
+.sub_cont_ament td {
+    font-size: min(1.4vw, 1.4rem);
+    color : #777;
+    padding: 20px 0 20px 30px;
+    border-left: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+    line-height: 2;
+}
+
+.sub_cont_ament td:first-child {
+    border-left: none;
+}
+
+
+/* 서비스 */
+.sub_cont_ser h2 {
+    font-size: min(3vw, 3rem);
+    font-family: 'Source Code Pro', monospace;
+    padding: 50px 0 30px;
+}
+
+.sub_cont_sercont>ol>li {
+    display: flex;
+}
+
+.sub_cont_serimg {
+    width: 45%;
+}
+
+.sub_cont_serimg img {
+    width: 100%;
+}
+
+.sub_cont_sertxt {
+    width: 52%;
+    padding-left: 3%;
+}
+
+.sub_cont_sertxt h3 {
+    font-size: min(2.7vw, 2.7rem);
+    font-family: 'Source Code Pro', monospace;
+    padding-bottom: 3%;   
+}
+
+.sub_cont_sertxt p {
+    font-size: min(1.4vw, 1.4rem);
+    padding-bottom: 5%;
+}
+
+.sub_cont_sertxt ul {
+    padding-bottom: 5%;
+}
+
+.sub_cont_sertxt li {
+    font-size: min(1.3vw, 1.3rem);
+}
+
+.sub_cont_sertxt li+li {
+    padding-top: 2%;
+}
+
+.sub_cont_sertxt li span:nth-child(1) {
+    padding-right: 2%;
+}
+.sub_cont_sertxt li span:nth-child(2) {
+    color : #555;
+}
+
+.sub_cont_sertxt small {
+    color : #777;
 }

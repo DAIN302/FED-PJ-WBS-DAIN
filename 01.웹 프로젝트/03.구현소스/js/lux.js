@@ -11,22 +11,32 @@ function luxFn() {
     cbtn.onclick = () => {
         window.scrollTo(0, window.innerHeight*1);
     }
+
+    // (2) 기능 : 객실이미지의 버튼을 누르면 이미지 이동
     
-    
-    // (2) 기능 : 첫페이지에서 스크롤 시 상단 메뉴 색상 변화
-    // 대상선정 
-    const top = document.querySelector(".top");
-    function chgTop() {
-        window.addEventListener("scroll", ()=>{
-            let scTop = document.querySelector('html').scrollTop;
-            console.log(scTop);
-            if(scTop > 0) { 
-                top.classList.add("on");
+    // 버튼 클릭시 다음 슬라이드로 넘어가기 기능
+    // 클릭대상 : .sub_cont_imgbtn button
+    const rimgBtn = document.querySelectorAll(".sub_cont_imgbtn button");
+    // 이동대상 : .sub_cont_imglist>ol
+    const rimgList = document.querySelector(".sub_cont_imglist>ol");
+    console.log(rimgList);
+
+    rimgBtn.forEach((ele, idx)=> {
+        ele.onclick = () => {
+            // 다음 버튼
+            if(idx) {
+                rimgList.style.left = "-50%";
+                rimgList.style.transition = "left .5s ease-in-out";
+                ele.style.display = "none";
+                rimgBtn[0].style.display = "inline-block"
             }
+            // 이전 버튼
             else {
-                top.classList.remove("on");
+                rimgList.style.left = 0;
+                ele.style.display = "none"
+                rimgBtn[1].style.display = "inline-block"
+                console.log(ele);
             }
-        })
-    }
-    chgTop();
+        }
+    })
 }
