@@ -10,12 +10,18 @@
     <!-- 외부 CSS -->
     <link rel="stylesheet" href="./css/contact.css" />
     <!-- JS -->
+    <!-- 제이쿼리 -->
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <!-- 제이쿼리 UI -->
+    <script src="./js/jquery-ui.min.js"></script>
     <!-- 공통 JS -->
     <script src="./js/common.js"></script>
     <!-- 서브페이지 공통 JS -->
     <script src="./js/subcommon.js"></script>
     <!-- 링크 연결 JS -->
     <script src="./js/linksys.js"></script>
+    <!-- 서브페이지 JS  -->
+    <script src="./js/contact.js"></script>
     <!-- 타이틀 등장 액션 JS -->
     <script src="./js/showtit.js"></script>
   </head>
@@ -147,7 +153,70 @@
               도보 200m 거리에 있는 잠실역(지하철 2, 8호선)과 790m 거리의 송파나루역(9호선)에서 지하철을 타고<br> 서울의 주요 관광명소로 쉽게 이동할 수 있는 
               트리플 역세권이며, 30분 이내 강남에 도착할 수 있습니다.<br> 석촌호수, 롯데월드 테마파크 & 쇼핑몰, 올림픽공원 또한 도보거리에 있습니다.</p>
           </div>
-          
+          <!-- 2. 지도 및 주소 -->
+          <div class="sub_cont_map">
+            <div class="sub_cont_mapimg">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.742322108591!2d127.10449611563357!3d37.5139951798079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca57e98b59f95%3A0x690ff6cec8e678eb!2z7IaM7ZS87YWUIOyVsOuwsOyEnOuNlCDshJzsmrgg7Zi47YWUICYg7ISc67mE7Iqk65OcIOugiOyngOuNmOyKpA!5e0!3m2!1sko!2skr!4v1679033572921!5m2!1sko!2skr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="sub_cont_maptxt">
+              <h2>ADDRESS</h2>
+              <p>서울시 송파구 잠실로 209 (05552), 대한민국</p>
+              <ul>
+                <li>
+                  <span>E-MAIL</span>
+                  <span>Sofitel.Seoul@Sofitel.com</span>
+                </li>
+                <li>
+                  <span>TEL</span>
+                  <span>02-2092-6000</span>
+                </li>
+                <li>
+                  <span>FAX</span>
+                  <span>02-2092-6001</span>
+                </li>
+              </ul>
+            </div>
+          </div>    
+          <!-- 3. 오시는 길 -->
+          <!-- 제이쿼리 아코디언 기능 사용예정 -->
+          <div class="sub_cont_loca">
+            <h2>LOCATION</h2>
+            <!-- 아코디언 메뉴 박스 -->
+            <div class="sub_cont_locatxt">
+              <h3>
+                <span>대중교통</span>
+                <span class="fa-solid fa-chevron-down"></span>
+              </h3>
+              <div>
+                <dl>
+                  <dt>지하철</dt>
+                  <dd>2, 8호선 잠실역 10번 출구(200m)</dd>
+                  <dd>송파나루역 9호선 2번 출구(790m)</dd>
+                </dl>
+                <dl>
+                  <dt>버스</dt>
+                  <dd>지선버스 (잠실광역환승센터) - 3217, 3313, 3314, 3315, 3317, 3414, 4319</dd>
+                  <dd>광역버스 (잠실광역환승센터) - 1007-1, 1100, 1700, 2000, 6900, 7007, 8001</dd>
+                  <dd>간선버스 (잠실광역환승센터) - 301, 341, 360, 362</dd>
+                </dl>
+              </div>
+              <h3>
+                <span>공항에서</span>
+                <span class="fa-solid fa-chevron-down"></span>
+              </h3>
+              <div>
+                <dl>
+                  <dt>김포공항</dt>
+                  <dd>올림픽대로 > 잠실역에서 '올릭핌 공원' 방면 좌회전 (약 1시간 20분 35km)</dd>
+                </dl>
+                <dl>
+                  <dt>인천공항</dt>
+                  <dd>영종해안북로 > 인천국제공항고속도로 > 올림픽대로 > 잠실역에서 '올림픽공원' 방면 좌회전 (약 1시간 30분 소요/ 73km)</dd>
+                  <dd>공항버스 6705 > '잠실 롯데월드호텔 롯데타워'역 하차</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
           <!-- 4. 위로 가기 버튼 -->
           <aside class="gotop">
             <div class="gotop_btn">

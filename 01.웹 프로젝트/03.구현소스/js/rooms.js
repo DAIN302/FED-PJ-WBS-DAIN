@@ -18,7 +18,7 @@ function roomsFn() {
    // 기본값 세팅
    let allRoom = rdata["all"];
    // console.log(allRoom.luxury["tit"]);
-   scrollShow();
+   
 
 
     // 리스트 만들기 함수
@@ -116,6 +116,7 @@ function roomsFn() {
         // 처음 두게는 처음부터 보이게 하기
         rcontList[0].classList.add("on");
         rcontList[1].classList.add("on");
+        scrollShow(rcontList);
     } // 클릭이벤트
    } // for of
 
@@ -126,6 +127,7 @@ function roomsFn() {
    // 스크롤 시 하위메뉴 나타나기
    let rcontList = document.querySelectorAll(".rcont>ul>li");
    // console.log(rcontList);
+   scrollShow(rcontList);
 
    
    // 처음 두게는 처음부터 보이게 하기
@@ -133,7 +135,7 @@ function roomsFn() {
    rcontList[1].classList.add("on");
    
    // 스크롤 시 하위메뉴 나타나기
-   function scrollShow() {
+   function scrollShow(obj) {
       // 화면높이값의 4/5구하기
       const hv = window.innerHeight/6*5;
       // 윈도우 높이값
@@ -162,13 +164,9 @@ function roomsFn() {
       };       
 
       window.addEventListener("scroll", ()=> {
-      for(let x of rcontList) showIt(x);
+      for(let x of obj) showIt(x);
       })
    } // scrollShow 함수
-
-   const goTop = document.querySelector(".gotop span");
-   console.log(goTop);
-   goTop.onclick = () => window.scrollTo(0,0);
 
 
 } // 로드 함수

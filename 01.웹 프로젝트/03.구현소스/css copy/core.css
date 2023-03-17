@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* 웹폰트, 공통 클래스 세팅 CSS - core.css */
+
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&family=Source+Code+Pro:wght@400;700&display=swap');
+/* 
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+*/
+/* 공사중표시 */
+body * {
+    /* outline: 1px dashed #eee; */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* #아이디명 스크롤 이동 시 부드럽게 애니메이션 이동함 */
+}
+html, body {
+    /* width: 100%; */
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif
+}
+
+:root {
+    --scl : #A98524;
+    --sclo : #a986246b;
+}
+
+
+
+
+/* 배경이미지 설명 넣기 숨기기 클래스
+   IR : Image Replacement 이미지 대체텍스트 웹접근성때문에 */
+.ir {
+display: block;
+width: 0;
+height: 0;
+overflow: hidden;
+}

@@ -19,4 +19,10 @@ function subFn() {
         })
     }
     chgTop();
-}
+
+
+    // 위로가기 버튼 클릭 시 맨 위로 이동
+    const goTop = document.querySelector(".gotop span");
+    console.log(goTop);
+    goTop.onclick = () => window.scrollTo(0,0);
+} // 로드 함수

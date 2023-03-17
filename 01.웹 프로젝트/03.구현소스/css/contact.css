@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/* 서브페이지 CSS - contact.css */
+
+/* 공통 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+@import url(subcommon.css);
+
+/* 2. 지도 및 주소 */
+.sub_cont_map {
+    margin: 0 auto;
+}
+
+.sub_cont_mapimg {
+    height: 50vh;
+    padding-bottom: 30px;
+}
+
+.sub_cont_map iframe {
+    border : none;
+    width: 100%;
+    height: 100%;
+}
+
+.sub_cont_maptxt h2, .sub_cont_loca h2 {
+    font-size: min(3vw, 3rem);
+    font-family: 'Source Code Pro', monospace;
+    padding-bottom: 30px;
+}
+
+.sub_cont_maptxt p {
+    font-size: min(1.8vw, 1.8rem);
+    color : #555;
+    padding-bottom: 30px;
+}
+
+.sub_cont_maptxt ul {
+    display: flex;
+    gap: 0 20px;
+    
+}
+
+.sub_cont_maptxt ul li span:first-child {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    font-size: min(1.6vw, 1.6rem);
+}
+
+.sub_cont_maptxt ul li span:nth-child(2) {
+    color: #777;
+    font-size: min(1.5vw, 1.5rem);
+    padding-left: 10px;
+}
+
+/* 3. 오시는 길 */
+.sub_cont_loca h2 {
+    padding-top: 50px;
+}
+
+
+/* 아코디언 메뉴 박스 */
+.sub_cont_locatxt h3 {
+    position: relative;
+    font-size: min(2vw, 2rem);
+    padding: 2vh 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+
+.sub_cont_locatxt h3:nth-of-type(2) {
+    border-top:1px solid #ccc;
+}
+
+.sub_cont_locatxt h3 span {
+    display: inline-block;
+}
+.sub_cont_locatxt h3 span:nth-child(2) {
+    position: absolute;
+    line-height: 1.5;
+    right: 3%;
+}
+
+
+.sub_cont_locatxt>div {
+    padding: 2vh 0;
+    background-color: #f8f8f8;
+}
+
+.sub_cont_locatxt dl {
+    padding-left: 2%;
+}
+
+.sub_cont_locatxt dt {
+    font-size: min(1.8vw, 1.8rem);
+    padding-bottom: 1vh;
+    box-sizing: border-box;
+}
+
+.sub_cont_locatxt dd {
+    font-size: min(1.4vw, 1.4rem);
+    color : #777;
+    line-height: 2;
+}
+
+.sub_cont_locatxt dd:last-child {
+    padding-bottom: 10px;
+} 
+
+
+
+
+

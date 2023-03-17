@@ -279,15 +279,13 @@
     object-fit: cover;
 }
 
-
-
 /* 어메니티 */
 .sub_cont_ame, .sub_cont_ser, .sub_cont_guide {
     width: 80vw;
     margin: 0 auto;
 }
 
-.sub_cont_ame h2,.sub_cont_ser h2, .sub_cont_guide h2 {
+.sub_cont_ame h2 {
     font-size: min(3vw, 3rem);
     font-family: 'Source Code Pro', monospace;
     padding-bottom: 30px;
@@ -365,7 +363,9 @@
 
 /* 서비스 */
 .sub_cont_ser h2, .sub_cont_guide h2 {
-    padding-top: 50px;
+    font-size: min(3vw, 3rem);
+    font-family: 'Source Code Pro', monospace;
+    padding: 50px 0 30px;
 }
 .sub_cont_sercont>ol {
     display: flex;

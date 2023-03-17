@@ -111,8 +111,7 @@ function roomPack() {
                     <figure>
                         <img
                             src="./images/main/offer/${data.img}"
-                            alt="패키지이미지"
-                        />
+                            alt="패키지이미지"/>
                     </figure>
                     <h3>${data.tit}</h3>
                     <h4>${data.subtit}</h4>

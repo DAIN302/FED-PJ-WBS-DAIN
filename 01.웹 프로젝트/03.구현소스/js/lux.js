@@ -10,7 +10,7 @@ function luxFn() {
     const cbtn = document.querySelector(".sub_cont_btn span");
     cbtn.onclick = () => {
         window.scrollTo(0, window.innerHeight*1);
-    }
+    } // click
 
     // (2) 기능 : 객실이미지의 버튼을 누르면 이미지 이동
     
@@ -20,23 +20,112 @@ function luxFn() {
     // 이동대상 : .sub_cont_imglist>ol
     const rimgList = document.querySelector(".sub_cont_imglist>ol");
     console.log(rimgList);
+    function imgSlide() {
+        rimgBtn.forEach((ele, idx)=> {
+            ele.onclick = () => {
+                // 다음 버튼
+                if(idx) {
+                    rimgList.style.left = "-50%";
+                    rimgList.style.transition = "left .5s ease-in-out";
+                    ele.style.display = "none";
+                    rimgBtn[0].style.display = "inline-block"
+                }
+                // 이전 버튼
+                else {
+                    rimgList.style.left = 0;
+                    ele.style.display = "none"
+                    rimgBtn[1].style.display = "inline-block"
+                    console.log(ele);
+                }
+            } // click
+        })// forEach
+    }
+    // 함수호출
+    imgSlide();
 
-    rimgBtn.forEach((ele, idx)=> {
-        ele.onclick = () => {
-            // 다음 버튼
-            if(idx) {
-                rimgList.style.left = "-50%";
-                rimgList.style.transition = "left .5s ease-in-out";
-                ele.style.display = "none";
-                rimgBtn[0].style.display = "inline-block"
+    const ameCont = document.querySelectorAll(".sub_cont_ament");
+    scrollShow(ameCont);
+
+    // (3) 기능 : 객체 데이터로 서비스 부분에 데이터 넣고, 스크롤 이벤트(스크롤 시 목록 나타나기)   
+    // 대상
+    // 데이터 넣을 대상 : .sub_cont_sercont
+    const serCont = document.querySelector(".sub_cont_sercont");
+    serList(serCont)
+
+    function serList(obj) {
+        console.log(obj);
+        let hcode = "<ol>";
+        for(let key in rsdata) {
+            console.log(key);
+            hcode += `
+            <li>
+                <figure class="sub_cont_serimg">
+                 <img src="./images/sub/service/${key}.jpg" alt="이미지">
+                </figure>
+                <article class="sub_cont_sertxt">
+                    <h3>${rsdata[key].sname}</h3>
+                    <p>${rsdata[key].sdesc}</p>
+                    <ul>
+                        <li>
+                            <span>위치</span>
+                            <span>${rsdata[key].sloca}</span>
+                        </li>
+                        <li>
+                            <span>시간</span>
+                            <span>${rsdata[key].stime}</span>
+                        </li>
+                        <li>
+                            <span>문의</span>
+                            <span>${rsdata[key].sinq}</span>
+                        </li>                         
+                    </ul>
+                    <small>${rsdata[key].setc}</small>
+                </article>
+            </li> 
+            `
+        } // for in문
+        hcode += "</ol>"
+        obj.innerHTML = hcode;
+
+        const serContList = serCont.querySelectorAll("ol>li");
+        console.log(serContList);
+
+        scrollShow(serContList);
+
+    } // serList 함수
+
+    function scrollShow(a) {
+        // 화면높이값의 4/5구하기
+        const hv = window.innerHeight/5*4;
+        // 윈도우 높이값
+        const winH = window.innerHeight;
+    
+        // 전체 문서 높이값
+        const docH = document.body.clientHeight;
+        console.log("문서전체높이", docH); 
+    
+        // 스크롤한계값
+        const scLimit = docH - winH
+        console.log("스크롤한계값", scLimit); 
+    
+        // 등장액션 대상 위치값 리턴함수
+        const retVal = ele => ele.getBoundingClientRect().top;
+  
+        // 클래스 넣기 함수
+        const showIt = x => { // x는 등장요소
+            // 대상요소의 현재 스크롤 위치
+            let xval = retVal(x)
+            // 화면 높이값의 절반값에 왔을때 첫번째 박스 등장
+            // hv변수 -> 화면 높이값의 절반값
+            if(xval < hv && xval > 0) {
+                x.classList.add("on");
             }
-            // 이전 버튼
-            else {
-                rimgList.style.left = 0;
-                ele.style.display = "none"
-                rimgBtn[1].style.display = "inline-block"
-                console.log(ele);
-            }
-        }
-    })
+        };       
+  
+        window.addEventListener("scroll", ()=> {
+        for(let x of a) showIt(x);
+        })
+     } // scrollShow 함수
+
+
 }
