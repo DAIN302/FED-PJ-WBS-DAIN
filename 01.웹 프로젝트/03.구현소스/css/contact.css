@@ -55,6 +55,10 @@
 }
 
 /* 3. 오시는 길 */
+.sub_cont_loca {
+    padding-bottom: 50px;
+}
+
 .sub_cont_loca h2 {
     padding-top: 50px;
 }
@@ -64,31 +68,39 @@
 .sub_cont_locatxt h3 {
     position: relative;
     font-size: min(2vw, 2rem);
-    padding: 2vh 0;
-    border-top: 1px solid #000;
     border-bottom: 1px solid #ccc;
+    padding: 2vh 0;
     cursor: pointer;
 }
-
-
-.sub_cont_locatxt h3:nth-of-type(2) {
-    border-top:1px solid #ccc;
+.sub_cont_loca div:first-of-type h3 {
+    border-top: 1px solid #000;
 }
 
 .sub_cont_locatxt h3 span {
     display: inline-block;
+    padding-left: 2%;
 }
 .sub_cont_locatxt h3 span:nth-child(2) {
     position: absolute;
     line-height: 1.5;
-    right: 3%;
+    padding-left: 0;
+    right: 2%;
+    transition : transform .3s ease-in-out;
+}
+.sub_cont_locatxt h3 .fa-solid.up {
+    transform: rotate(-180deg);
 }
 
-
-.sub_cont_locatxt>div {
-    padding: 2vh 0;
+.sub_cont_locadesc {
+    height: 0;
+    overflow: hidden;
     background-color: #f8f8f8;
+    transition: heigth .3s ease-in-out;
 }
+
+/* .sub_cont_locatxt>div.on {
+    padding: 2vh 0;
+} */
 
 .sub_cont_locatxt dl {
     padding-left: 2%;
