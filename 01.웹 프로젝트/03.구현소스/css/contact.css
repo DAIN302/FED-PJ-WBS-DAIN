@@ -87,20 +87,25 @@
     right: 2%;
     transition : transform .3s ease-in-out;
 }
-.sub_cont_locatxt h3 .fa-solid.up {
+.sub_cont_locatxt h3.active .fa-solid {
     transform: rotate(-180deg);
 }
 
 .sub_cont_locadesc {
-    height: 0;
-    overflow: hidden;
     background-color: #f8f8f8;
-    transition: heigth .3s ease-in-out;
+    /* transition: height .4s ease-in-out; */
 }
 
-/* .sub_cont_locatxt>div.on {
+.sub_cont_locadesc.hidden {
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+.sub_cont_locadesc>div {
     padding: 2vh 0;
-} */
+}
 
 .sub_cont_locatxt dl {
     padding-left: 2%;
