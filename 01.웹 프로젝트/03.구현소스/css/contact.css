@@ -24,7 +24,7 @@
     height: 100%;
 }
 
-.sub_cont_maptxt h2, .sub_cont_loca h2 {
+.sub_cont_maptxt h2, .sub_cont_loca h2, .sub_cont_add h2 {
     font-size: min(3vw, 3rem);
     font-family: 'Source Code Pro', monospace;
     padding-bottom: 30px;
@@ -60,7 +60,7 @@
 }
 
 .sub_cont_loca h2 {
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 
@@ -126,6 +126,25 @@
 .sub_cont_locatxt dd:last-child {
     padding-bottom: 10px;
 } 
+
+
+/* 4. 기타 부대시설 연락처 */
+.sub_cont_add {
+    padding-bottom: 100px;
+}
+
+.sub_cont_add h2 {
+    padding-top: 50px;
+}
+
+.sub_cont_add ol {
+    display: flex;
+    font-size: 1.8rem;
+}
+
+.sub_cont_add h3 {
+    font-size: 1.8rem;
+}
 
 
 
