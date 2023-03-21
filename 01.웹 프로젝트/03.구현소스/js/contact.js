@@ -1,43 +1,5 @@
 // 서브페이지 JS - contact.js
 
-const fdata = {
-    fait : {
-        name : "Fait Maison",
-        loca : "서울시 송파구 잠실로 209 (4층)",
-        tel : "02-2092-6100",
-        fax : "02-2092-6100",
-        mail : "HB220-FB7@SOFITEL.COM"
-    },
-    mio : {
-        name : "MIO",
-        loca : "서울시 송파구 잠실로 209 (3층)",
-        tel : "02-2092-6102",
-        fax : "02-2092-6102",
-        mail : "HB220-FB10@SOFITEL.COM"
-    },
-    jardin : {
-        name : "Jardin D'Hiver",
-        loca : "서울시 송파구 잠실로 209 (6층)",
-        tel : "02-2092-6106",
-        fax : "02-2092-6106",
-        mail : "HB220-FB8@SOFITEL.COM"
-    },
-    espace : {
-        name : "L'Espace",
-        loca : "서울시 송파구 잠실로 209 (6층)",
-        tel : "02-2092-6104",
-        fax : "02-2092-6104",
-        mail : "HB220-FB9@SOFITEL.COM"
-    },
-    latitude : {
-        name : "Latitude32",
-        loca : "서울시 송파구 잠실로 209 (32층)",
-        tel : "02-2092-6108",
-        fax : "02-2092-6108",
-        mail : "HB220-FB11@SOFITEL.COM"
-    },
-}; 
-
 $(document).ready(function() {
     // 1. 처음에 다 숨기기
     $(".sub_cont_locadesc").addClass("hidden");
@@ -60,4 +22,48 @@ $(document).ready(function() {
         }
         
     })// click
+    // 부대시설 연락처 리스트 만들기 함수
+    // 대상선정 : .sub_cont_addinfo
+    const addInfo = $(".sub_cont_addinfo");
+    console.log(addInfo);
+    function flist() {
+        let hcode = "";
+        for(let x in fdata) {
+            // console.log(fdata[x]);
+            let fv = fdata[x]
+            // console.log(fv)
+            hcode += `
+                <li>
+                    <h3>${x}</h3>
+                    <ul class="sub_cont_addcont">
+            `
+            for(let y in fv) {
+                console.log(y);
+                hcode +=`
+                            <li>
+                                <h4>${fv[y].name}</h4>
+                                <ol>
+                                    <li>
+                                        <span class="fa-solid fa-location-dot"></span>
+                                        <span>${fv[y].loca}</span>
+                                    </li>
+                                    <li>
+                                        <span class="fa-solid fa-phone"></span>
+                                        <span>${fv[y].tel}</span>
+                                    </li>
+                                    <li>
+                                        <span class="fa-solid fa-envelope"></span>
+                                        <span>${fv[y].mail}</span>
+                                    </li>
+                                 </ol>
+                            </li>
+                        `
+            } // for in
+            hcode += `</ul></li>`
+        } // for in
+        addInfo.html(hcode);
+    }// flist 함수
+
+    // 함수호출
+    flist();
 }) // 로드함수

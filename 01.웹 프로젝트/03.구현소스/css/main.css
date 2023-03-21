@@ -344,7 +344,14 @@ body {
     height: 60vh;
     width: 100%;
     top: 50%;
+    opacity: 0;
     transform: translateY(-50%);
+    transition: opacity .6s ease-in-out;
+}
+
+.main_room_img li.on {
+    opacity: 1;
+    z-index: 1;
 }
 
 .main_room_img img {
@@ -361,6 +368,7 @@ body {
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .main_room_btn button {
@@ -386,6 +394,7 @@ body {
     bottom: 23%;
     right: 20px;
     font-size: 1.4rem;
+    z-index: 1;
 }
 
 .main_timebar {
@@ -397,24 +406,23 @@ body {
     background-color: rgba(255,255,255,0.3);
 }
 
-/* 가상요소로 색이 채워지는 효과 */
-.main_timebar::before {
-    content: '';
+.main_timebar span {
     position: absolute;
     width: 0;
     height: 100%;
     background-color: #fff;
-    animation: timebarAni 6s linear infinite;
+    /* transition : width 3s linear; */
+    /* animation: timebarAni 3s linear infinite; */
 }
 
 /* 이미지 진행 시간 애니매이션 키프레임 */
 /* 슬라이드가 바뀔때마다 반복 */
 /* 중간에 이미지가 바뀌면 처음부터 시작 */
-@keyframes timebarAni {
+/* @keyframes timebarAni {
     100% {
         width : 100%;
     }
-}
+} */
 
 /* 객실 소개 텍스트 박스 */
 .main_room_txt .main_txt {

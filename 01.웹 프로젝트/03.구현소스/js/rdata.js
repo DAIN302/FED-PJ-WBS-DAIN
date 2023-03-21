@@ -261,3 +261,105 @@ const rsdata = {
         setc : "이용 문의는 5층 프론트 데스크로 해주시기 바랍니다."
     },
 }
+
+
+const fdata = {
+    "DINING" : {
+        fait : {
+            name : "Fait Maison",
+            loca : "4F",
+            tel : "02-2092-6100",
+            mail : "hb220-fb7@sofitel.com"
+        },
+        mio : {
+            name : "MIO",
+            loca : "3F",
+            tel : "02-2092-6102",
+            mail : "hb220-fb10@sofitel.com"
+        },
+        jardin : {
+            name : "Jardin D'Hiver",
+            loca : "6F",
+            tel : "02-2092-6106",
+            mail : "hb220-fb8@sofitel.com"
+        },
+        lespace : {
+            name : "L'Espace",
+            loca : "6F",
+            tel : "02-2092-6104",
+            mail : "hb220-fb9@sofitel.com"
+        },
+        latitude : {
+            name : "Latitude32",
+            loca : "32F",
+            tel : "02-2092-6108",
+            mail : "hb220-fb11@sofitel.com"
+        },
+    },
+    "MEETING & WEDDING" : {
+        wedding : {
+            name : "Magnifique Wedding",
+            loca : "4F",
+            tel : "02-2092-6110~1",
+            mail : "HB220-SL10@sofitel.com"
+        },
+        grand : {
+            name : "Grand Ballroom Vendôme",
+            loca : "4F",
+            tel : "02-2092-6052",
+            mail : "HB220-SL8@sofitel.com"
+        },
+        bastille : {
+            name : "Bastille Room",
+            loca : "3F",
+            tel : "02-2092-6052",
+            mail : "HB220-SL8@sofitel.com"
+        },
+        concorde : {
+            name : "Concorde Room",
+            loca : "6F",
+            tel : "02-2092-6052",
+            mail : "HB220-SL8@sofitel.com"
+        },
+    },
+    "FACILITIES" : {
+        club : {
+            name : "Club Millésime",
+            loca : "32F",
+            tel : "02-2092-6000",
+            mail : "Sofitel.Seoul@sofitel.com"
+        },
+        kids : {
+            name : "Kids Lounge",
+            loca : "5F",
+            tel : "02-2092-6000",
+            mail : "Sofitel.Seoul@sofitel.com"
+        },
+        busi : {
+            name : "Business Corner",
+            loca : "5F",
+            tel : "02-2092-6000",
+            mail : "Sofitel.Seoul@sofitel.com"
+        },
+    },
+    "WELLNESS" : {
+        pool : {
+            name : "Pool",
+            loca : "16F",
+            tel : "02-2092-6000",
+            mail : "Sofitel.Seoul@sofitel.com"
+        },
+        fitness : {
+            name : "Sofitel Fitness",
+            loca : "5F, 16F",
+            tel : "02-2092-6000",
+            mail : "Sofitel.Seoul@sofitel.com"
+        },
+        spa : {
+            name : "Sofitel Spa By Beauté BR",
+            loca : "16F",
+            tel : "02-2092-6085",
+            mail : "sofitelspabybeautebr@naver.com"
+        },
+    },
+}; 

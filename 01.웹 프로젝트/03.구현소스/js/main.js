@@ -77,12 +77,137 @@ function roomImgCont() {
             <img src="./images/main/room/room${i}.jpg" alt="객실이미지" />
         </li>
         `
-        ctnum.innerText = i;
     }
     roomCont.innerHTML = hcode;
 }
 
 roomImgCont();
+
+// 슬라이드 번호 변수
+let snum = 0;
+// 이벤트 대상
+const roomBtn = document.querySelectorAll(".main_room_btn button"); 
+// 변경 대상 1 : 슬라이드 리스트
+const roomList = roomCont.querySelectorAll("li");
+// 변경 대상 2 : 타임바
+const rtimeBar = document.querySelector(".main_room_time .main_timebar span");
+console.log(rtimeBar);
+
+// 슬라이드 개수 변수
+let scnt = roomList.length
+// 초기값
+roomList[0].classList.add("on");
+setTimeout(()=>{
+    rtimeBar.style.width = "100%";
+    rtimeBar.style.transition = "width 3s linear"
+}, 0)
+
+// 광클금지변수 : 0 - 허용, 1 - 불허용
+let prot = 0;
+
+// 슬라이드 변경 함수
+const goSlide = (seq) => {
+    console.log("슬고", seq);
+    // 광클금지 설정하기 //////
+    if (prot) return;
+    prot = 1; // 잠금!
+    setTimeout(() => {
+        prot = 0; // 해제!
+    }, 400); /// 0.4초후 해제! ///
+    
+
+
+    // 1. 방향에 따른 분기
+    // 1-1. 오른쪽버튼 클릭시 : seq===1
+    if(seq) {
+        snum++;
+        console.log("난 오", snum);
+        // 슬라이드 번호 증가
+    }
+    // 1-2. 왼쪽버튼 클릭시 : seq===0
+    else {
+        snum--;
+        console.log("난 왼", snum);
+        // 슬라이드 번호 감소
+    }
+
+
+    // 2. 한계값 체크 : 
+    // 처음이전-> 끝, 끝다음 ->처음
+    if(snum===-1) snum = scnt - 1;
+    else if(snum === scnt) snum = 0;
+
+    ctnum.innerText = snum+1;
+    rtimeBar.style.width = "100%";
+
+
+    // 3. 이동 : 해당순번 슬라이드 li에 클래스 "on" 넣기
+    // 변경대상 : slide 변수
+    // 전체초기화
+    chgSlide(roomList);
+
+    // 4. 블릿연결 : 해당순번 텍스트 li에 클래스 "on" 넣기
+    // 변경대상 : 변수
+    // 전체초기화
+    // chgSlide(indic);
+
+
+};// goSlide 함수
+
+// 버튼에 이벤트 설정
+roomBtn.forEach((ele, idx)=>{
+    ele.onclick = () =>{
+        clearAuto();
+        // 슬라이드 넘어가면 애니메이션 초기화
+        goSlide(idx);
+        
+    }
+})
+
+
+// 3, 4번 페이지 페이드 배너 함수 만들기
+function chgSlide(obj) {
+    // 전체초기화
+    obj.forEach((ele)=>{
+        ele.classList.remove("on");
+    })
+
+    // 해당순번 li에 클래스 넣기
+    obj[snum].classList.add("on");
+}
+
+// 인터벌 함수 지우기 위한 변수
+let autoI;
+// 타임아웃 함수 지우기 위한 변수
+let autoT;
+
+function autoSlide() {
+    console.log("인터발ㅎㅇ");
+    // 인터발함수로 슬라이드 함수 호출
+    autoI = setInterval(()=>{
+        goSlide(1)
+        rtimeBar.style.width = "0";
+        rtimeBar.style.width = "100%";
+        rtimeBar.style.transition = "width 3s linear"
+    }, 3000);
+}/////// autoSlide 함수
+
+// 자동넘김 최초호출
+autoSlide();
+
+function clearAuto() {
+    console.log("인터발 ㅂㅂ");
+    // 1. 인터발 지우기
+    clearInterval(autoI);
+
+    // 2. 타임아웃도 지우지 않으면 쌓여서 타임아웃 쓰나미 실행이 발생
+    clearTimeout(autoT);
+
+    // . 잠시 후 다시 작동하도록 타임아웃으로 인터발함수 호출
+    // 5초후(인터발은 3초후, 토탈 8초후 작동시작)
+    autoT = setTimeout(autoSlide, 5000);
+}
+
 
 // 5번 페이지(ROOM PACKAGE) 요소 li 넣어서 슬라이드 리스트 만들기
 // 대상선정 -> .main_offer_cont 하위 ul
