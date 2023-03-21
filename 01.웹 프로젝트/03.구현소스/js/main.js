@@ -90,17 +90,15 @@ const roomBtn = document.querySelectorAll(".main_room_btn button");
 // 변경 대상 1 : 슬라이드 리스트
 const roomList = roomCont.querySelectorAll("li");
 // 변경 대상 2 : 타임바
-const rtimeBar = document.querySelector(".main_room_time .main_timebar span");
+const rtimeBar = document.querySelector(".main_room_time .main_timebar");
 console.log(rtimeBar);
 
 // 슬라이드 개수 변수
 let scnt = roomList.length
 // 초기값
 roomList[0].classList.add("on");
-setTimeout(()=>{
-    rtimeBar.style.width = "100%";
-    rtimeBar.style.transition = "width 3s linear"
-}, 0)
+rtimeBar.classList.add("on");
+
 
 // 광클금지변수 : 0 - 허용, 1 - 불허용
 let prot = 0;
@@ -138,7 +136,6 @@ const goSlide = (seq) => {
     else if(snum === scnt) snum = 0;
 
     ctnum.innerText = snum+1;
-    rtimeBar.style.width = "100%";
 
 
     // 3. 이동 : 해당순번 슬라이드 li에 클래스 "on" 넣기
@@ -159,7 +156,12 @@ roomBtn.forEach((ele, idx)=>{
     ele.onclick = () =>{
         clearAuto();
         // 슬라이드 넘어가면 애니메이션 초기화
+        rtimeBar.classList.remove("on");
         goSlide(idx);
+        setTimeout(()=>{
+            rtimeBar.classList.add("on");
+        },0)
+        
         
     }
 })
@@ -186,10 +188,7 @@ function autoSlide() {
     // 인터발함수로 슬라이드 함수 호출
     autoI = setInterval(()=>{
         goSlide(1)
-        rtimeBar.style.width = "0";
-        rtimeBar.style.width = "100%";
-        rtimeBar.style.transition = "width 3s linear"
-    }, 3000);
+    }, 5000);
 }/////// autoSlide 함수
 
 // 자동넘김 최초호출
@@ -205,7 +204,7 @@ function clearAuto() {
 
     // . 잠시 후 다시 작동하도록 타임아웃으로 인터발함수 호출
     // 5초후(인터발은 3초후, 토탈 8초후 작동시작)
-    autoT = setTimeout(autoSlide, 5000);
+    autoT = setTimeout(autoSlide, 0);
 }
 
 

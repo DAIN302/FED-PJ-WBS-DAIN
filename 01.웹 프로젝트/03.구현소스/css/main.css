@@ -412,17 +412,24 @@ body {
     height: 100%;
     background-color: #fff;
     /* transition : width 3s linear; */
-    /* animation: timebarAni 3s linear infinite; */
+    
+}
+
+.main_timebar.on span {
+    animation: timebarAni 5s linear infinite;
 }
 
 /* 이미지 진행 시간 애니매이션 키프레임 */
 /* 슬라이드가 바뀔때마다 반복 */
 /* 중간에 이미지가 바뀌면 처음부터 시작 */
-/* @keyframes timebarAni {
+@keyframes timebarAni {
+    0%{
+        width: 0%;
+    }
     100% {
         width : 100%;
     }
-} */
+}
 
 /* 객실 소개 텍스트 박스 */
 .main_room_txt .main_txt {
