@@ -411,8 +411,7 @@ body {
     width: 0;
     height: 100%;
     background-color: #fff;
-    /* transition : width 3s linear; */
-    
+    /* transition : width 3s linear; */  
 }
 
 .main_timebar.on span {
@@ -473,6 +472,25 @@ body {
     transform: translateX(-50%);
 }
 
+.main_dining_img>ul {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.main_dining_img>ul>li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .6s ease-in-out;
+}
+
+.main_dining_img>ul>li.on {
+    opacity: 1;
+    z-index: 1;
+}
+
 .main_dining_img img {
     width: 100%;
     height: 100%;
@@ -484,6 +502,7 @@ body {
     position: absolute;
     bottom: 10px;
     width: 100%;
+    z-index: 1;
 }
 
 .main_dining_name ul {
@@ -497,18 +516,19 @@ body {
     width: 20%;
 }
 
-.main_dining_name a {
+.main_dining_name li>span {
     color: rgba(255,255,255,0.5);
     width: 100%;
     font-size: 2rem;
     transition: color .3s;
     white-space: nowrap;
+    cursor: pointer;
 }
 
-.main_dining_name li.on a {
+.main_dining_name li.on>span {
     color:#fff
 }
-.main_dining_name a:hover {
+.main_dining_name li>span:hover {
     color: rgba(255,255,255,1);
 }
 
@@ -519,14 +539,18 @@ body {
     bottom: auto;
 }
 
+.main_dining_name li.on .main_timebar span {
+    animation: timebarAni 5s linear infinite;
+}
+
 /* 클래스 on이 없으면 시간 바 애니메이션 멈춤 */
-.main_dining_name li .main_timebar::before {
+/* .main_dining_name li .main_timebar span {
     animation-play-state: paused;
-}
+} */
 /* 클래스 on이 들어가면 시간 바 애니메이션 */
-.main_dining_name li.on .main_timebar::before {
+/* .main_dining_name li.on .main_timebar span {
     animation-play-state: running;
-}
+} */
 
 /* 다이닝 소개 텍스트 */
 .main_dining_txt .main_txt {
