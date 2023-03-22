@@ -176,7 +176,6 @@ function scrollFn() {
     let scnt = roomList.length
     // 초기값
     roomList[0].classList.add("on");
-    
     diningList[0].classList.add("on");
 
 
@@ -253,8 +252,8 @@ function scrollFn() {
             setTimeout(()=>{
                 rtimeBar.classList.add("on");
             },0)
-        }
-    })
+        } // click
+    }) // forEach
 
      // 4번 페이지 다이닝 이름 클릭 시 해당되는 다이닝 이미지 보여주기
      diningBtn.forEach((ele, idx)=> {
@@ -267,8 +266,8 @@ function scrollFn() {
             // 전체 다이닝 이름 초기화
             chgSlide(dtimeBar, snum2);
             // clearAuto()
-        }
-    })
+        } // click
+    }) /// forEach
 
 
     // 3, 4번 페이지 페이드 배너 함수 만들기
@@ -280,7 +279,7 @@ function scrollFn() {
 
         // 해당순번 li에 클래스 넣기
         obj[ssnum].classList.add("on");
-    }
+    } // chgSlide
 
     // 인터벌 함수 지우기 위한 변수
     let autoI;
@@ -317,14 +316,21 @@ function scrollFn() {
         clearTimeout(autoT);
 
         // . 잠시 후 다시 작동하도록 타임아웃으로 인터발함수 호출
-        autoT = setTimeout(()=>autoSlide(), 0);
-    }
+        autoT = setTimeout(()=>autoSlide(pgnum), 0);
+    } // clearauto ///////////
 
 
     // 문제1 : 3/4번 페이지 슬라이드 다른 곳으로 슬라이드 했다가 다시 돌아오면
     // 자동넘김 시간이 빨라짐 
     // 원인?? updatePg 함수에서 autoSlide 함수를 호출하는데 이때문에 페이지에 다시 돌아올때마다
     // 인터벌이 겹쳐서 그런것 같음 
+
+
+    // 슬라이드 진행 초기화 함수
+    function initSlide() {
+        // 1. 인터발 지우기
+        clearInterval(autoI);
+    } // initSlide 
 
        
 
