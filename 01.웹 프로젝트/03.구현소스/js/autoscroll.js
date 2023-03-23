@@ -304,6 +304,9 @@ function scrollFn() {
                 dgoSlide()
             }, 5000);
         }
+        else {
+            initSlide();
+        }
     }/////// autoSlide 함수  
     
 
