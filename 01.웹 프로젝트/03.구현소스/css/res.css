@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* 서브페이지 CSS - res.css */
+
+/* 공통 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+@import url(subcommon.css);
+
+
+/* 3. 오시는 길 */
+.sub_cont_res {
+    padding-bottom: 50px;
+}
+
+
+/* 아코디언 메뉴 박스 */
+.sub_cont_restxt h3 {
+    position: relative;
+    font-size: min(2vw, 2rem);
+    border-bottom: 1px solid #ccc;
+    padding: 2vh 0;
+    cursor: pointer;
+}
+.sub_cont_res div:first-of-type h3 {
+    border-top: 1px solid #000;
+}
+
+.sub_cont_restxt h3 span {
+    display: inline-block;
+    padding-left: 2%;
+}
+/* .sub_cont_restxt h3 span:nth-child(2) {
+    position: absolute;
+    line-height: 1.5;
+    padding-left: 0;
+    right: 2%;
+    transition : transform .3s ease-in-out;
+} */
+.sub_cont_restxt h3.active .fa-solid {
+    transform: rotate(-180deg);
+}
+
+.sub_cont_resdesc {
+    background-color: #f8f8f8;
+    /* transition: height .4s ease-in-out; */
+}
+
+.sub_cont_resdesc.hidden {
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
