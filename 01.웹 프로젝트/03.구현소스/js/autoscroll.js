@@ -289,6 +289,8 @@ function scrollFn() {
     function autoSlide(c) {
        // 3번 페이지 왔을 때 자동 넘김 작동 
        if(c===2) {
+            
+            initSlide();
             console.log("3번");
             rtimeBar.classList.add("on");
             // 인터발함수로 슬라이드 함수 호출
@@ -298,6 +300,9 @@ function scrollFn() {
         } //if
         // 4번 페이지 왔을 때 자동 넘김 작동
         else if (c===3) {
+            
+            initSlide();
+            rtimeBar.classList.remove("on");
             console.log("4번")    
             // 인터발함수로 슬라이드 함수 호출
             autoI = setInterval(()=>{
@@ -306,6 +311,7 @@ function scrollFn() {
         }
         else {
             initSlide();
+            rtimeBar.classList.remove("on");
         }
     }/////// autoSlide 함수  
     
