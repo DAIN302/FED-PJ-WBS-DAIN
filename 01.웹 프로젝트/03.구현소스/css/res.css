@@ -29,7 +29,7 @@
 
 .sub_cont_restxt h3 span {
     display: inline-block;
-    padding-left: 2%;
+    /* padding-left: 2%; */
 }
 /* .sub_cont_restxt h3 span:nth-child(2) {
     position: absolute;
