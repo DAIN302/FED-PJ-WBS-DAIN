@@ -144,13 +144,11 @@ function scrollFn() {
             top.classList.add("on");
             ind.classList.add("on"); 
             ctmove.classList.add("on");
-            dtimeBar[0].classList.add("on");
         }
         else {
             top.classList.remove("on");
             ind.classList.remove("on");
             ctmove.classList.remove("on");
-            dtimeBar[0].classList.remove("on");
         }
     } // chgColor 함수
 
@@ -240,6 +238,7 @@ function scrollFn() {
         // 변경대상 :  dtimeBar 변수
         // 전체초기화
         chgSlide(dtimeBar, snum2);
+
     };// dgoSlide 함수
 
     // 3번 페이지 버튼에 이벤트 설정
@@ -289,7 +288,6 @@ function scrollFn() {
     function autoSlide(c) {
        // 3번 페이지 왔을 때 자동 넘김 작동 
        if(c===2) {
-            
             initSlide();
             console.log("3번");
             rtimeBar.classList.add("on");
@@ -300,14 +298,17 @@ function scrollFn() {
         } //if
         // 4번 페이지 왔을 때 자동 넘김 작동
         else if (c===3) {
-            
             initSlide();
             rtimeBar.classList.remove("on");
+            dtimeBar[0].classList.add("on");
             console.log("4번")    
             // 인터발함수로 슬라이드 함수 호출
             autoI = setInterval(()=>{
                 dgoSlide()
             }, 5000);
+            if(snum2!==0) {
+                dtimeBar[0].classList.remove("on");
+            } //슬라이드 번호가 0이 아니면 on 제거
         }
         else {
             initSlide();
@@ -328,22 +329,9 @@ function scrollFn() {
         autoT = setTimeout(()=>autoSlide(pgnum), 0);
     } // clearauto ///////////
 
-
-    // 문제1 : 3/4번 페이지 슬라이드 다른 곳으로 슬라이드 했다가 다시 돌아오면
-    // 자동넘김 시간이 빨라짐 
-    // 원인?? updatePg 함수에서 autoSlide 함수를 호출하는데 이때문에 페이지에 다시 돌아올때마다
-    // 인터벌이 겹쳐서 그런것 같음 
-    // 4번 페이지는 바로 빨라지지 않고 다른 식당 이름 클릭하면 슬라이드 넘김이 빨라짐
-
-
     // 슬라이드 진행 초기화 함수
     function initSlide() {
         // 1. 인터발 지우기
         clearInterval(autoI);
     } // initSlide 
-
-       
-
-    
-
 }

@@ -90,7 +90,7 @@
     display: block;
     width: 100%;
     color: #fff;
-    font-size: min(1.6vw, 16px);
+    font-size: min(1.4vw, 16px);
 }
 
 .top.top_on>.gnb>.menu_top>li>a,
@@ -178,22 +178,6 @@
     /* transition: height .3s ease-out; */
 }
 
-/* .menu_top li.sm::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 0;
-    background-color: rgba(0,0,0,0.3);
-    z-index: -2;
-} */
-
-/* .menu_top li:hover::after {
-    height: 100vh;
-} */
-
-
 .top.slim .menu_top li.sm::before {
     top : 50px;
 }
@@ -259,7 +243,7 @@
     /* width: 100%;
     height: 100%; */
     padding: 1.2vh 2vw;
-    font-size: min(1.6vw, 16px);
+    font-size: min(1.4vw, 16px);
     color: #fff;
     border: 1px solid #fff;
     box-sizing: border-box;
@@ -290,6 +274,18 @@
     transition: .6s .3s;
 }
 
+/* 햄버거 버튼 */
+.ham {
+    display: none;
+    position: absolute;
+    right: 5%;
+    background-color: transparent;
+    border: none;
+    color : #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 /* 3. 하단 */
 #info {
     width: 100%;
@@ -300,26 +296,30 @@
     position: relative;
     height: 300px;
     background-color: #000;
-    justify-content: space-between;
-}
-
-.bwrap {
-    flex : 1;
+    justify-content: flex-start;
+    gap: 0 10%;
 }
 
 /* 3-1. 하단로고 */
 .blogo {
     width: 300px;
-    padding : 80px 0 0 40px;
+    padding : 80px 0 0 100px;
     text-align: center;
 }
 
 .blogo figure img {
-    width: 100px;
-    height: 50px;
+    width: 100%;
 }
 .blogo figcaption {
-    font-size: 2rem;
+    padding : 20px 0;
+    font-size: 1.8rem;
+    font-family: 'Source Code Pro', monospace;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.blogo figcaption span {
+    display: block;
 }
 
 .blogo a {
@@ -330,19 +330,19 @@
 /* 3-2. sns 링크 연결 */
 .bsns {
     padding-top: 10px;
-    padding-left: 40px;
+    padding-left: 100px;
     width: 300px;
 }
 .bsns ul {
     display: flex;
     width: 100%;   
     justify-content: center;
-    gap: 0 10px;
+    gap: 0 20px;
 }
 
 .bsns a {
     color:var(--scl);
-    font-size: 3rem;
+    font-size: 3.5rem;
     transition: opacity .3s;
 }
 
@@ -369,7 +369,7 @@
 /* 3-4. 회사정보 */
 .binfo {
     max-width: 600px;
-    color : #ddd;
+    color : #bbb;
     font-size: 1.2rem;
 }
 
@@ -378,6 +378,92 @@
     padding-bottom: 30px;
 }
 
+.binfo address span {
+    display: block;
+    font-size: 1.3rem;
+}
+
 .binfo p {
     color : var(--scl);
 }
+
+
+/* 공통 클래스 미디어쿼리 영역 */
+/* 1024px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+    /* 상단 */
+    .gnb {
+        display: none;
+    }
+    /* 햄버거 버튼 */
+    .top.on .ham {
+        color : #555;
+    }
+
+    .top.subon .ham {
+        color : #555;
+    }
+
+    .ham {
+        display: block;
+    }
+    /* 예약버튼 */
+    .res {
+        right: 10%;
+    }
+
+    /* 하단 */
+    .info {
+        flex-direction: column;
+        align-items: center;
+        height: 280px;
+    }
+
+    /* 하단로고 */
+    .blogo {
+        width: 300px;
+        padding: 10px 0 0;
+        margin: 0 auto;
+    }
+
+    .blogo figure img {
+        width: 70%;
+    }
+
+    .blogo figcaption {
+        padding: 10px 0;
+        font-size: 1.4rem;
+    }
+
+    /* sns */
+    .bsns {
+        padding: 0;
+    }
+
+    .bsns a {
+        font-size: 3rem;
+    }
+
+    /* 하단링크 */
+    .blink {
+        padding:0 0 5px;
+    }
+
+    .blink ul {
+        gap: 0 10px;
+    }
+    .blink a {
+        font-size: 1.2rem;
+    }
+
+    /* 회사정보 */
+
+    .binfo {
+        text-align: center;
+    }
+
+    .binfo address {
+        padding-bottom: 10px;
+    }
+
+} /* 1024px 사이즈 이하 미디어쿼리 끝*/
