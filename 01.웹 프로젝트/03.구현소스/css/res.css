@@ -43,6 +43,7 @@
 }
 
 .sub_cont_resdesc {
+    position: relative;
     background-color: #f8f8f8;
     /* transition: height .4s ease-in-out; */
 }
@@ -52,6 +53,97 @@
     overflow: hidden;
 }
 
+/* 달력 */
+
+.calbtn button {
+    position: absolute;
+    background-color: transparent;
+    border : none;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+}
+
+.calbtn .cal_nextbtn {
+    right: 0;
+}
+
+.calbx{
+    display: flex;
+    justify-content: center;
+    font-size: min(1.6rem, 1.8vw);
+    gap: 0 10%;
+}
+
+.calbx thead>tr th{
+    width: 4vw;
+    height: 4vw;
+    
+}
+
+.calbx thead>tr th:first-child {
+    color : red;
+}
+
+/* 객실 및 인원 */
+.sub_cont_rescnt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub_cont_roomsel {
+    width: 30%;
+    padding: 20px 0 40px;
+}
+
+.sub_cont_roomsel h4{
+    font-size: min(2vw, 2rem);
+    text-align: center;
+    padding: 15px 0;
+}
+
+.sub_cont_numbx {
+    display: flex;
+    gap: 0 5%;
+    justify-content: center;
+    font-size: min(1.5vw, 1.8rem);
+}
+
+.sub_cont_numpeople {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sub_cont_numpeople button {
+    background-color: transparent;
+    border : none;
+    cursor : pointer;
+    font-size: 2rem;
+}
+ 
+.sub_cont_numpeople span {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+
+.sub_cont_numpeople em {
+    display: inline-block;
+    font-style: normal;
+    padding-left: 5px;
+}
+
+/* 주의사항 */
+.sub_cont_resetc {
+    position: absolute;
+    padding-top: 20px;
+    right: 50px;
+}
+
+.sub_cont_resetc span {
+    color : #777;
+    font-size: 1.2rem;
+}
 
 
 

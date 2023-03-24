@@ -164,7 +164,54 @@
               </h3>
               <!-- (2) 투숙기간 박스(달력) -->
               <div class="sub_cont_resdesc">
-                <div class="sub_cont_rescal"></div>
+                <div class="sub_cont_rescal calendar">
+                  <div class="calbtn">
+                    <button class="cal_prebtn">
+                      <span class="fa-solid fa-chevron-left"></span>
+                    </button>
+                    <button class="cal_nextbtn">
+                      <span class="fa-solid fa-chevron-right"></span>
+                    </button>
+                  </div>
+                  <div class="calbx sub_cont_calbx">
+                    <table class="curr_month">
+                        <caption>
+                          <span class="yeartit"></span>
+                          <span class="month"></span>
+                        </caption>
+                        <thead>
+                          <tr>
+                            <th>SUN</th>
+                            <th>MON</th>
+                            <th>TUE</th>
+                            <th>WED</th>
+                            <th>THU</th>
+                            <th>FRI</th>
+                            <th>SAT</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <table class="next_month">
+                        <caption>
+                          <span class="yeartit"></span>
+                          <span class="month"></span>
+                        </caption>
+                        <thead>
+                          <tr>
+                            <th>SUN</th>
+                            <th>MON</th>
+                            <th>TUE</th>
+                            <th>WED</th>
+                            <th>THU</th>
+                            <th>FRI</th>
+                            <th>SAT</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="sub_cont_restxt">
@@ -183,10 +230,67 @@
               </h3>
               <!-- (2) 객실 및 인원 선택 박스 -->
               <div class="sub_cont_resdesc">
-                <div class="sub_cont_rescnt"></div>
+                <div class="sub_cont_rescnt">
+                  <div class="sub_cont_roomsel" data-roomnum="1">
+                    <h4>객실 1</h4>
+                    <div class="sub_cont_numbx">
+                      <div class="sub_cont_numpeople" data-target="adult">
+                        <input type="hidden" class="adultcnt" value="2">
+                        <button class="btndown">-</button>
+                        <span>성인<em>2</em></span>
+                        <button class="btnup">+</button>
+                      </div>
+                      <div class="sub_cont_numpeople" data-target="child">
+                        <input type="hidden" class="childcnt" value="0">
+                        <button class="btndown">-</button>
+                        <span>어린이<em>0</em></span>
+                        <button class="btnup">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sub_cont_roomsel" data-roomnum="2">
+                    <h4>객실 2</h4>
+                    <div class="sub_cont_numbx">
+                      <div class="sub_cont_numpeople" data-target="adult">
+                        <input type="hidden" class="adultcnt" value="0">
+                        <button class="btndown">-</button>
+                        <span>성인<em>0</em></span>
+                        <button class="btnup">+</button>
+                      </div>
+                      <div class="sub_cont_numpeople" data-target="child">
+                        <input type="hidden" class="childcnt" value="0">
+                        <button class="btndown">-</button>
+                        <span>어린이<em>0</em></span>
+                        <button class="btnup">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sub_cont_roomsel" data-roomnum="3">
+                    <h4>객실 3</h4>
+                    <div class="sub_cont_numbx">
+                      <div class="sub_cont_numpeople" data-target="adult">
+                        <input type="hidden" class="adultcnt" value="0">
+                        <button class="btndown">-</button>
+                        <span>성인<em>0</em></span>
+                        <button class="btnup">+</button>
+                      </div>
+                      <div class="sub_cont_numpeople" data-target="child">
+                        <input type="hidden" class="childcnt" value="0">
+                        <button class="btndown">-</button>
+                        <span>어린이<em>0</em></span>
+                        <button class="btnup">+</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+            <!-- 주의사항 -->
+            <div class="sub_cont_resetc">
+              <span>* 최대 3개 객실 예약 가능</span>
+              <span>* 어린이 기준 : 37개월 ~ 만 12세</span>
+            </div>
+        </div>
           <!-- 4. 위로 가기 버튼 -->
           <aside class="gotop">
             <div class="gotop_btn">
