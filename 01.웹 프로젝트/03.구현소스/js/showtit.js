@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded",()=> {
 
     // 글자 변수 할당
     const txtTit = titName.innerText;
-    console.log(txtTit);
+    //console.log(txtTit);
     // 글자 초기화
     titName.innerText = "";
     // 코드 저장 변수 
