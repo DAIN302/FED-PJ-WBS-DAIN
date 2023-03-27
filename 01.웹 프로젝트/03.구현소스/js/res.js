@@ -18,10 +18,7 @@ $(document).ready(function() {
     // 숫자 변수
     let cnt = 0;
 
-    // let acnt = [];
-
     // 숫자 적용 변수
-    // let acnt1, acnt2, acnt3, ccnt1, ccnt2, ccnt3;
 
     let adultCounts = [];
     let childCounts = [];
@@ -36,6 +33,10 @@ $(document).ready(function() {
     function roomCount() {
         // 마이너스 버튼 클릭 시 인원 감소
         btndown.click(function() {
+            let buttonIndex = $(this).parent().parent().parent().attr("data-roomnum");
+
+            let isAdult = $(this).parent().attr("data-target") === "adult";
+
             let miNum = $(this).next().find("em");
             cnt = miNum.text();
             if(cnt!==0) {
@@ -45,11 +46,23 @@ $(document).ready(function() {
             miNum.text(cnt).parent().siblings("input").attr("value", cnt); 
 
             // 어른 숫자 반영
-            // acnt1 = roomsel.eq(0).find("em").parent().siblings().filter(".adultcnt").attr("value");
-            // acnt2 = roomsel.eq(1).find("em").parent().siblings().filter(".adultcnt").attr("value");
-            // acnt3 = roomsel.eq(2).find("em").parent().siblings().filter(".adultcnt").attr("value");
             
             // resNum(".sub_cont_acnt").find("em").text(parseInt(acnt1)+parseInt(acnt2)+parseInt(acnt3));
+
+            // 어른 숫자 반영
+            if(isAdult) adultCounts[buttonIndex - 1] = cnt;
+            // 어린이 숫자 반영
+            else childCounts[buttonIndex - 1] = cnt;
+
+            let totalAdultNumber = GetTotalAdultNumber();
+            let totalChildNumber = GetTotalChildNumber();
+            resNum(".sub_cont_acnt").find("em").text(totalAdultNumber);
+            resNum(".sub_cont_ccnt").find("em").text(totalChildNumber);
+            if(totalChildNumber < 1){
+                resNum(".sub_cont_ccnt").css({
+                    display : "none"
+                });
+            }
         })
     
         // 플러스 버튼 클릭 시 인원 증가
@@ -64,7 +77,9 @@ $(document).ready(function() {
             if(cnt > 6) return;
             plusNum.text(cnt).parent().siblings("input").attr("value", cnt); 
 
+            // 어른 숫자 반영
             if(isAdult) adultCounts[buttonIndex - 1] = cnt;
+            // 어린이 숫자 반영
             else childCounts[buttonIndex - 1] = cnt;
 
             let totalAdultNumber = GetTotalAdultNumber();
@@ -77,11 +92,8 @@ $(document).ready(function() {
                 });
             }
         })
-
-
         
     } // roomCount
-
 
 
     // 호출 
