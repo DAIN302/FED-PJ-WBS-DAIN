@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+/* 메인페이지 미디어쿼리 CSS */
+
+
+/* 1024px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+    /* 메인페이지 공통 */
+    body {
+        overflow-y : scroll;
+    }
+    
+    /* 1번 페이지 */
+    .main_res_form {
+        display: none;
+    }
+
+    /* 예약버튼 디자인 */
+    .main_res_btn {
+        display: block;
+    }
+
+    /* 2번 페이지 */
+    /* 텍스트 공통 */
+    .main_txt {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .main_txt h2 {
+        text-align: center;
+        font-size: min(3vw, 3rem);
+    }
+
+    .main_txt p {
+        text-align: center;
+        font-size: min(1.4vw, 1.6rem);
+    }
+
+    /* 3번 페이지 */
+    .main_room_txt .main_txt h2{
+        text-align: left;
+    }
+    .main_room_txt .main_txt p{
+        text-align: left;
+    }
+
+    .main_room_txt h4 {
+        font-size: 1.2rem;
+    }
+
+    /* 4번 페이지 */
+    /* 다이닝 소개 텍스트 */
+    .main_dining_txt .main_txt {
+        left: 50%;
+    }
+
+    /* 5번 페이지 */
+    /* 패키지 텍스트 박스 */
+    .main_offer_txt .main_txt {
+        left: 50%;
+    }
+
+    .main_offer_cont {
+        height: 40vh;
+    }
+} /* 1024px 사이즈 이하 미디어쿼리 끝*/
+
+
+/* 860px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 860px) {
+    /*  3번 페이지 */
+    .main_room_cont {
+        flex-direction: column-reverse;
+    }
+
+    .main_room_cont>div:first-child {
+        flex: 1;
+    }
+
+    .main_room_img {
+        height: auto;
+    }
+    .main_room_img li {
+        height: 40vh;
+        top: 30%;
+    }
+
+    /* 이미지 넘기기 버튼 */
+    .main_room_btn {
+        width: 15%;
+        left: 50%;
+        top: auto;
+        transform: translate(-50%, -50%);
+        bottom: 10%;
+    }
+
+    .main_room_btn button {
+        font-size: 3rem;
+        color : #fff;
+    }
+
+    .main_room_time {
+        justify-content: space-between;
+        width: 3vw;
+        bottom: 10%;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.2rem;
+    }
+
+    /* 타임바 */
+    .main_timebar {
+        display: none;
+    }
+    
+
+} /* 860px 사이즈 이하 미디어쿼리 끝*/

@@ -246,7 +246,7 @@ body {
 }
 
 /* 서치버튼 디자인 */
-#sbtn > input {
+#sbtn > input, .main_res_btn a {
     width: min(16vw, 200px);
     height: 60px;
     border: none;
@@ -258,10 +258,26 @@ body {
 }
 
 /* 서치버튼 마우스 오버시 디자인 변경 */
-#sbtn > input:hover {
+#sbtn > input:hover, .main_res_btn a:hover {
     background-color: #000;
     color :#fff;
 }
+
+/* 예약버튼 디자인 */
+.main_res_btn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: none;
+}
+.main_res_btn a {
+    display: inline-block;
+    line-height: 5vh;
+    height: 5vh;
+}
+
 
 /***** 2번 페이지 *****/
 #pg2 .main_back_img {
@@ -442,19 +458,45 @@ body {
 }
 
 .main_room_txt h4 a {
+    position: relative;
     color: #fff;
     cursor: pointer;
     display: inline-block;
     font-family: 'Source Code Pro', monospace;
 }
 
-.main_room_txt h4 a::after {
+.main_room_txt h4 a::before {
     content: '';
+    position: absolute;
+    bottom: 0;
     display: block;
     width: 100%;
     height: 1px;
+    left: 0;
     background-color: #fff;
+    transition: all .4s ease-in-out;
 }
+.main_room_txt h4 a::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: all .4s ease-in-out .4s;
+}
+
+.main_room_txt h4 a:hover::before {
+    width: 0;
+    left: 100%;
+}
+.main_room_txt h4 a:hover::after {
+    width: 100%;
+}
+
+
 
 
 /***** 4번 페이지 *****/
@@ -543,15 +585,6 @@ body {
     animation: timebarAni 5s linear infinite;
 }
 
-/* 클래스 on이 없으면 시간 바 애니메이션 멈춤 */
-/* .main_dining_name li .main_timebar span {
-    animation-play-state: paused;
-} */
-/* 클래스 on이 들어가면 시간 바 애니메이션 */
-/* .main_dining_name li.on .main_timebar span {
-    animation-play-state: running;
-} */
-
 /* 다이닝 소개 텍스트 */
 .main_dining_txt .main_txt {
     width: 90vw;
@@ -569,7 +602,7 @@ body {
 
 /* 패키지 텍스트 박스 */
 .main_offer_txt .main_txt {
-    top: 38%;
+    top: 30%;
     left: 10%;
 }
 
@@ -577,7 +610,7 @@ body {
 .main_offer_cont {
     position: absolute;
     width: 90vw;
-    height: 450px;
+    height: 50vh;
     padding: 2vh 5vw;
     bottom: 5%;
     left: 50%;
@@ -620,12 +653,14 @@ body {
 .main_offer_cont>.listbx {
     position: relative;
     width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
 .main_offer_cont>.listbx>.listslide {
     position: relative;
     width: 200%;
+    height: 100%;
     left: 0;
     display: flex;
     justify-content: space-between;
@@ -656,7 +691,7 @@ body {
 
 
 .main_offer_contwrap {
-    width: 20.5vw;
+    width: 100%;
 }
 
 .main_offer_cont figure>img {
@@ -665,11 +700,11 @@ body {
 }
 
 .main_offer_cont h3 {
-    font-size: min(2vw, 2.2rem);
+    font-size: min(1.8vw, 2.2rem);
     padding: 2rem 0 0.5rem 0;
 }
 .main_offer_cont h4 {
-    font-size: min(1.8vw, 1.8rem);
+    font-size: min(1.6vw, 1.8rem);
     padding-bottom: 2rem;
     color : #333;
     border-bottom: 1px solid #ccc;

@@ -22,13 +22,13 @@ $(document).ready(function() {
 
     let adultCounts = [];
     let childCounts = [];
+    let roomCounts = 1;
 
     adultCounts[0] = 2;
 
+
     // 어린이 인원 0일 시 표시 X
-    resNum(".sub_cont_ccnt").css({
-        display : "none"
-    })
+    resNum(".sub_cont_ccnt").hide();
 
     function roomCount() {
         // 마이너스 버튼 클릭 시 인원 감소
@@ -59,24 +59,25 @@ $(document).ready(function() {
             resNum(".sub_cont_acnt").find("em").text(totalAdultNumber);
             resNum(".sub_cont_ccnt").find("em").text(totalChildNumber);
             if(totalChildNumber < 1){
-                resNum(".sub_cont_ccnt").css({
-                    display : "none"
-                });
+                resNum(".sub_cont_ccnt").hide()
             }
         })
     
         // 플러스 버튼 클릭 시 인원 증가
         btnup.click(function(){
             let buttonIndex = $(this).parent().parent().parent().attr("data-roomnum");
-
             let isAdult = $(this).parent().attr("data-target") === "adult";
-
             let plusNum = $(this).prev().find("em");
             cnt = plusNum.text();
             cnt++;
-            if(cnt > 6) return;
+            if(cnt > 5) return;
             plusNum.text(cnt).parent().siblings("input").attr("value", cnt); 
 
+            adultValueNumber = parseInt(plusNum.text(cnt).parent().siblings("input").filter(".adultcnt").attr("value"));
+            console.log(adultValueNumber);
+            if(adultValueNumber === 0) {
+                
+            } 
             // 어른 숫자 반영
             if(isAdult) adultCounts[buttonIndex - 1] = cnt;
             // 어린이 숫자 반영
@@ -84,13 +85,21 @@ $(document).ready(function() {
 
             let totalAdultNumber = GetTotalAdultNumber();
             let totalChildNumber = GetTotalChildNumber();
+            
             resNum(".sub_cont_acnt").find("em").text(totalAdultNumber);
             resNum(".sub_cont_ccnt").find("em").text(totalChildNumber);
+            
             if(totalChildNumber > 0){
-                resNum(".sub_cont_ccnt").css({
-                    display : "inline-block"
-                });
+                resNum(".sub_cont_ccnt").show();
             }
+
+            // if(buttonIndex==="2") {
+            //     resNum(".sub_cont_rcnt").find("em").text(roomCounts);
+            // }
+            // else if(buttonIndex==="3") {
+            //     roomCounts = parseInt(buttonIndex);
+            //     resNum(".sub_cont_rcnt").find("em").text(roomCounts);
+            // }
         })
         
     } // roomCount

@@ -175,6 +175,56 @@
     font-size: 1.2rem;
 }
 
+/* 서치 버튼 */
+.sub_cont_search {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    width: min(15vw, 180px);
+    height: min(4.5vh, 45px);
+    background-color: var(--scl);
+    border: 1px solid var(--scl);
+    box-sizing: border-box;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border .3s ease-in-out;
+}
+.sub_cont_search a{
+    position: absolute;
+    display: block;
+    font-size: min(1.6vw, 16px);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Source Code Pro', monospace;
+    line-height: 2.5;
+    transition: color .5s ease-in-out;
+}
+
+.sub_cont_search::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -300%;
+    width : 200%;
+    height : 100%;
+    background-color: #fff;
+    transform: skew(-45deg);
+    transition : left .8s ease-in-out;
+}
+
+.sub_cont_search:hover {
+    border: 1px solid #000;
+}
+
+.sub_cont_search:hover::before {
+    left : -30%;
+}
+
+.sub_cont_search:hover a {
+    color : #000;
+}
 
 
 
