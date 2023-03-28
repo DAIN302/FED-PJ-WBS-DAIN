@@ -140,7 +140,7 @@
     border-bottom: 1px solid #ccc;
 }
 
-.sub_cont_rescnt>div:first-child .sub_cont_numpeople {
+.sub_cont_numbx.active .sub_cont_numpeople {
     border-color: #000;
 }
 

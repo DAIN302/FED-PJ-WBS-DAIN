@@ -185,3 +185,32 @@
 }
 
 
+/* 미디어쿼리 */
+
+/* 1024px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+    .rcont_txt h3 {
+        font-size: min(1.8vw, 1.5rem);
+    }
+    .rcont_txt h4 {
+        font-size: min(2vw, 2.5rem);
+    }
+
+} /* 1024px 사이즈 이하 미디어쿼리 끝*/
+
+/* 860px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 860px) {
+    .rcont ul>li {
+        width: 100%;
+    }
+
+    .rcont ul > li:nth-child(2n+1) {
+        margin-right: 0;
+    }
+
+    .rcont figcaption {
+        display: none;
+    }
+
+} /* 860px 사이즈 이하 미디어쿼리 끝*/
+

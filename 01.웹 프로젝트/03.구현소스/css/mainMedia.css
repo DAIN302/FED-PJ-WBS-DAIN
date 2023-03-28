@@ -69,6 +69,11 @@
 
 /* 860px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 860px) {
+    /* 페이지 이동 인디케이터 */
+    .main_nav {
+        display: none;
+    }
+
     /*  3번 페이지 */
     .main_room_cont {
         flex-direction: column-reverse;
@@ -127,9 +132,57 @@
 
     /* 객실 소개 텍스트 박스 */
     .main_room_txt .main_txt {
-        width: 90%;
+        width: 100%;
+        left: 50%;
         top: 35%;
+        text-align: center;
+        
     }
+
+    .main_room_txt .main_txt h2 {
+        text-align: center;
+    }
+    .main_room_txt .main_txt p {
+        text-align: center;
+    }
+
+    .main_room_txt h4 {
+        padding-top: 0;
+    }
+
+    /* 4번 페이지 */
+    /* 다이닝 이름 */
+    .main_dining_name {
+        position: absolute;
+        bottom: -10%;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .main_dining_name ul {
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .main_dining_name li {
+        width: auto;
+    }
+
+    .main_dining_name li>span {
+        color: rgba(5,5,5,0.5);
+        width: auto;
+        font-size: 1.1rem;
+    }
+
+    .main_dining_name li.on>span {
+        color:#555;
+    }
+
+    .main_dining_name li>span:hover {
+        color: #555;
+    }
+
+    /* 5번 페이지 */
     
 
 } /* 860px 사이즈 이하 미디어쿼리 끝*/

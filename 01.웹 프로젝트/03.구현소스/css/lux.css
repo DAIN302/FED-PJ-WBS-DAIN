@@ -46,7 +46,7 @@
 
 .sub_cont_tit h3 {
     font-family: 'Source Code Pro', monospace;
-    font-size: 2rem;
+    font-size: min(2.4vw, 2rem);
     color : #d7d7d7;
     text-shadow: 1px 1px 5px #777;
     opacity: 0;
@@ -60,7 +60,7 @@
 }
 
 .sub_cont_tit h2 {
-    font-size: 6rem;
+    font-size: min(6vw, 6rem);
     font-family: 'Source Code Pro', monospace;
     text-shadow: 1px 3px 20px #777;
     animation: titAni .8s ease-in-out forwards;
@@ -83,7 +83,7 @@
 
 .sub_cont_tit p {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.8rem;
+    font-size: min(1.6vw, 1.8rem);
     padding-top: 3%;
     width: 60vw;
     color : #eee;
@@ -312,7 +312,7 @@
 /* 테이블 제목 */
 .sub_cont_ament th {
     font-family: 'Source Code Pro', monospace;
-    font-size: 2rem;    
+    font-size: min(1.8vw, 2rem);    
     border-top: 1px solid #000;
     border-bottom: 1px solid #d8d8d8;
     padding: 20px 0;
@@ -478,4 +478,36 @@
 .gotop span:hover {
     color : var(--scl);
 }
+
+/* 미디어쿼리 */
+
+/* 860px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 860px) {
+    /*  어메니티 */
+    .sub_cont_ament td {
+        padding-left: 10px;
+    }
+    /* 서비스 */
+    .sub_cont_sercont>ol>li {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sub_cont_serimg {
+        width: 100%;
+    }
+    
+    .sub_cont_serimg img {
+        aspect-ratio: 2/1;
+    }
+
+    .sub_cont_sertxt {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 10px;
+    }
+
+} /* 860px 사이즈 이하 미디어쿼리 끝*/
+
+
 
