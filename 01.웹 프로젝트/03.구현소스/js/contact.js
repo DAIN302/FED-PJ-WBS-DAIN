@@ -3,6 +3,7 @@
 $(document).ready(function() {
     // 1. 처음에 다 숨기기
     $(".sub_cont_locadesc").addClass("hidden");
+    // 2. 클릭이벤트 설정
     $(".sub_cont_locatxt>h3").click(function(){
         // 2-0. 다른 h3 요소 클릭 시 다른 메뉴는 접히기
         $(".sub_cont_locatxt>h3").not(this).removeClass("active")
