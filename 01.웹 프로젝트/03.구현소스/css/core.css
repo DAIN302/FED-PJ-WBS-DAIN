@@ -30,11 +30,10 @@ body::-webkit-scrollbar {
 }
 body::-webkit-scrollbar-thumb {
     background-color: rgba(5,5,5,0.5);
-    /* background-color: red; */
 }
 body::-webkit-scrollbar-track {
     /* 스크롤바 */
-    background-color: #000;
+    background-color: rgba(5,5,5,0.5);
 }
 
 :root {
