@@ -183,6 +183,56 @@
     }
 
     /* 5번 페이지 */
+
+    .main_offer_txt .main_txt {
+        top: 20%;
+    }
+    /* 버튼 안보이게 */
+    .main_offer_btn {
+        display: none;
+    }
+
+    .main_offer_cont {
+        width: 60%;
+        height: 50%;
+        bottom: 10%;
+        padding: 0;
+    }
+    .main_offer_cont>.listbx>.listslide  {
+        display: none;
+    }
+
+    .main_offer_cont>.listbx>.listslide_mobile {
+        display: block;
+        height: 100%;
+        width: 600%;
+    }
+    .main_offer_cont>.listbx>.listslide_mobile>ul {
+        position: relative;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        left: 0;
+    }
+    .main_offer_cont>.listbx>.listslide_mobile>ul>li {
+        height: 100%;
+        width: 100%;
+    }
+    
+    .main_offer_cont>.listbx>.listslide_mobile>ul>li a{
+        display: block;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        padding: 2rem;
+        width: 100%;
+        height: auto;
+    }
     
 
 } /* 860px 사이즈 이하 미디어쿼리 끝*/
+
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
+    
+} /* 600px 사이즈 이하 미디어쿼리 끝*/

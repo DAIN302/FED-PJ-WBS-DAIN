@@ -105,23 +105,26 @@ dImgList();
 // 5번 페이지(ROOM PACKAGE) 요소 li 넣어서 슬라이드 리스트 만들기
 // 대상선정 -> .main_offer_cont 하위 ul
 const packCont = document.querySelector(".main_offer_cont .listslide");
+const packContMobile = document.querySelector(".main_offer_cont .listslide_mobile>ul");
+console.log(packContMobile);
 // 버튼
 const offerBtn = document.querySelectorAll(".main_offer_btn");
 // console.log(offerBtn[1]);
 
 // 함수 기능 : packCont 내부에 객체 데이터를 이용해서 리스트 넣기
 function roomPack() {
+    let mobileHcode = "";
     let hcode = "";
 
     // 임시순번변수
     let temp = 0;
     
+    
     for(let x in pdata) {
         let data = pdata[x];
         console.log(x);
-
         if(temp===0||temp===3)hcode += "<ul>";
-        
+
         hcode += `
         <li>
             <a href="#">
@@ -148,15 +151,41 @@ function roomPack() {
          </li>
         `;
 
-        
-        if(temp===2||temp===5)hcode += "</ul>";
+        mobileHcode += `
+        <li data-seq="${temp}">
+            <a href="#">
+                <div class="main_offer_contwrap">
+                    <figure>
+                        <img
+                            src="./images/main/offer/${data.img}"
+                            alt="패키지이미지"/>
+                    </figure>
+                    <h3>${data.tit}</h3>
+                    <h4>${data.subtit}</h4>
+                    <div class="main_offer_prd">
+                    <div class="main_offer_day">
+                        <span>예약기간</span>
+                        <span>${data.res}</span>
+                    </div>
+                    <div class="main_offer_day">
+                        <span>투숙기간</span>
+                        <span>${data.stay}</span>
+                    </div>
+                    </div>
+                </div>
+            </a>
+         </li>
+        `;
 
+        if(temp===2||temp===5)hcode += "</ul>";
+        
         // temp증감
         temp++;
-
+        
     } // for in
     
     packCont.innerHTML = hcode;
+    packContMobile.innerHTML = mobileHcode;
     // 버튼 클릭시 다음 슬라이드로 넘어가기 기능
     // 다음 버튼
     offerBtn[1].onclick = () => {
@@ -177,5 +206,22 @@ function roomPack() {
 // 함수 호출
 roomPack();
 
+// bullet 변수
+const mobileBullet = document.querySelectorAll(".listslide_mobilebullet>ol>li")
+console.log(mobileBullet);
+// 5번 페이지 모바일에서 슬라이드 
+function roompackSlide() {
+
+}
+
+
+
+// 불릿 클릭 시
+mobileBullet.forEach((ele)=> {
+    ele.onclick = function() {
+        ele.classList.add("on");
+        
+    }
+})
 
 } // mainFn
