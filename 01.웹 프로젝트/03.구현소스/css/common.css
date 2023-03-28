@@ -285,6 +285,156 @@
     font-size: 2rem;
     cursor: pointer;
 }
+/* 모바일 gnb 메뉴 */
+.gnb_mobliebx {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    z-index: 9999;
+}
+
+.gnb_mobile_backgroundbx {
+    position: absolute;
+    width: 60%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    
+}
+
+.gnb_mobile_menubx {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+    
+}
+
+.gnb_mobile_topbx {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 5%;
+    background-color: #000;
+}
+
+.gnb_mobile_topbx ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gnb_mobile_topbx li {
+    padding: 0 10px;
+}
+
+.gnb_mobile_topbx a {
+    display: inline-block;
+    width: 120px;
+    color : #fff;
+    font-size: min(1.6vw, 2rem);
+}
+
+.gnb_mobile_topbx img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.gnb_mobile_topbx button {
+    color : #fff;
+    border:none;
+    background-color: transparent;
+    font-size: min(1.6vw, 2rem);
+    cursor: pointer;
+}
+
+nav.gnb_mobile_menu {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+}
+
+.gnb_mobile_menu h3 {
+    position: relative;
+    font-size: min(2.4vw, 2.3rem);
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    cursor : pointer;
+    transition: color .5s;
+}
+.gnb_mobile_menu h3 .fa-solid {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform .3s;
+}
+
+.gnb_mobile_menu>ul>li.on h3 {
+    color : var(--scl);
+}
+
+.gnb_mobile_menu>ul>li.on h3 .fa-solid {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.mobile_menu_sub {
+    background-color: #f2f2f2;
+}
+
+.mobile_menu_sub>li {
+    padding: 10px;
+}
+.mobile_menu_sub>li>a {
+    font-size: min(2.2vw, 2rem);
+}
+
+.mobile_menu_sub>li>ol>li>a {
+    color : #777;
+    font-size: min(2vw, 1.8rem);
+}
+
+.gnb_mobile_bottombx {
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    bottom: 0;
+    background-color: #fafafa;
+}
+
+.gnb_mobile_bottombx ul {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+    align-items : center;
+}
+
+.gnb_mobile_bottombx li {
+    width: 50%;
+}
+
+.gnb_mobile_bottombx li:first-child {
+    border-right: 1px solid #ccc;
+}
+
+
+.gnb_mobile_bottombx a {
+    display: inline-block;
+    width: 100%;
+    padding: 2vh 0;
+    font-size: min(2vw, 1.4rem);
+
+}
+
 
 /* 3. 하단 */
 #info {
