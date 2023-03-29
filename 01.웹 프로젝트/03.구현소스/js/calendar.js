@@ -242,7 +242,7 @@ function MakeCaledar() {
                 $(obj).addClass("checkIn");
                 checkInDate = $(obj).data("day");
                 console.log(checkInDate);
-                $(".checkIn_date").text(getCheckIndateHtml());
+                $(".checkIn_date").text(getCheckDateHtml(checkInDate));
             } 
             else {
                 // 체크인 날짜 한번 더 클릭했을때 동작 X
@@ -260,8 +260,8 @@ function MakeCaledar() {
                     $(obj).addClass("checkIn")
                     $(`.day[data-day"${checkOutDate}"]`).addClass("checkOut");
 
-                    $(".checkIn_date").text(getCheckIndateHtml());
-                    $(".checkOut_date").text(getCheckOutdateHtml());
+                    $(".checkIn_date").text(getCheckDateHtml(checkInDate));
+                    $(".checkOut_date").text(getCheckDateHtml(checkOutDate));
 
                     addClassSelectDay();
 
@@ -272,7 +272,7 @@ function MakeCaledar() {
                 if(checkOutDate==="") {
                     $(obj).addClass("checkOut");
                     checkOutDate = $(obj).data("day");
-                    $(".checkOut_date").text(getCheckOutdateHtml());
+                    $(".checkOut_date").text(getCheckDateHtml(checkOutDate));
 
                     addClassSelectDay();
                 } else {
@@ -286,7 +286,7 @@ function MakeCaledar() {
                     checkInDate = $(obj).data("day");
                     checkOutDate = "";
 
-                    $(".checkIn_date").text(getCheckIndateHtml());
+                    $(".checkIn_date").text(getCheckDateHtml(checkInDate));
                     $(".checkOut_date").text();
                 }
             }
@@ -294,19 +294,12 @@ function MakeCaledar() {
         }
     }
 
-    // 체크인 날짜 표기
-    function getCheckIndateHtml() {
-        checkInDate = checkInDate.toString();
-        return checkInDate.substring(0,4) + "." + checkInDate.substring(4,6)+ "." + checkInDate.substring(6,8) + " " +strWeekDay(weekday(checkInDate));
+    // 체크인/아웃 날짜 표기
+    function getCheckDateHtml(check) {
+        check = check.toString();
+        return check.substring(0,4) + "." + check.substring(4,6)+ "." + check.substring(6,8) + " " +strWeekDay(weekday(check));
     }
     
-    // 체크아웃 날짜 표기
-    function getCheckOutdateHtml() {
-        checkOutDate = checkOutDate.toString();
-        return checkOutDate.substring(0,4) + "." + checkOutDate.substring(4,6)+ "." + checkOutDate.substring(6,8) + " " +strWeekDay(weekday(checkOutDate));
-    }
-
-    // console.log(thisDate, today, thisMonth, currentMonth, currentYear)
     // 몇요일인지 알려주는 함수 (숫자 형태)
     function weekday(YYYYMMDD) {
         const weekday_year = YYYYMMDD.substring(0, 4);
