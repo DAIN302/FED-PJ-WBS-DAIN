@@ -189,7 +189,7 @@
     }
     /* 버튼 안보이게 */
     .main_offer_btn {
-        display: none;
+        /* display: none; */
     }
 
     .main_offer_cont {
@@ -198,7 +198,7 @@
         bottom: 10%;
         padding: 0;
     }
-    .main_offer_cont>.listbx>.listslide  {
+    /* .main_offer_cont>.listbx>.listslide  {
         display: none;
     }
 
@@ -227,7 +227,7 @@
         padding: 2rem;
         width: 100%;
         height: auto;
-    }
+    } */
     
 
 } /* 860px 사이즈 이하 미디어쿼리 끝*/

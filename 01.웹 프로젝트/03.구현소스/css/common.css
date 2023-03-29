@@ -629,4 +629,8 @@ nav.gnb_mobile_menu {
     .gnb_mobile_menubx {
         width: 100%;
     }
+    .res {
+        right: 15%;
+    }
+    
 } /* 600px 사이즈 이하 미디어쿼리 끝*/

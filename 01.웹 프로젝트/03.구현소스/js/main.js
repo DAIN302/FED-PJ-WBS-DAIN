@@ -4,6 +4,32 @@ window.addEventListener("DOMContentLoaded", mainFn);
 
 function mainFn() {
 
+
+
+ // 날짜선택 클릭 시 달력 열리기   
+$(".main_res_chk>input").click(function() {
+    console.log("달력ㅎㅇ");
+    $(".calendar").addClass("active");
+})
+
+
+const closeCalendar = () => {
+    let calendarHeight = $(".calendar").height()
+    let checkOutDateValue = $(".checkOut_date").val()
+    if(calendarHeight>1&&checkOutDateValue!=="날짜 선택") {
+        $(".calendar").removeClass("active");
+    }
+    // 날짜선택하고 다시 열었을때 이상하므로 코드 고칠 필요가 있음 
+}
+
+$(document).on("click", ()=> closeCalendar())
+
+$("div>.current").click(function(){
+    console.log("gd");
+})
+
+
+
 // 예약선택폼 ////////////////////////
 /*
     구현내용 : 
@@ -113,7 +139,7 @@ const offerBtn = document.querySelectorAll(".main_offer_btn");
 
 // 함수 기능 : packCont 내부에 객체 데이터를 이용해서 리스트 넣기
 function roomPack() {
-    let mobileHcode = "";
+    // let mobileHcode = "";
     let hcode = "";
 
     // 임시순번변수
@@ -151,31 +177,31 @@ function roomPack() {
          </li>
         `;
 
-        mobileHcode += `
-        <li data-seq="${temp}">
-            <a href="#">
-                <div class="main_offer_contwrap">
-                    <figure>
-                        <img
-                            src="./images/main/offer/${data.img}"
-                            alt="패키지이미지"/>
-                    </figure>
-                    <h3>${data.tit}</h3>
-                    <h4>${data.subtit}</h4>
-                    <div class="main_offer_prd">
-                    <div class="main_offer_day">
-                        <span>예약기간</span>
-                        <span>${data.res}</span>
-                    </div>
-                    <div class="main_offer_day">
-                        <span>투숙기간</span>
-                        <span>${data.stay}</span>
-                    </div>
-                    </div>
-                </div>
-            </a>
-         </li>
-        `;
+        // mobileHcode += `
+        // <li data-seq="${temp}">
+        //     <a href="#">
+        //         <div class="main_offer_contwrap">
+        //             <figure>
+        //                 <img
+        //                     src="./images/main/offer/${data.img}"
+        //                     alt="패키지이미지"/>
+        //             </figure>
+        //             <h3>${data.tit}</h3>
+        //             <h4>${data.subtit}</h4>
+        //             <div class="main_offer_prd">
+        //             <div class="main_offer_day">
+        //                 <span>예약기간</span>
+        //                 <span>${data.res}</span>
+        //             </div>
+        //             <div class="main_offer_day">
+        //                 <span>투숙기간</span>
+        //                 <span>${data.stay}</span>
+        //             </div>
+        //             </div>
+        //         </div>
+        //     </a>
+        //  </li>
+        // `;
 
         if(temp===2||temp===5)hcode += "</ul>";
         
@@ -185,21 +211,21 @@ function roomPack() {
     } // for in
     
     packCont.innerHTML = hcode;
-    packContMobile.innerHTML = mobileHcode;
+    //packContMobile.innerHTML = mobileHcode;
     // 버튼 클릭시 다음 슬라이드로 넘어가기 기능
     // 다음 버튼
-    offerBtn[1].onclick = () => {
-        packCont.style.left = "-100%";
-        packCont.style.transition = "left .2s";
-        offerBtn[1].style.display = "none";
-        offerBtn[0].style.display = "inline-block";
-    }
+    // offerBtn[1].onclick = () => {
+    //     packCont.style.left = "-100%";
+    //     packCont.style.transition = "left .2s";
+    //     offerBtn[1].style.display = "none";
+    //     offerBtn[0].style.display = "inline-block";
+    // }
     
-    offerBtn[0].onclick = () => {
-        packCont.style.left = 0;
-        offerBtn[0].style.display = "none";
-        offerBtn[1].style.display = "inline-block";
-    }
+    // offerBtn[0].onclick = () => {
+    //     packCont.style.left = 0;
+    //     offerBtn[0].style.display = "none";
+    //     offerBtn[1].style.display = "inline-block";
+    // }
 
 }
 

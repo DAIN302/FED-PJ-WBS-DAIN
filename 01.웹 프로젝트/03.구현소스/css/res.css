@@ -161,6 +161,19 @@
     
 }
 
+.today::after {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
 .checkIn::after, .checkOut::after {
     content: '';
     background-color: var(--scl);
@@ -309,8 +322,43 @@
 }
 
 
+.gotop {
+    display: none;
+}
 
 
+/* 1024px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+    .sub_cont_roomsel {
+        width: 45%;
+    }
+
+}
+/* 1024px 사이즈 이하 미디어쿼리 끝 */
+
+/* 870px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 870px) {
+    .calbx{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calbx > div {
+        width: 70%;
+        height: 300px;
+    }
+    
+    .sub_cont_rescnt {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .sub_cont_roomsel {
+        width: 80%;
+    }
+
+}
+/* 870px 사이즈 이하 미디어쿼리 끝 */
 
 
 

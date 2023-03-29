@@ -135,8 +135,17 @@ body {
 }
 
 /* 체크인/아웃 박스 */
+.main_res_chkbx {
+    position: relative;
+    display: flex;
+}
 .main_res_chk {
     position: relative;
+}
+
+.main_res_chk:nth-child(2) {
+    padding-left: 15px;
+    box-sizing: border-box;
 }
 
 /* 체크인/아웃 박스에 가상요소로 경계선 그리기 */
@@ -156,7 +165,167 @@ body {
     display: block;
     background-color: transparent;
     border: none;
-    color : #fff
+    color : #fff;
+    cursor: pointer;
+    
+}
+
+/* 달력 */
+.calendar {
+    /* display: none; */
+    position: absolute;
+    background-color: #fff;
+    top: 110%;
+    width: 200%;
+    color : #222;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+
+.calendar.active {
+    display: block;
+    opacity: 1;
+    height: 300px;
+
+
+}
+
+.calendar.active .calbtn>div {
+    opacity: 1;
+}
+.calbtn>div {
+    position: absolute;
+    background-color: transparent;
+    border : none;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color : #555;
+    padding: 0 10px;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.calbtn .cal_nextbtn {
+    right: 0;
+}
+
+.calbx{
+    display: flex;
+    justify-content: center;
+    font-size: min(1.4rem, 1.6vw);
+    padding-bottom: 20px;
+    gap: 0 10%;
+}
+.calbx h4 {
+    justify-content: center;
+    display: flex;
+    font-size: min(2.4vw, 2.6rem);
+    font-weight: bold;
+    padding: 20px 0 10px;
+}
+
+.calbx h4 span {
+    display: block;
+}
+
+/* 달력박스 크기 */
+.calbx>div {
+    width: 30%;
+    height: 280px;
+}
+
+.days> .day {
+    color : #555;
+}
+
+/* 일요일은 빨간색 */
+.days>.day:first-child, .dates>.day:nth-child(7n+1) {
+    color : var(--sunColor);
+}
+/* 토요일은 파란색 */
+.days>.day:last-child, .dates>.day:nth-child(7n) {
+    color : var(--satColor);
+}
+
+.dates, .days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 크기설정 -> 7일씩 표시되게 */
+.dates .day, .days .day {
+    width: calc(100%/7);
+    text-align: center;
+    padding: 5px 0;
+}
+
+.dates .day {
+    position: relative;
+}
+.dates .day span{
+    position: relative;
+    padding: 0;
+    z-index: 2;
+}
+.dates .day.current {
+    cursor: pointer;
+}
+
+.dates .day.disable {
+    color : #ddd;
+}
+
+.dates .day.checkIn, .dates .day.checkOut{
+    color : #fff;
+    
+}
+
+.today::after {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.checkIn::after, .checkOut::after {
+    content: '';
+    background-color: var(--scl);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.selectDay::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: var(--sclo);
+    z-index: 1;
+}
+.checkIn.selectDay::before {
+    left: 50%;
+    width: 50%;
+}
+.checkOut.selectDay::before {
+    width: 50%;
 }
 
 /* 숫자선택공통박스 */
@@ -689,9 +858,9 @@ body {
     height: 100%;
 }
 
-.main_offer_cont>.listbx>.listslide_mobile {
+/* .main_offer_cont>.listbx>.listslide_mobile {
     display: none;
-}
+} */
 
 
 .main_offer_contwrap {
@@ -727,7 +896,7 @@ body {
     color : #555;
 }
 
-.listslide_mobilebullet {
+/* .listslide_mobilebullet {
     position: absolute;
     left: 50%;
     bottom: 2%;
@@ -752,19 +921,19 @@ body {
     display: inline-block;
     background-color: rgba(255,255,255,0.8);
     /* border: 1px solid #eee; */
-    border-radius: 50%;
+    /* border-radius: 50%;
     cursor: pointer;
     transition: all .2s;
-}
+} */
 
-.listslide_mobilebullet li.on {
+/* .listslide_mobilebullet li.on {
     width: 7px;
     height: 7px;
 }
 .listslide_mobilebullet li.on span{
     width: 200%;
     background-color: rgba(255,255,255,1);
-}
+}  */
 
 
 

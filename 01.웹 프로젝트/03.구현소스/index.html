@@ -23,6 +23,7 @@
     <script src="./js/mdata.js"></script>
     <!-- 메인 JS -->
     <script src="./js/main.js"></script>
+    <script src="./js/calendar.js"></script>
     <!-- 스크롤액션 JS -->
     <script src="./js/autoscroll.js"></script>
   </head>
@@ -337,15 +338,62 @@
           <div class="main_res">
             <form action="" method="get" class="main_res_form">
               <div class="main_res_cont">
-                <!-- 날짜선택 : 체크인 -->
-                <div class="main_res_chk">
-                  <span>CHECK IN</span>
-                  <input type="text" value="날짜 선택" class="checkIn_date" disabled />
-                </div>
-                <!-- 날짜선택 : 체크아웃 -->
-                <div class="main_res_chk">
-                  <span>CHECK OUT</span>
-                  <input type="text" value="날짜 선택" class="checkOut_date"disabled />
+                <div class="main_res_chkbx">
+                  <!-- 날짜선택 : 체크인 -->
+                  <div class="main_res_chk">
+                    <span>CHECK IN</span>
+                    <input type="text" value="날짜 선택" class="checkIn_date" readonly />
+                  </div>
+                  <!-- 날짜선택 : 체크아웃 -->
+                  <div class="main_res_chk">
+                    <span>CHECK OUT</span>
+                    <input type="text" value="날짜 선택" class="checkOut_date" readonly />
+                  </div>
+                  <!-- 달력 -->
+                  <div class="main_res_cal calendar">
+                    <div class="calbtn">
+                      <div class="cal_prebtn">
+                        <span class="fa-solid fa-chevron-left"></span>
+                      </div>
+                      <div class="cal_nextbtn">
+                        <span class="fa-solid fa-chevron-right"></span>
+                      </div>
+                    </div>
+                    <div class="calbx sub_cont_calbx">
+                      <div class="start_month">
+                        <h4>
+                          <span class="start_yeartit yeartit"></span>
+                          <span class="start_monthtit monthtit"></span>
+                        </h4>
+                        <div class="days">
+                          <div class="day">SUN</div>
+                          <div class="day">MON</div>
+                          <div class="day">TUE</div>
+                          <div class="day">WED</div>
+                          <div class="day">THU</div>
+                          <div class="day">FRI</div>
+                          <div class="day">SAT</div>
+                        </div>
+                        <div class="start_calendar dates"></div>
+                      </div>
+                      <div class="next_month">
+                        <h4>
+                          <span class="next_yeartit yeartit"></span>
+                          <span class="next_monthtit monthtit"></span>
+                        </h4>
+                        <div class="days">
+                          <div class="day">SUN</div>
+                          <div class="day">MON</div>
+                          <div class="day">TUE</div>
+                          <div class="day">WED</div>
+                          <div class="day">THU</div>
+                          <div class="day">FRI</div>
+                          <div class="day">SAT</div>
+                        </div>
+                        <div class="dates last_calendar"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <!-- 객실 수 선택 -->
                 <div class="main_res_select">
@@ -623,7 +671,7 @@
               </button>
               <div class="listbx">
                 <div class="listslide"></div>
-                <div class="listslide_mobile">
+                <!-- <div class="listslide_mobile">
                   <ul></ul>
                   <nav class="listslide_mobilebullet">
                     <ol>
@@ -647,7 +695,7 @@
                       </li>
                     </ol>
                   </nav>
-                </div>
+                </div> -->
               </div>
             </div>
           </section>

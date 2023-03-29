@@ -1,14 +1,8 @@
 /// 달력 함수
 
-// 호출
-MakeCaledar();
-
+window.addEventListener("DOMContentLoaded", MakeCaledar);
 
 function MakeCaledar() {
-    // 선택함수 ///////
-    const qs = x => document.querySelector(x);
-    const qsa = x => document.querySelectorAll(x);
-    
     // 두자릿수 만들기 함수
     const addZero = x => x <10?"0"+x:x;
 
@@ -31,6 +25,43 @@ function MakeCaledar() {
 
     // 달력 호출
     InitCalendar(thisMonth);
+
+    // 날짜 기간 계산 함수 
+    const getDateDiff = (dt1, dt2) => {
+        const date1 =  new Date(dt1);
+        const date2 =  new Date(dt2);
+
+        const diffDate =  date1.getTime() - date2.getTime();
+        return Math.abs(diffDate / (1000 * 60 * 60 * 24));
+    }
+
+    // 처음에 오늘 날짜로 표시
+    let currentDate = today.getFullYear() + '' + addZero((today.getMonth()+1)) + '' + addZero(today.getDate())
+    let currentNextDate = today.getFullYear() + '' + addZero((today.getMonth()+1)) + '' + addZero(today.getDate()+1)
+
+    // 체크인 날짜 표시(오늘)
+    $(".checkIn_date").text(getCheckDateHtml(currentDate));
+    $(".checkIn_date").next().val(getCheckDateValue(currentDate));
+
+    // 체크아웃 날짜 표사(내일)
+    $(".checkOut_date").text(getCheckDateHtml(currentNextDate));
+    $(".checkOut_date").next().val(getCheckDateValue(currentNextDate));
+
+    // 날짜 계산용 변수
+    let today_value = $(".checkIn_date").next().val();
+    let nextDay_value = $(".checkOut_date").next().val();
+
+    $(".stay_days").text(getDateDiff(today_value, nextDay_value)+"박");
+
+    // 오늘 날짜에 today 클래스 넣기
+    let todayDate = currentDate.split("-")[0]
+    console.log(typeof($(".current").data("day")));
+    todayDate = Number(todayDate);
+
+    
+    if(todayDate === $(".current").data("day")) {
+        $(`.current[data-day="${todayDate}"]`).addClass("today");
+    }    
 
     // 이전달로 이동
     $(".cal_prebtn").click(function(){
@@ -76,8 +107,6 @@ function MakeCaledar() {
 
         makeStartCalendar();
         makeLastCalendar();
-
-        
 
         // start_calendar 
         function makeStartCalendar() {
@@ -126,7 +155,6 @@ function MakeCaledar() {
             $(".start_yeartit").text(currentYear);
             // 월표기
             $(".start_monthtit").text("."+addZero(currentMonth+1));
-
         }// makeStartCalendar
 
         // last_calendar 
@@ -190,11 +218,11 @@ function MakeCaledar() {
         function dailyDay(currentYear, currentMonth, day) {
             const date = currentYear + '' + addZero((currentMonth+1)) + '' + addZero(day)
             if (checkInDate === date) {
-                return `<div class="day current checkIn" data-day="${date}"><span>${day}</span><p class="check_in_out_p"></p><p></div>`
+                return `<div class="day current checkIn" data-day="${date}"><span>${day}</span></div>`
             } else if (checkOutDate === date) {
-                return `<div class="day current checkOut" data-day="${date}"><span>${day}</span><p class="check_in_out_p"></p><p></div>`
+                return `<div class="day current checkOut" data-day="${date}"><span>${day}</span></div>`
             } else {
-                return `<div class="day current" data-day="${date}"><span>${day}</span><p class="check_in_out_p"></p><p></div>`;
+                return `<div class="day current" data-day="${date}"><span>${day}</span></div>`;
             }
         }
 
@@ -242,7 +270,7 @@ function MakeCaledar() {
                 $(obj).addClass("checkIn");
                 checkInDate = $(obj).data("day");
                 console.log(checkInDate);
-                $(".checkIn_date").text(getCheckDateHtml(checkInDate));
+                $(".checkIn_date").text(getCheckDateHtml(checkInDate)).val(getCheckDateHtml(checkInDate)).next().val(getCheckDateValue(checkInDate));
             } 
             else {
                 // 체크인 날짜 한번 더 클릭했을때 동작 X
@@ -260,8 +288,12 @@ function MakeCaledar() {
                     $(obj).addClass("checkIn")
                     $(`.day[data-day"${checkOutDate}"]`).addClass("checkOut");
 
-                    $(".checkIn_date").text(getCheckDateHtml(checkInDate));
-                    $(".checkOut_date").text(getCheckDateHtml(checkOutDate));
+                    $(".checkIn_date").text(getCheckDateHtml(checkInDate)).val(getCheckDateHtml(checkInDate)).next().val(getCheckDateValue(checkInDate));
+                    $(".checkOut_date").text(getCheckDateHtml(checkOutDate)).val(getCheckDateHtml(checkOutDate)).next().val(getCheckDateValue(checkOutDate));
+                    today_value = $(".checkIn_date").next().val();
+                    nextDay_value = $(".checkOut_date").next().val();
+
+                    $(".stay_days").text(getDateDiff(today_value, nextDay_value)+"박");
 
                     addClassSelectDay();
 
@@ -272,7 +304,11 @@ function MakeCaledar() {
                 if(checkOutDate==="") {
                     $(obj).addClass("checkOut");
                     checkOutDate = $(obj).data("day");
-                    $(".checkOut_date").text(getCheckDateHtml(checkOutDate));
+                    $(".checkOut_date").text(getCheckDateHtml(checkOutDate)).val(getCheckDateHtml(checkOutDate)).next().val(getCheckDateValue(checkOutDate));
+                    today_value = $(".checkIn_date").next().val();
+                    nextDay_value = $(".checkOut_date").next().val();
+
+                    $(".stay_days").text(getDateDiff(today_value, nextDay_value)+"박");
 
                     addClassSelectDay();
                 } else {
@@ -286,11 +322,10 @@ function MakeCaledar() {
                     checkInDate = $(obj).data("day");
                     checkOutDate = "";
 
-                    $(".checkIn_date").text(getCheckDateHtml(checkInDate));
-                    $(".checkOut_date").text();
+                    $(".checkIn_date").text(getCheckDateHtml(checkInDate)).val(getCheckDateHtml(checkInDate)).next().val(getCheckDateValue(checkInDate));
+                    $(".checkOut_date").text("");
                 }
             }
-
         }
     }
 
@@ -298,6 +333,12 @@ function MakeCaledar() {
     function getCheckDateHtml(check) {
         check = check.toString();
         return check.substring(0,4) + "." + check.substring(4,6)+ "." + check.substring(6,8) + " " +strWeekDay(weekday(check));
+    }
+
+    // 날짜차이 계산용
+    function getCheckDateValue(check) {
+        check = check.toString();
+        return check.substring(0,4) + "-" + check.substring(4,6)+ "-" + check.substring(6,8)
     }
     
     // 몇요일인지 알려주는 함수 (숫자 형태)
@@ -328,6 +369,4 @@ function MakeCaledar() {
                 break;
         }
     }
-
-    
 }

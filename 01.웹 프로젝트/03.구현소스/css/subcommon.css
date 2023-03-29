@@ -64,3 +64,25 @@
 .gotop span:hover {
     color : var(--scl);
 }
+
+/* 870px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 870px) {
+    .tit {
+        width: 87vw;
+    }
+
+    .tit p {
+        width: 100%;
+    }
+
+}
+/* 870px 사이즈 이하 미디어쿼리 끝 */
+
+/* 660px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 660px) {
+    .tit {
+        width: 80vw;
+    }
+
+}
+/* 660px 사이즈 이하 미디어쿼리 끝 */
