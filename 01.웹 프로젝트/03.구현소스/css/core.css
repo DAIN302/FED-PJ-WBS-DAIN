@@ -39,6 +39,8 @@ body::-webkit-scrollbar-track {
 :root {
     --scl : #A98524;
     --sclo : #a986246b;
+    --sunColor : #de2e5f;
+    --satColor : #3aaced;
 }
 
 

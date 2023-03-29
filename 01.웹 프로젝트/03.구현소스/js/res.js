@@ -30,12 +30,13 @@ $(document).ready(function() {
 
     // 숫자 변수
     let cnt = 0;
+    // 성인 수 체크 
     let adultNumberCheck = $(".sub_cont_numadult").find("span").find("em").text();
 
     // 어린이 인원 0일 시 표시 X
     resNum(".sub_cont_ccnt").hide();
 
-    // 성인 수 0일때 어린이 수 증가 X -> 버튼 비활성화
+    // 성인 수 0일때 어린이 수 증가 X -> 어린이 버튼 비활성화
     for(let i=0; i<adultNumberCheck.length; i++) {
         console.log()
         if(Number(adultNumberCheck[i])===0) {
@@ -164,6 +165,7 @@ $(document).ready(function() {
     // 함수 호출 
     roomCount();
 
+    // 성인 종합 명 구하는 함수
     function GetTotalAdultNumber(){
         let totalNumber = 0;
         roomInfoArray.forEach(roominfo => {
@@ -173,6 +175,7 @@ $(document).ready(function() {
         return totalNumber;
     } 
 
+    // 어린이 종합 명 구하는 함수
     function GetTotalChildNumber(){
         let totalNumber = 0;
         roomInfoArray.forEach(roominfo => {

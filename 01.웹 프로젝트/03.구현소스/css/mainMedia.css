@@ -234,13 +234,6 @@
 
 /* 600px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 600px) {
-    .gnb_mobile_backgroundbx {
-        width: 0;
-        display: none;
-    }
-    
-    .gnb_mobile_menubx {
-        width: 100%;
-    }
+
     
 } /* 600px 사이즈 이하 미디어쿼리 끝*/

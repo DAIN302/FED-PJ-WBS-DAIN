@@ -39,8 +39,8 @@
     padding-left: 10px;
 }
 
-.sub_cont_restxt h3>span:nth-child(2) span:nth-child(2):before,
-.sub_cont_restxt h3>span:nth-child(2) span:nth-child(3):before {
+.sub_cont_restxt h3>span:nth-child(2)>span:nth-child(2):before,
+.sub_cont_restxt h3>span:nth-child(2)>span:nth-child(3):before {
     content: '|';
     display: inline-block;
     padding-right: 10px;
@@ -98,17 +98,99 @@
     display: flex;
     justify-content: center;
     font-size: min(1.6rem, 1.8vw);
-    gap: 0 10%;
+    padding-bottom: 20px;
+    gap: 0 5%;
+}
+.calbx h4 {
+    justify-content: center;
+    display: flex;
+    font-size: min(2.4vw, 2.6rem);
+    font-weight: bold;
+    padding: 20px 0;
 }
 
-.calbx thead>tr th{
-    width: 4vw;
-    height: 4vw;
+.calbx h4 span {
+    display: block;
+}
+
+/* 달력박스 크기 */
+.calbx>div {
+    width: 30%;
+    height: 350px;
+}
+
+
+/* 일요일은 빨간색 */
+.days>.day:first-child, .dates>.day:nth-child(7n+1) {
+    color : var(--sunColor);
+}
+/* 토요일은 파란색 */
+.days>.day:last-child, .dates>.day:nth-child(7n) {
+    color : var(--satColor);
+}
+
+.dates, .days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 크기설정 -> 7일씩 표시되게 */
+.dates .day, .days .day {
+    width: calc(100%/7);
+    text-align: center;
+    padding: 5px 0;
+}
+
+.dates .day {
+    position: relative;
+}
+.dates .day span{
+    position: relative;
+    z-index: 2;
+}
+.dates .day.current {
+    cursor: pointer;
+}
+
+.dates .day.disable {
+    color : #ddd;
+}
+
+.dates .day.checkIn, .dates .day.checkOut{
+    color : #fff;
     
 }
 
-.calbx thead>tr th:first-child {
-    color : red;
+.checkIn::after, .checkOut::after {
+    content: '';
+    background-color: var(--scl);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.selectDay::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: var(--sclo);
+    z-index: 1;
+}
+.checkIn.selectDay::before {
+    left: 50%;
+    width: 50%;
+}
+.checkOut.selectDay::before {
+    width: 50%;
 }
 
 /* 객실 및 인원 */

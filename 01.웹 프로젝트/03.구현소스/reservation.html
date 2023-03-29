@@ -24,6 +24,7 @@
     <script src="./js/showtit.js"></script>
     <!-- 예약페이지 JS -->
     <script src="./js/res.js"></script>
+    <script src="./js/calendar.js" defer></script>
   </head>
   <body>
     <!-- 1. 상단 -->
@@ -135,6 +136,156 @@
             </li>
           </ul>
         </nav>
+                <!-- 햄버거 버튼 -->
+                <button class="ham">
+                  <span class="fa-solid fa-bars"></span>
+                </button>
+                <!-- 모바일 gnb메뉴 -->
+                <aside class="gnb_mobliebx">
+                  <div class="gnb_mobile_backgroundbx"></div>
+                  <div class="gnb_mobile_menubx">
+                    <div class="gnb_mobile_topbx">
+                      <ul>
+                        <li>
+                          <button>
+                            <span class="fa-solid fa-home"></span>
+                          </button>
+                        </li>
+                        <li>
+                          <button class="close_menu">
+                            <span class="fa-solid fa-x"></span>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                    <nav class="gnb_mobile_menu">
+                      <ul>
+                        <li>
+                          <h3>
+                            <span>ROOMS</span>
+                            <span class="fa-solid fa-chevron-down"></span>
+                          </h3>
+                          <ol class="mobile_menu_sub">
+                            <li>
+                              <a href="#">ALL</a>
+                            </li>
+                            <li>
+                              <a href="#">ROOM</a>
+                              <ol>
+                                <li><a href="#">Luxury</a></li>
+                                <li><a href="#">Magnifique</a></li>
+                                <li><a href="#">Luxury Lake</a></li>
+                                <li><a href="#">Club Luxury</a></li>
+                                <li><a href="#">Magnifique Family</a></li>
+                              </ol>
+                            </li>
+                            <li>
+                              <a href="#">SUITE</a>
+                              <ol>
+                                <li><a href="#">Prestige Suite</a></li>
+                                <li><a href="#">Prestige Family Suite</a></li>
+                                <li><a href="#">Opera Suite</a></li>
+                                <li><a href="#">Presidential Suite</a></li>
+                              </ol>
+                            </li>
+                            <li>
+                              <a href="#">RESIDENCE</a>
+                              <ol>
+                                <li><a href="#">Studio</a></li>
+                                <li><a href="#">1 Bedroom Signature Suite</a></li>
+                                <li><a href="#">2 Bedroom Executive Suite</a></li>
+                              </ol>
+                            </li>
+                          </ol>
+                        </li>
+                        <li>
+                          <h3>
+                            <span>DINING</span>
+                            <span class="fa-solid fa-chevron-down"></span>
+                          </h3>
+                          <ol class="mobile_menu_sub">
+                            <li><a href="#">Fait Maison</a></li>
+                            <li><a href="#">MIO</a></li>
+                            <li><a href="#">Jardin D’Hiver</a></li>
+                            <li><a href="#">L’Espace</a></li>
+                            <li><a href="#">Latitude32</a></li>
+                          </ol>
+                        </li>
+                        <li>
+                          <h3>
+                            <span>OFFERS</span>
+                            <span class="fa-solid fa-chevron-down"></span>
+                          </h3>
+                          <ol class="mobile_menu_sub">
+                            <li><a href="#">Room Packages</a></li>
+                            <li><a href="#">Dining Offers</a></li>
+                          </ol>
+                        </li>
+                        <li>
+                          <h3>
+                            <span>PROGRAMS</span>
+                            <span class="fa-solid fa-chevron-down"></span>
+                          </h3>
+                          <ol class="mobile_menu_sub">
+                            <li><a href="#">Candle Ritual</a></li>
+                            <li><a href="#">Sofitel Vélo</a></li>
+                            <li><a href="#">Sofitel Seoul Art Tour</a></li>
+                            <li><a href="#">French Bouquet Class</a></li>
+                          </ol>
+                        </li>
+                        <li>
+                          <h3>
+                            <span>FACILITIES</span>
+                            <span class="fa-solid fa-chevron-down"></span>
+                          </h3>
+                          <ol class="mobile_menu_sub">
+                            <li>
+                              <a href="#">WELLNESS</a>
+                              <ol>
+                                <li><a href="#">Pool</a></li>
+                                <li><a href="#">Fitness</a></li>
+                                <li><a href="#">Sofitel Spa By Beauté BR</a></li>
+                              </ol>
+                            </li>
+                            <li>
+                              <a href="#">LOUNGE</a>
+                              <ol>
+                                <li><a href="#">Club Millésime</a></li>
+                                <li><a href="#">Kids Lounge</a></li>
+                              </ol>
+                            </li>
+                            <li>
+                              <a href="#">BUSINESS</a>
+                            </li>
+                            <li>
+                              <a href="#">WEDDING</a>
+                            </li>
+                          </ol>
+                        </li>
+                        <li>
+                          <h3>
+                            <span>ABOUT</span>
+                            <span class="fa-solid fa-chevron-down"></span>
+                          </h3>
+                          <ol class="mobile_menu_sub">
+                            <li><a href="#">Notice</a></li>
+                            <li><a href="#">Contact</a></li>
+                          </ol>
+                        </li>
+                      </ul>
+                    </nav>
+                    <div class="gnb_mobile_bottombx">
+                      <ul>
+                        <li>
+                          <a href="#">RESERVATION</a>
+                        </li>
+                        <li>
+                          <a href="#">CONTACT</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </aside>
         <!-- 1-3. 예약버튼 -->
         <aside class="res">
           <a href="#">RESERVATION</a>
@@ -165,9 +316,15 @@
               <span>투숙기간 선택</span>
               <span>
                 <!-- 체크인/체크아웃 일자 -->
-                <span></span>
+                <span>
+                  <!-- 체크인 -->
+                  <span class="checkIn_date"></span>
+                  <span>-</span>
+                  <!-- 체크아웃 -->
+                  <span class="checkOut_date"></span>
+                </span>
                 <!-- 머무는 날 계산 -->
-                <span></span>
+                <span class="stay_days"></span>
               </span>
               <span class="fa-solid fa-chevron-down"></span>
             </h3>
@@ -183,42 +340,38 @@
                   </button>
                 </div>
                 <div class="calbx sub_cont_calbx">
-                  <table class="curr_month">
-                    <caption>
-                      <span class="yeartit"></span>
-                      <span class="month"></span>
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th>SUN</th>
-                        <th>MON</th>
-                        <th>TUE</th>
-                        <th>WED</th>
-                        <th>THU</th>
-                        <th>FRI</th>
-                        <th>SAT</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                  <table class="next_month">
-                    <caption>
-                      <span class="yeartit"></span>
-                      <span class="month"></span>
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th>SUN</th>
-                        <th>MON</th>
-                        <th>TUE</th>
-                        <th>WED</th>
-                        <th>THU</th>
-                        <th>FRI</th>
-                        <th>SAT</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
+                  <div class="start_month">
+                    <h4>
+                      <span class="start_yeartit yeartit"></span>
+                      <span class="start_monthtit monthtit"></span>
+                    </h4>
+                    <div class="days">
+                      <div class="day">SUN</div>
+                      <div class="day">MON</div>
+                      <div class="day">TUE</div>
+                      <div class="day">WED</div>
+                      <div class="day">THU</div>
+                      <div class="day">FRI</div>
+                      <div class="day">SAT</div>
+                    </div>
+                    <div class="start_calendar dates"></div>
+                  </div>
+                  <div class="next_month">
+                    <h4>
+                      <span class="next_yeartit yeartit"></span>
+                      <span class="next_monthtit monthtit"></span>
+                    </h4>
+                    <div class="days">
+                      <div class="day">SUN</div>
+                      <div class="day">MON</div>
+                      <div class="day">TUE</div>
+                      <div class="day">WED</div>
+                      <div class="day">THU</div>
+                      <div class="day">FRI</div>
+                      <div class="day">SAT</div>
+                    </div>
+                    <div  class="dates last_calendar"></div>
+                  </div>
                 </div>
               </div>
             </div>
