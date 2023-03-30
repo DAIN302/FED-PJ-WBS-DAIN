@@ -10,9 +10,11 @@ function mainFn() {
 $(".main_res_chk>input").click(function() {
     console.log("달력ㅎㅇ");
     $(".calendar").addClass("active");
+    $(".main_res_chk>input").val("날짜 선택");
 })
 
 
+// 달력 닫는 함수
 const closeCalendar = () => {
     let calendarHeight = $(".calendar").height()
     let checkOutDateValue = $(".checkOut_date").val()
