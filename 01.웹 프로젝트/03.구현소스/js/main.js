@@ -4,6 +4,24 @@ window.addEventListener("DOMContentLoaded", mainFn);
 
 function mainFn() {
 
+// 링크 이동
+function linkMove() {
+    // 서브페이지 이동 링크
+    const ctmove = document.querySelector(".ctmove");
+    const roomsMore = document.querySelector(".main_room_txt h4 a")
+
+    ctmove.onclick = (e) =>{
+        e.preventDefault();
+        location.href = "contact.html";
+    }
+
+    roomsMore.onclick = (e) => {
+        e.preventDefault();
+        location.href = "rooms.html";
+    }
+}   
+
+linkMove();
 
 // 달력 닫는 함수
 const closeCalendar = () => {
@@ -186,7 +204,7 @@ const packSlideList = packSlide.querySelectorAll("li");
 const packSlideNum = document.querySelector(".main_offer_slidenum>.slidenum");
 // 슬라이드 번호용 변수
 let packNum = 1;
-console.log(packSlideNum);
+// console.log(packSlideNum);
 
 // 드래그 이벤트 호출
 slideDrag(packSlide);
@@ -273,6 +291,7 @@ function slideDrag(obj) {
             resultX = moveX - firstX;
             // 움직일때 위치값 - 처음 위치값
             // console.log(firstX, moveX, resultX);
+            obj.style.left = resultX + lastX + "px";
         }
     }
 
@@ -327,13 +346,10 @@ function goWhere(obj) {
     else if(tgLeft> -tgPoint+50) {
         roompackSlide(0);
     }
-    //제자리
+    // //제자리
     else {
         obj.style.left = -tgPoint+"px";
         obj.style.transition = "left .2s ease-out"
     }
-
 }
-
-
 } // mainFn
