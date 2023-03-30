@@ -22,8 +22,12 @@
     font-family: 'Source Code Pro', monospace;
 }
 
-.top.top_on, .top.on, .top.slim, .top.subon {
+.top.top_on, .top.slim, .top.subon {
     background-color: #fff;
+}
+
+.top.on { 
+    background-color: transparents;
 }
 
 .top.on {
@@ -265,12 +269,14 @@
 .top.top_on .res a,
 .top.on .res a,
 .top.subon .res a,
-.top.slim .res a {
+.top.slim .res a,
+.res.on a {
     border: 1px solid rgba(255,255,255,0);
     background-color: var(--scl);
 }
 
-.top.on .res a {
+.top.on .res a,
+.res.on a {
     transition: .6s .3s;
 }
 
@@ -631,6 +637,10 @@ nav.gnb_mobile_menu {
     }
     .res {
         right: 15%;
+    }
+
+    .logo {
+        width: 120px;
     }
     
 } /* 600px 사이즈 이하 미디어쿼리 끝*/

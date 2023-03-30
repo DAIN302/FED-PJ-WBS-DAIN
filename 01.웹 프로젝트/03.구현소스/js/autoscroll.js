@@ -138,9 +138,11 @@ function scrollFn() {
         const ind = document.querySelector(".main_nav");
         // (3) 컨택트 아이콘
         const ctmove = document.querySelector(".ctmove");
+        // (4) 상단 예약 버튼
+        const resbtn = document.querySelector(".top .res");
 
         // 2. 클래스 넣기
-        if(c===3) {
+        if(c===3||c===2||c===4) {
             top.classList.add("on");
             ind.classList.add("on"); 
             ctmove.classList.add("on");
@@ -149,7 +151,9 @@ function scrollFn() {
             top.classList.remove("on");
             ind.classList.remove("on");
             ctmove.classList.remove("on");
+            resbtn.classList.remove("on");
         }
+
     } // chgColor 함수
 
 

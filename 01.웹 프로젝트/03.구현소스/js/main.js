@@ -5,15 +5,6 @@ window.addEventListener("DOMContentLoaded", mainFn);
 function mainFn() {
 
 
-
- // 날짜선택 클릭 시 달력 열리기   
-$(".main_res_chk>input").click(function() {
-    console.log("달력ㅎㅇ");
-    $(".calendar").addClass("active");
-    $(".main_res_chk>input").val("날짜 선택");
-})
-
-
 // 달력 닫는 함수
 const closeCalendar = () => {
     let calendarHeight = $(".calendar").height()
@@ -24,11 +15,18 @@ const closeCalendar = () => {
     // 날짜선택하고 다시 열었을때 이상하므로 코드 고칠 필요가 있음 
 }
 
+ // 날짜선택 클릭 시 달력 열리기   
+ $(".main_res_chk>input").click(function() {
+    console.log("달력ㅎㅇ");
+    $(".calendar").addClass("active");
+    $(".main_res_chk>input").val("날짜 선택");
+})
+
 $(document).on("click", ()=> closeCalendar())
 
-$("div>.current").click(function(){
-    console.log("gd");
-})
+// $("div>.current").click(function(){
+//     console.log("gd");
+// })
 
 
 
@@ -132,9 +130,9 @@ dImgList();
 
 // 5번 페이지(ROOM PACKAGE) 요소 li 넣어서 슬라이드 리스트 만들기
 // 대상선정 -> .main_offer_cont 하위 ul
-const packCont = document.querySelector(".main_offer_cont .listslide");
-const packContMobile = document.querySelector(".main_offer_cont .listslide_mobile>ul");
-console.log(packContMobile);
+const packCont = document.querySelector(".main_offer_cont .listbx");
+// const packContMobile = document.querySelector(".main_offer_cont .listslide_mobile>ul");
+// console.log(packContMobile);
 // 버튼
 const offerBtn = document.querySelectorAll(".main_offer_btn");
 // console.log(offerBtn[1]);
@@ -144,14 +142,10 @@ function roomPack() {
     // let mobileHcode = "";
     let hcode = "";
 
-    // 임시순번변수
-    let temp = 0;
-    
-    
+    hcode += "<ul>"
     for(let x in pdata) {
         let data = pdata[x];
         console.log(x);
-        if(temp===0||temp===3)hcode += "<ul>";
 
         hcode += `
         <li>
@@ -166,11 +160,7 @@ function roomPack() {
                     <h4>${data.subtit}</h4>
                     <div class="main_offer_prd">
                     <div class="main_offer_day">
-                        <span>예약기간</span>
-                        <span>${data.res}</span>
-                    </div>
-                    <div class="main_offer_day">
-                        <span>투숙기간</span>
+                        <span class="fa-solid fa-calendar-days"></span>
                         <span>${data.stay}</span>
                     </div>
                     </div>
@@ -179,77 +169,171 @@ function roomPack() {
          </li>
         `;
 
-        // mobileHcode += `
-        // <li data-seq="${temp}">
-        //     <a href="#">
-        //         <div class="main_offer_contwrap">
-        //             <figure>
-        //                 <img
-        //                     src="./images/main/offer/${data.img}"
-        //                     alt="패키지이미지"/>
-        //             </figure>
-        //             <h3>${data.tit}</h3>
-        //             <h4>${data.subtit}</h4>
-        //             <div class="main_offer_prd">
-        //             <div class="main_offer_day">
-        //                 <span>예약기간</span>
-        //                 <span>${data.res}</span>
-        //             </div>
-        //             <div class="main_offer_day">
-        //                 <span>투숙기간</span>
-        //                 <span>${data.stay}</span>
-        //             </div>
-        //             </div>
-        //         </div>
-        //     </a>
-        //  </li>
-        // `;
-
-        if(temp===2||temp===5)hcode += "</ul>";
-        
-        // temp증감
-        temp++;
-        
-    } // for in
+    } // for in.
+    hcode += "</ul>"
     
     packCont.innerHTML = hcode;
-    //packContMobile.innerHTML = mobileHcode;
-    // 버튼 클릭시 다음 슬라이드로 넘어가기 기능
-    // 다음 버튼
-    // offerBtn[1].onclick = () => {
-    //     packCont.style.left = "-100%";
-    //     packCont.style.transition = "left .2s";
-    //     offerBtn[1].style.display = "none";
-    //     offerBtn[0].style.display = "inline-block";
-    // }
-    
-    // offerBtn[0].onclick = () => {
-    //     packCont.style.left = 0;
-    //     offerBtn[0].style.display = "none";
-    //     offerBtn[1].style.display = "inline-block";
-    // }
-
 }
 
 // 함수 호출
 roomPack();
 
-// bullet 변수
-const mobileBullet = document.querySelectorAll(".listslide_mobilebullet>ol>li")
-console.log(mobileBullet);
-// 5번 페이지 모바일에서 슬라이드 
-function roompackSlide() {
+
+// 변경대상
+const packSlide = document.querySelector(".listbx>ul")
+const packSlideList = packSlide.querySelectorAll("li"); 
+// 슬라이드 번호
+const packSlideNum = document.querySelector(".main_offer_slidenum>.slidenum");
+// 슬라이드 번호용 변수
+let packNum = 1;
+console.log(packSlideNum);
+
+// 드래그 이벤트 호출
+slideDrag(packSlide);
+
+// 리스트에 순번 붙이기
+packSlideList.forEach((ele, idx)=> {
+    ele.setAttribute("data-seq", idx);
+})
+
+// 5번 페이지에서 슬라이드 
+function roompackSlide(seq) {
+    let packSlideLists = packSlide.querySelectorAll("li"); 
+
+    // 방향에 따른 분기
+    // 오른쪽(다음) 버튼 클릭 시
+    if(seq) {
+        packSlide.appendChild(packSlideLists[0]);
+        packSlide.style.left = "-50%"
+        packSlide.style.transition = "none"
+
+        
+        // setTimeout으로 코드분리
+        setTimeout(()=>{
+            packSlide.style.left = "-100%"
+            packSlide.style.transition = "left .4s ease-out"
+        },1)
+
+        // 슬라이드 번호 변경
+        if(packNum>packSlideLists.length-1) packNum=0;
+        packNum++;
+        packSlideNum.innerText = packNum;
+
+    } 
+    // 왼쪽(이전) 버튼 클릭시
+    else {
+        packSlide.insertBefore(packSlideLists[packSlideLists.length-1], packSlideLists[0])
+        packSlide.style.left = "-150%"
+        packSlide.style.transition = "none"
+        // setTimeout으로 코드분리
+        setTimeout(()=>{
+            packSlide.style.left = "-100%"
+            packSlide.style.transition = "left .4s ease-out"
+        },1)
+
+        // 슬라이드 번호 변경
+        packNum--;
+        if(packNum<1) packNum=packSlideLists.length;
+        packSlideNum.innerText = packNum;
+    }
+}
+
+// 클릭 설정
+offerBtn.forEach((ele, idx) => {
+    ele.onclick = () => {
+        roompackSlide(idx);
+    }
+})
+
+// 드래그 적용 함수
+function slideDrag(obj) {
+    // 드래그 상태 변수
+    let drag = false;
+    // 첫번째 위치 포인트
+    let firstX;
+    // 마지막 위치 포인트
+    let lastX = obj.offsetLeft;
+    // 움직일 때의 위치포인트
+    let moveX;
+    // 위치 이동차이 결과 변수
+    let resultX;
+
+    // 함수 생성
+    // 드래그 상태 true
+    const dragTrue = () => (drag = true);
+    // 드래그 상태 true
+    const dragFalse = () => (drag = false);
+    // 드래그 움직일 때 작동 함수
+    const dragMove = () => {
+        if(drag) {
+            obj.style.transition = "none";
+            // 드래그 상태에서 움직일 떄 위치값 moveX
+            moveX = event.pageX || event.changedTouches[0].pageX;
+
+            resultX = moveX - firstX;
+            // 움직일때 위치값 - 처음 위치값
+            // console.log(firstX, moveX, resultX);
+        }
+    }
+
+    // 첫번째 위치포인트 세팅함수
+    const firstPoint = () => {
+        firstX = event.pageX || event.changedTouches[0].pageX;
+    }
+
+    // 마우스 내려갈때(터치시작할때 )
+    obj.addEventListener("mousedown", () => {
+        dragTrue();
+        firstPoint();
+    })
+    obj.addEventListener("touchstart", () => {
+        dragTrue();
+        firstPoint();
+    })
+
+    // 마우스 올라갈때(터치 끝날때)
+    obj.addEventListener("mouseup", ()=>{
+        dragFalse();
+        goWhere(obj);
+    })
+    obj.addEventListener("touchend", ()=>{
+        dragFalse();
+        goWhere(obj);
+    })
+
+    // 마우스 움직일때
+    obj.addEventListener("mousemove", dragMove);
+    obj.addEventListener("touchmove", dragMove);
+
+    // 마우스 벗어날때
+    obj.addEventListener("mouseleave", dragFalse);
+} // slideDrag
+
+
+// 드래그 시 이동 판별 함수
+function goWhere(obj) {
+    let tgLeft = obj.offsetLeft;
+
+    // 부모박스 기준한 left 위치값 구하기
+    let tgPoint = obj.parentElement.clientWidth*1;
+    console.log(tgLeft, tgPoint);
+
+    // 방향 판별
+    // 왼쪽 이동(오른쪽 버튼)
+    if(tgLeft < -tgPoint-50) {
+        roompackSlide(1);
+    }
+    // 오른쪽 이동(왼쪽 버튼)
+    else if(tgLeft> -tgPoint+50) {
+        roompackSlide(0);
+    }
+    //제자리
+    else {
+        obj.style.left = -tgPoint+"px";
+        obj.style.transition = "left .2s ease-out"
+    }
 
 }
 
-
-
-// 불릿 클릭 시
-mobileBullet.forEach((ele)=> {
-    ele.onclick = function() {
-        ele.classList.add("on");
-        
-    }
-})
 
 } // mainFn

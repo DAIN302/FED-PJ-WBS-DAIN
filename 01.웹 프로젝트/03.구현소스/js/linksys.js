@@ -12,4 +12,5 @@ function linkFn(){
     // 예약 링크
     const resLink = document.querySelector(".res a");
 
+
 }
