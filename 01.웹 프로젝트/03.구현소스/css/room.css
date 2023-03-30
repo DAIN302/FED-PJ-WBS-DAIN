@@ -1,0 +1,519 @@
+@charset "utf-8";
+
+/* 서브페이지 CSS - lux.css */
+
+/* 공통 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+.cont {
+    width: 100%;
+    overflow: hidden;
+    min-height: 1000px;
+}
+.sub_cont {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 백그라운드 이미지 */
+.sub_back_img {
+    /* background: url(../images/sub/luxury/1.jpg) no-repeat center/cover; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    filter: brightness(80%) blur(5px);
+    transform: scale(1.2);
+    animation: backAni .8s ease-in-out forwards;
+}
+.sub_back_img img{
+    height: 100%;
+}
+
+@keyframes backAni {
+    to {
+        transform: scale(1);
+        filter : brightness(80%) blur(0);
+    }
+}
+
+.sub_cont_tit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color : #fff;
+    text-align: center;
+}
+
+.sub_cont_tit h3 {
+    font-family: 'Source Code Pro', monospace;
+    font-size: min(2.4vw, 2rem);
+    color : #d7d7d7;
+    text-shadow: 1px 1px 5px #777;
+    opacity: 0;
+    animation: subtitAni .8s ease-in-out forwards;
+}
+
+@keyframes subtitAni {
+    to {
+        opacity: 1;
+    }
+}
+
+.sub_cont_tit h2 {
+    font-size: min(6vw, 6rem);
+    font-family: 'Source Code Pro', monospace;
+    text-shadow: 1px 3px 20px #777;
+    animation: titAni .8s ease-in-out forwards;
+}
+
+@keyframes titAni {
+    0% {
+        letter-spacing: -4rem;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        letter-spacing: 0;
+        opacity: 1; 
+        text-shadow: 1px 3px 20px #777;  
+    }
+}
+
+.sub_cont_tit p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: min(1.6vw, 1.8rem);
+    padding-top: 3%;
+    width: 60vw;
+    color : #eee;
+    text-shadow: 1px 1px 5px #777;
+    transform: translateY(10%);
+    opacity: 0;
+    animation: txtAni .8s ease-in-out forwards;
+}
+
+@keyframes txtAni {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 다음페이지 이동 버튼 */
+.sub_cont_btn {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform : translateX(-50%)
+}
+.sub_cont_btn span{
+    color : #fff;
+    font-size: 4rem;
+    cursor: pointer;
+    transition:color .3s;
+}
+
+.sub_cont_btn:hover span {
+    color :rgba(255,255,255,0.7);
+}
+
+
+/* 2번 페이지 */
+.sub_cont_txt {
+    width: 90vw;
+    margin : 0 auto;
+    padding-top: 70px;
+    height: auto;
+    
+}
+
+/* 예약페이지 이동 버튼 */
+.sub_cont_res, .sub_cont_listbtn {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    width: min(15vw, 180px);
+    height: min(4.5vh, 45px);
+    background-color: var(--scl);
+    border: 1px solid var(--scl);
+    box-sizing: border-box;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border .3s ease-in-out;
+}
+.sub_cont_res a, .sub_cont_listbtn a{
+    position: absolute;
+    display: block;
+    font-size: min(1.6vw, 16px);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Source Code Pro', monospace;
+    line-height: 2.5;
+    transition: color .5s ease-in-out;
+}
+
+.sub_cont_res::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -300%;
+    width : 200%;
+    height : 100%;
+    background-color: #fff;
+    transform: skew(-45deg);
+    transition : left .8s ease-in-out;
+}
+
+.sub_cont_res:hover {
+    border: 1px solid #000;
+}
+
+.sub_cont_res:hover::before {
+    left : -30%;
+}
+
+.sub_cont_res:hover a {
+    color : #000;
+}
+
+
+
+/* 객실 개요 */
+
+.sub_cont_detail {
+    text-align: center;
+    padding-top: 50px;
+}
+.sub_cont_detail ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sub_cont_detail li {
+    display: flex;
+    flex-direction: column;
+    width : 33.33%;
+    padding-bottom: 30px;
+}
+
+.sub_cont_detail span {
+    font-size: min(1.6vw, 1.6rem);
+}
+.sub_cont_detail span:first-child {
+    font-weight: bold;
+    font-family: 'Source Code Pro', monospace;
+}
+.sub_cont_detail span:nth-child(2) {
+    color : #777;
+}
+
+/* 객실 이미지 */
+.sub_cont_img {
+    position: relative;
+    width: 70vw;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* 이미지 넘기기 버튼 */
+.sub_cont_imgbtn {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    z-index: 2;
+    left: 0; 
+}
+
+.sub_cont_imgbtn>div {
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+/* 이전 버튼 */
+.sub_cont_pbtn {
+    left: 5%;
+}
+
+.sub_cont_pbtn button {
+    display: none;
+}
+
+/* 다음 버튼 */
+.sub_cont_nbtn {
+    right : 5%;
+}
+
+
+.sub_cont_imgbtn button {
+    background-color: transparent;
+    border : none;
+    color : #fff;
+    font-size: min(4vw, 4rem);
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.sub_cont_imgbtn button:hover {
+    color :rgba(255,255,255,0.7);
+}
+
+.sub_cont_imglist {
+    width: 200%;
+}
+.sub_cont_img ol {
+    display: flex;
+    position: relative;
+    left: 0;
+}
+
+.sub_cont_img li {
+    aspect-ratio: 333/250;
+    width: 100%;
+}
+
+.sub_cont_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* 어메니티 */
+.sub_cont_ame, .sub_cont_ser, .sub_cont_guide {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.sub_cont_ame h2,.sub_cont_ser h2, .sub_cont_guide h2 {
+    font-size: min(3vw, 3rem);
+    font-family: 'Source Code Pro', monospace;
+    padding-bottom: 30px;
+}
+
+.sub_cont_ament {
+    position: relative;
+    transform: translateY(10%);
+    opacity: 0;
+    transition: .5s ease-in;
+}
+
+.sub_cont_ament.on {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sub_cont_ament table {
+    width: 100%;
+}
+
+/* 테이블 제목 */
+.sub_cont_ament th {
+    font-family: 'Source Code Pro', monospace;
+    font-size: min(1.8vw, 2rem);    
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 20px 0;
+    width: 33.33%;
+}
+
+/* 가상요소에 아이콘 넣기 */
+.ico::before {
+    content: '';
+    display: inline-block;
+    background-image: url(../images/ico.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+/* bed room 아이콘 */
+.i-bed::before {
+    background-position: 0 -120px;
+    width: 46px;
+    height: 33px;
+}
+/* bath room 아이콘 */
+.i-bath::before {
+    background-position: -50px -120px;
+    width: 37px;
+    height: 33px;
+}
+
+/* mini-bar 아이콘 */
+.i-bar::before {
+    background-position: -90px -120px;
+    width: 37px;
+    height: 33px;
+}
+
+/* 테이블 본문 */
+.sub_cont_ament td {
+    font-size: min(1.4vw, 1.4rem);
+    color : #777;
+    padding: 20px 0 20px 30px;
+    background-color: #fefefe;
+    border-left: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+    line-height: 2;
+}
+
+.sub_cont_ament td:first-child {
+    border-left: none;
+}
+
+
+/* 서비스 */
+.sub_cont_ser h2, .sub_cont_guide h2 {
+    padding-top: 50px;
+}
+.sub_cont_sercont>ol {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh 0;
+}
+
+
+.sub_cont_sercont>ol>li {
+    position: relative;
+    display: flex;
+    height: 35vh;
+    transform: translateX(10%);
+    opacity: 0;
+    transition: .5s ease-in;
+}
+
+.sub_cont_sercont>ol>li.on {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sub_cont_sercont>ol>li+li {
+}
+
+.sub_cont_serimg {
+    width: 45%;
+    
+}
+
+.sub_cont_serimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub_cont_sertxt {
+    width: 52%;
+    padding-left: 3%;
+}
+
+.sub_cont_sertxt h3 {
+    font-size: min(2.7vw, 2.7rem);
+    font-family: 'Source Code Pro', monospace;
+    padding-bottom: 3%;   
+}
+
+.sub_cont_sertxt p {
+    font-size: min(1.4vw, 1.4rem);
+    padding-bottom: 5%;
+}
+
+.sub_cont_sertxt ul {
+    padding-bottom: 5%;
+}
+
+.sub_cont_sertxt li {
+    font-size: min(1.3vw, 1.3rem);
+}
+
+.sub_cont_sertxt li+li {
+    padding-top: 2%;
+}
+
+.sub_cont_sertxt li span:nth-child(1) {
+    padding-right: 2%;
+}
+.sub_cont_sertxt li span:nth-child(2) {
+    color : #555;
+}
+
+.sub_cont_sertxt small {
+    color : #777;
+}
+
+/* 안내사항 */
+.sub_cont_guide {
+    padding-bottom: 50px;
+}
+.sub_cont_guide li {
+    list-style-type: disc;
+    list-style-position: inside;
+    font-size: min(1.4vw, 1.4rem);
+    color : #555;
+    line-height: 2;
+}
+
+/* 목록 돌아가기 버튼 */
+.sub_cont_listbtn {
+    width: min(10vw, 140px);
+    margin-bottom: 5vh;
+    transition: none;
+}
+.sub_cont_listbtn a {
+    transition: none;
+}
+
+/* 위로가기 버튼 */
+.gotop {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.gotop span {
+    font-size: 5rem;
+    color : #555;
+    cursor: pointer;
+    transition: color .3s;
+}
+.gotop span:hover {
+    color : var(--scl);
+}
+
+/* 미디어쿼리 */
+
+/* 860px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 860px) {
+    /*  어메니티 */
+    .sub_cont_ament td {
+        padding-left: 10px;
+    }
+    /* 서비스 */
+    .sub_cont_sercont>ol>li {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sub_cont_serimg {
+        width: 100%;
+    }
+    
+    .sub_cont_serimg img {
+        aspect-ratio: 2/1;
+    }
+
+    .sub_cont_sertxt {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 10px;
+    }
+
+} /* 860px 사이즈 이하 미디어쿼리 끝*/
+
+
+

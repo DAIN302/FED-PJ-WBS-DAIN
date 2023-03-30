@@ -1,10 +1,29 @@
 // 서브페이지 JS - lux.js
 
-window.addEventListener("DOMContentLoaded", luxFn);
+// 넘어온 url 받기
+let pm = location.href;
+pm = pm.split("?")[1].split("=")[1];
+// pm값 특수문자 복원
+pm = decodeURIComponent(pm);
+console.log(pm);
 
-function luxFn() {
+window.addEventListener("DOMContentLoaded", roomFn);
 
+function roomFn() {
+    const subRoomData = roomsData[pm];
 
+    $(".sub_cont_tit h3").text(subRoomData[0]).next().text(subRoomData[1])
+    .next().text(subRoomData[2]);
+    $(".sub_back_img").html(`<img src="./images/sub/${pm}/1.jpg" alt="객실배경">`)
+
+    for(let i = 3; i<subRoomData.length; i++) {
+        $(".sub_cont_detail>ul>li").eq(i-3).find("span").eq(1).text(subRoomData[i])
+    }
+
+    for(let i=0; i<2 ;i++) {
+        $(".sub_cont_imglist>ol>li").eq(i).html(`<img src="./images/sub/${pm}/${i+1}.jpg" alt="객실이미지" />`)
+    }
+    
     
     // console.log("gg");
     // (1) 기능 : 첫페이지의 아래 화살표 버튼 클릭 시 다음페이지로 이동
