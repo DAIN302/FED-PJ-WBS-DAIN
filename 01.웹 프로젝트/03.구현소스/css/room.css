@@ -31,6 +31,7 @@
     animation: backAni .8s ease-in-out forwards;
 }
 .sub_back_img img{
+    width: 100%;
     height: 100%;
 }
 

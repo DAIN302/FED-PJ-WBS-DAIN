@@ -150,4 +150,19 @@ function roomFn() {
      } // scrollShow 함수
 
 
+     // 예약페이지 이동
+     const moveRes = document.querySelector(".sub_cont_res>a")
+     // 객실 목록 페이지로 이동
+     const moveRooms = document.querySelector(".sub_cont_listbtn>a")
+
+     // 링크 이동 함수
+     function moveLink(btn, link) {
+        btn.onclick = (e) => {
+            e.preventDefault();
+            location.href = `${link}.html`;
+        }
+     }
+
+     moveLink(moveRes, "reservation")
+     moveLink(moveRooms, "rooms")
 }

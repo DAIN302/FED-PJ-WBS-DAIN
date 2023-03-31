@@ -13,9 +13,13 @@ function linkFn(){
     const subMenuLink = document.querySelectorAll(".menu_sub>li>a");
     // 객실 서브메뉴 링크
     const subRoomLink = document.querySelectorAll(".menu_sub>li>ol>li>a");
+
+    
     // 모바일용 링크 
     const mobileHome = document.querySelector(".gnb_mobile_topbx>ul>li>button")
     const mobileBottom = document.querySelectorAll(".gnb_mobile_bottombx>ul>li>a");
+    const mobileSubMenu = document.querySelectorAll(".mobile_menu_sub>li>a");
+    const mobielRoomLink = document.querySelectorAll(".mobile_menu_sub>li>ol>li>a")
 
     
     // 예약 버튼 링크
@@ -106,12 +110,51 @@ function linkFn(){
         location.href = "index.html";
     }
 
-
+    // 예약페이지 및 컨택트 페이지 이동
     for(let x of mobileBottom) {
         x.onclick = (e) => {
             e.preventDefault();
             let atxt = x.innerText.toLowerCase().trim();
             location.href = `${atxt}.html`;
+        }
+    }
+
+    //서브페이지 이동
+    for(let x of mobileSubMenu) {
+        x.onclick = (e) => {
+            e.preventDefault();
+            let atxt = x.innerText.toLowerCase().trim();
+            if(atxt==="contact") {
+                location.href = `${atxt}.html`;
+            } else if(atxt==="all"||atxt==="room"||atxt==="suite"||atxt==="residence") {
+                location.href = `rooms.html`;
+            } else {
+                alert("공사중입니다.")
+            }
+        }
+    }
+    // 서브메뉴 - 객실 링크
+    for(let x of mobielRoomLink) {
+        x.onclick = (e) => {
+            e.preventDefault();
+            let atxt = x.innerText.toLowerCase().trim();
+            atxt = atxt.replace(" ", "");
+
+            let url;
+            switch(atxt) {
+                case"luxury":url = atxt; break;
+                case"magnifique":url = atxt; break;
+                case"luxurylake":url = atxt; break;
+                case"clubluxury":url = atxt; break;
+                case"magnifiquefamily":url = atxt; break;
+                default: url = "esc";
+            }
+
+            if(url==="esc") {
+                alert("공사중입니다.")
+            } else {
+                location.href = "room.html?cat="+encodeURIComponent(url);
+            }
         }
     }
 
