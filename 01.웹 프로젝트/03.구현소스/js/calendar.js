@@ -38,14 +38,27 @@ function MakeCaledar() {
     // 처음에 오늘 날짜로 표시
     let currentDate = today.getFullYear() + '' + addZero((today.getMonth()+1)) + '' + addZero(today.getDate())
     let currentNextDate = today.getFullYear() + '' + addZero((today.getMonth()+1)) + '' + addZero(today.getDate()+1)
+    let currentNextMonthFirst = today.getFullYear() + '' + addZero((today.getMonth()+2)) + '' + addZero(1)
+    // 이번달의 마지막날 날짜와 요일 구하기
+    let currentEndDate = new Date(currentYear, currentMonth+1, 0).getDate();
+    let todayEndDate = today.getDate();
+    // console.log(todayEndDate);
 
     // 체크인 날짜 표시(오늘)
     $(".checkIn_date").text(getCheckDateHtml(currentDate));
     $(".checkIn_date").next().val(getCheckDateValue(currentDate));
 
-    // 체크아웃 날짜 표사(내일)
-    $(".checkOut_date").text(getCheckDateHtml(currentNextDate));
-    $(".checkOut_date").next().val(getCheckDateValue(currentNextDate));
+    // 체크아웃 날짜 표시(내일)
+    // 다음날이 다음달 1일일때
+    if(currentEndDate===todayEndDate) {
+        $(".checkOut_date").text(getCheckDateHtml(currentNextMonthFirst));
+        $(".checkOut_date").next().val(getCheckDateValue(currentNextMonthFirst));
+    }
+    // 다음날이 같은달일때 
+    else {
+        $(".checkOut_date").text(getCheckDateHtml(currentNextDate));
+        $(".checkOut_date").next().val(getCheckDateValue(currentNextDate));
+    }
 
     // 날짜 계산용 변수
     let today_value = $(".checkIn_date").next().val();

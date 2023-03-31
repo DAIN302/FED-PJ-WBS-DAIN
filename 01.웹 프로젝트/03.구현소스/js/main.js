@@ -35,7 +35,7 @@ const closeCalendar = () => {
 
  // 날짜선택 클릭 시 달력 열리기   
  $(".main_res_chk>input").click(function() {
-    console.log("달력ㅎㅇ");
+    // console.log("달력ㅎㅇ");
     $(".calendar").addClass("active");
     $(".main_res_chk>input").val("날짜 선택");
 })
