@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", roomFn);
 function roomFn() {
     const subRoomData = roomsData[pm];
 
+    // 넘어온 객체 데이터로 내용 넣기
     $(".sub_cont_tit h3").text(subRoomData[0]).next().text(subRoomData[1])
     .next().text(subRoomData[2]);
     $(".sub_back_img").html(`<img src="./images/sub/${pm}/1.jpg" alt="객실배경">`)
