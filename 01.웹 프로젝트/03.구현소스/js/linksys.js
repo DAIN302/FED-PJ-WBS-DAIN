@@ -128,7 +128,7 @@ function linkFn(){
             if(atxt==="contact") {
                 location.href = `${atxt}.html`;
             } else if(atxt==="all"||atxt==="room"||atxt==="suite"||atxt==="residence") {
-                location.href = `rooms.html`;
+                location.href = `rooms.html?rm=`+atxt;
             } else {
                 alert("공사중입니다.")
             }
