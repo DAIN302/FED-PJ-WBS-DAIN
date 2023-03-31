@@ -115,6 +115,8 @@ function roomsFn() {
         rcontList[0].classList.add("on");
         rcontList[1].classList.add("on");
         scrollShow(rcontList);
+
+        moveSubRooms();
     } // 클릭이벤트
    } // for of
 
@@ -168,32 +170,37 @@ function roomsFn() {
 
 
    // room 페이지와 링크 연결
-   const roomListLink = document.querySelectorAll(".rcontwrap>a");
-   console.log(roomListLink);
-   roomListLink.forEach((ele)=>{
-    ele.onclick = (e) =>{
-      e.preventDefault();
-      let atxt = ele.querySelector(".rcont_txt>h4").innerText.toLowerCase().trim();
-      atxt = atxt.replace(" ", "");
-      // console.log("메롱");
-      // console.log(atxt);
-      let url;
-      switch(atxt) {
-          case"luxury":url = atxt; break;
-          case"magnifique":url = atxt; break;
-          case"luxurylake":url = atxt; break;
-          case"clubluxury":url = atxt; break;
-          case"magnifiquefamily":url = atxt; break;
-          default: url = "esc";
-      }
+   function moveSubRooms() {
+      const roomListLink = document.querySelectorAll(".rcontwrap>a");
+      console.log(roomListLink);
+      roomListLink.forEach((ele)=>{
+        ele.onclick = (e) =>{
+          e.preventDefault();
+          let atxt = ele.querySelector(".rcont_txt>h4").innerText.toLowerCase().trim();
+          atxt = atxt.replace(" ", "");
+          // console.log("메롱");
+          // console.log(atxt);
+          let url;
+          switch(atxt) {
+              case"luxury":url = atxt; break;
+              case"magnifique":url = atxt; break;
+              case"luxurylake":url = atxt; break;
+              case"clubluxury":url = atxt; break;
+              case"magnifiquefamily":url = atxt; break;
+              default: url = "esc";
+          }
 
-      if(url==="esc") {
-          alert("공사중입니다.")
-      } else {
-          location.href = "room.html?cat="+encodeURIComponent(url);
-      }
+          if(url==="esc") {
+              alert("공사중입니다.")
+          } else {
+              location.href = "room.html?cat="+encodeURIComponent(url);
+          }
+        }
+      })
     }
-   })
+
+    // 함수 호출
+    moveSubRooms();
 
 
 } // 로드 함수

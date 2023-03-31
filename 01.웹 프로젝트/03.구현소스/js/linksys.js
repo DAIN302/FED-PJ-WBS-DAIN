@@ -16,9 +16,13 @@ function linkFn(){
 
     
     // 모바일용 링크 
+    // 홈이동
     const mobileHome = document.querySelector(".gnb_mobile_topbx>ul>li>button")
+    // 예약 및 연락페이지 이동
     const mobileBottom = document.querySelectorAll(".gnb_mobile_bottombx>ul>li>a");
+    // 서브메뉴
     const mobileSubMenu = document.querySelectorAll(".mobile_menu_sub>li>a");
+    // 객실서브메뉴
     const mobielRoomLink = document.querySelectorAll(".mobile_menu_sub>li>ol>li>a")
 
     
@@ -32,14 +36,17 @@ function linkFn(){
 
     // console.log(subRoomLink);
 
+    // 링크 이동함수 
+    function movePage(ele, loca) {
+        ele.onclick = (e) => {
+            e.preventDefault();    
+            location.href = `${loca}.html`;
+        }
+    }
+
     //////////////// 상단 공통
     // 로고 클릭 시 홈으로 이동
-    logoLink.onclick = (e) => {
-        e.preventDefault();
-
-        // 홈으로 이동
-        location.href = "index.html";
-    }
+    movePage(logoLink, "index");
 
     // gnb 메뉴 링크
     for(let x of menuLink) {
@@ -98,17 +105,11 @@ function linkFn(){
     }
     
     // 예약버튼 링크 이동
-    resLink.onclick = (e) => {
-        e.preventDefault();
-        location.href = "reservation.html";
-    }
+    movePage(resLink, "reservation");
 
     //////////////모바일
     // 홈으로 이동
-    mobileHome.onclick = (e) => {
-        e.preventDefault();
-        location.href = "index.html";
-    }
+    movePage(mobileHome, "index");
 
     // 예약페이지 및 컨택트 페이지 이동
     for(let x of mobileBottom) {
@@ -160,10 +161,8 @@ function linkFn(){
 
     ///////////// 하단 공통
     // 하단 로고 링크 이동
-    blogoLink.onclick = (e) => {
-        e.preventDefault();
-        location.href = "index.html";
-    }
+    movePage(blogoLink, "index");
+    
     // sns링크 이동 세팅
     for(let x of bsnsLink) {
         x.onclick = (e) => {
