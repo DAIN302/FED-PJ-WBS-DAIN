@@ -97,9 +97,9 @@ function roomsFn() {
         //     location.href = "rooms.html";
         //     rlist(allRoom);
         // } else {
-            // console.log(rinfo);
-            // location.href = "rooms.html?cat="+encodeURIComponent(atxt);
-            
+        //     console.log(rinfo);
+        //     location.href = "rooms.html?cat="+encodeURIComponent(atxt);
+        //     rlist(rinfo);
         // }
 
         // 클래스 초기화

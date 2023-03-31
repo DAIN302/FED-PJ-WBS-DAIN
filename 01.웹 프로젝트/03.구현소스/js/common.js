@@ -58,8 +58,6 @@ $(".close_menu").click(function() {
 })
 
 
-
-
 // 모바일 메뉴 아코디언
 // 1. 처음 다 숨기기
 $(".mobile_menu_sub").addClass("hidden");
