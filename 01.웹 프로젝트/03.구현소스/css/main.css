@@ -463,7 +463,7 @@ body {
 
 /* 소제목 공통 */
 .main_txt h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     overflow: hidden;
     font-family: 'Source Code Pro', monospace;
 }
@@ -617,6 +617,7 @@ body {
 
 /* 객실 소개 텍스트 박스 */
 .main_room_txt .main_txt {
+    top: 35%;
     width: 80%;
     color : #222;
 }
