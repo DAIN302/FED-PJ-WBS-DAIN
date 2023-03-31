@@ -846,6 +846,13 @@ body {
     overflow: hidden;
 }
 
+/* 드래그,선택금지설정 */
+.main_offer_cont>.listbx>ul * {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
 .main_offer_cont>.listbx>ul {
     position: relative;
     left: -100%;

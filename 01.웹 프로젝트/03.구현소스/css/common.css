@@ -136,9 +136,9 @@
 }
 
 .top.slim .menu_sub {
-    top : 50px; 
+    top : 70px; 
     left: 180px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
 .menu_sub_dn {
