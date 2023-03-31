@@ -161,6 +161,9 @@ function roomFn() {
         btn.onclick = (e) => {
             e.preventDefault();
             location.href = `${link}.html`;
+            if(link==="rooms") {
+                location.href = `${link}.html?rm=rooms`
+            }
         }
      }
 
