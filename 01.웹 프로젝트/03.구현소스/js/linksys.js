@@ -55,7 +55,7 @@ function linkFn(){
             let atxt = x.innerText.toLowerCase().trim();
 
             if(atxt==="rooms") {
-                location.href = `${atxt}.html`
+                location.href = `${atxt}.html?rm=rooms`
             }
             else {
                 alert("공사중입니다.");
@@ -72,7 +72,7 @@ function linkFn(){
             if(atxt==="contact") {
                 location.href = `${atxt}.html`;
             } else if(atxt==="room"||atxt==="suite"||atxt==="residence") {
-                location.href = `rooms.html`;
+                location.href = `rooms.html?rm=`+atxt;
             } else {
                 alert("공사중입니다.")
             }

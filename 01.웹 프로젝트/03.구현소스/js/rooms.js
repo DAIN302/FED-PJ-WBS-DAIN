@@ -3,11 +3,11 @@
 window.addEventListener("DOMContentLoaded", roomsFn);
 
 function roomsFn() {
-   // console.log("rooms");    
-   // 기능 : lnb 클릭 시 해당되는 카테고리의 객실 정보 뿌리기
-   // All누를시에 뒤에 /로 시작하는 하위 주소 X
-   // 해당 기능 gnb메뉴에서도 구현해야함
-
+  // console.log("rooms");    
+  // 기능 : lnb 클릭 시 해당되는 카테고리의 객실 정보 뿌리기
+  // All누를시에 뒤에 /로 시작하는 하위 주소 X
+  // 해당 기능 gnb메뉴에서도 구현해야함
+  
    // 대상선정
    // 서브메뉴
    const lnb =  document.querySelectorAll(".lnb a");
@@ -19,7 +19,30 @@ function roomsFn() {
    let allRoom = rdata["all"];
    // console.log(allRoom.luxury["tit"]);
    
+// 파라미터값
+let pm = location.href;
 
+// 시스템을 통한 접근만 허용!
+if(pm.indexOf("?")===-1) location.href="index.html";
+
+// 값잘라오기
+pm = pm.split("?")[1].split("=")[1];
+console.log("값:",pm);
+
+let rinfo = rdata[pm];
+
+  // 최초셋팅
+if(pm==="rooms") 
+rlist(allRoom);
+else{
+  rlist(rinfo);
+  $(".lnb a:contains("+pm.toUpperCase()+")").parent().addClass("on")
+  .siblings().removeClass("on");
+  // console.log("888",$(".lnb a:contains("+pm.toUpperCase()+")"));
+}
+
+
+  console.log(rinfo);
 
     // 리스트 만들기 함수
    function rlist(rv) {
@@ -121,7 +144,7 @@ function roomsFn() {
    } // for of
 
    // 초기 세팅
-   rlist(allRoom);
+  //  rlist(allRoom);
 
 
    // 스크롤 시 하위메뉴 나타나기

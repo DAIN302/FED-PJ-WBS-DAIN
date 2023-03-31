@@ -219,6 +219,7 @@ function mainFn() {
         ele.setAttribute("data-seq", idx);
     });
 
+
     // 5번 페이지에서 슬라이드
     function roompackSlide(seq) {
         let packSlideLists = packSlide.querySelectorAll("li");
@@ -270,7 +271,7 @@ function mainFn() {
     });
 
 // 위치 이동차이 결과 변수
-let resultX;
+let resultX=0;
 
     // 드래그 적용 함수
     function slideDrag(obj) {

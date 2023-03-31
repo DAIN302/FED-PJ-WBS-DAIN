@@ -858,6 +858,7 @@ body {
     left: -100%;
     display: flex;
     width: 300%;
+    transition: left 0.4s ease-out;
 }
 .main_offer_cont>.listbx>ul>li {
     flex-basis: 30%;
