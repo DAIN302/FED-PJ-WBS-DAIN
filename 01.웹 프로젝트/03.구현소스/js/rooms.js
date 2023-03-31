@@ -46,18 +46,17 @@ function roomsFn() {
                         </div>
                       </figcaption>
                     </figure>
-                  </a>
-                  <!-- 텍스트 부분 -->
-                  <div class="rcont_txt">
-                    <!-- 객실 타입 -->
-                    <h3>${rv[key].type}</h3>
-                    <!-- 객실 이름 -->
-                    <h4>${rv[key].tit}</h4>
-                    <!-- 객실 요약 -->
-                    <ol class="rcont_txtsub">
+                    <!-- 텍스트 부분 -->
+                    <div class="rcont_txt">
+                      <!-- 객실 타입 -->
+                      <h3>${rv[key].type}</h3>
+                      <!-- 객실 이름 -->
+                      <h4>${rv[key].tit}</h4>
+                      <!-- 객실 요약 -->
+                      <ol class="rcont_txtsub">
                       <li>
-                        <span>침대타입</span>
-                        <span>${rv[key].bed}</span>
+                      <span>침대타입</span>
+                      <span>${rv[key].bed}</span>
                       </li>
                       <li>
                         <span>전망</span>
@@ -71,8 +70,9 @@ function roomsFn() {
                         <span>면적</span>
                         <span>${rv[key].size}</span>
                       </li>
-                    </ol>
-                  </div>
+                     </ol>
+                    </div>
+                  </a>
                 </section>
               </li>
             `
@@ -89,8 +89,6 @@ function roomsFn() {
         e.preventDefault();
         // rcont.innerHTML = ""; 
         let atxt = x.innerText.toLowerCase().trim();
-        // console.log(atxt);
-        // console.log(atxt);
         let rinfo = rdata[atxt];
         rlist(rinfo);
         // console.log(rinfo);
@@ -167,6 +165,35 @@ function roomsFn() {
       for(let x of obj) showIt(x);
       })
    } // scrollShow 함수
+
+
+   // room 페이지와 링크 연결
+   const roomListLink = document.querySelectorAll(".rcontwrap>a");
+   console.log(roomListLink);
+   roomListLink.forEach((ele)=>{
+    ele.onclick = (e) =>{
+      e.preventDefault();
+      let atxt = ele.querySelector(".rcont_txt>h4").innerText.toLowerCase().trim();
+      atxt = atxt.replace(" ", "");
+      // console.log("메롱");
+      // console.log(atxt);
+      let url;
+      switch(atxt) {
+          case"luxury":url = atxt; break;
+          case"magnifique":url = atxt; break;
+          case"luxurylake":url = atxt; break;
+          case"clubluxury":url = atxt; break;
+          case"magnifiquefamily":url = atxt; break;
+          default: url = "esc";
+      }
+
+      if(url==="esc") {
+          alert("공사중입니다.")
+      } else {
+          location.href = "room.html?cat="+encodeURIComponent(url);
+      }
+    }
+   })
 
 
 } // 로드 함수

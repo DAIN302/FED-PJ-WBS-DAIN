@@ -36,8 +36,11 @@ function MakeCaledar() {
     }
 
     // 처음에 오늘 날짜로 표시
+    // 오늘날짜
     let currentDate = today.getFullYear() + '' + addZero((today.getMonth()+1)) + '' + addZero(today.getDate())
+    // 다음날 날짜
     let currentNextDate = today.getFullYear() + '' + addZero((today.getMonth()+1)) + '' + addZero(today.getDate()+1)
+    // 오늘이 이번달의 마지막 날일때 다음날이 다음달의 1일로 표시
     let currentNextMonthFirst = today.getFullYear() + '' + addZero((today.getMonth()+2)) + '' + addZero(1)
     // 이번달의 마지막날 날짜와 요일 구하기
     let currentEndDate = new Date(currentYear, currentMonth+1, 0).getDate();
