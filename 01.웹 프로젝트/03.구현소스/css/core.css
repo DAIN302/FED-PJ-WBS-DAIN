@@ -7,9 +7,13 @@
     font-family: 'Noto Sans KR', sans-serif;
     font-family: 'Source Code Pro', monospace;
 */
-/* 공사중표시 */
-body * {
-    /* outline: 1px dashed #eee; */
+:root {
+    --scl : #A98524;
+    --sclo : #a986246b;
+    --sclo2 : #a9862444;
+    --bscl : #f6f6f6;
+    --sunColor : #de2e5f;
+    --satColor : #3aaced;
 }
 
 html {
@@ -29,21 +33,15 @@ body::-webkit-scrollbar {
     width: 5px;
 }
 body::-webkit-scrollbar-thumb {
-    background-color: rgba(5,5,5,0.5);
+    background-color:var(--sclo);
 }
 body::-webkit-scrollbar-track {
     /* 스크롤바 */
-    background-color: rgba(5,5,5,0.5);
+    /* background-color: rgba(5,5,5,0.5); */
+    background-color:var(--sclo2);
 }
 
-:root {
-    --scl : #A98524;
-    --sclo : #a986246b;
-    --sclo2 : #a9862444;
-    --bscl : #f6f6f6;
-    --sunColor : #de2e5f;
-    --satColor : #3aaced;
-}
+
 
 
 

@@ -164,7 +164,7 @@
 .today::after {
     content: '';
     position: absolute;
-    background-color: #ddd;
+    background-color: var(--sclo2);
     left: 50%;
     top: 50%;
     width: 30px;
