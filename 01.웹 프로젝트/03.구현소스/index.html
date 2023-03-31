@@ -326,17 +326,10 @@
         <!-- 2-1. 1번 메인페이지 : 배경 비디오 및 예약 선택폼 -->
         <div class="main_page page" id="pg1">
           <!-- 2-1-1. 배경 비디오 -->
-          <video
-            id="mvid"
-            src="./videos/[Official Video] Sofitel Ambassador Seoul.mp4"
-            autoplay
-            muted
-            playsinline
-            loop
-          ></video>
+          <video id="mvid" src="./videos/sofitel.mp4" autoplay muted playsinline loop></video>
           <!-- 2-1-2. 예약 선택 폼 -->
           <div class="main_res">
-            <form action="" method="get" class="main_res_form">
+            <form action="process.php" method="get" class="main_res_form">
               <div class="main_res_cont">
                 <div class="main_res_chkbx">
                   <!-- 날짜선택 : 체크인 -->
@@ -605,7 +598,7 @@
                         <div class="main_timebar"><span></span></div>
                       </div>
                       <!-- a요소를 누르면 해당되는 이미지로 전환 -->
-                      <span>Fait Maison<span>
+                      <span>Fait Maison</span>
                     </li>
                     <li>
                       <div class="main_dining_time">
