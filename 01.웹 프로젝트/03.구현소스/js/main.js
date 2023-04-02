@@ -17,7 +17,7 @@ function mainFn() {
 
         roomsMore.onclick = (e) => {
             e.preventDefault();
-            location.href = "rooms.html";
+            location.href = "rooms.html?rm=rooms";
         };
     }
 
