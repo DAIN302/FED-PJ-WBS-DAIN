@@ -2,10 +2,13 @@
 
 // 넘어온 url 받기
 let pm = location.href;
+// 시스템을 통한 접근만 허용!
+if(pm.indexOf("?")===-1) location.href="index.html";
 pm = pm.split("?")[1].split("=")[1];
 // pm값 특수문자 복원
 pm = decodeURIComponent(pm);
 console.log(pm);
+
 
 window.addEventListener("DOMContentLoaded", roomFn);
 

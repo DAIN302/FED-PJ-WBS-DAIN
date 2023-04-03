@@ -116,15 +116,6 @@ else{
         rlist(rinfo);
         // console.log(rinfo);
            
-        // if(atxt==="all") {
-        //     location.href = "rooms.html";
-        //     rlist(allRoom);
-        // } else {
-        //     console.log(rinfo);
-        //     location.href = "rooms.html?cat="+encodeURIComponent(atxt);
-        //     rlist(rinfo);
-        // }
-
         // 클래스 초기화
         for(let y of lnbList) {
             y.classList.remove("on");
@@ -201,7 +192,6 @@ else{
           e.preventDefault();
           let atxt = ele.querySelector(".rcont_txt>h4").innerText.toLowerCase().trim();
           atxt = atxt.replace(" ", "");
-          // console.log("메롱");
           // console.log(atxt);
           let url;
           switch(atxt) {
