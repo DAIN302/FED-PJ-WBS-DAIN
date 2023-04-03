@@ -26,6 +26,7 @@ function scrollFn() {
 
     // 1. 전체 휠 이벤트 설정 /////
     window.addEventListener("wheel", wheelFn, {passive:false})
+    // window.addEventListener("scroll", wheelFn);
 
     function wheelFn(e) {
         // console.log("ㅎㅇ");
@@ -129,7 +130,7 @@ function scrollFn() {
         },500);
     }
 
-    // 4번페이지(다이닝)만 gnb 글씨색 다르게 하기 
+    // 3,4,5번페이지 gnb 및 인디케이터, 컨택트 아이콘 색상 다르게 하기 
     function chgColor (c) {
         // 1. 대상선정
         // (1) 상단

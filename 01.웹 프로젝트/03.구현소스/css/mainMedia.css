@@ -90,6 +90,15 @@
         height: 40vh;
         top: 30%;
     }
+    
+    .main_room_img .main_room_btn button,
+    .main_room_img .main_room_time {
+        color : #555;
+    }
+
+    .main_room_img .main_room_btn button {
+        font-size: 1.5rem;
+    }
 
     /* 이미지 넘기기 버튼 */
     .main_room_btn {
@@ -97,7 +106,7 @@
         left: 50%;
         top: auto;
         transform: translate(-50%, -50%);
-        bottom: 10%;
+        bottom: 14%;
     }
 
     .main_room_btn button {
