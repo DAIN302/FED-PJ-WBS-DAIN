@@ -4,3 +4,6 @@
 
 1차 프로젝트 주소 : 
 https://dain302.github.io/FED-PJ-WBS-DAIN/01.%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/03.%EA%B5%AC%ED%98%84%EC%86%8C%EC%8A%A4/index.html
+
+1차 프로젝트 발표 자료 :
+https://dain302.github.io/FED-PJ-WBS-DAIN/01.%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/04.%EA%B0%80%EC%9D%B4%EB%93%9C%EB%AC%B8%EC%84%9C/1%EC%B0%A8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EB%B0%9C%ED%91%9C.pdf
