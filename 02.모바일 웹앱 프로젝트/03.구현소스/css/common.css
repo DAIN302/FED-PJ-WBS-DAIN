@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/* 공통 모듈 디자인 CSS */
+
+#top {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.top {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    height: 140px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gnb>ul {
+    display: flex;
+}
+
+.logo {
+    max-width: 140px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.side_menu {
+    display: flex;
+}
