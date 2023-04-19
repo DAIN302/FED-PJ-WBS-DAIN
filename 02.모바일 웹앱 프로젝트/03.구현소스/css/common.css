@@ -26,7 +26,10 @@
 .gnb>ul {
     display: flex;
     gap : 0 20px;
-    
+}
+
+.gnb>ul>li>a {
+    font-size: 1.6rem;
 }
 
 .logo {
@@ -45,4 +48,6 @@
 
 .side_menu {
     display: flex;
+    justify-content: flex-end;
+    gap: 0px 20px;
 }
