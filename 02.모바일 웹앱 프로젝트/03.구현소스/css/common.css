@@ -19,12 +19,24 @@
     justify-content: space-between;
 }
 
+.top_wrap {
+    width: 33.33%;
+}
+
 .gnb>ul {
     display: flex;
+    gap : 0 20px;
+    
 }
 
 .logo {
-    max-width: 140px;
+    text-align: center;
+    width: 100%;
+}
+
+.logo a {
+    display: inline-block;
+    width: 140px;
 }
 
 .logo img {
