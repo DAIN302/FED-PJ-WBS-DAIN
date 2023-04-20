@@ -7,6 +7,11 @@
     <title>향수가 일상이 되는 셀렉트샵, 퍼퓸그라피.</title>
     <!-- 외부 CSS -->
     <link rel="stylesheet" href="./css/main.css" />
+    <!-- 제이쿼리 -->
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>   
+    <!--공통 JS -->
+    <script src="./js/common.js"></script>   
   </head>
   <body>
     <!-- 상단 -->
@@ -18,13 +23,6 @@
             <ul>
               <li>
                 <a href="#">SHOP</a>
-                <ol class="sub_menu">
-                  <li><a href="#">BEST</a></li>
-                  <li><a href="#">NEW</a></li>
-                  <li><a href="#">WOMEN</a></li>
-                  <li><a href="#">MEN</a></li>
-                  <li><a href="#">MAIN NOTE</a></li>
-                </ol>
               </li>
               <li>
                 <a href="#">CURATION</a>
@@ -48,7 +46,7 @@
         </div>
         <!-- 사이드메뉴 -->
         <div class="top_wrap">
-          <ul class="side_menu">
+          <ul class="icon_menu">
             <li>
               <a href="#">
                 <span class="fa-regular fa-user"></span>
@@ -72,6 +70,39 @@
           </ul>
         </div>
       </header>
+      <aside class="sidebar_menu">
+        <ul class="sub_menu">
+          <li><a href="#">BEST</a></li>
+          <li><a href="#">NEW</a></li>
+          <li>
+            <a href="#">WOMEN</a>
+            <ol>
+              <li><a href="#">Modern</a></li>
+              <li><a href="#">Chic</a></li>
+              <li><a href="#">Lovely</a></li>
+            </ol>
+          </li>
+          <li>
+            <a href="#">MEN</a>
+            <ol>
+              <li><a href="#">Street</a></li>
+              <li><a href="#">Formal</a></li>
+              <li><a href="#">Elegant</a></li>
+            </ol>
+          </li>
+          <li>
+            <a href="#">MAIN NOTE</a>
+            <ol>
+              <li><a href="#">Citrus</a></li>
+              <li><a href="#">Floral</a></li>
+              <li><a href="#">Fruity</a></li>
+              <li><a href="#">Soapy</a></li>
+              <li><a href="#">Woody</a></li>
+              <li><a href="#">Powdery</a></li>
+            </ol>
+          </li>
+        </ul>
+      </aside>
     </div>
     <!-- 메인 -->
     <div id="cont">

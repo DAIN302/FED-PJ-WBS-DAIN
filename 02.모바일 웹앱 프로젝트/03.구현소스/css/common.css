@@ -8,6 +8,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    background-color: var(--pcolor);
 }
 
 .top {
@@ -30,6 +31,7 @@
 
 .gnb>ul>li>a {
     font-size: 1.6rem;
+    font-family: 'Nunito', sans-serif; 
 }
 
 .logo {
@@ -46,12 +48,18 @@
     width: 100%;
 }
 
-.side_menu {
+.icon_menu {
     display: flex;
     justify-content: flex-end;
     gap: 0px 20px;
+    font-size: 1.8rem;
 }
 
-.side_menu {
-    font-size: 2rem;
+.sidebar_menu {
+    position: absolute;
+    /* width: 100%; */
+    height: 100vh;
+    background-color: var(--pcolor);
+    font-family: 'Nunito', sans-serif; 
 }
+
