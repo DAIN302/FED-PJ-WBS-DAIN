@@ -57,9 +57,19 @@
 
 .sidebar_menu {
     position: absolute;
-    /* width: 100%; */
+    z-index: 999;
+    width: 20%;
     height: 100vh;
+    padding: 0 5%;
+    left: 0;
     background-color: var(--pcolor);
     font-family: 'Nunito', sans-serif; 
+}
+
+.sub_menu>li {
+    font-size: 1.4rem;
+}
+.sidebar_menu h2 {
+    font-size: 1.4rem;
 }
 
