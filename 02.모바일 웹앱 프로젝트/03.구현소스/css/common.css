@@ -56,20 +56,49 @@
 }
 
 .sidebar_menu {
-    position: absolute;
+    position: fixed;
     z-index: 999;
     width: 20%;
     height: 100vh;
     padding: 0 5%;
-    left: 0;
+    left: -50%;
     background-color: var(--pcolor);
     font-family: 'Nunito', sans-serif; 
+    transition : left .5s ease-in-out;
+}
+
+.sidebar_menu.show {
+    left: 0;
 }
 
 .sub_menu>li {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    padding : 1rem 0;
 }
 .sidebar_menu h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    position: relative;
+    cursor : pointer;
 }
 
+.sidebar_menu h2 .fa-solid {
+    position: absolute;
+    right: 3%;
+    transition: transform .3s ease-in-out;
+}
+
+.sidebar_menu h2.active .fa-solid {
+    transform: rotate(-180deg);
+}
+
+.sidebar_submenu.hidden {
+    height: 0;
+    overflow: hidden;
+}
+
+.sidebar_submenu>li {
+    padding: 1rem 0 1rem 2rem;
+}
+.sidebar_submenu>li a{
+    color : #555;
+}
