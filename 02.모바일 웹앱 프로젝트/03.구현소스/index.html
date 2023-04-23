@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./images/logo/icon.ico" />
     <title>향수가 일상이 되는 셀렉트샵, 퍼퓸그라피.</title>
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
     <!-- 외부 CSS -->
     <link rel="stylesheet" href="./css/main.css" />
     <!-- 제이쿼리 -->
     <script src="./js/jquery-3.6.3.min.js"></script>
-    <script src="./js/jquery-ui.min.js"></script>   
+    <script src="./js/jquery-ui.min.js"></script>
+    <!-- swiper js -->
+    <script src="./js/swiper-bundle.min.js"></script>
     <!--공통 JS -->
-    <script src="./js/common.js"></script>   
+    <script src="./js/common.js"></script>
+    <!-- 메인 JS -->
+    <script src="./js/main.js"></script>
   </head>
   <body>
     <!-- 상단 -->
@@ -120,7 +126,44 @@
     <div id="cont">
       <main class="cont">
         <!-- 배너영역 -->
-        <div class="main_banner"></div>
+        <div class="main_banner">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <!-- Best -->
+        <section class="main_best">
+          <div class="main_best_wrap">
+            <div class="main_best_column main_best_img">
+              <figure>
+                <img src="./images/main/best/1.jpg" alt="베스트셀러" />
+              </figure>
+            </div>
+            <div class="main_best_column main_best_txt"></div>
+          </div>
+          <div class="main_best_wrap">
+            <div class="main_best_column main_best_img">
+              <figure>
+                <img src="./images/main/best/2.jpg" alt="베스트셀러" />
+              </figure>
+            </div>
+            <div class="main_best_column main_best_txt"></div>
+          </div>
+          <div class="main_best_wrap">
+            <div class="main_best_column main_best_img">
+              <figure>
+                <img src="./images/main/best/3.jpg" alt="베스트셀러" />
+              </figure>
+            </div>
+            <div class="main_best_column main_best_txt"></div>
+          </div>
+        </section>
+        <!-- New Arrival -->
+        <section class="main_new"></section>
+        <!-- select -->
       </main>
     </div>
     <!-- 하단 -->

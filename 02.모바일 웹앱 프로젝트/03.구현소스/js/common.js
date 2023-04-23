@@ -3,7 +3,10 @@ $(()=>{
     // 서브메뉴 등장 -> shop 글씨 클릭했을때만
     $(".gnb>ul>li>a").first().click(function(e){
         e.preventDefault();
-        $(".sidebar_menu").addClass("show");
+        // $(".sidebar_menu").addClass("show");
+        $(".sidebar_menu").animate({
+            left : 0
+        }, 1000, "easeOutExpo")
     })
 
 

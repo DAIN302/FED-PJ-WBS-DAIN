@@ -15,7 +15,7 @@
     margin: 0 auto;
     width: 90%;
     display: flex;
-    height: 140px;
+    height: 120px;
     align-items: center;
     justify-content: space-between;
 }
@@ -41,7 +41,7 @@
 
 .logo a {
     display: inline-block;
-    width: 140px;
+    width: 120px;
 }
 
 .logo img {
@@ -64,11 +64,11 @@
     left: -50%;
     background-color: var(--pcolor);
     font-family: 'Nunito', sans-serif; 
-    transition : left .5s ease-in-out;
+    /* transition : left .5s ease-in-out; */
 }
 
 .sidebar_menu.show {
-    left: 0;
+    /* left: 0; */
 }
 
 .sub_menu>li {
