@@ -76,6 +76,7 @@
           </ul>
         </div>
       </header>
+      <!-- 사이드바 메뉴 -->
       <aside class="sidebar_menu">
         <ul class="sub_menu">
           <li><a href="#">BEST</a></li>
@@ -121,6 +122,23 @@
           </li>
         </ul>
       </aside>
+      <!-- 로그인 -->
+      <aside class="icon_sidebar">
+        <div class="login_box">
+          <form action="index.html" method="post" id="login-form">
+            <div class="login_inputbx">
+              <label for="email">Email Address</label>
+              <input type="email" required>
+            </div>
+            <div class="login_inputbx">
+              <label for="pw">Password</label>
+              <input type="password" id="pw" required>
+            </div>
+
+            <input type="submit" value="Log In">
+          </form>
+        </div>
+      </aside>
     </div>
     <!-- 메인 -->
     <div id="cont">
@@ -136,13 +154,21 @@
         </div>
         <!-- Best -->
         <section class="main_best">
+          <h2>BEST</h2>
           <div class="main_best_wrap">
             <div class="main_best_column main_best_img">
               <figure>
                 <img src="./images/main/best/1.jpg" alt="베스트셀러" />
               </figure>
             </div>
-            <div class="main_best_column main_best_txt"></div>
+            <div class="main_best_column main_best_txt">
+              <h3></h3>
+              <h4></h4>
+              <p></p>
+              <div>
+                <a href="#">Shop Now</a>
+              </div>
+            </div>
           </div>
           <div class="main_best_wrap">
             <div class="main_best_column main_best_img">
@@ -162,7 +188,9 @@
           </div>
         </section>
         <!-- New Arrival -->
-        <section class="main_new"></section>
+        <section class="main_new">
+          <h2>NEW ARRIVAL</h2>
+        </section>
         <!-- select -->
       </main>
     </div>

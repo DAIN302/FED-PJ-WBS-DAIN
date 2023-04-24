@@ -54,4 +54,17 @@
 /* best */
 .main_best_wrap {
     padding-top: 15vh;
+    height: 80vh;
+    display: flex;
+}
+
+.main_best_img figure {
+    width: 60vw;
+    height: 100%;
+}
+
+.main_best_img figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

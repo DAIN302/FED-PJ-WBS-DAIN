@@ -32,6 +32,7 @@
 .gnb>ul>li>a {
     font-size: 1.6rem;
     font-family: 'Nunito', sans-serif; 
+    color : #222;
 }
 
 .logo {
@@ -55,20 +56,23 @@
     font-size: 1.8rem;
 }
 
-.sidebar_menu {
+.sidebar_menu, .icon_sidebar {
     position: fixed;
     z-index: 999;
     width: 20%;
     height: 100vh;
-    padding: 0 5%;
-    left: -50%;
     background-color: var(--pcolor);
-    font-family: 'Nunito', sans-serif; 
-    /* transition : left .5s ease-in-out; */
 }
 
-.sidebar_menu.show {
-    /* left: 0; */
+.sidebar_menu {
+    padding: 0 5%;
+    left: -50%;
+    font-family: 'Nunito', sans-serif; 
+}
+
+.icon_sidebar{
+    right: 0;
+    padding: 0 5%;
 }
 
 .sub_menu>li {

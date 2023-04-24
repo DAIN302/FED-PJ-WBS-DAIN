@@ -6,10 +6,8 @@ $(()=>{
         // $(".sidebar_menu").addClass("show");
         $(".sidebar_menu").animate({
             left : 0
-        }, 1000, "easeOutExpo")
+        }, 1000, "easeOutExpo") 
     })
-
-
 
     // 서브메뉴
     // 1. 처음 다 숨기기
