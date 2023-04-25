@@ -82,3 +82,10 @@
     height: 100%;
     object-fit: cover;
 }
+
+.main_best_txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}

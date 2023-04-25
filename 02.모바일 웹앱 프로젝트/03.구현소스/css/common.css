@@ -106,3 +106,10 @@
 .sidebar_submenu>li a{
     color : #555;
 }
+
+
+
+/* 메인 */
+#cont {
+    overflow-x: hidden;
+}
