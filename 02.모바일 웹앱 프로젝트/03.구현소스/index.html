@@ -156,20 +156,22 @@
             <div class="swiper-pagination"></div>
           </div>
         </div>
+        <!-- <div id="main_best_cont"> -->
+        </div>
         <!-- Best -->
         <section class="main_best">
           <h2 class="main_tit">BEST</h2>
           <div class="main_best_cont">
-            <div class="main_best_wrap">
+            <div class="main_best_wrap" v-for="(v,i) in items.data">
               <div class="main_best_column main_best_img">
-                <figure>
+                <figure v-html="v.image">
                 </figure>
               </div>
               <div class="main_best_column main_best_txt">
-                <h3 class="best_perfume_brand">
+                <h3 class="best_perfume_brand" v-html="v.brandlogo">
                 </h3>
-                <h4 class="best_perfume_name"></h4>
-                <p class="best_perfume_desc">
+                <h4 class="best_perfume_name">{{v.name}}</h4>
+                <p class="best_perfume_desc" v-html="v.desc">
                 </p>
                 <div class="best_perfume_sublink">
                   <a href="#">Shop Now</a>
@@ -177,62 +179,6 @@
               </div>
             </div> 
           </div>
-          <!-- <best-cont v-for="(n, i) in 3"></best-cont> -->
-          <!-- 
-            <div class="main_best_wrap">
-              <div class="main_best_column main_best_img">
-                <figure>
-                </figure>
-              </div>
-              <div class="main_best_column main_best_txt">
-                <h3 class="best_perfume_brand">
-                </h3>
-                <h4 class="best_perfume_name"></h4>
-                <p class="best_perfume_desc">
-                </p>
-                <div class="best_perfume_sublink">
-                  <a href="#">Shop Now</a>
-                </div>
-              </div>
-            </div> 
-          -->
-          <!-- <div class="main_best_wrap">
-            <div class="main_best_column main_best_img">
-              <figure>
-                <img class="best_img1" src="./images/main/best/1.jpg" alt="베스트셀러" />
-              </figure>
-            </div>
-            <div class="main_best_column main_best_txt">
-              <h3 class="best_perfume_brand">
-                <img src="./images/main/best/santa.png" alt="브랜드이미지">
-              </h3>
-              <h4 class="best_perfume_name">L'Iris Eau de Parfum</h4>
-              <p class="best_perfume_desc">
-                하이얀 꽃잎들이 경쾌히 흐드러지던<br>
-                찬란한 계절의 끝자락, <br>
-                홀로 피어나 봄을 따스히 지키는 오월의 아이리스
-              </p>
-              <div class="best_perfume_sublink">
-                <a href="#">Shop Now</a>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="main_best_wrap">
-              <div class="main_best_column main_best_img">
-              <figure>
-                <img class="best_img2" src="./images/main/best/2.jpg" alt="베스트셀러" />
-              </figure>
-            </div>
-            <div class="main_best_column main_best_txt"></div>
-          </div>
-          <div class="main_best_wrap">
-            <div class="main_best_column main_best_img">
-              <figure>
-                <img class="best_img3" src="./images/main/best/3.jpg" alt="베스트셀러" />
-              </figure>
-            </div>
-            <div class="main_best_column main_best_txt"></div>
-          </div> -->
         </section>
         <!-- New Arrival -->
         <section class="main_new">
@@ -245,7 +191,7 @@
                 </figure>
               </div>
               <div class="new_txtbx">
-                <h3></h3>
+                <h3>Jo By Jo Loves</h3>
                 <p></p>
               </div>
             </li>

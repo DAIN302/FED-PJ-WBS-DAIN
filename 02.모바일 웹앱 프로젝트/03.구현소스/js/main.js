@@ -38,32 +38,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     bannerSwiper();
 
-    // Vue.component("best-cont", {
-    //     template : `
-    //         <div class="main_best_wrap">
-    //           <div class="main_best_column main_best_img">
-    //             <figure>
-    //                 <img v-bind:src="./images/main/best/1.jpg" alt="베스트셀러" />  
-    //             </figure>
-    //           </div>
-    //           <div class="main_best_column main_best_txt">
-    //             <h3 class="best_perfume_brand">
-    //             </h3>
-    //             <h4 class="best_perfume_name"></h4>
-    //             <p class="best_perfume_desc">
-    //             </p>
-    //             <div class="best_perfume_sublink">
-    //               <a href="#">Shop Now</a>
-    //             </div>
-    //           </div>
-    //         </div> 
-    //     `
-    // })
-
-    // new Vue({
-    //     el : ".main_best_cont",
-
-    // })
+    const bestCont = new Vue({
+        el : ".main_best_cont",
+        data : {
+            items : {}
+        },
+        mounted : function(){
+            axios.get("./js/best.json").then(x=>this.items=x);
+        }
+    })
 
     console.log("gd")
 
