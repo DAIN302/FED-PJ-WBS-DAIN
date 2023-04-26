@@ -12,6 +12,10 @@
     <!-- 제이쿼리 -->
     <script src="./js/jquery-3.6.3.min.js"></script>
     <script src="./js/jquery-ui.min.js"></script>
+    <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
     <!-- swiper js -->
     <script src="./js/swiper-bundle.min.js"></script>
     <!--공통 JS -->
@@ -155,7 +159,44 @@
         <!-- Best -->
         <section class="main_best">
           <h2 class="main_tit">BEST</h2>
-          <div class="main_best_wrap">
+          <div class="main_best_cont">
+            <div class="main_best_wrap">
+              <div class="main_best_column main_best_img">
+                <figure>
+                </figure>
+              </div>
+              <div class="main_best_column main_best_txt">
+                <h3 class="best_perfume_brand">
+                </h3>
+                <h4 class="best_perfume_name"></h4>
+                <p class="best_perfume_desc">
+                </p>
+                <div class="best_perfume_sublink">
+                  <a href="#">Shop Now</a>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <!-- <best-cont v-for="(n, i) in 3"></best-cont> -->
+          <!-- 
+            <div class="main_best_wrap">
+              <div class="main_best_column main_best_img">
+                <figure>
+                </figure>
+              </div>
+              <div class="main_best_column main_best_txt">
+                <h3 class="best_perfume_brand">
+                </h3>
+                <h4 class="best_perfume_name"></h4>
+                <p class="best_perfume_desc">
+                </p>
+                <div class="best_perfume_sublink">
+                  <a href="#">Shop Now</a>
+                </div>
+              </div>
+            </div> 
+          -->
+          <!-- <div class="main_best_wrap">
             <div class="main_best_column main_best_img">
               <figure>
                 <img class="best_img1" src="./images/main/best/1.jpg" alt="베스트셀러" />
@@ -175,9 +216,9 @@
                 <a href="#">Shop Now</a>
               </div>
             </div>
-          </div>
-          <div class="main_best_wrap">
-            <div class="main_best_column main_best_img">
+          </div> -->
+          <!-- <div class="main_best_wrap">
+              <div class="main_best_column main_best_img">
               <figure>
                 <img class="best_img2" src="./images/main/best/2.jpg" alt="베스트셀러" />
               </figure>
@@ -191,11 +232,24 @@
               </figure>
             </div>
             <div class="main_best_column main_best_txt"></div>
-          </div>
+          </div> -->
         </section>
         <!-- New Arrival -->
         <section class="main_new">
           <h2 class="main_tit">NEW ARRIVAL</h2>
+          <ul class="main_newlist">
+            <li>
+              <div class="new_imgbx">
+                <figure>
+                  <img src="./images/main/new/1.jpeg" alt="신상품">
+                </figure>
+              </div>
+              <div class="new_txtbx">
+                <h3></h3>
+                <p></p>
+              </div>
+            </li>
+          </ul>
         </section>
         <!-- select -->
       </main>
