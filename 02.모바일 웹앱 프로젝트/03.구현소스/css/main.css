@@ -185,9 +185,12 @@
 
 
 .new_imgbx figure {
+    aspect-ratio: 465 / 530;
 }
 
-.new_imgbx figure img {
+.new_imgbx figure img {                                                                                                                                                                                                                                                                                     
+    height: 100%;
+    object-fit: cover;
 }
 
 
