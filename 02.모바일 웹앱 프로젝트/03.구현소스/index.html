@@ -156,13 +156,12 @@
             <div class="swiper-pagination"></div>
           </div>
         </div>
-        <!-- <div id="main_best_cont"> -->
         </div>
         <!-- Best -->
         <section class="main_best">
           <h2 class="main_tit">BEST</h2>
           <div class="main_best_cont">
-            <div class="main_best_wrap" v-for="(v,i) in items.data">
+            <div class="main_best_wrap" v-for="(v,i) in bestitems.data">
               <div class="main_best_column main_best_img">
                 <figure v-html="v.image">
                 </figure>
@@ -183,19 +182,22 @@
         <!-- New Arrival -->
         <section class="main_new">
           <h2 class="main_tit">NEW ARRIVAL</h2>
-          <ul class="main_newlist">
-            <li>
-              <div class="new_imgbx">
-                <figure>
-                  <img src="./images/main/new/1.jpeg" alt="신상품">
-                </figure>
-              </div>
-              <div class="new_txtbx">
-                <h3>Jo By Jo Loves</h3>
-                <p></p>
-              </div>
-            </li>
-          </ul>
+          <div class="main_new_cont">
+            <ul class="main_newlist">
+              <li v-for="(v,i) in newitems.data">
+                <a href="#">
+                  <div class="new_imgbx">
+                    <figure v-html="makeImg(i)">
+                    </figure>
+                  </div>
+                  <div class="new_txtbx">
+                    <h3>{{v.name}}</h3>
+                    <p v-html="v.desc"></p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
         </section>
         <!-- select -->
       </main>

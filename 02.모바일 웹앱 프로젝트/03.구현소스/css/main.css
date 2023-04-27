@@ -64,7 +64,7 @@
 }
 
 .main_best_wrap {
-    padding-top: 15vh;
+    padding-bottom: 15vh;
     height: 80vh;
     display: flex;
 }
@@ -161,5 +161,48 @@
 
 /* new */
 .main_new {
-    background-color: rgb(245,245,245);
 }
+
+.main_new_cont {
+    background-color: rgb(245,245,245);
+    padding : 100px 0;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.main_newlist {
+    display: flex;
+    position: relative;
+    /* overflow: hidden; */
+    left: 0;
+}
+
+.main_newlist>li {
+    
+}
+
+
+
+.new_imgbx figure {
+}
+
+.new_imgbx figure img {
+}
+
+
+.new_txtbx {
+    
+}
+
+.new_txtbx h3 { 
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.new_txtbx p {
+    font-size: 1.6rem;
+    color : #777;
+}
+
+

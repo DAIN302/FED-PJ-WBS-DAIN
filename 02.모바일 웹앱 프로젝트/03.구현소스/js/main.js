@@ -41,10 +41,25 @@ window.addEventListener("DOMContentLoaded", ()=>{
     const bestCont = new Vue({
         el : ".main_best_cont",
         data : {
-            items : {}
+            bestitems : {}
         },
         mounted : function(){
-            axios.get("./js/best.json").then(x=>this.items=x);
+            axios.get("./js/best.json").then(x=>this.bestitems=x);
+        }
+    })
+
+    const newCont = new Vue({
+        el :".main_new_cont",
+        data : {
+            newitems : []
+        },
+        methods : {
+            makeImg(val){
+                return `<img src="./images/main/new/${val+1}.jpg" alt="신상품">`;
+            },
+        },
+        mounted : function(){
+            axios.get("./js/new.json").then(x=>this.newitems=x);
         }
     })
 
