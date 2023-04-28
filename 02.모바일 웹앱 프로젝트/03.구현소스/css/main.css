@@ -14,15 +14,15 @@
     padding-top: 120px;
 }
 
-.swiper {
+.main_banner .swiper {
     width: 100%;
     height: 75vh;
 }
 
 .swiper-slide {
-    text-align: center;
+    /* text-align: center; */
     font-size: 18px;
-    background: #fff;
+    /* background: #fff; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,10 +165,14 @@
 
 .main_new_cont {
     background-color: rgb(245,245,245);
-    padding : 100px 0;
+    padding : 100px 0 50px;
     width: 100%;
     overflow: hidden;
 
+}
+
+.main_new_cont .swiper-wrapper {
+    transition-timing-function: linear;
 }
 
 .main_newlist {
@@ -195,7 +199,7 @@
 
 
 .new_txtbx {
-    
+    padding-top : 10px;
 }
 
 .new_txtbx h3 { 
@@ -204,7 +208,7 @@
 }
 
 .new_txtbx p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color : #777;
 }
 

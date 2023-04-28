@@ -1,6 +1,7 @@
 // 메인페이지 JS
 
 window.addEventListener("DOMContentLoaded", ()=>{
+    // 메인 배너 함수
     function bannerSwiper() {
         const banImg = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg"];
 
@@ -13,7 +14,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             `;
 
-            $(".swiper-wrapper").append(temp_banner);
+            $(".main_bannerwrap").append(temp_banner);
         }
         
         let banSwiper = new Swiper(".mySwiper", {
@@ -38,6 +39,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     bannerSwiper();
 
+    // Best
     const bestCont = new Vue({
         el : ".main_best_cont",
         data : {
@@ -46,8 +48,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
         mounted : function(){
             axios.get("./js/best.json").then(x=>this.bestitems=x);
         }
-    })
+    });
 
+    // New
     const newCont = new Vue({
         el :".main_new_cont",
         data : {
@@ -61,7 +64,25 @@ window.addEventListener("DOMContentLoaded", ()=>{
         mounted : function(){
             axios.get("./js/new.json").then(x=>this.newitems=x);
         }
+    });
+
+    let newSwiper = new Swiper(".newSwiper", {
+        slidesPerView: 3,
+        slidesPerGroup: 1, 
+        spaceBetween: 100,
+        speed : 3000,
+        loop: true, 
+        loopFillGroupWithBlank: true,
+        navigation: {
+            nextEl: ".swiper-button-next", 
+            prevEl: ".swiper-button-prev", 
+        },
+        autoplay: {
+            delay: 1000, 
+            disableOnInteraction: false,
+        },
     })
+
 
     console.log("gd")
 
