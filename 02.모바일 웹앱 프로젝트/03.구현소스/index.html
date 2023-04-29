@@ -21,7 +21,7 @@
     <!--공통 JS -->
     <script src="./js/common.js"></script>
     <!-- 메인 JS -->
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </head>
   <body>
     <!-- 상단 -->
@@ -160,6 +160,8 @@
         <section class="main_best">
           <h2 class="main_tit">BEST</h2>
           <div class="main_best_cont">
+            <best-comp></best-comp>
+            <!-- 
             <div class="main_best_wrap" v-for="(v,i) in bestitems.data">
               <div class="main_best_column main_best_img">
                 <figure v-html="v.image">
@@ -175,7 +177,8 @@
                   <a href="#">Shop Now</a>
                 </div>
               </div>
-            </div> 
+            </div>  
+          -->
           </div>
         </section>
         <!-- New Arrival -->

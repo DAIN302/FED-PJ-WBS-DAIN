@@ -1,56 +1,77 @@
 // 메인페이지 JS
 
-window.addEventListener("DOMContentLoaded", ()=>{
-    // 메인 배너 함수
-    function bannerSwiper() {
-        const banImg = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg"];
+import bData from "./bestData.js";
 
-        for(let i = 0; i<banImg.length; i++) {
-            let temp_banner = `
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="./images/main/banner/${banImg[i]}" alt="베너이미지">
-                    </a>
-                </div>
-            `;
+// 메인 배너 함수
+function bannerSwiper() {
+    const banImg = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg"];
 
-            $(".main_bannerwrap").append(temp_banner);
-        }
-        
-        let banSwiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            slidesPerGroup: 1, 
-            loop: true, 
-            loopFillGroupWithBlank: true,
-            pagination: {
-                el: ".swiper-pagination", 
-                type: "progressbar",
-            },
-            navigation: {
-                nextEl: ".swiper-button-next", 
-                prevEl: ".swiper-button-prev", 
-            },
-            autoplay: {
-                delay: 5000, 
-                disableOnInteraction: false,
-            },
-        })
+    for(let i = 0; i<banImg.length; i++) {
+        let temp_banner = `
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="./images/main/banner/${banImg[i]}" alt="베너이미지">
+                </a>
+            </div>
+        `;
+
+        $(".main_bannerwrap").append(temp_banner);
     }
-
-    bannerSwiper();
-
-    // Best
-    const bestCont = new Vue({
-        el : ".main_best_cont",
-        data : {
-            bestitems : {}
+    
+    let banSwiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        slidesPerGroup: 1, 
+        loop: true, 
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: ".swiper-pagination", 
+            type: "progressbar",
         },
-        mounted : function(){
-            axios.get("./js/best.json").then(x=>this.bestitems=x);
-        }
-    });
+        navigation: {
+            nextEl: ".swiper-button-next", 
+            prevEl: ".swiper-button-prev", 
+        },
+        autoplay: {
+            delay: 5000, 
+            disableOnInteraction: false,
+        },
+    })
+}
 
-    // New
+bannerSwiper();
+
+// Best
+function bestCont() {
+    // const bestCont = new Vue({
+    //     el : ".main_best_cont",
+    //     data : {
+    //         bestitems : {}
+    //     },
+    //     mounted : function(){
+    //         axios.get("./js/best.json").then(x=>this.bestitems=x);
+
+    //         function bestParallax() {
+    //             // 윈도우 높이값
+    //             const winHeight = $(window).height();
+        
+    //             // 패럴렉스 수치 범위
+    //             const setHeight = 200;
+        
+    //             const tg = $(".main_best_img");
+    //             console.log(tg);
+        
+    //         }
+    //         bestParallax();
+    //     }
+    // });
+}
+
+bestCont();
+
+
+
+// New
+function newContBanner() {
     const newCont = new Vue({
         el :".main_new_cont",
         data : {
@@ -70,20 +91,22 @@ window.addEventListener("DOMContentLoaded", ()=>{
         slidesPerView: 3,
         slidesPerGroup: 1, 
         spaceBetween: 100,
-        speed : 3000,
         loop: true, 
         loopFillGroupWithBlank: true,
+        speed : 500,
         navigation: {
             nextEl: ".swiper-button-next", 
             prevEl: ".swiper-button-prev", 
         },
         autoplay: {
-            delay: 1000, 
+            delay: 3000, 
             disableOnInteraction: false,
+            pauseOnMouseEnter : true,
         },
-    })
+    });
+}
 
+newContBanner();
 
-    console.log("gd")
+console.log("gd")
 
-});

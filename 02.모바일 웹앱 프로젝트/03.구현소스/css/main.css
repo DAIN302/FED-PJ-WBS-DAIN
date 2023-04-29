@@ -61,6 +61,7 @@
     font-size: 6rem;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 3rem;
 }
 
 .main_best_wrap {
@@ -85,6 +86,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.2);
 }
 
 .main_best_txt {
@@ -160,9 +162,6 @@
 
 
 /* new */
-.main_new {
-}
-
 .main_new_cont {
     background-color: rgb(245,245,245);
     padding : 100px 0 50px;
@@ -172,31 +171,61 @@
 }
 
 .main_new_cont .swiper-wrapper {
-    transition-timing-function: linear;
+    transition-timing-function: ease-in-out;
 }
 
 .main_newlist {
     display: flex;
     position: relative;
-    /* overflow: hidden; */
     left: 0;
 }
 
-.main_newlist>li {
-    
+.main_newlist *{
+    user-select: none;
+    -webkit-user-drag: none;
 }
-
-
 
 .new_imgbx figure {
+    position: relative;
     aspect-ratio: 465 / 530;
+    overflow: hidden;
 }
 
-.new_imgbx figure img {                                                                                                                                                                                                                                                                                     
+.new_imgbx figure img {
+    position: absolute;     
+    transition: transform .7s;
+}
+
+.new_imgbx figure::before {
+    position: absolute;
+    content: '';
+    width: 100%;
     height: 100%;
-    object-fit: cover;
+    opacity: 0;
+    background-color: #fff;
+    z-index: 1;
+    transition: opacity .7s;
 }
 
+.new_imgbx figure::after {
+    position: absolute;
+    content: 'Discover More';
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+}
+
+.main_newlist a:hover img {
+    transform: scale(1.1);
+}
+
+.main_newlist a:hover .new_imgbx figure::before,
+.main_newlist a:hover .new_imgbx figure::after {
+    opacity: 0.6;
+}
 
 .new_txtbx {
     padding-top : 10px;
@@ -210,6 +239,7 @@
 .new_txtbx p {
     font-size: 1.4rem;
     color : #777;
+    padding-top: 10px;
 }
 
 
