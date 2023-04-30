@@ -113,3 +113,101 @@
 #cont {
     overflow-x: hidden;
 }
+
+
+/* 하단 */
+#info {
+    width: 100%;
+    background-color: #f9f9f9;
+}
+.info {
+    width: 90%;
+    padding: 50px 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+.blogo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);    
+    right: 0;
+}
+.blogo a {
+    display: inline-block;
+    width: 80px;
+}
+
+.btext {
+    padding-bottom: 20px;
+}
+
+.btext h2 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+
+.btext p {
+    font-size: 1.4rem;
+    padding: 5px 0;
+}
+
+.blink_wrap {
+    display: flex;
+    padding: 10px 0 20px;
+    font-size: 1.6rem;
+}
+
+.blink {
+    margin-right: 30px;   
+}
+
+.blink ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 30px;
+}
+
+.blink_bar{
+    width: 1px;
+    background-color: #bbb;
+    margin-right: 30px;
+}
+
+.bsns ul {
+    display: flex;
+    gap : 0 30px;
+}
+
+.bsns img {
+    height: 20px;
+}
+
+.binfo address {
+    font-style : normal;
+}
+
+.binfo ul {
+    /* display: flex;
+    flex-wrap: nowrap;
+    gap : 0 15px; */
+    width: 50%;
+    font-size: 1.4rem;
+    white-space: wrap;
+}
+
+.binfo li {
+    display: inline-block;
+}
+
+.binfo li span {
+    display: inline-block;
+    padding-right: 5px;
+    color : #777;
+}
+
+.binfo p {
+    font-size: 1.4rem;
+    color : #777;
+    padding-top: 20px;
+}

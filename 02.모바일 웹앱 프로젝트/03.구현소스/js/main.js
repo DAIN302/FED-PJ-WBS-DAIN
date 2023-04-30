@@ -36,35 +36,75 @@ function bannerSwiper() {
             disableOnInteraction: false,
         },
     })
-}
+} // bannerSwiper
 
 bannerSwiper();
 
 // Best
 function bestCont() {
-    // const bestCont = new Vue({
-    //     el : ".main_best_cont",
-    //     data : {
-    //         bestitems : {}
-    //     },
-    //     mounted : function(){
-    //         axios.get("./js/best.json").then(x=>this.bestitems=x);
+   const  bestP = document.querySelector(".main_best_cont")
+   let hcode = "";
+   for(let x in bData) {
+    hcode += `
+        <div class="main_best_wrap">
+            <div class="main_best_column main_best_img">
+                <figure>${bData[x].image}</figure>
+            </div>
+            <div class="main_best_column main_best_txt">
+            <h3 class="best_perfume_brand">
+                ${bData[x].brandlogo}
+            </h3>
+            <h4 class="best_perfume_name">${bData[x].name}</h4>
+            <p class="best_perfume_desc">
+            ${bData[x].desc}
+            </p>
+            <div class="best_perfume_sublink">
+                <a href="#">Shop Now</a>
+            </div>
+            </div>
+        </div>  
+    `
+   }
 
-    //         function bestParallax() {
-    //             // 윈도우 높이값
-    //             const winHeight = $(window).height();
-        
-    //             // 패럴렉스 수치 범위
-    //             const setHeight = 200;
-        
-    //             const tg = $(".main_best_img");
-    //             console.log(tg);
-        
-    //         }
-    //         bestParallax();
-    //     }
-    // });
-}
+   bestP.innerHTML = hcode;
+
+   
+   // 이미지 패럴렉스 효과 적용
+   // 윈도우 높이값
+   const winH = $(window).height();
+   // 패럴렉스 수치 범위
+   const setH = 200;
+   // 패럴렉스 대상
+   const bestImage = $(".main_best_img figure img")
+
+   // 패럴렉스 이동 함수
+   const moveImage = (elpos, ele, setH) => {
+    if(elpos < winH && elpos > -200) {
+        // 위치 이동값 계산
+        let x = setH - (elpos * setH) / winH
+
+        // 요소에 위치 이동 CSS 반영
+        $(ele).css({
+            transform : `scale(1.2) translateY(${-x}px)`
+        })
+    }
+   } // moveImage
+
+   // 요소위치값 - 현재스크롤위치값
+   const retVal = (elpos, scTop) => elpos - scTop;
+
+   // 스크롤이벤트함수
+   $(window).on("scroll", ()=>{
+    // 현재 스크롤 위치값
+    let scTop = $(window).scrollTop();
+
+    bestImage.each((idx, ele)=>{
+        moveImage(retVal($(ele).offset().top, scTop), ele, setH)
+    })
+
+   })
+      
+} // bestCont 
 
 bestCont();
 
@@ -87,6 +127,7 @@ function newContBanner() {
         }
     });
 
+    // 스와이퍼
     let newSwiper = new Swiper(".newSwiper", {
         slidesPerView: 3,
         slidesPerGroup: 1, 
@@ -104,9 +145,41 @@ function newContBanner() {
             pauseOnMouseEnter : true,
         },
     });
-}
+} // newContBanner
 
 newContBanner();
+
+function matchWheel() {
+    // 이벤트 대상
+    const wheelImg = $(".img_wheel");
+    // 버튼
+    let wheelBtn = $(".match_btn")
+    let wheelNum = 0;
+
+    const wheelImgFn = (num) => {
+        let rotateNum = -25.7143 * num
+        wheelImg.css({
+            transform : `rotate(${rotateNum}deg)`
+        })
+    }
+
+    wheelBtn.click(function(){
+        let isRight = $(this).is(".match_nextbtn");
+        // 오른쪽 버튼 클릭
+        if(isRight){
+            wheelNum++
+            wheelImgFn(wheelNum);
+        }
+        // 왼쪽 버튼 클릭
+        else {
+            wheelNum--;
+            wheelImgFn(wheelNum);
+        }
+    })
+}
+
+matchWheel();
+
 
 console.log("gd")
 

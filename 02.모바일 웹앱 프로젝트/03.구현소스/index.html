@@ -160,25 +160,6 @@
         <section class="main_best">
           <h2 class="main_tit">BEST</h2>
           <div class="main_best_cont">
-            <best-comp></best-comp>
-            <!-- 
-            <div class="main_best_wrap" v-for="(v,i) in bestitems.data">
-              <div class="main_best_column main_best_img">
-                <figure v-html="v.image">
-                </figure>
-              </div>
-              <div class="main_best_column main_best_txt">
-                <h3 class="best_perfume_brand" v-html="v.brandlogo">
-                </h3>
-                <h4 class="best_perfume_name">{{v.name}}</h4>
-                <p class="best_perfume_desc" v-html="v.desc">
-                </p>
-                <div class="best_perfume_sublink">
-                  <a href="#">Shop Now</a>
-                </div>
-              </div>
-            </div>  
-          -->
           </div>
         </section>
         <!-- New Arrival -->
@@ -189,10 +170,10 @@
               <li class="swiper-slide" v-for="(v,i) in newitems.data">
                 <a href="#">
                   <div class="new_imgbx">
-                    <figure v-html="makeImg(i)">
-                    </figure>
+                    <figure v-html="makeImg(i)"></figure>
                   </div>
                   <div class="new_txtbx">
+                    <h4>Jo Loves</h4>
                     <h3>{{v.name}}</h3>
                     <p v-html="v.desc"></p>
                   </div>
@@ -202,12 +183,90 @@
           </div>
         </section>
         <!-- select -->
-        
+        <section class="main_match">
+          <h2 class="main_tit">Match Your Fragrance</h2>
+          <div class="match_rotate">
+            <figure class="mask">
+              <img src="./images/main/match/mask_new.png" alt="mask">
+            </figure>
+            <figure class="img_wheel">
+              <img src="./images/main/match/wheel.png" alt="wheelimg">
+            </figure>
+          </div>
+          <div class="match_btnbx">
+            <button class="match_btn match_prevbtn">
+              <span class="fa-solid fa-chevron-left"></span>
+            </button>
+            <button class="match_btn match_nextbtn">
+              <span class="fa-solid fa-chevron-right"></span>
+            </button>
+          </div>
+        </section>
       </main>
     </div>
     <!-- 하단 -->
     <div id="info">
-      <footer class="info"></footer>
+      <footer class="info">
+        <div class="blogo">
+          <figure>
+            <a href="#">
+              <img src="./images/logo/info_logo.svg" alt="">
+            </a>
+          </figure>
+        </div>
+        <div class="btext">
+          <h2>PERFUMEGRAPHY PROCESS</h2>
+          <p>
+            국가기관에 정식 등록된 공식 수입사, 퍼퓸그라피의 모든 제품은 국문 라벨이 부착된 100% 정품임을 보증합니다.
+          </p>
+        </div>
+
+        <div class="blink_wrap">
+          <div class="blink">
+            <ul>
+              <li>
+                <a href="#">회사소개</a>
+              </li>
+              <li>
+                <a href="#">이용약관</a>
+              </li>
+              <li>
+                <a href="#">개인정보처리방침</a>
+              </li>
+              <li>
+                <a href="#">이용안내</a>
+              </li>
+            </ul>
+          </div>
+          <div class="blink_bar"></div>
+          <div class="bsns">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./images/logo/insta.png" alt="인스타그램">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/logo/facebook.png" alt="페이스북">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="binfo">
+          <address>
+            <ul>
+              <li><span>상호명</span>주식회사 퍼퓸그라피</li>
+              <li><span>대표자</span>홍은표</li>
+              <li><span>통신판매업신고번호</span>제 2019-서울종로-0106호</li>
+              <li><span>고객센터</span>070-7424-1253</li>
+              <li><span>주소</span>03086 서울특별시 종로구 대학로 10길 15-15(동숭동) 해안빌딩 2층 퍼퓸그라피</li>
+            </ul>
+          </address>
+          <p>Copyright © 퍼퓸그라피. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
     <script
       src="https://kit.fontawesome.com/2041668019.js"
