@@ -108,8 +108,6 @@ function bestCont() {
 
 bestCont();
 
-
-
 // New
 function newContBanner() {
     const newCont = new Vue({
@@ -156,6 +154,7 @@ function matchWheel() {
     let wheelBtn = $(".match_btn")
     let wheelNum = 0;
 
+    // 휠 이미지 기능 함수
     const wheelImgFn = (num) => {
         let rotateNum = -25.7143 * num
         wheelImg.css({
@@ -165,20 +164,23 @@ function matchWheel() {
 
     wheelBtn.click(function(){
         let isRight = $(this).is(".match_nextbtn");
-        // 오른쪽 버튼 클릭
+        // 오른쪽 버튼 클릭 : 시계방향 회전
         if(isRight){
             wheelNum++
-            wheelImgFn(wheelNum);
         }
-        // 왼쪽 버튼 클릭
+        // 왼쪽 버튼 클릭 : 반시계방향 회전
         else {
             wheelNum--;
-            wheelImgFn(wheelNum);
         }
+        wheelImgFn(wheelNum);
     })
 }
 
 matchWheel();
+
+function perfumeShow() {
+    
+}
 
 
 console.log("gd")
