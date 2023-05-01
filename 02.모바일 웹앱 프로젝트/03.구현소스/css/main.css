@@ -8,6 +8,7 @@
 @import url(common.css);
 
 
+
 /* 배너영역 - 스와이퍼 */
 .main_banner {
     position: relative;
@@ -296,4 +297,7 @@
     cursor: pointer;
 }
 
+.perfume_list {
+    display: flex;
+}
 

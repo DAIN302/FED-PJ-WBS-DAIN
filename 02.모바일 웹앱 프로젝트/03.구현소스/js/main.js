@@ -1,6 +1,7 @@
 // 메인페이지 JS
 
 import bData from "./bestData.js";
+import matchData from "./matchData.js";
 
 // 메인 배너 함수
 function bannerSwiper() {

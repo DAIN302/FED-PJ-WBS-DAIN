@@ -112,6 +112,7 @@
 /* 메인 */
 #cont {
     overflow-x: hidden;
+    min-height: 800px;
 }
 
 
