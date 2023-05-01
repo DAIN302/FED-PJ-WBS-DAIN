@@ -251,16 +251,20 @@
 
 /* match */
 .main_match { 
-    padding-top: 10vh;
-    position: relative;
-    height: 650px;
+    padding: 10vh 0;
 }
 
+.match_wheel {
+    position: relative;
+    height: 30vh;
+
+}
 .match_rotate {
     position: relative;
     padding: 2% 10% 0 10%;
-    height: 50%;
+    height: 100%;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .match_rotate figure {
@@ -278,7 +282,7 @@
 }
 
 .img_wheel {
-    transition: all .4s;
+    transition: all .6s ease-in-out;
 }
 
 .match_btnbx {
@@ -297,7 +301,89 @@
     cursor: pointer;
 }
 
+.match_perfume ul {
+    padding: 2% 20% 0 20%;
+}
+
+
 .perfume_list {
     display: flex;
+    justify-content: center;
+    height: 400px;
+}
+
+.perfume_list>div {
+    flex : 1;
+}
+
+.perfume_img figure, .perfume_img img {
+    height: 100%;
+    text-align: center;
+}
+
+.perfume_txt ol {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10% 0;
+}
+
+.perfume_brand {
+    font-size: 2rem;
+    color : #777;
+}
+
+.perfume_name {
+    font-size: 3rem;
+}
+
+.perfume_family {
+    font-size: 1.6rem;
+}
+
+.perfume_link {
+    height: 140px;
+    position: relative;
+}
+
+.perfume_link a {
+    display: inline-block;
+    position: relative;
+    font-size: 1.4rem;
+    margin-top: 100px;
+}
+
+.perfume_link a::before {
+    position: absolute;
+    content: '';
+    top: -100px;
+    left: 50%;
+    width: 1px;
+    height: 100px;
+    background-color: #000;
+    transition : height .4s, top .4s;
+}
+
+.perfume_link a::after {
+    position: absolute;
+    content: '';
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    transition : width .6s;
+}
+
+.perfume_link a:hover::before {
+    height: 0;
+    top: 0;
+}
+
+.perfume_link a:hover::after {
+    width: 100%;
 }
 

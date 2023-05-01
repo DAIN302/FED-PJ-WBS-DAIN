@@ -111,7 +111,7 @@
 
 /* 메인 */
 #cont {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     min-height: 800px;
 }
 
@@ -126,6 +126,8 @@
     padding: 50px 0;
     margin: 0 auto;
     position: relative;
+    height: 300px;
+    box-sizing: border-box;
 }
 
 .blogo {
