@@ -204,8 +204,10 @@
             </div>
           </div>
           <div class="match_perfume">
-            <ul>
-              <li class="perfume_list">
+            <ul class="match_perfumelist">
+              <match-comp v-for="n in matchdata" v-bind:matchperfume="n"></match-comp>
+              <!-- 
+               <li class="perfume_list">
                 <div class="perfume_img">
                   <figure>
                     <img src="./images/main/match/perfume/floralamber.png" alt="향수이미지">
@@ -221,7 +223,8 @@
                     </li>
                   </ol>
                 </div>
-              </li>
+              </li> 
+              -->
             </ul>
           </div>
         </section>

@@ -179,6 +179,60 @@ function matchWheel() {
 
 matchWheel();
 
+// 객체 생성자 함수
+function MatchList(family, img, brand, name) {
+    this.family = family; 
+    this.img = img; 
+    this.brand = brand; 
+    this.name = name; 
+}
+Vue.component("match-comp", {
+    template : `
+        <li class="perfume_list">
+            <div class="perfume_img">
+                <figure>
+                 <img v-bind:src="pimg" alt="향수이미지"/>
+                </figure>
+            </div>
+            <div class="perfume_txt">
+                <ol>
+                    <li class="perfume_brand">{{pbrand}}</li>
+                    <li class="perfume_name">{{pname}}</li>
+                    <li class="perfume_family">{{pfamily}}</li>
+                    <li class="perfume_link">
+                        <a href="#">SHOP NOW</a>
+                    </li>
+                </ol>
+            </div>
+        </li> 
+              ` ,
+        props :["matchperfume"],
+        data : function() {
+            return {
+                pimg : `./images/main/match/perfume/${this.matchperfume.img}`,
+                pbrand : this.matchperfume.brand,
+                pname : this.matchperfume.name,
+                pfamily : this.matchperfume.family
+            }
+        },    
+})
+
+const MatchVue = new Vue({
+    el : ".match_perfumelist",
+    data : {
+        matchdata : matchData
+    },
+    methods : {
+
+    },
+    created : function(){
+
+    },
+    mounted : function(){
+
+    }
+})
+
 function perfumeShow() {
     
 }
