@@ -150,10 +150,18 @@ newContBanner();
 
 function matchWheel() {
     // 이벤트 대상
+    // 휠 이미지
     const wheelImg = $(".img_wheel");
+    // 향수 리스트
+    const perfumeList = $(".perfume_list");
+    console.log(perfumeList[0]);
     // 버튼
     let wheelBtn = $(".match_btn")
     let wheelNum = 0;
+    let perfumeNum = 0;
+
+    // 1번 이미지 처음부터 보이기
+    perfumeList.eq(0).addClass("on");
 
     // 휠 이미지 기능 함수
     const wheelImgFn = (num) => {
@@ -163,29 +171,35 @@ function matchWheel() {
         })
     }
 
+    // 향수 리스트 전환 함수
+    const perfumeShow = (num) => {
+        // 전체 초기화
+        perfumeList.removeClass("on");
+        // 해당 순번에 클래스 넣기
+        perfumeList.eq(num).addClass("on");
+    }
+
     wheelBtn.click(function(){
         let isRight = $(this).is(".match_nextbtn");
         // 오른쪽 버튼 클릭 : 시계방향 회전
         if(isRight){
             wheelNum++
+            perfumeNum++;
+            if(perfumeNum > perfumeList.length-1) perfumeNum = 0;
         }
         // 왼쪽 버튼 클릭 : 반시계방향 회전
         else {
             wheelNum--;
+            perfumeNum--;
+            if(perfumeNum < 0) perfumeNum = perfumeList.length-1;
         }
+
+        console.log(perfumeNum)
         wheelImgFn(wheelNum);
+        perfumeShow(perfumeNum);
     })
-}
+} // matchWheel
 
-matchWheel();
-
-// 객체 생성자 함수
-function MatchList(family, img, brand, name) {
-    this.family = family; 
-    this.img = img; 
-    this.brand = brand; 
-    this.name = name; 
-}
 Vue.component("match-comp", {
     template : `
         <li class="perfume_list">
@@ -198,7 +212,7 @@ Vue.component("match-comp", {
                 <ol>
                     <li class="perfume_brand">{{pbrand}}</li>
                     <li class="perfume_name">{{pname}}</li>
-                    <li class="perfume_family">{{pfamily}}</li>
+                    <li class="perfume_family" v-bind:style="pfcolor">{{pfamily}}</li>
                     <li class="perfume_link">
                         <a href="#">SHOP NOW</a>
                     </li>
@@ -212,7 +226,8 @@ Vue.component("match-comp", {
                 pimg : `./images/main/match/perfume/${this.matchperfume.img}`,
                 pbrand : this.matchperfume.brand,
                 pname : this.matchperfume.name,
-                pfamily : this.matchperfume.family
+                pfamily : this.matchperfume.family,
+                pfcolor : `color : ${this.matchperfume.color}`
             }
         },    
 })
@@ -222,20 +237,12 @@ const MatchVue = new Vue({
     data : {
         matchdata : matchData
     },
-    methods : {
-
-    },
-    created : function(){
-
-    },
     mounted : function(){
-
+        matchWheel();
     }
 })
 
-function perfumeShow() {
-    
-}
+
 
 
 console.log("gd")

@@ -303,13 +303,24 @@
 
 .match_perfume ul {
     padding: 2% 20% 0 20%;
+    position: relative;
+    height: 400px;
 }
 
 
 .perfume_list {
+    position: absolute;
     display: flex;
-    justify-content: center;
-    height: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    opacity: 0;
+    transition: opacity .6s ease-in-out;
+}
+
+.perfume_list.on {
+    opacity: 1;
+    z-index: 1;
 }
 
 .perfume_list>div {
@@ -319,6 +330,10 @@
 .perfume_img figure, .perfume_img img {
     height: 100%;
     text-align: center;
+}
+
+.perfume_img figure {
+    aspect-ratio: 1/1;
 }
 
 .perfume_txt ol {
@@ -333,14 +348,17 @@
 .perfume_brand {
     font-size: 2rem;
     color : #777;
+    text-align: center;
 }
 
 .perfume_name {
     font-size: 3rem;
+    text-align: center;
 }
 
 .perfume_family {
     font-size: 1.6rem;
+    text-align: center;
 }
 
 .perfume_link {
