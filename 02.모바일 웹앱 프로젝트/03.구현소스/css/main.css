@@ -273,7 +273,7 @@
 }
 
 .match_rotate .mask {
-    z-index: 2;
+    z-index: 1;
     transform: translateY(-12%) scale(0.7);
 }
 

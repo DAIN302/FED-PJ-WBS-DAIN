@@ -6,8 +6,19 @@ $(()=>{
         // $(".sidebar_menu").addClass("show");
         $(".sidebar_menu").animate({
             left : 0
-        }, 1000, "easeOutExpo") 
+        }, 1000, "easeOutExpo")
+        $(".overlay").addClass("active") 
     })
+    
+    // 로그인 창 등장
+    $(".icon_menu>li>a").first().click(function(e){
+        e.preventDefault();
+        $(".icon_sidebar").animate({
+            right : 0
+        }, 1000 , "easeOutExpo")
+        $(".overlay").addClass("active")
+    })
+
 
     // 서브메뉴
     // 1. 처음 다 숨기기

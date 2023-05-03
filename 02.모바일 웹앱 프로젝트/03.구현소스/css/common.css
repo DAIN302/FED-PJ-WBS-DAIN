@@ -66,6 +66,13 @@
     top: 120px;
     left: 0;
     background-color: rgba(0,0,0,0.2);
+    display: none;
+    opacity: 0;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
 }
 
 .sidebar_menu, .icon_sidebar {
@@ -82,8 +89,8 @@
     font-family: 'Nunito', sans-serif; 
 }
 
-.icon_sidebar{
-    right: 0;
+.icon_sidebar {
+    right: -50%;
     padding: 0 5%;
 }
 
@@ -149,10 +156,30 @@
     margin-bottom: 30px;
 }
 
-.login_findid {
+.login_addbx {
     display: flex;
     justify-content: space-between;
     padding-bottom: 30px;
+}
+
+.login_saveid input{
+    display: none;
+}
+
+.login_saveid input+label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: -1px;
+}
+
+.login_saveid input:checked+label {
+    font-weight: 900;
+}
+
+.login_findid a{
+    text-decoration: underline;
+    color : #666;
 }
 
 .login_btn {
@@ -160,12 +187,28 @@
     font-size: 1.6rem;
     cursor: pointer;
     padding: 20px 0;
+    background-color: #000;
+    color : #fff;
+    margin-bottom: 40px;
+}
+
+.sign_up {
+    background-color: #fff;
+    color : #000;
+    border: 1px solid #ddd;;
+    transition: all .4s ease-in-out;
+}
+
+.sign_up:hover {
+    background-color: #000;
+    color : #fff;
 }
 
 .login_sns {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 40px;
 }
 
 .login_sns li {
@@ -178,6 +221,11 @@
 
 .find_order, .login_btn {
     text-align: center;
+}
+
+.find_order {
+    text-decoration: underline;
+    color : #777;
 }
 
 /* 메인 */
