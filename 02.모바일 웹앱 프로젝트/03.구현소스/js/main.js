@@ -157,7 +157,9 @@ function matchWheel() {
     console.log(perfumeList[0]);
     // 버튼
     let wheelBtn = $(".match_btn")
+    // 휠 이미지 순번 변수
     let wheelNum = 0;
+    // 퍼퓸 리스트 순번 변수
     let perfumeNum = 0;
 
     // 1번 이미지 처음부터 보이기
@@ -171,7 +173,7 @@ function matchWheel() {
         })
     }
 
-    // 향수 리스트 전환 함수
+    // 향수 리스트 변환 함수
     const perfumeShow = (num) => {
         // 전체 초기화
         perfumeList.removeClass("on");
@@ -194,8 +196,9 @@ function matchWheel() {
             if(perfumeNum < 0) perfumeNum = perfumeList.length-1;
         }
 
-        console.log(perfumeNum)
+        // 휠 기능 함수 호출
         wheelImgFn(wheelNum);
+        // 리스트 변환 함수 호출
         perfumeShow(perfumeNum);
     })
 } // matchWheel
