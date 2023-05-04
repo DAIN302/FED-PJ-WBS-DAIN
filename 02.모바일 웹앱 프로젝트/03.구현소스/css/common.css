@@ -66,12 +66,13 @@
     top: 120px;
     left: 0;
     background-color: rgba(0,0,0,0.2);
-    display: none;
     opacity: 0;
+    visibility: hidden;
+    transition: visibility .4s linear,opacity .4s linear;
 }
 
 .overlay.active {
-    display: block;
+    visibility: visible;
     opacity: 1;
 }
 
@@ -81,17 +82,25 @@
     width: 35%;
     height: 100vh;
     background-color: var(--pcolor);
+    padding: 0 5%;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .sidebar_menu {
-    padding: 0 5%;
     left: -50%;
     font-family: 'Nunito', sans-serif; 
 }
 
+.sidebar_menu.show {
+    left : 0;
+}
+
 .icon_sidebar {
     right: -50%;
-    padding: 0 5%;
+}
+
+.icon_sidebar.show { 
+    right : 0;
 }
 
 .sub_menu>li {
@@ -147,7 +156,7 @@
 
 .login_box h2 {
     padding: 3% 0 10%;
-    font-size: 2.2rem;
+    font-size: 3rem;
 }
 
 .login_inputbx {

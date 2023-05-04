@@ -1,23 +1,56 @@
 // 공통 JS
-$(()=>{
+function commonFn(){
     // 서브메뉴 등장 -> shop 글씨 클릭했을때만
-    $(".gnb>ul>li>a").first().click(function(e){
+    $(".gnb>ul>li>a:first").click(function(e){
         e.preventDefault();
-        // $(".sidebar_menu").addClass("show");
-        $(".sidebar_menu").animate({
-            left : 0
-        }, 1000, "easeOutExpo")
-        $(".overlay").addClass("active") 
+        let isShow = $(".sidebar_menu").hasClass("show");
+        if(!isShow) {
+            openMenu(".sidebar_menu");
+            $(".overlay").addClass("active"); 
+        }
+        else {
+            closeMenu(".sidebar_menu");
+            $(".overlay").removeClass("active"); 
+        }
+
+        closeMenu(".icon_sidebar");
     })
     
+    
     // 로그인 창 등장
-    $(".icon_menu>li>a").first().click(function(e){
+    $(".icon_menu>li>a:first").click(function(e){
         e.preventDefault();
-        $(".icon_sidebar").animate({
-            right : 0
-        }, 1000 , "easeOutExpo")
-        $(".overlay").addClass("active")
+        let isShow = $(".icon_sidebar").hasClass("show");
+        if(!isShow){
+            openMenu(".icon_sidebar");
+            $(".overlay").addClass("active") 
+        }
+        else {
+            closeMenu(".icon_sidebar");
+            $(".overlay").removeClass("active"); 
+        }
+        closeMenu(".sidebar_menu");
     })
+
+    // 바깥 클릭 시 창 닫힘
+    $(".overlay").click(function(e){
+        closeMenu(".sidebar_menu");
+        closeMenu(".icon_sidebar");
+        if($(".overlay").hasClass("active")){
+            $(".overlay").removeClass("active"); 
+        }
+    })
+    
+    
+    
+    function openMenu(ele){
+        $(ele).addClass("show")
+    }
+
+    function closeMenu(ele){
+        $(ele).removeClass("show")
+    }
+
 
 
     // 서브메뉴
@@ -42,4 +75,6 @@ $(()=>{
             $(this).addClass("active").next().removeClass("hidden").hide().slideDown(400);
         }
     })// click
-})
+}
+
+export default commonFn;
