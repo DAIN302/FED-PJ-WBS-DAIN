@@ -1,11 +1,13 @@
 // 메인페이지 JS
 
 import commonFn from "./common.js";
-import bData from "./bestData.js";
-import matchData from "./matchData.js";
+import {bData, matchData} from "./mainData.js";
 
 // 공통 함수 호출
 commonFn();
+
+// 부드러운 스크롤
+startSS();
 
 // 메인 배너 함수
 function bannerSwiper() {
