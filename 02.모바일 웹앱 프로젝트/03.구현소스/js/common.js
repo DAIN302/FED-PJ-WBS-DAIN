@@ -51,6 +51,44 @@ function commonFn(){
         $(ele).removeClass("show")
     }
 
+    // gnb 오버 이미지 Array
+    const menuMedia = ["women_modern","women_chic","women_lovely","men_street","men_formal","men_elegant","note_citrus","note_floral","note_fruity","note_woody"];
+
+    let temp_img = "";
+    for(let i = 0; i<menuMedia.length; i++) {
+        temp_img += `
+        <li>
+            <img src="./images/gnb/${menuMedia[i]}.jpg" alt="메뉴이미지">
+        </li>
+        `;
+    }
+
+    $(".menu_medialist").html(temp_img);
+
+    function menuImgShow() {
+        // gnb 이미지 다 안보이게 설정
+        let menuImg = $(".menu_medialist li");
+        console.log(menuImg)
+        menuImg.css({display : "none"});
+
+        // 메뉴에 마우스 오버 시 이미지 변경
+        let sideSub = $(".sidebar_submenu li a");
+        
+        sideSub.hover(function(){
+            let subTxt = $(this).text();
+            let subNum = $(this);
+            console.log(subNum);
+            if(subTxt!=="All") {
+                menuImg.eq(subNum).stop().fadeIn(300)
+            }
+        },
+        function(){
+            menuImg.stop().fadeOut(300)
+        })
+    }
+
+    // 함수 호출
+    menuImgShow();
 
 
     // 서브메뉴
