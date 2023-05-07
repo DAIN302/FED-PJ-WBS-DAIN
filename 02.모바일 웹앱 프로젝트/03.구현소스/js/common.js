@@ -76,8 +76,7 @@ function commonFn(){
         
         sideSub.hover(function(){
             let subTxt = $(this).text();
-            let subNum = $(this);
-            console.log(subNum);
+            let subNum = $(this).attr("data-num");
             if(subTxt!=="All") {
                 menuImg.eq(subNum).stop().fadeIn(300)
             }
