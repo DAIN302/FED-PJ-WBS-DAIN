@@ -97,10 +97,10 @@ function commonFn(){
                 let subTxt = $(this).text();
                 let subNum = $(this).attr("data-num");
                 if(subTxt!=="All") {
-                    menuImg.show().find("li").eq(subNum).stop().fadeIn(300)
+                    menuImg.show().find("li").eq(subNum).stop().fadeIn(100)
                 }},
             function(){ // 마우스 아웃시
-                menuImg.find("li").stop().fadeOut(300).parent().parent().fadeOut(300);
+                menuImg.find("li").stop().fadeOut(100).parent().parent().fadeOut(100);
                 
             })
     } // menuImgShow
