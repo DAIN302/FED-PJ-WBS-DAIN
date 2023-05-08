@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/logo/icon.ico" />
+    <title>향수가 일상이 되는 셀렉트샵, 퍼퓸그라피.</title>
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <!-- 외부 CSS -->
+    <link rel="stylesheet" href="./css/category.css" />
+    <!-- 제이쿼리 -->
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+    <!-- swiper js -->
+    <script src="./js/swiper-bundle.min.js"></script>
+    <!-- 부드러운 스크롤 -->
+    <script src="./js/smoothScroll20.js"></script>
+    <!-- 메인 JS -->
+    <script src="./js/category.js" type="module"></script>
+  </head>
+  <body>
+    <!-- 상단 -->
+    <div id="top">
+      <top-area></top-area>
+    </div>
+    <!-- 메인 -->
+    <div id="cont">
+      <main class="cont">
+        <h2 class="ctit">WOMEN</h2>
+        <nav class="lnb">
+          <ul>
+            <li><a href="#">ALL</a></li>
+            <li><a href="#">MODERN</a></li>
+            <li><a href="#">CHIC</a></li>
+            <li><a href="#">LOVELY</a></li>
+          </ul>
+        </nav>
+        <div class="product_filter">
+          <div class="filter_btn">
+            <button class="fa-solid fa-filter"></button>
+          </div>
+          <div class="filter_select">
+            <div class="filter_value">
+              <button>인기상품순</button>
+            </div>
+            <div class="filter_option">
+              <ul>
+                <li class="option">
+                  <input type="radio" name="best_item" id="best_item">
+                  <label for="best_item">인기상품순</label>
+                </li>
+                <li class="option">
+                  <input type="radio" name="new_item" id="new_item">
+                  <label for="new_item">신상품순</label>
+                </li>
+                <li class="option">
+                  <input type="radio" name="high_price" id="high_price">
+                  <label for="high_price">높은가격순</label>
+                </li>
+                <li class="option">
+                  <input type="radio" name="low_price" id="low_price">
+                  <label for="low_price">낮은가격순</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <section class="product_listwrap">
+          <ol class="product_list">
+            <li>
+              <div class="product_imgbx">
+                <figure></figure>
+              </div>
+              <div class="product_descbx">
+                <h3 class="product_brand"></h3>
+                <h4 class="product_name"></h4>
+                <h5 class="product_price">
+                  <span class="vol_price1"></span>
+                  <span class="vol_price2"></span>
+                </h5>
+                <div class="product_radiobtn">
+                  <span>
+                    <input type="radio" class="volchk1" name="volchk1">
+                    <label for="volchk1"></label>
+                  </span>
+                  <span>
+                    <input type="radio" class="volchk2" name="volchk2">
+                    <label for="volchk2"></label>
+                  </span>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </main>
+    </div>
+    <!-- 하단 -->
+    <div id="info">
+      <info-area></info-area>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/2041668019.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

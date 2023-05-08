@@ -79,6 +79,7 @@
 .sidebar_menu, .icon_sidebar {
     position: fixed;
     z-index: 999;
+    top: 120px;
     width: 35%;
     height: 100vh;
     background-color: var(--pcolor);
@@ -99,6 +100,7 @@
     position: fixed;
     z-index: 999;
     width: 55%;
+    top: 120px;
     height: 100vh;
     right: 0;
 }
@@ -264,7 +266,9 @@
 /* 메인 */
 #cont {
     /* overflow-x: hidden; */
+    position: relative;
     min-height: 800px;
+    padding-top: 120px;
 }
 
 

@@ -41,8 +41,6 @@ function commonFn(){
         }
     })
     
-    
-    
     function openMenu(ele){
         $(ele).addClass("show")
     }
@@ -53,6 +51,8 @@ function commonFn(){
 
     // gnb 오버 이미지 Array
     const menuMedia = ["women_modern","women_chic","women_lovely","men_street","men_formal","men_elegant","note_citrus","note_floral","note_fruity","note_woody"];
+    let sideSub = $(".sidebar_submenu li a");
+    // console.log(sideSub.text())
 
     let temp_img = "";
     for(let i = 0; i<menuMedia.length; i++) {
@@ -63,32 +63,50 @@ function commonFn(){
         `;
     }
 
+    // 이미지 넣기
     $(".menu_medialist").html(temp_img);
 
+    // 서브메뉴에 속성넣기
+    let subNum = 0;
+    sideSub.each((idx, ele)=>{
+        subNum = idx-1
+        if($(ele).text()!=="All"){
+            // men 부분 번호 순번 변경
+            if(idx > 4 && idx < 8) {
+                subNum = idx-2
+            }
+            // main note 부분 순번 변경
+            else if(idx > 8) {
+                subNum = idx-3
+            }
+            $(ele).attr("data-num", subNum);
+        }
+    }) /// each
+
+
+
     function menuImgShow() {
-        // gnb 이미지 다 안보이게 설정
-        let menuImg = $(".menu_medialist li");
-        console.log(menuImg)
-        menuImg.css({display : "none"});
+        // gnb 이미지 처음엔 다 안보이게 설정
+        let menuImg = $(".menu_media");
+        // console.log(menuImg)
+        menuImg.css({display : "none"}).find("li").css({display:"none"});
 
         // 메뉴에 마우스 오버 시 이미지 변경
-        let sideSub = $(".sidebar_submenu li a");
-        
-        sideSub.hover(function(){
-            let subTxt = $(this).text();
-            let subNum = $(this).attr("data-num");
-            if(subTxt!=="All") {
-                menuImg.eq(subNum).stop().fadeIn(300)
-            }
-        },
-        function(){
-            menuImg.stop().fadeOut(300)
-        })
-    }
+        sideSub.hover(
+            function(){ // 마우스 오버시
+                let subTxt = $(this).text();
+                let subNum = $(this).attr("data-num");
+                if(subTxt!=="All") {
+                    menuImg.show().find("li").eq(subNum).stop().fadeIn(300)
+                }},
+            function(){ // 마우스 아웃시
+                menuImg.find("li").stop().fadeOut(300).parent().parent().fadeOut(300);
+                
+            })
+    } // menuImgShow
 
     // 함수 호출
     menuImgShow();
-
 
     // 서브메뉴
     // 1. 처음 다 숨기기
