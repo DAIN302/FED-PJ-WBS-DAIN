@@ -187,7 +187,6 @@ function matchWheel() {
     const wheelImg = $(".img_wheel");
     // 향수 리스트
     const perfumeList = $(".perfume_list");
-    console.log(perfumeList[0]);
     // 버튼
     let wheelBtn = $(".match_btn")
     // 휠 이미지 순번 변수
@@ -274,12 +273,9 @@ const MatchVue = new Vue({
         matchdata : matchData
     },
     mounted : function(){
+        // 휠 및 향수 리스트 기능 함수 호출
         matchWheel();
     }
 })
 
-
-
-
-console.log("gd")
 

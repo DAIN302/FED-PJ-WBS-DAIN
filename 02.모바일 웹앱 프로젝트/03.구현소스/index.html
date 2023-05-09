@@ -89,7 +89,7 @@
           </div>
           <div class="match_perfume">
             <ul class="match_perfumelist">
-              <match-comp v-for="n in matchdata" v-bind:matchperfume="n"></match-comp>
+              <match-comp v-for="(n, i) in matchdata" v-bind:key="i" v-bind:matchperfume="n"></match-comp>
             </ul>
           </div>
         </section>
