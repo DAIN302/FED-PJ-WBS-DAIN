@@ -9,15 +9,103 @@
 
 /* 타이틀 */
 .ctit {
-    padding: 50px 0;
+    padding: 50px 0 20px;
     text-align: center;
     font-size: 5rem;
 }
 
+/* lnb */
+.lnb {
+    padding-bottom: 20px;
+}
 .lnb ul {
     display: flex;
     justify-content: center;
+    gap: 0 3%;
+    font-size: 1.4rem;
 }
+
+.lnb a {
+    color : #777;
+}
+
+/* 필터 기능 버튼 */
+.product_filter {
+    display: flex;
+    justify-content: center;
+    gap : 0 1%;
+}
+
+.product_filter button {
+    background-color: transparent;
+    border : none;
+}
+
+.filter_btn button {
+    font-size: 2rem;
+    
+}
+
+/* 필터 옵션 선택창 */
+.filter_value button {
+    padding: 5px 0;
+    text-align: center;
+    width: 77px;
+    cursor: pointer;
+}
+
+.filter_option {
+    position: absolute;
+    overflow: hidden;
+    height: 0;
+    width: 77px;
+}
+
+.filter_option ul {
+    position: absolute;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+    width: 77px;
+}
+
+.filter_option ul li {
+    padding: 5px;
+    font-size: 1.3rem;
+}
+
+.filter_option ul li:hover {
+    background-color: var(--pcolor);
+}
+
+/* 상품 목록 */
+.product_listwrap {
+    width: 100%;
+}
+.product_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: min(5vw, 50px);
+    grid-row-gap: min(1.5vw, 15px);
+}
+
+.product_brand {
+    font-size: 1.4rem;
+    color : #777;
+}
+
+.product_name {
+    font-size: 1.6rem;
+}
+
+.product_price {
+    color : #c28243;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+
+
 
 
 

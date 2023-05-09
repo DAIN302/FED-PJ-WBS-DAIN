@@ -111,7 +111,7 @@ function bestCont() {
    // 윈도우 높이값
    const winH = $(window).height();
    // 패럴렉스 수치 범위
-   const setH = 200;
+   const setH = 100;
    // 패럴렉스 대상
    const bestImage = $(".main_best_img figure img")
 
@@ -123,7 +123,7 @@ function bestCont() {
 
         // 요소에 위치 이동 CSS 반영
         $(ele).css({
-            transform : `scale(1.2) translateY(${-x}px)`
+            transform : `scale(1.2) translate3d(0,${-x}px,0)`
         })
     }
    } // moveImage
