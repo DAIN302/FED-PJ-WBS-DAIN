@@ -17,7 +17,7 @@
     padding: 50px 0 20px;
     text-align: center;
     font-size: 5rem;
-    font-family: 'Nunito', sans-serif; 
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
 
@@ -116,17 +116,20 @@
 }
 
 /* 설명 */
+/* 브랜드 */
 .product_brand {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color : #777;
     padding-bottom: 5px;
 }
 
+/* 제품명 */
 .product_name {
     font-size: 1.6rem;
     padding-bottom: 20px;
 }
 
+/* 가격 */
 .product_price {
     color : #c28243;
     font-size: 1.6rem;
@@ -134,42 +137,60 @@
     padding-bottom: 10px;
 }
 
-.vol_price2 {
+.vol_price {
     display: none;
 }
 
+.vol_price1 {
+    display: inline;
+}
+
+/* 사이즈 선택 */
 .product_radiobtn {
     font-size: 1.6rem;
 }
 
-/* .product_radiobtn input {
-    display: none;
+.volchk, .volchk em {
+    display: inline-block;
+    cursor: pointer;
 }
-.product_radiobtn input:checked+label {
+
+.product_radiobtn span+span {
+    margin-left: 20px;
+}
+
+.volchk em {
+    margin-right: 5px;
+}
+
+.volchk1 em{
     font-weight: 900;
 }
 
-.product_radiobtn label {
-    color : #999;
-}
-
-.product_radiobtn label.fa-regular {
-    color : #000;
-} */
-
+/* 하트 표시 */
 .product_like {
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
 }
 
 .product_like button {
     background-color: transparent;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    padding: 1rem;
     border: none;
     cursor: pointer;
+    color: #bbb;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #bbb;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
 }
 
+.product_list>li:hover .product_like button {
+    opacity: 1;
+}
 
 
 

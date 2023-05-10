@@ -32,23 +32,23 @@ const comData = {
         <div class="top_wrap">
         <ul class="icon_menu">
             <li>
-            <a href="#">
-                <span class="fa-regular fa-user"></span>
+            <a href="#" title="로그인">
+                <span class="fa-regular fa-user"><span class="ir">로그인</span></span>
             </a>
             </li>
             <li>
-            <a href="#">
-                <span class="fa-regular fa-heart"></span>
+            <a href="#" title="찜목록">
+                <span class="fa-regular fa-heart"><span class="ir">찜목록</span></span>
             </a>
             </li>
             <li>
-            <a href="#">
-                <span class="fa-solid fa-bag-shopping"></span>
+            <a href="#" title="장바구니">
+                <span class="fa-solid fa-bag-shopping"><span class="ir">장바구니</span></span>
             </a>
             </li>
             <li>
-            <a href="#">
-                <span class="fa-solid fa-magnifying-glass"></span>
+            <a href="#" title="검색">
+                <span class="fa-solid fa-magnifying-glass"><span class="ir">검색</span></span>
             </a>
             </li>
         </ul>

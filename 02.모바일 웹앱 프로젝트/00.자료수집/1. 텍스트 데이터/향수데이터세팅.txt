@@ -1,0 +1,92 @@
+데이터 세팅
+1. 브랜드
+2. 상품명
+3. 이미지 이름
+4. 용량 및 가격
+5. 성별 및 무드
+6. 메인노트
+
+
+1. 
+아쿠아디파르마
+Acqua di pharma
+[
+(1)
+콜로니아 에센자 오 드 코롱
+Colonia Essensa
+ce_50
+50 / 100
+147,250 / 204,250
+남성 - formal, elegant
+woody, citrus
+(2)
+미르토 디 파나레아 오 드 뚜왈렛
+Mirto di Panarea
+mirto_30
+30 / 75 / 150
+104,500 / 161,500 / 247,500
+남성 - street
+citrus
+(3)
+오스만투스 오 드 퍼퓸
+Osmanthus
+osman_20
+20 / 100
+147,250 / 332,500
+여성 - lovely
+floral,citrus
+(4)
+피코 디 아말피 오 드 뚜왈렛
+Pico di Amalfi
+pico_30
+30 / 75 / 150
+104,500 / 161,500 / 247,500
+남성 - street
+woody
+(5)
+로사 노빌레 오 드 퍼퓸
+Rosa Nobile
+rosa_20
+20 / 50 / 100
+118,750 / 213,750 / 299,250
+여성 - lovely
+floral
+(6)
+유자 오 드 퍼퓸
+Yuzu
+yuzu_20
+20 / 100
+147,250 / 332,500
+여성 - lovely
+citrus, floral
+]
+
+2. 바이레도
+Byredo
+[
+(1)
+발다프리크 오 드 퍼퓸
+Bal d'Afrique
+bal_50
+50 / 100
+215,000 / 305,000
+여성 - modern / 남성 - formal
+citrus, floral
+(2)
+블랑쉬 오 드 퍼퓸
+Blanche
+blan_50
+50 / 100
+215,000 / 305,000
+여성 - chic / 남성 - street
+floral
+(3)
+모하비고스트 오 드 퍼퓸
+Mojave Ghost
+ghost_50
+50 / 100
+215,000 / 305,000
+여성 - chic / 남성 - elegant
+floral, woody
+]
+

@@ -97,7 +97,7 @@ function bestCont() {
             ${bData[x].desc}
             </p>
             <div class="best_perfume_sublink">
-                <a href="#">Shop Now</a>
+                <a href="#">SHOP NOW</a>
             </div>
             </div>
         </div>  
