@@ -86,7 +86,317 @@ Mojave Ghost
 ghost_50
 50 / 100
 215,000 / 305,000
-여성 - chic / 남성 - elegant
+여성 - chic, modern / 남성 - elegant
 floral, woody
+(4)
+인플로레센스 오 드 퍼퓸
+Inflorescence
+inf_50
+50 / 100
+215,000 / 305,000
+여성 - lovely 
+floral
+(5)
+라튤립 오 드 퍼퓸
+La Tulipe
+lat_50
+50 / 100
+215,000 / 305,000
+여성 - lovely 
+floral
+(6)
+슈퍼시더 오 드 퍼퓸
+super cedar
+sc_50
+50 / 100
+215,000 / 305,000
+남성 - formal
+woody
 ]
+
+3. 딥티크
+DIPTYQUE
+[
+(1)
+도손 오 드 퍼퓸
+doson
+par-doson_75
+75
+214,800
+여성 - lovely
+floral
+(2)
+롬브르단로 오 드 퍼퓸
+L'ombre Dans L'eau
+par-lom_75
+75
+214,800
+여성 - modern
+floral, woody
+(3)
+필로시코스 오 드 퍼퓸
+Philosykos
+par-philo_75
+75
+214,800
+여성 - modern / 남성 - elegant
+woody, fruity
+(4)
+오 로즈 드 퍼퓸
+Eau Rose
+par-rose_75
+75
+214,800
+여성 - lovely
+floral
+(5)
+탐다오 오 드 퍼퓸
+tamdao
+par-tam_75
+75
+214,800
+남성 - elegant
+woody
+]
+
+4. 조말론
+Jo Malone
+[
+(1)
+블랙베리 앤 베이 코롱
+Blackberry & bey
+bb_30
+30 / 100
+84,800 / 164,600
+남성 - street
+fruity, woody
+(2)
+잉글리쉬 페어 앤 프리지아 코롱
+English Pear & Freesia
+ef_30
+30 / 100
+84,800 / 164,600
+여성 - lovely
+floral
+(3)
+피오니 앤 블러쉬 스웨이드
+Peony & Blush Suede
+pb_30
+30 / 100
+84,800 / 164,600
+여성 - lovely
+floral
+(4)
+와일드 블루벨 코롱
+wild bluebell
+wb_30
+30 / 100
+84,800 / 164,600
+여성 - modern
+floral, fruity
+(5)
+다크 앰버 앤 진저 릴리 코롱 인텐스
+Dark Amber & ginger lily
+dg_100
+100
+248,000
+여성 - modern, chic / 남성 - formal
+floral, woody
+(6)
+오드 앤 베르가못 코롱 인텐스
+oud & bergamot
+ob_100
+100
+248,000
+남성 - formal
+woody, citrus
+(7)
+베티버 앤 골든 바닐라 코롱 인텐스
+vetiver & golden vanilla
+vg_100
+100
+248,000
+여성 - modern, chic / 남성 - formal
+woody
+]
+
+5. 산타마리아노벨라
+[
+(1)
+엔젤 디 피렌체 오드코롱
+angeli di firenze
+angel_50
+50 / 100
+104,800 / 154,800
+여성 - lovely
+fruity, floral
+(2)
+프리지아 오드코롱
+fresia
+fresia_50
+50 / 100
+104,800 / 154,800
+여성 - lovely
+floral
+(3)
+아이리스 오드퍼퓸
+L'iris
+iris_50
+50 / 100
+163,800 / 248,800
+여성 - lovely
+floral
+(4)
+멜로그라노 오드코롱
+Melograno
+fresia_50
+50 / 100
+104,800 / 154,800
+여성 - lovely
+floral
+(5)
+포푸리 오드코롱
+pot pourri
+pot_50
+50 / 100
+104,800 / 154,800
+남성 - formal
+woody
+(6)
+타바코 토스카노 오드코롱
+tabacco toscano
+tbc_50
+50 / 100
+104,800 / 154,800
+남성 - formal
+woody
+]
+6
+조러브스
+Jo loves
+[
+(1)
+코발트 파출리 앤 시더
+cobalt patchouli & cedar
+cpc_50
+50 / 100
+169,000 / 259,000
+남성 - street
+citrus
+(2)
+에보니 앤 카시스
+Ebony & cassis
+ec_50
+50 / 100
+169,000 / 259,000
+여성 - modern / 남성 - formal
+woody
+(3)
+No.42 더 플라워 샵
+No.42 The flower shop
+fs_50
+50 / 100
+169,000 / 259,000
+여성 - lovely
+floral
+(4)
+그린 오렌지 앤 코리안더
+Green Orange & Coriander
+goc_50
+50 / 100
+169,000 / 259,000
+여성 - chic
+citrus
+(5)
+골든 가드니아
+golden gardenia
+golden_50
+50 / 100
+169,000 / 259,000
+여성 - chic / 남성 - elegant
+woody, floral
+(6)
+조 바이 조 러브스
+Jo by jo loves
+jol_50
+50 / 100
+169,000 / 259,000
+여성 - lovely
+citrus
+(7)
+망고 타이 라임
+Mango thai lime
+mtl_50
+50 / 100
+169,000 / 259,000
+여성 - lovely
+fruit, citrus
+(8)
+오렌지 버터플라이
+orange butterflies
+ob_50
+50 / 100
+169,000 / 259,000
+여성 - lovely
+citrus, floral
+(9)
+포멜로
+Pomelo
+pom_50
+50 / 100
+169,000 / 259,000
+여성 - lovely
+floral
+(10)
+핑크 베티버
+pink vetiver
+pv_50
+50 / 100
+169,000 / 259,000
+여성 - lovely
+fruity
+(11)
+로즈페탈
+rose petal
+rp_50
+50 / 100
+169,000 / 259,000
+여성 - lovely
+floral
+(12)
+레드 트러플
+red truffle 21
+rt_50
+50 / 100
+169,000 / 259,000
+여성 - modern / 남성 - street
+woody, fruity, citrus
+(13)
+샤드 오브 시더 앤 레드 타임
+shards of cedar & red thyme
+scrt_50
+50 / 100
+169,000 / 259,000
+여성 - modern / 남성 - formal
+woody, citrus
+(14)
+스모크 플럼 앤 레더
+smoked plum & leather
+sol_50
+50 / 100
+169,000 / 259,000
+여성 - chic
+woody, fruity
+(15)
+화이트 로즈 앤 레몬 리브스
+white rose & lemon leaves
+wrll_50
+50 / 100
+169,000 / 259,000
+여성 - lovely
+citrus, floral
+
+]
+
+
 

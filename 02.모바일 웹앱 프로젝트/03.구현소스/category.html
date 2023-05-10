@@ -14,6 +14,8 @@
     <script src="./js/jquery-ui.min.js"></script>
     <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- 뷰JS vuex CDN -->
+    <script src="https://unpkg.com/vuex@3.0.0"></script>
     <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
     <!-- swiper js -->
@@ -31,33 +33,35 @@
     <!-- 메인 -->
     <div id="cont">
       <main class="cont">
-        <h2 class="ctit">WOMEN</h2>
-        <nav class="lnb">
-          <ul>
-            <li><a href="#">ALL</a></li>
-            <li><a href="#">MODERN</a></li>
-            <li><a href="#">CHIC</a></li>
-            <li><a href="#">LOVELY</a></li>
-          </ul>
-        </nav>
-        <div class="product_filter">
-          <div class="filter_btn">
-            <button class="fa-solid fa-sliders"></button>
-          </div>
-          <div class="filter_select">
-            <div class="filter_value">
-              <button>인기상품순</button>
+        <section class="product_header">
+          <h2 class="ctit">WOMEN</h2>
+          <nav class="lnb">
+            <ul>
+              <li><a href="#">ALL</a></li>
+              <li><a href="#">MODERN</a></li>
+              <li><a href="#">CHIC</a></li>
+              <li><a href="#">LOVELY</a></li>
+            </ul>
+          </nav>
+          <div class="product_filter">
+            <div class="filter_btn">
+              <button class="fa-solid fa-sliders"></button>
             </div>
-            <div class="filter_option">
-              <ul>
-                <li class="option">인기상품순</li>
-                <li class="option">신상품순</li>
-                <li class="option">높은가격순</li>
-                <li class="option">낮은가격순</li>
-              </ul>
+            <div class="filter_select">
+              <div class="filter_value">
+                <button>인기상품순</button>
+              </div>
+              <div class="filter_option">
+                <ul>
+                  <li class="option">인기상품순</li>
+                  <li class="option">신상품순</li>
+                  <li class="option">높은가격순</li>
+                  <li class="option">낮은가격순</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
         <section class="product_listwrap">
           <ol class="product_list">
             <li>
@@ -65,7 +69,7 @@
               <a href="#">
                 <div class="product_imgbx">
                   <figure>
-                    <img src="./images/sub/malone/bb_30.png" alt="향수">
+                    <img src="./images/sub/malone/bb_30.png" alt="향수" />
                   </figure>
                 </div>
               </a>
@@ -75,9 +79,7 @@
                 <h3 class="product_brand">JO MALONE</h3>
                 <!-- 제품명 -->
                 <h4 class="product_name">
-                  <a href="#">
-                    블랙베리 앤 베이 코롱    
-                  </a>
+                  <a href="#"> 블랙베리 앤 베이 코롱 </a>
                 </h4>
                 <!-- 가격 -->
                 <h5 class="product_price">
