@@ -1,0 +1,364 @@
+@charset "utf-8";
+
+/* 제품 상세 페이지 CSS */
+
+/* 공통 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+/* 디테일 섹션*/
+.product_detail {
+    display: flex;
+    height: auto;
+}
+
+.product_detail>div {
+    flex : 1;
+}
+
+/* 이미지 박스 - 왼쪽 */
+.detail_imgbx {
+    position: sticky;
+    top: 120px;
+    height: 100vh;
+}
+
+.detail_imgbx img {
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+}
+
+/* 설명 박스 - 오른쪽 */
+.detail_descbx {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*  향수병 이미지 */
+.detail_descimg img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 찜하기 */
+.detail_like {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.detail_like button {
+    background-color: transparent;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #555;
+}
+
+/* 용량선택 */
+.detail_radiobtn {
+    margin-bottom: 5px;
+}
+
+.volchk, .volchk em {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.detail_radiobtn span+span {
+    margin-left: 20px;
+}
+
+.volchk em {
+    margin-right: 5px;
+}
+
+.volchk1 em{
+    font-weight: 900;
+}
+
+/* 브랜드 */
+.detail_brand {
+    font-size: 1.6rem;
+    color : #777;
+    padding : 10px 0;
+}
+
+/* 제품명 */
+.detail_name {
+    font-size: 2.4rem;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.detail_name span {
+    display: block;
+}
+
+.name_eng {
+    font-size: 2rem;
+    color : #555;
+}
+
+
+/* 가격 */
+.detail_price {
+    color : #c28243;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.vol_price {
+    display: none;
+}
+
+.vol_price1 {
+    display: inline;
+}
+
+/* 구매버튼박스 */
+.detail_shopbtnbx button {
+    font-size: 1.6rem;
+    padding : 10px 30px;
+    margin: 0 5px 20px;
+    cursor: pointer;
+}
+
+.shop_bag {
+    border : 1px solid #777;
+    background-color: #fff;
+}
+
+.shop_buy {
+    border : 1px solid #000;
+    background-color: #000;
+    color : #fff;
+
+}
+
+/* 설명버튼 */
+.detail_descbtn button {
+    position: relative;
+    background-color: transparent;
+    border : none;
+    cursor : pointer;
+    font-size: 1.6rem;
+    padding: 0;
+    margin : 0 10px;
+}
+
+.detail_descbtn button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    right: 0;
+    bottom: 0;
+    transition: width .4s;
+}
+
+.detail_descbtn button:hover::after {
+    width: 0;
+}
+/* 향수 설명박스 */
+.detail_desc {
+    padding: 50px 0;
+}
+
+.desc_wrap {
+    width: 100%;
+}
+
+.desc_svg, .story_svg {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.svg-fill {
+    stroke: none;
+}
+
+.svg-right {
+    transform : rotate(180deg);
+}
+
+.svg-icon {
+    display: inline-block;
+    width: 14px; 
+    height: 10px;
+    vertical-align: middle;
+}
+
+.desc_wrap p {
+    font-size: 2rem;
+    text-align: center;
+    color : #777;
+}
+
+
+
+/* 프레그런스 노트 섹션 */
+.product_fragrance {
+    display: flex;
+    height: 80vh;
+    margin-top: 100px;
+}
+
+.product_fragrance>div {
+    flex : 1
+}
+
+/* 노트 */
+.fragrance_descbx {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fragrance_descbx h3 {
+    font-size: 3rem;
+    font-family: 'Nunito', sans-serif; 
+    margin-bottom: 50px;
+}
+
+.notes h4, .notes p {
+    text-align: center;
+}
+
+.notes h4 {
+    font-size: 2.4rem;
+    padding : 20px 0;
+}
+
+.notes p {
+    font-size: 2rem;
+}
+
+/* 이미지 */
+.fragrance_imgbx img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 스토리 섹션 */
+.product_story {
+    margin: 30px 0;
+    padding : 50px 0;
+}
+.story_wrap {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.story_p {
+    text-align: center;
+    font-size: 2.8rem;
+    color : #777;
+}
+
+/* 추천 */
+.product_recommands {
+    margin-bottom: 50px;
+}
+
+.product_recommands h2{
+    text-align: center;
+    font-size: 3rem;
+}
+
+.recommands_list {
+    padding: 30px 0;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.recommands_list ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: min(5vw, 50px);
+    grid-row-gap: min(1.5vw, 15px);
+}
+
+.recommands_list ul>li {
+    position: relative;
+}
+
+/* 이미지 */
+.recommands_imgbx figure {
+    aspect-ratio: 1/1;
+}
+
+.recommands_imgbx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 설명 */
+/* 브랜드 */
+.recommands_brand {
+    font-size: 1.2rem;
+    color : #777;
+    padding-bottom: 5px;
+}
+
+/* 제품명 */
+.recommands_name {
+    font-size: 1.6rem;
+    padding-bottom: 20px;
+}
+
+/* 가격 */
+.recommands_price {
+    color : #c28243;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+/* 사이즈 선택 */
+.recommands_radiobtn {
+    font-size: 1.6rem;
+}
+
+.recommands_radiobtn span+span {
+    margin-left: 20px;
+}
+
+/* 하트 표시 */
+.recommands_like {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.recommands_like button {
+    background-color: transparent;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    color: #bbb;
+    border-radius: 50%;
+    border: 1px solid #bbb;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+.recommands_list ul>li:hover .recommands_like button {
+    opacity: 1;
+}

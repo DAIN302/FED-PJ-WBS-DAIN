@@ -1,8 +1,8 @@
 // 메인페이지 JS
 
-import comData from "./comData.js";
-import commonFn from "./common.js";
-import {bData, matchData} from "./mainData.js";
+import comData from "./data/comData.js";
+import {commonFn} from "./common.js";
+import {bData, matchData} from "./data/mainData.js";
 
 // 상단영역 뷰템플릿
 Vue.component("top-area",{
@@ -157,7 +157,7 @@ function newContBanner() {
             },
         },
         mounted : function(){
-            axios.get("./js/new.json").then(x=>this.newitems=x);
+            axios.get("./js/data/new.json").then(x=>this.newitems=x);
         }
     });
 
