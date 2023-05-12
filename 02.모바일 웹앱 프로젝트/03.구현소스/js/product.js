@@ -38,3 +38,38 @@ Vue.component("info-area",{
 new Vue({
     el : "#info"
 })
+
+
+// 스크롤 시 하위메뉴 나타나기
+function scrollShow(obj) {
+    // 화면높이값의 4/5구하기
+    const hv = window.innerHeight/6*5;
+    // 윈도우 높이값
+    const winH = window.innerHeight;
+
+    // 전체 문서 높이값
+    const docH = document.body.clientHeight;
+    console.log("문서전체높이", docH); 
+
+    // 스크롤한계값
+    const scLimit = docH - winH
+    console.log("스크롤한계값", scLimit); 
+
+    // 등장액션 대상 위치값 리턴함수
+    const retVal = ele => ele.getBoundingClientRect().top;
+
+    // 클래스 넣기 함수
+    const showIt = x => { // x는 등장요소
+        // 대상요소의 현재 스크롤 위치
+        let xval = retVal(x)
+        // 화면 높이값의 절반값에 왔을때 첫번째 박스 등장
+        // hv변수 -> 화면 높이값의 절반값
+        if(xval < hv && xval > 0) {
+            x.classList.add("on");
+        }
+    };       
+
+    window.addEventListener("scroll", ()=> {
+    for(let x of obj) showIt(x);
+    })
+} // scrollShow 함수

@@ -231,7 +231,37 @@
 .fragrance_descbx h3 {
     font-size: 3rem;
     font-family: 'Nunito', sans-serif; 
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+.note_imgbx {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.notes_img {
+    background-color: #fff;
+    box-shadow: 10px 10px 20px #dadada, -10px -10px 20px #fff;
+    border-radius: 10px;
+    padding : 10px;
+    width: 40%;
+    margin: 2% 5%;
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+
+.notes_img img {
+    width: 100%;
+}
+
+.notes_img figcaption {
+    text-align: center;
+    padding-top : 10px;
+    font-size: 1.4rem;
 }
 
 .notes h4, .notes p {
@@ -241,6 +271,8 @@
 .notes h4 {
     font-size: 2.4rem;
     padding : 20px 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
 }
 
 .notes p {

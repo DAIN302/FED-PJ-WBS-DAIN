@@ -1,6 +1,6 @@
 // 스토어 JS
 
-new Vuex.Store({
+const store = new Vuex.Store({
     state : {
       perfumeData : {}
     },

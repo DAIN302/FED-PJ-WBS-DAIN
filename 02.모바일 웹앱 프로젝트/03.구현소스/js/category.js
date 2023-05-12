@@ -2,6 +2,8 @@
 
 import comData from "./data/comData.js";
 import {commonFn, volumeCheck} from "./common.js";
+import {catData} from "./data/catData.js";
+import store from "./store.js";
 
 // 상단영역 뷰템플릿
 Vue.component("top-area",{
@@ -18,7 +20,26 @@ new Vue({
 
         // 부드러운 스크롤
         startSS();
+    }
+})
 
+// 메인영역 뷰템플릿 
+// 메인 상단
+Vue.component("head-comp",{
+    template : catData.catHeader
+})
+
+// 메인 향수 리스트
+Vue.component("list-comp",{
+    template : catData.catList
+})
+
+// 메인영역 뷰인스턴스
+new Vue({
+    el : "#cont",
+    data : {},
+    store,
+    mounted : function(){
         // 옵션 선택 박스 함수
         selectOpt();
 
