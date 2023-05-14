@@ -32,7 +32,7 @@ const catData = {
     `,
     catList : `
         <ol class="product_list">
-            <li v-for="(v, i) in $store.state.perfumeData">
+            <li v-for="(v, i) in $store.state.perfumeData" v-if="v.gender===$store.state.title||v.gender==='ALL'">
               <!-- 이미지 -->
               <div class="product_imgbx">
                 <a href="#">
