@@ -141,9 +141,9 @@ function volumeCheck(check, img, price){
         // 사진 및 가격 변경을 위한 텍스트 읽어오기
         let volNum = $(this).text().split("ml")[0].trim()
         // 이미지 경로 숫자 부분 읽어오기
-        let temp = $(this).parent().parent().siblings(img).find("img").attr("src").split("_")[1].split(".")[0]
+        // let temp = $(this).parent().parent().siblings(img).find("img").attr("src").split("_")[1].split(".")[0]
         // 용량 클릭 시 해당하는 이미지로 변경
-        $(this).parent().parent().siblings(img).find("img").attr("src", $(img).find("img").attr("src").replace(temp, volNum))
+        // $(this).parents().siblings(img).find("img").attr("src", $(img).find("img").attr("src").replace(temp, volNum))
         // 용량 클릭 시 해당하는 가격으로 변경
         let txtNum = $(this).index();
         $(this).parents().siblings(price).find(".vol_price").eq(txtNum).show().siblings().hide();

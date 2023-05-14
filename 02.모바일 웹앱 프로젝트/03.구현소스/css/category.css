@@ -96,7 +96,7 @@
 .product_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: min(5vw, 50px);
+    grid-column-gap: min(15vw, 150px);
     grid-row-gap: min(1.5vw, 15px);
 }
 

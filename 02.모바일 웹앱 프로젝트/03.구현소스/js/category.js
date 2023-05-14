@@ -31,7 +31,12 @@ Vue.component("head-comp",{
 
 // 메인 향수 리스트
 Vue.component("list-comp",{
-    template : catData.catList
+    template : catData.catList,
+    methods : {
+        chgVolume(pm, event){
+            store.commit('chgVolume', pm)
+        }
+    }
 })
 
 // 메인영역 뷰인스턴스
@@ -39,6 +44,9 @@ new Vue({
     el : "#cont",
     data : {},
     store,
+    created(){
+
+    },
     mounted : function(){
         // 옵션 선택 박스 함수
         selectOpt();
