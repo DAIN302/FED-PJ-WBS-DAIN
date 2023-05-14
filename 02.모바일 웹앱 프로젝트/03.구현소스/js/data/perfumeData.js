@@ -431,7 +431,7 @@ const perfumeListData = {
         gender : "ALL",
         men : true,
         women : true,
-        mood : ["formal", "modern", "chic"],
+        mood : ["formal", "modern"],
         notes : ["floral", "woody"],
         note : {
             top : "블랙 카다멈",
@@ -473,7 +473,7 @@ const perfumeListData = {
         gender : "ALL",
         men : true,
         women : true,
-        mood : ["formal", "modern", "chic"],
+        mood : ["formal", "modern"],
         notes : ["woody"],
         note : {
             top : "카다멈",

@@ -5,7 +5,12 @@ import {street, formal, elegant, modern, chic, lovely} from "./data/moodData.js"
 const store = new Vuex.Store({
     state : {
       perfumeData : perfumeListData,
-      perfumeStreet : street,
+      perfumeStreet : {...street.street, ...street.lovely},
+      perfumeFormal : {...formal.formal, ...formal.elegant, ...formal.modern},
+      perfumeElegant : {...elegant.elegant, ...elegant.modern, ...elegant.chic},
+      perfumeModern : {...formal.modern, ...elegant.modern, ...modern},
+      perfumeChic : {...elegant.chic, ...chic},
+      perfumeLovely : {...street.lovely, ...modern},
       lnbData : {
         "women" : {
           title : "WOMEN",
@@ -26,6 +31,11 @@ const store = new Vuex.Store({
       br : "",
     },
     mutations : {
+      chgMenu(dt, pm){
+        // location.href = "category.html"
+        dt.title = dt.lnbData[pm].title
+        dt.lnb = dt.lnbData[pm].lnb
+      },
       // 용량 클릭 시 이미지 변경
       chgVolume(dt, pm){
         dt.image = dt.perfumeData[pm].image
@@ -37,13 +47,13 @@ const store = new Vuex.Store({
         let pml = pm.toLowerCase()
         if(pml==="all"){
           // all 클릭 시 전체 아이템 반환
-          dt.perfumeData = dt.perfumeData
+          dt.perfumeData = perfumeListData;
           console.log(pml)
         } else {
-          dt.perfumeData = dt.perfumeData
+          let temp = Object.keys(perfumeListData).map(item => perfumeListData[item]).filter(x => x.mood.includes(pml));
+          dt.perfumeData = temp;
+          console.log(temp.length)
         }
-        
-        
       }
     
     },

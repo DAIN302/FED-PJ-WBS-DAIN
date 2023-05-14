@@ -7,12 +7,18 @@ import store from "./store.js";
 
 // 상단영역 뷰템플릿
 Vue.component("top-area",{
-    template : comData.tarea
+    template : comData.tarea,
+    methods : {
+        chgMenu(pm){
+            store.commit('chgMenu', pm)
+        }
+    }
 })
 
 // 상단영역 뷰인스턴스
 new Vue({
     el : "#top",
+    store,
     data : {},
     mounted : function(){
         // 공통 함수 호출
