@@ -26,7 +26,13 @@ new Vue({
 // 메인영역 뷰템플릿 
 // 메인 상단
 Vue.component("head-comp",{
-    template : catData.catHeader
+    template : catData.catHeader,
+    methods : {
+        chgList(pm){
+            store.commit('chgList', pm)
+            console.log("dd", pm)
+        }
+    }
 })
 
 // 메인 향수 리스트
@@ -35,7 +41,10 @@ Vue.component("list-comp",{
     methods : {
         chgVolume(pm, event){
             store.commit('chgVolume', pm)
-        }
+        },
+        insComma(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
     }
 })
 

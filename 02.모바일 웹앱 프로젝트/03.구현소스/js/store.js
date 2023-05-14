@@ -21,7 +21,9 @@ const store = new Vuex.Store({
       title : "WOMEN",
       lnb : ["All", "Modern", "Chic", "Lovely"],
       image : "",
-      br : ""
+      br : "",
+      men : true,
+      women : true
     },
     mutations : {
       // 용량 클릭 시 이미지 변경
@@ -31,6 +33,9 @@ const store = new Vuex.Store({
         let imgVol = event.currentTarget.innerText.split("ml")[0].trim()
         dt.perfumeData[pm].image = dt.perfumeData[pm].image.split("_")[0]+"_"+imgVol
       },
+      chgList(dt, pm){
+        
+      }
     
     },
 })    

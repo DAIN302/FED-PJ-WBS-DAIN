@@ -5,7 +5,9 @@ const catData = {
         <h2 class="ctit" v-text="$store.state.title"></h2>
         <nav class="lnb">
         <ul>
-            <li v-for="(v,i) in $store.state.lnb"><a href="#">{{v}}</a></li>
+            <li v-for="(v,i) in $store.state.lnb" v-bind:key="v">
+              <a href="#" v-on:click.prevent="chgList(v)">{{v}}</a>
+            </li>
         </ul>
         </nav>
         <div class="product_filter">
@@ -35,25 +37,25 @@ const catData = {
               <div class="product_imgbx">
                 <a href="#">
                   <figure>
-                    <img v-bind:src="'./images/sub/'+$store.state.perfumeData[i].br+'/'+$store.state.perfumeData[i].image+'.jpg'" alt="향수" />
+                    <img v-bind:src="'./images/sub/'+v.br+'/'+v.image+'.jpg'" alt="향수" />
                   </figure>
                 </a>
               </div>
               <!-- 설명 -->
               <div class="product_descbx">
                 <!-- 브랜드 -->
-                <h3 class="product_brand">{{$store.state.perfumeData[i].brand}}</h3>
+                <h3 class="product_brand">{{v.brand}}</h3>
                 <!-- 제품명 -->
                 <h4 class="product_name">
-                  <a href="#">{{$store.state.perfumeData[i].namekor}}</a>
+                  <a href="#">{{v.namekor}}</a>
                 </h4>
                 <!-- 가격 -->
                 <h5 class="product_price">
-                  <span v-for="(a,b) in $store.state.perfumeData[i].price" v-bind:class="'vol_price'+(b+1)+' vol_price'">{{a}}<em>원</em></span>
+                  <span v-for="(a,b) in v.price" v-bind:class="'vol_price'+(b+1)+' vol_price'">{{insComma(a)}}<em>원</em></span>
                 </h5>
                 <!-- 사이즈 선택 -->
                 <div class="product_radiobtn">
-                  <span v-for="(a,b) in $store.state.perfumeData[i].volume" v-bind:class="'volchk'+(b+1)+' volchk'" v-on:click="chgVolume(i, $event)">
+                  <span v-for="(a,b) in v.volume" v-bind:class="'volchk'+(b+1)+' volchk'" v-on:click="chgVolume(i, $event)">
                     <em class="fa-regular fa-circle"></em>{{a}}
                   </span>
                 </div>

@@ -8,10 +8,9 @@ const perfumeListData = {
         image : "ce_50",
         volume : ["50ml", "100ml"],
         price : [147250, 204250],
-        gender : {
-            men : ["formal", "elegant"],
-            women : []
-        },
+        men : true,
+        women : false,
+        mood : ["formal", "elegant"],
         notes : ["woody", "citrus"],
         note : {
             top : "베르가못, 레몬, 자몽, 오렌지, 만다린, 네롤리, 쁘띠그레인",
@@ -29,10 +28,9 @@ const perfumeListData = {
         image : "mirto_30",
         volume : ["30ml", "75ml", "150ml"],
         price : [104500, 161500, 247500],
-        gender : {
-            men : ["street"],
-            women : []
-        },
+        men : true,
+        women : false,
+        mood : ["street"],
         notes : ["citrus"],
         note : {
             top : "머틀, 바질, 레몬, 베르가못",
@@ -50,10 +48,9 @@ const perfumeListData = {
         image : "osman_20",
         volume : ["20ml", "100ml"],
         price : [147250, 332500],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral","citrus"],
         note : {
             top : "그린 만다린, 네롤리",
@@ -71,10 +68,9 @@ const perfumeListData = {
         image : "pico_30",
         volume : ["30ml", "75ml", "150ml"],
         price : [104500, 161500, 247500],
-        gender : {
-            men : ["street"],
-            women : []
-        },
+        men : true,
+        women : false,
+        mood : ["street"],
         notes : ["woody"],
         note : {
             top : "레몬, 베르가못, 자몽",
@@ -92,10 +88,9 @@ const perfumeListData = {
         image : "rosa_20",
         volume : ["20ml", "50ml", "100ml"],
         price : [118750, 213750, 299250],
-        gender : {
-            men : [],
-            women : ["lovely"]
-        },
+        men : true,
+        women : false,        
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "칼라브리아 베르가못, 탠저린, 페퍼",
@@ -113,10 +108,9 @@ const perfumeListData = {
         image : "yuzu_20",
         volume : ["20ml", "100ml"],
         price : [147250, 332500],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral","citrus"],
         note : {
             top : "유자, 베르가못, 초피나무",
@@ -134,10 +128,9 @@ const perfumeListData = {
         image : "bal_50",
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
-        gender : {
-            men : ["formal"],
-            women : ["modern"],
-        },
+        men : true,
+        women : true,
+        mood : ["formal", "modern"],
         notes : ["floral","citrus"],
         note : {
             top : "아프리칸 매리골드, 베르가못, 부쿠",
@@ -155,10 +148,9 @@ const perfumeListData = {
         image : "blan_50",
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
-        gender : {
-            men : ["street"],
-            women : ["lovely"],
-        },
+        men : true,
+        women : true,
+        mood : ["street", "lovely"],
         notes : ["floral"],
         note : {
             top : "핑크 페퍼, 화이트로즈",
@@ -176,10 +168,9 @@ const perfumeListData = {
         image : "ghost_50",
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
-        gender : {
-            men : ["elegant"],
-            women : ["chic", "modern"],
-        },
+        men : true,
+        women : true,
+        mood : ["elegant","chic", "modern"],
         notes : ["floral", "woody"],
         note : {
             top : "암브레트, 네스베리",
@@ -197,10 +188,9 @@ const perfumeListData = {
         image : "inf_50",
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "장미꽃잎, 핑크 프리지아",
@@ -218,10 +208,9 @@ const perfumeListData = {
         image : "lat_50",
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "시클라멘, 프리지아, 루바브",
@@ -239,10 +228,9 @@ const perfumeListData = {
         image : "sc_50",
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
-        gender : {
-            men : ["formal"],
-            women : [],
-        },
+        men : true,
+        women : false,
+        mood : ["formal"],
         notes : ["woody"],
         note : {
             top : "장미꽃잎",
@@ -260,10 +248,9 @@ const perfumeListData = {
         image : "par-doson_75",
         volume : ["75ml"],
         price : [214800],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "아프리카 오렌지꽃, 로즈 아이리스",
@@ -281,10 +268,9 @@ const perfumeListData = {
         image : "par-philo_75",
         volume : ["75ml"],
         price : [214800],
-        gender : {
-            men : ["elegant"],
-            women : ["modern"],
-        },
+        men : true,
+        women : true,
+        mood : ["elegant","modern"],
         notes : ["floral", "woody"],
         note : {
             top : "무화과잎, 무화과",
@@ -302,10 +288,9 @@ const perfumeListData = {
         image : "par-rose_75",
         volume : ["75ml"],
         price : [214800],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "베르가못, 블랙커런트, 리치",
@@ -323,10 +308,9 @@ const perfumeListData = {
         image : "par-tam_75",
         volume : ["75ml"],
         price : [214800],
-        gender : {
-            men : ["elegant"],
-            women : [],
-        },
+        men : true,
+        women : false,
+        mood : ["elegant"],
         notes : ["woody"],
         note : {
             top : "로즈, 플럼블로썸, 이탈리안 사이프러스",
@@ -344,10 +328,9 @@ const perfumeListData = {
         image : "bb_30",
         volume : ["30ml", "100ml"],
         price : [84800,164600],
-        gender : {
-            men : ["street"],
-            women : [],
-        },
+        men : true,
+        women : false,
+        mood : ["street"], 
         notes : ["fruity", "woody"],
         note : {
             top : "블랙베리",
@@ -365,10 +348,9 @@ const perfumeListData = {
         image : "ef_30",
         volume : ["30ml", "100ml"],
         price : [84800,164600],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral", "fruity"],
         note : {
             top : "킹 윌리엄 페어",
@@ -386,10 +368,9 @@ const perfumeListData = {
         image : "pb_30",
         volume : ["30ml", "100ml"],
         price : [84800,164600],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "빨간 사과",
@@ -407,10 +388,9 @@ const perfumeListData = {
         image : "pb_30",
         volume : ["30ml", "100ml"],
         price : [84800,164600],
-        gender : {
-            men : [],
-            women : ["modern"],
-        },
+        men : false,
+        women : true,
+        mood : ["modern"],
         notes : ["floral", "fruity"],
         note : {
             top : "블루벨",
@@ -428,10 +408,9 @@ const perfumeListData = {
         image : "dg_100",
         volume : ["100ml"],
         price : [248000],
-        gender : {
-            men : ["formal"],
-            women : ["modern", "chic"],
-        },
+        men : true,
+        women : true,
+        mood : ["formal", "modern", "chic"],
         notes : ["floral", "woody"],
         note : {
             top : "블랙 카다멈",
@@ -449,10 +428,9 @@ const perfumeListData = {
         image : "ob_100",
         volume : ["100ml"],
         price : [248000],
-        gender : {
-            men : ["formal"],
-            women : [],
-        },
+        men : true,
+        women :  false,
+        mood : ["formal"],
         notes : ["woody", "citrus"],
         note : {
             top : "베르가못",
@@ -470,10 +448,9 @@ const perfumeListData = {
         image : "vg_100",
         volume : ["100ml"],
         price : [248000],
-        gender : {
-            men : ["formal"],
-            women : ["modern", "chic"],
-        },
+        men : true,
+        women : true,
+        mood : ["formal", "modern", "chic"],
         notes : ["woody"],
         note : {
             top : "카다멈",
@@ -491,10 +468,9 @@ const perfumeListData = {
         image : "angel_50",
         volume : ["50ml","100ml"],
         price : [104800, 154800],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral", "fruity"],
         note : {
             top : "피치, 오렌지",
@@ -512,10 +488,9 @@ const perfumeListData = {
         image : "fresia_50",
         volume : ["50ml","100ml"],
         price : [104800, 154800],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "프리지아 어코드",
@@ -533,10 +508,9 @@ const perfumeListData = {
         image : "iris_50",
         volume : ["50ml","100ml"],
         price : [163800, 248800],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "네롤리, 갈바넘, 티머페퍼",
@@ -554,10 +528,9 @@ const perfumeListData = {
         image : "melo_50",
         volume : ["50ml","100ml"],
         price : [104800, 154800],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "베르가못, 비터 오렌지, 프레쉬 스파이스",
@@ -575,10 +548,9 @@ const perfumeListData = {
         image : "pot_50",
         volume : ["50ml","100ml"],
         price : [104800, 154800],
-        gender : {
-            men : ["formal"],
-            women : [],
-        },
+        men : true,
+        women : false,
+        mood : ["formal"],
         notes : ["woody"],
         note : {
             top : "베르가못, 비터 오렌지, 라우렐",
@@ -596,10 +568,9 @@ const perfumeListData = {
         image : "tbc_50",
         volume : ["50ml","100ml"],
         price : [104800, 154800],
-        gender : {
-            men : ["formal"],
-            women : [],
-        },
+        men : true,
+        women : false,
+        mood : ["formal"],
         notes : ["woody"],
         note : {
             top : "베르가못, 토스카나 토바코잎",
@@ -617,10 +588,9 @@ const perfumeListData = {
         image : "cpc_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : ["street"],
-            women : [],
-        },
+        men : true,
+        women : false,
+        mood : ["street"],
         notes : ["citrus"],
         note : {
             top : "블루 그레이프프룻",
@@ -638,10 +608,9 @@ const perfumeListData = {
         image : "ec_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : ["formal"],
-            women : ["modern"],
-        },
+        men : true,
+        women : true,
+        mood : ["formal", "modern"],
         notes : ["woody"],
         note : {
             top : "블랙 커런트, 딸기, 블랙베리",
@@ -659,10 +628,9 @@ const perfumeListData = {
         image : "fs_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "블랙 커런트, 딸기, 블랙베리",
@@ -680,10 +648,9 @@ const perfumeListData = {
         image : "goc_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["chic"],
-        },
+        men : false,
+        women : true,
+        mood : ["chic"],
         notes : ["citrus"],
         note : {
             top : "비터 그린 오렌지, 블랙 페퍼",
@@ -701,10 +668,9 @@ const perfumeListData = {
         image : "golden_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : ["elegant"],
-            women : ["chic"],
-        },
+        men : true,
+        women : true,
+        mood : ["elegant", "chic"],
         notes : ["woody","floral"],
         note : {
             top : "인센스, 엘레미, 카다멈, 큐민 시드, 그레이챠콜",
@@ -719,13 +685,12 @@ const perfumeListData = {
         nameeng : "Jo by Jo Loves Eau de Toilette",
         brand : "Jo Loves",
         br : "loves",
-        image : "golden_50",
+        image : "jol_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["citrus"],
         note : {
             top : "자몽, 비터 오렌지, 라임, 스피어민트",
@@ -743,10 +708,9 @@ const perfumeListData = {
         image : "mtl_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["citrus", "fruity"],
         note : {
             top : "망고, 타임, 블랙페퍼",
@@ -764,10 +728,9 @@ const perfumeListData = {
         image : "obf_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["citrus", "floral"],
         note : {
             top : "베르가못, 만다린, 쁘띠그레인, 네롤리",
@@ -785,10 +748,9 @@ const perfumeListData = {
         image : "pom_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["floral"],
         note : {
             top : "포멜로, 로즈",
@@ -806,10 +768,9 @@ const perfumeListData = {
         image : "pv_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["fruity"],
         note : {
             top : "레드 페퍼 베리, 카다멈, 쥬니퍼 베리",
@@ -827,10 +788,9 @@ const perfumeListData = {
         image : "rp_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["lovely", "modern"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely", "modern"],
         notes : ["floral"],
         note : {
             top : "베르가못, 샤프란, 리치",
@@ -848,10 +808,9 @@ const perfumeListData = {
         image : "rt_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : ["street"],
-            women : ["modern"],
-        },
+        men : true,
+        women : true,
+        mood : ["street", "modern"],
         notes : ["fruity", "woody", "citrus"],
         note : {
             top : "블랙 페퍼, 그린 휘그 리프, 비터 시트러스",
@@ -869,10 +828,9 @@ const perfumeListData = {
         image : "scrt_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : ["formal"],
-            women : ["modern"],
-        },
+        men : true,
+        women : true,
+        mood : ["formal", "modern"],
         notes : ["woody", "citrus"],
         note : {
             top : "베르가못, 레드 타임, 민트",
@@ -890,10 +848,9 @@ const perfumeListData = {
         image : "spl_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["chic"],
-        },
+        men : false,
+        women : true,
+        mood : ["chic"],
         notes : ["woody", "fruity"],
         note : {
             top : "카다멈, 플럼, 시나몬",
@@ -911,10 +868,9 @@ const perfumeListData = {
         image : "wrll_50",
         volume : ["50ml","100ml"],
         price : [169000, 259000],
-        gender : {
-            men : [],
-            women : ["lovely"],
-        },
+        men : false,
+        women : true,
+        mood : ["lovely"],
         notes : ["citrus", "floral"],
         note : {
             top : "레몬 필 코롱, 쁘띠 그레인 오일, 핑크 페퍼",
