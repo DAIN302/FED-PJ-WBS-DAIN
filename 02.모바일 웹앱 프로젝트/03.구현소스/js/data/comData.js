@@ -149,11 +149,11 @@ const comData = {
     barea : `
         <footer class="info">
         <div class="blogo">
+        <a href="index.html">
         <figure>
-            <a href="#">
             <img src="./images/logo/info_logo.svg" alt="">
-            </a>
         </figure>
+        </a>
         </div>
         <div class="btext">
         <h2>PERFUMEGRAPHY PROCESS</h2>

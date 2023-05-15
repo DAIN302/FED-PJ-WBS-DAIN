@@ -35,7 +35,7 @@ const productData = {
               <div class="detail_descbtn">
                 <button class="desc_desc">Description</button>
                 <button class="desc_note">Fragrance Notes</button>
-                <button class="desc_story">Scent Stories</button>
+                <button class="desc_story">Scent Story</button>
               </div>
               <div class="detail_desc">
                 <div class="desc_wrap">
@@ -58,7 +58,7 @@ const productData = {
           </section>
           <section class="product_fragrance">
             <div class="fragrance_descbx">
-              <h3>FRAGRANCE NOTES</h3>
+              <h3 class="product_title">FRAGRANCE NOTES</h3>
               <div class="note_imgbx">
                 <figure v-for="(a,b) in $store.state.notes" class="notes_img">
                   <img :src="'./images/sub/'+a+'.jpg'" alt="향수노트">
@@ -85,6 +85,7 @@ const productData = {
             </div>
           </section>
           <section class="product_story">
+            <h3 class="product_title">SCENT STORY</h3>
             <div class="story_wrap">
               <div class="story_svg">
                 <svg viewBox="0 0 14 10" class="svg-icon svg-fill">
@@ -92,7 +93,7 @@ const productData = {
                 </svg>
               </div>
               <div class="story_p">
-                <p v-for="(a,b) in $store.state.story">{{a}}</p>
+                <p v-for="(a,b) in $store.state.story" class="story_desc">{{a}}</p>
               </div>
               <div class="story_svg">
                 <svg viewBox="0 0 14 10" class="svg-icon svg-fill svg-right">
@@ -102,7 +103,7 @@ const productData = {
             </div>
           </section>
           <section class="product_recommands">
-            <h2>RECOMMANDS</h2>
+            <h3 class="product_title">RECOMMANDS</h3>
             <div class="recommands_list">
               <ul>
                 <li>

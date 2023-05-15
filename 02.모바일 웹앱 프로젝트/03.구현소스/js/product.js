@@ -54,6 +54,21 @@ new Vue({
         
         let recVol = $(".recommands_radiobtn").find(".volchk")
         volumeCheck(recVol, ".recommands_imgbx", ".recommands_price")
+
+
+        // 스크롤 등장 액션
+        showTit(".product_title");
+
+        let imgbx = document.querySelectorAll(".fragrance_imgbx")
+        let noteImgbx = document.querySelectorAll(".note_imgbx")
+        let notes = document.querySelectorAll(".notes")
+        let storyP = document.querySelectorAll(".story_desc")
+        let recommList = document.querySelectorAll(".recommands_list>ul>li")
+        scrollShow(imgbx);
+        scrollShow(noteImgbx);
+        scrollShow(notes);
+        scrollShow(storyP);
+        scrollShow(recommList);
     }
 })
 
@@ -68,9 +83,45 @@ new Vue({
     el : "#info"
 })
 
+// 타이틀 나타나는 함수
+function showTit(x){
+    // const titName = document.querySelectorAll(".product_title");
+    const titName = document.querySelectorAll(x);
+
+    const hv = window.innerHeight/6*5;
+
+    // 등장액션 대상 위치값 리턴함수
+    const retVal = a => a.getBoundingClientRect().top;
+
+    const showIt =  y => {
+        let xval = retVal(y)
+
+        if(xval < hv && xval > 0) {
+            y.classList.add("on");
+        }
+    }
+    
+    titName.forEach(ele => {
+        let tCode = "";
+        let tnum = 0;
+        let txtTit = ele.innerText;
+        console.log(txtTit);
+        for(let x of txtTit){
+            if(x===" ") x = "&nbsp&nbsp";
+            tCode += `<span style="transition-delay: ${tnum*0.1}s">${x}</span>`
+            tnum++; 
+        }
+        ele.innerHTML = tCode;
+        
+        window.addEventListener("scroll", ()=>{
+            showIt(ele);
+        })
+    });
+}
 
 // 스크롤 시 하위메뉴 나타나기
 function scrollShow(obj) {
+    console.log(obj.length)
     // 화면높이값의 4/5구하기
     const hv = window.innerHeight/6*5;
     // 윈도우 높이값
@@ -78,11 +129,9 @@ function scrollShow(obj) {
 
     // 전체 문서 높이값
     const docH = document.body.clientHeight;
-    console.log("문서전체높이", docH); 
 
     // 스크롤한계값
     const scLimit = docH - winH
-    console.log("스크롤한계값", scLimit); 
 
     // 등장액션 대상 위치값 리턴함수
     const retVal = ele => ele.getBoundingClientRect().top;
@@ -101,4 +150,4 @@ function scrollShow(obj) {
     window.addEventListener("scroll", ()=> {
     for(let x of obj) showIt(x);
     })
-} // scrollShow 함수
+ } // scrollShow 함수

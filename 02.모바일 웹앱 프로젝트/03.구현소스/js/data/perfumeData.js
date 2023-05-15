@@ -63,19 +63,19 @@ const perfumeListData = {
         desc : ["강렬하고 고결한 느낌을 가지고 있는 오스만투스와","활기찬 느낌이 가득한 시트러스의 조화",],
         story : ["이부자리를 펴놓은 듯한 금목서 꽃잎들", "그 위로 몸을 던져서 노곤하게 햇빛을 쬐는 듯한 담백한 향기"]
     }, 
-    pico : {
+    fico : {
         namekor : "피코 디 아말피 오 드 뚜왈렛",
-        nameeng : "Pico Di Amalfi Eau de Toilette",
+        nameeng : "Fico Di Amalfi Eau de Toilette",
         brand : "ACQUA DI PARMA",
         br : "acqua",
-        image : "pico_30",
+        image : "fico_30",
         volume : ["30ml", "75ml", "150ml"],
         price : [104500, 161500, 247500],
         gender : "MEN",
         men : true,
         women : false,
         mood : ["street"],
-        notes : ["woody"],
+        notes : ["woody", "citrus"],
         note : {
             top : "레몬, 베르가못, 자몽",
             middle : "무화과꿀, 핑크 페퍼, 자스민 꽃잎",
@@ -404,7 +404,7 @@ const perfumeListData = {
         nameeng : "Wild Bluebell Cologne",
         brand : "Jo Malone",
         br : "malone",
-        image : "pb_30",
+        image : "wb_30",
         volume : ["30ml", "100ml"],
         price : [84800,164600],
         gender : "WOMEN",
@@ -642,7 +642,7 @@ const perfumeListData = {
         men : true,
         women : true,
         mood : ["formal", "modern"],
-        notes : ["woody"],
+        notes : ["woody", "fruity"],
         note : {
             top : "블랙 커런트, 딸기, 블랙베리",
             middle : "몰약, 넛맥, 대추",
@@ -726,7 +726,7 @@ const perfumeListData = {
         men : false,
         women : true,
         mood : ["lovely"],
-        notes : ["citrus"],
+        notes : ["citrus", "woody"],
         note : {
             top : "자몽, 비터 오렌지, 라임, 스피어민트",
             middle : "블랙페퍼, 헤디온",
@@ -747,7 +747,7 @@ const perfumeListData = {
         men : false,
         women : true,
         mood : ["lovely"],
-        notes : ["citrus", "fruity"],
+        notes : ["fruity","citrus"],
         note : {
             top : "망고, 타임, 블랙페퍼",
             middle : "프리지아, 민트잎",
@@ -921,7 +921,7 @@ const perfumeListData = {
             middle : "로즈 오일, 제라늄 리브스, 뮤게, 바이올렛",
             base : "로즈 앱솔루트, 클로브 새싹, 화이트 허니, 파출리, 앰버, 화이트머스크"
         },
-        desc : ["우아함과 프레시함이 담긴", "플로럴 프레그런스 화이트 로즈와 페퍼드 시트러스", "시더우가 어우러진 아름다운 플로럴 향"],
+        desc : ["우아함과 프레시함이 담긴", "플로럴 프레그런스 화이트 로즈와 페퍼드 시트러스", "시더우드가 어우러진 아름다운 플로럴 향"],
         story : ["하얀 장미로 채운 아름다운 집", "사랑과 축하, 인생에서 소중하고 기억에 남은 순간들", "퀸즈 가든에서 즐기는 파티"]
     }, 
 

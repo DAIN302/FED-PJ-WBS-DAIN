@@ -294,8 +294,44 @@
 }
 .blogo a {
     display: inline-block;
-    width: 80px;
 }
+
+.blogo figure {
+    display: flex;
+    width: 160px;
+    height: 160px;
+    background-image: url(../images/logo/pg-logo-circle.svg);
+    background-position: center center;
+    background-size: 160px;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    animation: rotateLogoText 20s linear infinite;
+}
+
+.blogo img {
+    width: 70px;
+    animation: rotateReverse 20s linear infinite;
+}
+
+@keyframes rotateLogoText {
+    0% {
+        transform : translate3d(0px,0px,0px) rotate(0deg);
+    }
+    100% {
+        transform : translate3d(0px,0px,0px) rotate(360deg);
+    }   
+}
+
+@keyframes rotateReverse {
+    0% {
+        transform : translate3d(0px,0px,0px) rotate(0deg);
+    }
+    100% {
+        transform : translate3d(0px,0px,0px) rotate(-360deg);
+    }   
+}
+
 
 .btext {
     padding-bottom: 20px;

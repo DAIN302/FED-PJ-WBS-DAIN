@@ -42,6 +42,7 @@
 .detail_descimg {
     aspect-ratio: 1/1;
     height: 45vh;
+    margin-bottom: 30px;
 }
 
 
@@ -98,7 +99,7 @@
 .detail_brand {
     font-size: 1.6rem;
     color : #777;
-    padding : 10px 0;
+    padding : 15px 0;
 }
 
 /* 제품명 */
@@ -123,7 +124,7 @@
     color : #c28243;
     font-size: 1.8rem;
     font-weight: bold;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .vol_price {
@@ -138,7 +139,7 @@
 .detail_shopbtnbx button {
     font-size: 1.6rem;
     padding : 10px 30px;
-    margin: 0 5px 20px;
+    margin: 0 5px 30px;
     cursor: pointer;
 }
 
@@ -235,12 +236,6 @@
     justify-content: center;
 }
 
-.fragrance_descbx h3 {
-    font-size: 3rem;
-    font-family: 'Nunito', sans-serif; 
-    margin-bottom: 20px;
-}
-
 .note_imgbx {
     display: flex;
     flex-wrap: wrap;
@@ -258,8 +253,15 @@
     margin: 2% 5%;
     box-sizing: border-box;
     text-align: center;
-    
+    opacity: 0;
+    transition: opacity 1s ease-in-out .3s;
 }
+
+.note_imgbx.on .notes_img {
+    opacity: 1;
+}
+
+
 
 .notes_img img {
     width: 100%;
@@ -286,18 +288,37 @@
     font-size: 2rem;
 }
 
+.note_desc {
+    opacity: 0;
+    transition: opacity 1s ease-in-out .5s;
+}
+
+.notes.on .note_desc{
+    opacity: 1;
+}
+
 /* 이미지 */
 .fragrance_imgbx img {
+    position: relative;
     object-fit: cover;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transform: translateX(30%);
+    transition: all 1s ease-in-out;
+}
+
+.fragrance_imgbx.on img {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* 스토리 섹션 */
 .product_story {
     margin: 30px 0;
-    padding : 50px 0;
+    padding : 100px 0;
 }
+
 .story_wrap {
     width: 80%;
     margin: 0 auto;
@@ -309,14 +330,18 @@
     color : #777;
 }
 
+.story_desc {
+    opacity: 0;
+    transition: opacity .6s ease-in-out 1s;
+}
+
+.story_desc.on {
+    opacity: 1;
+}
+
 /* 추천 */
 .product_recommands {
     margin-bottom: 50px;
-}
-
-.product_recommands h2{
-    text-align: center;
-    font-size: 3rem;
 }
 
 .recommands_list {
@@ -334,6 +359,12 @@
 
 .recommands_list ul>li {
     position: relative;
+    opacity: 0;
+    transition: opacity .8s ease-in-out;
+}
+
+.recommands_list ul>li.on {
+    opacity: 1;
 }
 
 /* 이미지 */
@@ -401,3 +432,26 @@
 .recommands_list ul>li:hover .recommands_like button {
     opacity: 1;
 }
+
+.product_title {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Nunito', sans-serif; 
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.product_title span {
+    position: relative;
+    display: inline-block;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: .5s cubic-bezier(0.25,1,0.5,1);
+}
+
+.product_title.on span {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+

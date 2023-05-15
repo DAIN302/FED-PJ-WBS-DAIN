@@ -2,11 +2,10 @@
 // 상단영역 관련 함수
 function commonFn(){
     // 로고 클릭 시 index.html로 이동
-    $(".top .logo").click(function(e){
+    $(".top .logo a").click(function(e){
         e.preventDefault();
         location.href = "index.html";
     })
-
 
     // 서브메뉴 등장 -> shop 글씨 클릭했을때만
     $(".gnb>ul>li>a:first").click(function(e){
