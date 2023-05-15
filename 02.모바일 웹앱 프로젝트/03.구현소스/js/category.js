@@ -20,12 +20,22 @@ new Vue({
     el : "#top",
     store,
     data : {},
+    created : function(){
+        let pm;
+
+        if(location.href.indexOf("?")!==-1) {
+            pm = location.href.split("?")[1].split("=")[1];
+            if(pm){
+                store.commit('chgMenu', pm)
+            }
+        }
+    },
     mounted : function(){
         // 공통 함수 호출
         commonFn();
 
         // 부드러운 스크롤
-        startSS();
+        // startSS();
     }
 })
 
@@ -47,6 +57,13 @@ Vue.component("list-comp",{
     methods : {
         chgVolume(pm, event){
             store.commit('chgVolume', pm)
+            // 클릭 시 용량 체크 부분 변경
+            $(event.currentTarget).find("em").css({fontWeight:900}).parent().siblings().find("em").css({fontWeight:400});
+            let txtNum = $(event.currentTarget).index();
+            // 클릭 시 가격 변경
+            $(event.currentTarget).parents().siblings(".product_price").
+            find(".vol_price").eq(txtNum).show().siblings().hide();
+
         },
         insComma(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -60,14 +77,12 @@ new Vue({
     data : {},
     store,
     created(){
-
+        // 용량 선택 기능 함수
+        // volumeCheck(".volchk", ".product_imgbx", ".product_price")
     },
     mounted : function(){
         // 옵션 선택 박스 함수
         selectOpt();
-
-        // 용량 선택 기능 함수
-        volumeCheck(".volchk", ".product_imgbx", ".product_price")
     }
 })
 

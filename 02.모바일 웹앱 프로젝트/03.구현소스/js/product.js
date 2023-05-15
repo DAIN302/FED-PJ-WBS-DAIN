@@ -1,7 +1,8 @@
 // 제품 상세 페이지 JS
-
 import comData from "./data/comData.js";
 import {commonFn, volumeCheck} from "./common.js";
+import productData from "./data/pdData.js";
+import store from "./store.js";
 
 // 상단영역 뷰템플릿
 Vue.component("top-area",{
@@ -18,8 +19,35 @@ new Vue({
 
         // 부드러운 스크롤
         startSS();
+    }
+})
 
-        // 용량 선택 기능 함수
+// 메인영역 뷰템플릿
+Vue.component("main-comp",{
+    template : productData.pdData,
+    methods : {
+        insComma(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+    }
+})
+// 메인영역 뷰인스턴스
+new Vue({
+    el : "#cont",
+    store,
+    data : {},
+    created : function(){
+        let pm;
+
+        if(location.href.indexOf("?")!==-1) {
+            pm = location.href.split("?")[1].split("=")[1];
+            if(pm){
+                store.commit('chgProduct', pm)
+            }
+        }
+    },
+    mounted : function(){
+                // 용량 선택 기능 함수
         let detailVol = $(".detail_radiobtn").find(".volchk")
         let detailPrice = $(".detail_price")
         volumeCheck(detailVol, ".detail_descimg", detailPrice)
@@ -28,6 +56,7 @@ new Vue({
         volumeCheck(recVol, ".recommands_imgbx", ".recommands_price")
     }
 })
+
 
 // 하단영역 뷰템플릿
 Vue.component("info-area",{

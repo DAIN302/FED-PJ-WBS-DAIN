@@ -39,10 +39,17 @@
     align-items: center;
 }
 
+.detail_descimg {
+    aspect-ratio: 1/1;
+    height: 45vh;
+}
+
+
 /*  향수병 이미지 */
 .detail_descimg img{
     width: 100%;
     height: 100%;
+    object-fit: scale-down;
 }
 
 /* 찜하기 */

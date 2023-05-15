@@ -35,7 +35,7 @@ const catData = {
             <li v-for="(v, i) in $store.state.perfumeData" v-if="v.gender===$store.state.title||v.gender==='ALL'">
               <!-- 이미지 -->
               <div class="product_imgbx">
-                <a href="#">
+                <a :href="'product.html?cat='+v.image.split('_')[0]">
                   <figure>
                     <img v-bind:src="'./images/sub/'+v.br+'/'+v.image+'.jpg'" alt="향수" />
                   </figure>
@@ -47,7 +47,7 @@ const catData = {
                 <h3 class="product_brand">{{v.brand}}</h3>
                 <!-- 제품명 -->
                 <h4 class="product_name">
-                  <a href="#">{{v.namekor}}</a>
+                  <a :href="'product.html?cat='+v.image.split('_')[0]">{{v.namekor}}</a>
                 </h4>
                 <!-- 가격 -->
                 <h5 class="product_price">

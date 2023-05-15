@@ -66,10 +66,10 @@ const comData = {
                 <span class="fa-solid fa-chevron-down"></span>
                 </h2>
                 <ol class="sidebar_submenu">
-                <li><a href="#" v-on:click.prevent="chgMenu('women')">All</a></li>
-                <li><a href="#" v-on:click.prevent="chgMenu('women')">Modern</a></li>
-                <li><a href="#" v-on:click.prevent="chgMenu('women')">Chic</a></li>
-                <li><a href="#" v-on:click.prevent="chgMenu('women')">Lovely</a></li>
+                <li><a href="category.html?=women">All</a></li>
+                <li><a href="category.html?=women">Modern</a></li>
+                <li><a href="category.html?=women">Chic</a></li>
+                <li><a href="category.html?=women">Lovely</a></li>
                 </ol>
             </li>
             <li>
@@ -78,10 +78,10 @@ const comData = {
                 <span class="fa-solid fa-chevron-down"></span>
                 </h2>
                 <ol class="sidebar_submenu">
-                <li><a href="#" v-on:click.prevent="chgMenu('men')">All</a></li>
-                <li><a href="#" v-on:click.prevent="chgMenu('men')">Street</a></li>
-                <li><a href="#" v-on:click.prevent="chgMenu('men')">Formal</a></li>
-                <li><a href="#" v-on:click.prevent="chgMenu('men')">Elegant</a></li>
+                <li><a href="category.html?=men">All</a></li>
+                <li><a href="category.html?=men">Street</a></li>
+                <li><a href="category.html?=men">Formal</a></li>
+                <li><a href="category.html?=men">Elegant</a></li>
                 </ol>
             </li>
             <li>

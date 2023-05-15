@@ -4,13 +4,13 @@ import {street, formal, elegant, modern, chic, lovely} from "./data/moodData.js"
 
 const store = new Vuex.Store({
     state : {
+      // perfumeStreet : {...street.street, ...street.lovely},
+      // perfumeFormal : {...formal.formal, ...formal.elegant, ...formal.modern},
+      // perfumeElegant : {...elegant.elegant, ...elegant.modern, ...elegant.chic},
+      // perfumeModern : {...formal.modern, ...elegant.modern, ...modern},
+      // perfumeChic : {...elegant.chic, ...chic},
+      // perfumeLovely : {...street.lovely, ...modern, ...lovely},
       perfumeData : perfumeListData,
-      perfumeStreet : {...street.street, ...street.lovely},
-      perfumeFormal : {...formal.formal, ...formal.elegant, ...formal.modern},
-      perfumeElegant : {...elegant.elegant, ...elegant.modern, ...elegant.chic},
-      perfumeModern : {...formal.modern, ...elegant.modern, ...modern},
-      perfumeChic : {...elegant.chic, ...chic},
-      perfumeLovely : {...street.lovely, ...modern},
       lnbData : {
         "women" : {
           title : "WOMEN",
@@ -27,6 +27,19 @@ const store = new Vuex.Store({
       },
       title : "WOMEN",
       lnb : ["All", "Modern", "Chic", "Lovely"],
+      namekor : "",
+      nameeng : "",
+      brand : "",
+      volume : [],
+      price : [],
+      notes : [],
+      note : {
+        top : "",
+        middle : "",
+        base : ""
+      },
+      desc :[],
+      story : [],
       image : "",
       br : "",
     },
@@ -38,8 +51,11 @@ const store = new Vuex.Store({
       },
       // 용량 클릭 시 이미지 변경
       chgVolume(dt, pm){
+        // 이미지 변경
         dt.image = dt.perfumeData[pm].image
+        // 경로 변경
         dt.br = dt.perfumeData[pm].br
+        // 클릭 시 이미지 변경
         let imgVol = event.currentTarget.innerText.split("ml")[0].trim()
         dt.perfumeData[pm].image = dt.perfumeData[pm].image.split("_")[0]+"_"+imgVol
       },
@@ -50,12 +66,27 @@ const store = new Vuex.Store({
           dt.perfumeData = perfumeListData;
           console.log(pml)
         } else {
-          let temp = Object.keys(perfumeListData).map(item => perfumeListData[item]).filter(x => x.mood.includes(pml));
-          dt.perfumeData = temp;
-          console.log(temp.length)
+          let tempData = Object.keys(perfumeListData).map(item => perfumeListData[item]).filter(x => x.mood.includes(pml));
+          let tempData2 = Object.assign({}, tempData);
+          dt.perfumeData = tempData;
+          console.log(tempData)
         }
+      },
+      chgProduct(dt, pm){
+        dt.image = dt.perfumeData[pm].image
+        dt.br = dt.perfumeData[pm].br
+        dt.namekor = dt.perfumeData[pm].namekor
+        dt.nameeng = dt.perfumeData[pm].nameeng
+        dt.brand = dt.perfumeData[pm].brand
+        dt.volume = dt.perfumeData[pm].volume
+        dt.price = dt.perfumeData[pm].price
+        dt.notes = dt.perfumeData[pm].notes
+        dt.note["top"] = dt.perfumeData[pm].note["top"]
+        dt.note["middle"] = dt.perfumeData[pm].note["middle"]
+        dt.note["base"] = dt.perfumeData[pm].note["base"]
+        dt.desc = dt.perfumeData[pm].desc
+        dt.story = dt.perfumeData[pm].story
       }
-    
     },
 })    
 
