@@ -65,7 +65,7 @@
 
 .main_best_wrap {
     padding-bottom: 15vh;
-    height: 60vh;
+    height: 65vh;
     display: flex;
 }
 
@@ -260,7 +260,7 @@
 
 .match_wheel {
     position: relative;
-    height: 30vh;
+    height: 35vh;
 
 }
 .match_rotate {
