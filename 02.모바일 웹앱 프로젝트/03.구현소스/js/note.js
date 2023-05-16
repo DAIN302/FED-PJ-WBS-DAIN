@@ -40,11 +40,11 @@ new Vue({
 
 // 메인영역 뷰템플릿 
 // 메인 상단
-Vue.component("head-comp",{
-    template : catData.catHeader,
+Vue.component("notehead-comp",{
+    template : catData.noteCatHeader,
     methods : {
-        chgList(pm){
-            store.commit('chgList', pm)
+        chgNoteList(pm){
+            store.commit('chgNoteList', pm)
             // 리스트 변경 시 선택된 것 초기화
             // 용량 체크 부분 초기화
             $(".volchk1").find("em").css({fontWeight:900}).parent().siblings().find("em").css({fontWeight:400});
@@ -66,8 +66,8 @@ Vue.component("head-comp",{
 })
 
 // 메인 향수 리스트
-Vue.component("list-comp",{
-    template : catData.catList,
+Vue.component("notelist-comp",{
+    template : catData.noteCatList,
     methods : {
         chgVolume(pm, event){
             store.commit('chgVolume', pm)

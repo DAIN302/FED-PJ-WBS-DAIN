@@ -8,8 +8,20 @@
 @import url(common.css);
 
 .cont {
-    width: 90%;
-    margin: 0 auto;
+    
+}
+.ctit_bgibx {
+    overflow: hidden;
+}
+
+.ctit_bgi {
+    width: 100%;
+    height: 120px;
+}
+
+.ctit_bgi img {
+    width: 100%;
+    height: 100%;
 }
 
 /* 타이틀 */
@@ -90,8 +102,9 @@
 
 /* 상품 목록 */
 .product_listwrap {
-    width: 100%;
+    width: 90%;
     padding: 40px 0;
+    margin: 0 auto;
 }
 .product_list {
     display: grid;
@@ -105,6 +118,11 @@
 }
 
 /* 이미지 */
+.product_imgbx {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
 .product_imgbx figure {
     aspect-ratio: 1/1;
 }
@@ -170,8 +188,8 @@
 /* 하트 표시 */
 .product_like {
     position: absolute;
-    top: 0;
-    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .product_like button {
@@ -184,12 +202,49 @@
     border-radius: 50%;
     border: 1px solid #bbb;
     opacity: 0;
-    transition: opacity .2s ease-in-out;
+    transform: translateY(50%);
+    transition: all .4s ease-in-out;
 }
 
 .product_list>li:hover .product_like button {
     opacity: 1;
+    transform: translateY(0);
 }
+
+.product_bag {
+    opacity: 0;
+    margin-top: 20px;
+    transition: opacity .4s;
+}
+
+.product_list>li:hover .product_bag {
+    opacity: 1;
+}
+
+.product_bag button {
+    position: relative;
+    padding : 0;
+    font-family: 'Nunito', sans-serif; 
+    font-size: 1.6rem;
+    background-color: transparent;
+    border : none;
+    cursor: pointer;
+}
+
+.product_bag button::after {
+    position: absolute;
+    content: '';
+    width : 100%;
+    height: 1px;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    transition: width .4s;
+}
+.product_bag button:hover::after {
+    width : 0;
+}
+
 
 
 

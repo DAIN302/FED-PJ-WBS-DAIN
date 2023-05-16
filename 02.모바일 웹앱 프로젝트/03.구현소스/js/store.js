@@ -1,15 +1,8 @@
 // 스토어 JS
 import { perfumeListData } from "./data/perfumeData.js";
-import {street, formal, elegant, modern, chic, lovely} from "./data/moodData.js"
 
 const store = new Vuex.Store({
     state : {
-      // perfumeStreet : {...street.street, ...street.lovely},
-      // perfumeFormal : {...formal.formal, ...formal.elegant, ...formal.modern},
-      // perfumeElegant : {...elegant.elegant, ...elegant.modern, ...elegant.chic},
-      // perfumeModern : {...formal.modern, ...elegant.modern, ...modern},
-      // perfumeChic : {...elegant.chic, ...chic},
-      // perfumeLovely : {...street.lovely, ...modern, ...lovely},
       perfumeData : perfumeListData,
       lnbData : {
         "women" : {
@@ -20,13 +13,11 @@ const store = new Vuex.Store({
           title : "MEN",
           lnb : ["All", "Street", "Formal", "Elegant"]
         },
-        "note" : {
-          title : "MAIN NOTE",
-          lnb : ["All", "Citrus", "Floral", "Fruity", "Woody"]
-        },
       },
       title : "WOMEN",
       lnb : ["All", "Modern", "Chic", "Lovely"],
+      notetitle : "MAIN NOTE",
+      notelnb : ["All", "Citrus", "Floral", "Fruity", "Woody"],
       namekor : "",
       nameeng : "",
       brand : "",
@@ -44,8 +35,8 @@ const store = new Vuex.Store({
       br : "",
     },
     mutations : {
+      // 카테고리 페이지 타이틀 및 lnb 변경
       chgMenu(dt, pm){
-        // location.href = "category.html"
         dt.title = dt.lnbData[pm].title
         dt.lnb = dt.lnbData[pm].lnb
       },
@@ -56,22 +47,34 @@ const store = new Vuex.Store({
         // 경로 변경
         dt.br = dt.perfumeData[pm].br
         // 클릭 시 이미지 변경
-        let imgVol = event.currentTarget.innerText.split("ml")[0].trim()
-        dt.perfumeData[pm].image = dt.perfumeData[pm].image.split("_")[0]+"_"+imgVol
+        
+        // dt.perfumeData[pm].image = dt.perfumeData[pm].image.split("_")[0]+"_"+imgVol
       },
+      // 카테고리 페이지의 lnb 클릭 시 해당되는 항목의 향수로 리스트 변경
       chgList(dt, pm){
         let pml = pm.toLowerCase()
         if(pml==="all"){
           // all 클릭 시 전체 아이템 반환
           dt.perfumeData = perfumeListData;
-          console.log(pml)
         } else {
+          // filter() 사용을 위해 객체를 배열로 변경
           let tempData = Object.keys(perfumeListData).map(item => perfumeListData[item]).filter(x => x.mood.includes(pml));
-          let tempData2 = Object.assign({}, tempData);
           dt.perfumeData = tempData;
-          console.log(tempData)
         }
       },
+      // 노트별 분류 상세페이지 lnb 클릭 시 해당되는 항목의 향수로 리스트 변경
+      chgNoteList(dt,pm){
+        let pml = pm.toLowerCase()
+        if(pml==="all"){
+          // all 클릭 시 전체 아이템 반환
+          dt.perfumeData = perfumeListData;
+        } else {
+          // filter() 사용을 위해 객체를 배열로 변경
+          let tempData = Object.keys(perfumeListData).map(item => perfumeListData[item]).filter(x => x.notes.includes(pml));
+          dt.perfumeData = tempData;
+        }
+      },
+      // 향수 상세페이지 구현을 위한 세팅
       chgProduct(dt, pm){
         dt.image = dt.perfumeData[pm].image
         dt.br = dt.perfumeData[pm].br

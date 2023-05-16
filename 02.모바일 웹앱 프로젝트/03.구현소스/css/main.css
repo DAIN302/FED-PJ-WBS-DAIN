@@ -116,6 +116,7 @@
 .best_perfume_desc {
     font-size: 1.6rem;
     color : #777;
+    font-family: 'SUITE-Regular';
 }
 
 .best_perfume_sublink {
@@ -251,6 +252,7 @@
     font-size: 1.4rem;
     color : #777;
     padding-top: 10px;
+    font-family: 'SUITE-Regular';
 }
 
 /* match */

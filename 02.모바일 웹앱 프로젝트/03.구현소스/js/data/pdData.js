@@ -7,11 +7,14 @@ const productData = {
               <img :src="'./images/sub/product/'+$store.state.br+'/'+$store.state.image.split('_')[0]+'/1.jpg'" alt="향수이미지">
             </div>
             <div class="detail_descbx">
-              <div class="detail_descimg">
-                <img :src="'./images/sub/'+$store.state.br+'/'+$store.state.image+'.jpg'" alt="향수병이미지">
+              <div class="product_link">
+                <a href="javascript:history.back();" class="fa-solid fa-arrow-left" title="이전 페이지로"></a>
               </div>
-              <div class="detail_like" title="찜하기">
+              <div class="detail_descimg">    
+                <img :src="'./images/sub/'+$store.state.br+'/'+$store.state.image+'.jpg'" alt="향수병이미지">
+                <div class="detail_like" title="찜하기">
                 <button class="fa-regular fa-heart"></button>
+              </div>
               </div>
               <div class="detail_radiobx">
                 <div class="detail_radiobtn">                    
@@ -29,8 +32,8 @@ const productData = {
                 <span v-for="(a,b) in $store.state.price" :class="'vol_price'+(b+1)+' vol_price'">{{insComma(a)}}<em>원</em></span>
               </div>
               <div class="detail_shopbtnbx">
-                <button class="shop_bag">장바구니</button>
-                <button class="shop_buy">바로 구매하기</button>
+                <button class="shop_bag">Add To Bag</button>
+                <button class="shop_buy">Buy Now</button>
               </div>
               <div class="detail_descbtn">
                 <button class="desc_desc">Description</button>
