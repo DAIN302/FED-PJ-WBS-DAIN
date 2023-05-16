@@ -1,7 +1,7 @@
 // 카테고리 페이지 JS
 
 import comData from "./data/comData.js";
-import {commonFn} from "./common.js";
+import {commonFn, lnbColorChg, infoFn} from "./common.js";
 import {catData} from "./data/catData.js";
 import store from "./store.js";
 
@@ -59,8 +59,11 @@ Vue.component("notehead-comp",{
                     $(ele).find("img").attr("src", $(ele).find("img").attr("src").replace(temp, volume))
                 })
             })
-            
-            
+            // 선택한 노트에 맞는 상단 배경이미지 변경
+            let pml = pm.toLowerCase()
+            let lnbImgName = $(".ctit_bgi").find("img").attr("src").split("_")[1].split(".")[0];
+            console.log(lnbImgName);
+            $(".ctit_bgi").find("img").attr("src", $(".ctit_bgi").find("img").attr("src").replace(lnbImgName, pml))
         }
     }
 })
@@ -101,6 +104,8 @@ new Vue({
         // 옵션 선택 박스 함수
         selectOpt();
 
+        lnbColorChg();
+
     }
 })
 
@@ -111,7 +116,12 @@ Vue.component("info-area",{
 
 // 하단영역 뷰인스턴스
 new Vue({
-    el : "#info"
+    el : "#info",
+    data : {},
+    mounted : function(){
+        // 하단영역 공통 JS
+        infoFn()
+    }
 })
 
 // 필터 선택 기능 함수

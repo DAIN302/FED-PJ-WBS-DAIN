@@ -1,7 +1,7 @@
 // 카테고리 페이지 JS
 
 import comData from "./data/comData.js";
-import {commonFn} from "./common.js";
+import {commonFn, lnbColorChg, infoFn} from "./common.js";
 import {catData} from "./data/catData.js";
 import store from "./store.js";
 
@@ -100,6 +100,8 @@ new Vue({
     mounted : function(){
         // 옵션 선택 박스 함수
         selectOpt();
+        // lnb 클릭 시 색깔 선택한 요소만 바뀌기
+        lnbColorChg();
 
     }
 })
@@ -111,7 +113,12 @@ Vue.component("info-area",{
 
 // 하단영역 뷰인스턴스
 new Vue({
-    el : "#info"
+    el : "#info",
+    data : {},
+    mounted : function(){
+        // 하단영역 공통 JS
+        infoFn()
+    }
 })
 
 // 필터 선택 기능 함수

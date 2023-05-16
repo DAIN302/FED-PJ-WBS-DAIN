@@ -90,11 +90,11 @@ const comData = {
                 <span class="fa-solid fa-chevron-down"></span>
                 </h2>
                 <ol class="sidebar_submenu">
-                <li><a href="#">All</a></li>
-                <li><a href="#">Citrus</a></li>
-                <li><a href="#">Floral</a></li>
-                <li><a href="#">Fruity</a></li>
-                <li><a href="#">Woody</a></li>
+                <li><a href="note.html">All</a></li>
+                <li><a href="note.html">Citrus</a></li>
+                <li><a href="note.html">Floral</a></li>
+                <li><a href="note.html">Fruity</a></li>
+                <li><a href="note.html">Woody</a></li>
                 </ol>
             </li>
             </ul>

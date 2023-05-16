@@ -75,7 +75,7 @@ const catData = {
     <div class="product_headerwrap">
         <div class="ctit_bgibx">
           <div class="ctit_bgi">
-            <img src="./images/sub/all1.jpg" alt="배경이미지"> 
+            <img src="./images/sub/tit_all.jpg" alt="배경이미지"> 
           </div>
         </div>
         <h2 class="ctit">{{$store.state.notetitle}}</h2>

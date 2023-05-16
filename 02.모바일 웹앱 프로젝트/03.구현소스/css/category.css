@@ -7,9 +7,7 @@
 @import url(core.css);
 @import url(common.css);
 
-.cont {
-    
-}
+
 .ctit_bgibx {
     overflow: hidden;
 }
@@ -44,9 +42,30 @@
     font-size: 1.6rem;
 }
 
+.lnb li:first-child a {
+    color : #000;
+}
+
 .lnb a {
-    color : #777;
+    position: relative;
+    display: inline-block;
+    color : #aaa;
     font-family: 'Nunito', sans-serif; 
+}
+
+.lnb a::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    left: 0;
+    bottom: 0;
+    transition: width .4s;
+}
+
+.lnb a:hover::after {
+    width: 100%;
 }
 
 /* 필터 기능 버튼 */

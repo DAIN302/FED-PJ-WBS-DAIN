@@ -1,7 +1,7 @@
 // 메인페이지 JS
 
 import comData from "./data/comData.js";
-import {commonFn} from "./common.js";
+import {commonFn, infoFn} from "./common.js";
 import {bData, matchData} from "./data/mainData.js";
 
 // 상단영역 뷰템플릿
@@ -23,11 +23,17 @@ new Vue({
         // 메인 배너 함수
         bannerSwiper();
 
+        // 배너 링크 기본 기능 막기
+        $(".main_bannerwrap .swiper-slide").find("a").click(function(e){
+            e.preventDefault();
+        })
+
         // 베스트 섹션 함수
         bestCont();
 
         // 신상품 섹션 함수
         newContBanner();
+
     }
 })
 
@@ -38,7 +44,12 @@ Vue.component("info-area",{
 
 // 하단영역 뷰인스턴스
 new Vue({
-    el : "#info"
+    el : "#info",
+    data : {},
+    mounted : function(){
+        // 하단영역 공통 JS
+        infoFn()
+    }
 })
 
 
@@ -97,7 +108,7 @@ function bestCont() {
             ${bData[x].desc}
             </p>
             <div class="best_perfume_sublink">
-                <a href="#">SHOP NOW</a>
+                <a href="product.html?cat=${bData[x].nm}">SHOP NOW</a>
             </div>
             </div>
         </div>  
@@ -249,7 +260,7 @@ Vue.component("match-comp", {
                     <li class="perfume_name">{{pname}}</li>
                     <li class="perfume_family" v-bind:style="pfcolor">{{pfamily}}</li>
                     <li class="perfume_link">
-                        <a href="#">SHOP NOW</a>
+                        <a href="#" :data-name="pnm">SHOP NOW</a>
                     </li>
                 </ol>
             </div>
@@ -262,7 +273,8 @@ Vue.component("match-comp", {
                 pbrand : this.matchperfume.brand,
                 pname : this.matchperfume.name,
                 pfamily : this.matchperfume.family,
-                pfcolor : `color : ${this.matchperfume.color}`
+                pfcolor : `color : ${this.matchperfume.color}`,
+                pnm : this.matchperfume.nm
             }
         },    
 })
@@ -275,6 +287,22 @@ const MatchVue = new Vue({
     mounted : function(){
         // 휠 및 향수 리스트 기능 함수 호출
         matchWheel();
+
+        const perfumeLink = document.querySelectorAll(".perfume_link a")
+        perfumeLink.forEach(ele=>{
+            ele.onclick = (e) => {
+                e.preventDefault();
+                let dataName = ele.dataset.name
+                console.log(dataName);
+                if(dataName==="no") {
+                    alert("준비중입니다.")
+                }
+                else {
+                    location.href = `product.html?cat=`+dataName
+                }
+
+            }
+        })
     }
 })
 

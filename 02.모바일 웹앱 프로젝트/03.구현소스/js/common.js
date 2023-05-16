@@ -51,7 +51,7 @@ function commonFn(){
     function openMenu(ele){
         $(ele).addClass("show")
     }
-
+    
     function closeMenu(ele){
         $(ele).removeClass("show")
     }
@@ -156,4 +156,33 @@ function volumeCheck(check, img, price){
     }) // click
 } // volumeCheck
 
-export {commonFn, volumeCheck};
+// lnb 색 변경 함수 
+function lnbColorChg(){
+    $(".lnb a").click(function(e){
+        $(this).css({color : "#000"}).parent().siblings().find("a").css({color : "#aaa"});
+    })
+}
+
+// 하단 영역 공통 함수
+function infoFn(){
+    // 하단 링크 기본기능 막기
+    $(".blink a").click(function(e){
+        e.preventDefault();
+    })
+
+    $(".bsns a").click(function(e){
+        e.preventDefault();
+        let altTxt = $(this).find("img").attr("alt")
+        
+        let url;
+
+        switch(altTxt){
+            case"인스타그램":url = "https://www.instagram.com/perfumegraphy/";break;
+            case"페이스북":url = "https://www.facebook.com/people/%ED%8D%BC%ED%93%B8%EA%B7%B8%EB%9D%BC%ED%94%BC/100063806297606/?ref=page_internal";break;
+        }
+
+        window.open().location.href = url;
+    })
+}
+
+export {commonFn, volumeCheck, lnbColorChg, infoFn};

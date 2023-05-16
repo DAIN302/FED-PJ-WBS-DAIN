@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* 미디어쿼리 */
+/* 1600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1600px) {
+
+}
+/* 1600px 사이즈 이하 미디어쿼리 끝 */
+/* 1024px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+
+}
+/* 1024px 사이즈 이하 미디어쿼리 끝 */
+/* 768px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 768px) {
+
+}
+/* 768px 사이즈 이하 미디어쿼리 끝 */
+/* 480px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 480px) {
+
+}
+/* 480px 사이즈 이하 미디어쿼리 끝 */

@@ -9,8 +9,6 @@ const perfumeListData = {
         volume : ["50ml", "100ml"],
         price : [147250, 204250],
         gender : "MEN",
-        men : true,
-        women : false,
         mood : ["formal", "elegant"],
         notes : ["woody", "citrus"],
         note : {
@@ -30,8 +28,6 @@ const perfumeListData = {
         volume : ["30ml", "75ml", "150ml"],
         price : [104500, 161500, 247500],
         gender : "MEN",
-        men : true,
-        women : false,
         mood : ["street"],
         notes : ["citrus"],
         note : {
@@ -51,8 +47,6 @@ const perfumeListData = {
         volume : ["20ml", "100ml"],
         price : [147250, 332500],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral","citrus"],
         note : {
@@ -72,8 +66,6 @@ const perfumeListData = {
         volume : ["30ml", "75ml", "150ml"],
         price : [104500, 161500, 247500],
         gender : "MEN",
-        men : true,
-        women : false,
         mood : ["street"],
         notes : ["woody", "citrus"],
         note : {
@@ -93,8 +85,6 @@ const perfumeListData = {
         volume : ["20ml", "50ml", "100ml"],
         price : [118750, 213750, 299250],
         gender : "WOMEN",
-        men : true,
-        women : false,        
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -114,8 +104,6 @@ const perfumeListData = {
         volume : ["20ml", "100ml"],
         price : [147250, 332500],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral","citrus"],
         note : {
@@ -135,8 +123,6 @@ const perfumeListData = {
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["formal", "modern"],
         notes : ["floral","citrus"],
         note : {
@@ -156,8 +142,6 @@ const perfumeListData = {
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["street", "lovely"],
         notes : ["floral"],
         note : {
@@ -177,8 +161,6 @@ const perfumeListData = {
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["elegant","chic", "modern"],
         notes : ["floral", "woody"],
         note : {
@@ -198,8 +180,6 @@ const perfumeListData = {
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -219,8 +199,6 @@ const perfumeListData = {
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -240,8 +218,6 @@ const perfumeListData = {
         volume : ["50ml", "100ml"],
         price : [215000, 305000],
         gender : "MEN",
-        men : true,
-        women : false,
         mood : ["formal"],
         notes : ["woody"],
         note : {
@@ -261,8 +237,6 @@ const perfumeListData = {
         volume : ["75ml"],
         price : [214800],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -282,8 +256,6 @@ const perfumeListData = {
         volume : ["75ml"],
         price : [214800],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["elegant","modern"],
         notes : ["floral", "woody"],
         note : {
@@ -303,8 +275,6 @@ const perfumeListData = {
         volume : ["75ml"],
         price : [214800],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -324,8 +294,6 @@ const perfumeListData = {
         volume : ["75ml"],
         price : [214800],
         gender : "MEN",
-        men : true,
-        women : false,
         mood : ["elegant"],
         notes : ["woody"],
         note : {
@@ -345,8 +313,6 @@ const perfumeListData = {
         volume : ["30ml", "100ml"],
         price : [84800,164600],
         gender : "MEN",
-        men : true,
-        women : false,
         mood : ["street"], 
         notes : ["fruity", "woody"],
         note : {
@@ -366,8 +332,6 @@ const perfumeListData = {
         volume : ["30ml", "100ml"],
         price : [84800,164600],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral", "fruity"],
         note : {
@@ -387,8 +351,6 @@ const perfumeListData = {
         volume : ["30ml", "100ml"],
         price : [84800,164600],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -408,8 +370,6 @@ const perfumeListData = {
         volume : ["30ml", "100ml"],
         price : [84800,164600],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["modern"],
         notes : ["floral", "fruity"],
         note : {
@@ -429,8 +389,6 @@ const perfumeListData = {
         volume : ["100ml"],
         price : [248000],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["formal", "modern"],
         notes : ["floral", "woody"],
         note : {
@@ -450,8 +408,6 @@ const perfumeListData = {
         volume : ["100ml"],
         price : [248000],
         gender : "MEN",
-        men : true,
-        women :  false,
         mood : ["formal"],
         notes : ["woody", "citrus"],
         note : {
@@ -471,8 +427,6 @@ const perfumeListData = {
         volume : ["100ml"],
         price : [248000],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["formal", "modern"],
         notes : ["woody"],
         note : {
@@ -492,8 +446,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [104800, 154800],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral", "fruity"],
         note : {
@@ -513,8 +465,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [104800, 154800],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -534,8 +484,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [163800, 248800],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -555,8 +503,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [104800, 154800],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -576,8 +522,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [104800, 154800],
         gender : "MEN",
-        men : true,
-        women : false,
         mood : ["formal"],
         notes : ["woody"],
         note : {
@@ -597,8 +541,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [104800, 154800],
         gender : "MEN",
-        men : true,
-        women : false,
         mood : ["formal"],
         notes : ["woody"],
         note : {
@@ -618,8 +560,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "MEN",
-        men : true,
-        women : false,
         mood : ["street"],
         notes : ["citrus"],
         note : {
@@ -639,8 +579,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["formal", "modern"],
         notes : ["woody", "fruity"],
         note : {
@@ -660,8 +598,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["floral"],
         note : {
@@ -681,8 +617,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["chic"],
         notes : ["citrus"],
         note : {
@@ -702,8 +636,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["elegant", "chic"],
         notes : ["woody","floral"],
         note : {
@@ -723,8 +655,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["citrus", "woody"],
         note : {
@@ -744,8 +674,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["fruity","citrus"],
         note : {
@@ -765,8 +693,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["citrus", "floral"],
         note : {
@@ -786,8 +712,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["citrus","floral"],
         note : {
@@ -807,8 +731,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["fruity"],
         note : {
@@ -828,8 +750,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely", "modern"],
         notes : ["floral"],
         note : {
@@ -849,8 +769,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["street", "modern"],
         notes : ["fruity", "woody", "citrus"],
         note : {
@@ -870,8 +788,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "ALL",
-        men : true,
-        women : true,
         mood : ["formal", "modern"],
         notes : ["woody", "citrus"],
         note : {
@@ -891,8 +807,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["chic"],
         notes : ["woody", "fruity"],
         note : {
@@ -912,8 +826,6 @@ const perfumeListData = {
         volume : ["50ml","100ml"],
         price : [169000, 259000],
         gender : "WOMEN",
-        men : false,
-        women : true,
         mood : ["lovely"],
         notes : ["citrus", "floral"],
         note : {

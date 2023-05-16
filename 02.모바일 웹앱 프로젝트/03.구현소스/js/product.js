@@ -1,6 +1,6 @@
 // 제품 상세 페이지 JS
 import comData from "./data/comData.js";
-import {commonFn, volumeCheck} from "./common.js";
+import {commonFn, volumeCheck, infoFn} from "./common.js";
 import productData from "./data/pdData.js";
 import store from "./store.js";
 
@@ -80,7 +80,12 @@ Vue.component("info-area",{
 
 // 하단영역 뷰인스턴스
 new Vue({
-    el : "#info"
+    el : "#info",
+    data : {},
+    mounted : function(){
+        // 하단영역 공통 JS
+        infoFn()
+    }
 })
 
 // 타이틀 나타나는 함수

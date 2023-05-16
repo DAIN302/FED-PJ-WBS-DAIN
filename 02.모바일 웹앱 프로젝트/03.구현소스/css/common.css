@@ -32,9 +32,26 @@
 }
 
 .gnb>ul>li>a {
-    font-size: 1.6rem;
+    position: relative;
+    display: inline-block;
+    font-size: min(1.6rem, 1.3vw);
     font-family: 'Nunito', sans-serif; 
     color : #222;
+}
+
+.gnb>ul>li>a::after{
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 0;
+    background-color: #222;
+    bottom: 0;
+    left: 0;
+    transition: width .4s;
+}
+
+.gnb>ul>li>a:hover::after {
+    width: 100%;
 }
 
 .logo {
@@ -130,12 +147,33 @@
 }
 
 .sub_menu>li {
-    font-size: 1.5rem;
+    font-size: min(1.5rem, 1.2vw);
     padding : 1rem 0;
 }
-.sidebar_menu h2 {
-    font-size: 1.5rem;
+
+.sub_menu>li>a, .sub_menu>li>h2>span:first-child {
+    display: inline-block;
     position: relative;
+    color: #222;
+}
+
+.sub_menu>li>a::after, .sub_menu>li>h2>span:first-child::after{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #222;
+    bottom: 0;
+    left: 0;
+    transition: width .4s;
+}
+
+.sub_menu>li>a:hover::after, .sub_menu>li>h2>span:first-child:hover::after{
+    width: 100%;
+}
+
+.sidebar_menu h2 {
+    font-size: min(1.5rem, 1.2vw);
     cursor : pointer;
 }
 
@@ -157,9 +195,26 @@
 .sidebar_submenu>li {
     padding: 1rem 0 1rem 2rem;
 }
-.sidebar_submenu>li a{
+.sidebar_submenu>li a {
+    position: relative;
     color : #555;
 }
+.sidebar_submenu>li a::after {
+    position: absolute;
+    content: '';
+    background-color: #555;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    transition: width .4s;
+}
+
+.sidebar_submenu>li a:hover::after {
+    width: 100%;
+}
+
+
 
 /* 로그인 폼 */
 #login-form {
@@ -383,12 +438,8 @@
 }
 
 .binfo ul {
-    /* display: flex;
-    flex-wrap: nowrap;
-    gap : 0 15px; */
     width: 50%;
     font-size: 1.4rem;
-    white-space: wrap;
 }
 
 .binfo li {
@@ -406,3 +457,32 @@
     color : #777;
     padding-top: 20px;
 }
+
+/* 미디어쿼리 */
+/* 1600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1600px) {
+
+}
+/* 1600px 사이즈 이하 미디어쿼리 끝 */
+/* 1024px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+    /* 하단영역 */
+     .blogo {
+        display: none;
+     }
+     .binfo ul {
+        width: 100%;
+    }
+    
+}
+/* 1024px 사이즈 이하 미디어쿼리 끝 */
+/* 768px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 768px) {
+
+}
+/* 768px 사이즈 이하 미디어쿼리 끝 */
+/* 480px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 480px) {
+
+}
+/* 480px 사이즈 이하 미디어쿼리 끝 */
