@@ -59,8 +59,9 @@ Vue.component("head-comp",{
                     $(ele).find("img").attr("src", $(ele).find("img").attr("src").replace(temp, volume))
                 })
             })
-            
-            
+
+            $(".filter_value").find("button").text("인기상품순")
+
         }
     }
 })
@@ -102,7 +103,6 @@ new Vue({
         selectOpt();
         // lnb 클릭 시 색깔 선택한 요소만 바뀌기
         lnbColorChg();
-
     }
 })
 

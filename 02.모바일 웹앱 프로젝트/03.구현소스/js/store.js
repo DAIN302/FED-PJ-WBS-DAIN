@@ -60,6 +60,7 @@ const store = new Vuex.Store({
           // filter() 사용을 위해 객체를 배열로 변경
           let tempData = Object.keys(perfumeListData).map(item => perfumeListData[item]).filter(x => x.mood.includes(pml));
           dt.perfumeData = tempData;
+          console.log(tempData)
         }
       },
       // 노트별 분류 상세페이지 lnb 클릭 시 해당되는 항목의 향수로 리스트 변경
@@ -89,7 +90,51 @@ const store = new Vuex.Store({
         dt.note["base"] = dt.perfumeData[pm].note["base"]
         dt.desc = dt.perfumeData[pm].desc
         dt.story = dt.perfumeData[pm].story
-      }
+      },
+      // 낮은가격순으로 정렬
+      chgLowPrice(dt, pm) {
+        let tempData = Object.keys(dt.perfumeData).map(item => dt.perfumeData[item])
+
+        function compare(key){
+          return (a,b) =>(a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0))
+        }
+        let comparePrice = tempData.sort(compare('compare'))
+
+        dt.perfumeData = comparePrice;
+      },
+      // 높은가격순으로 정렬
+      chgHighPrice(dt, pm) {
+        let tempData = Object.keys(dt.perfumeData).map(item => dt.perfumeData[item])
+
+        function compare(key){
+          return (a,b) =>(a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0))
+        }
+        let comparePrice = tempData.sort(compare('compare')).reverse()
+
+        dt.perfumeData = comparePrice;
+      },
+      // 인기상품순으로 정렬
+      sortBestList(dt, pm) {
+        let tempData = Object.keys(dt.perfumeData).map(item => dt.perfumeData[item])
+
+        function compare(key){
+          return (a,b) =>(a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0))
+        }
+        let comparePrice = tempData.sort(compare('idx'))
+
+        dt.perfumeData = comparePrice;
+      },
+      // 신상품순으로 정렬
+      sortNewList(dt, pm) {
+        let tempData = Object.keys(dt.perfumeData).map(item => dt.perfumeData[item])
+
+        function compare(key){
+          return (a,b) =>(a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0))
+        }
+        let comparePrice = tempData.sort(compare('idx')).reverse()
+
+        dt.perfumeData = comparePrice;
+      },
     },
 })    
 
