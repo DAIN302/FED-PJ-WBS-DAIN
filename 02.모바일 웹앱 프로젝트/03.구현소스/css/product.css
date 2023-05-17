@@ -46,7 +46,7 @@
 
 .product_link a{
     position: absolute;
-    font-size: 3rem;
+    font-size: min(3rem, 3vw);
     right: 10px;
 }
 
@@ -74,7 +74,7 @@
 
 .detail_like button {
     background-color: transparent;
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     padding: 1rem;
     border: none;
     cursor: pointer;
@@ -92,7 +92,7 @@
 .volchk, .volchk em {
     display: inline-block;
     cursor: pointer;
-    font-size: 1.4rem;
+    font-size: min(1.4rem, 1.4vw);
 }
 
 .detail_radiobtn span+span {
@@ -109,14 +109,14 @@
 
 /* 브랜드 */
 .detail_brand {
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     color : #777;
     padding : 15px 0;
 }
 
 /* 제품명 */
 .detail_name {
-    font-size: 2.4rem;
+    font-size: min(2.4rem, 2.4vw);
     padding-bottom: 15px;
     text-align: center;
 }
@@ -126,7 +126,7 @@
 }
 
 .name_eng {
-    font-size: 2rem;
+    font-size: min(2rem, 2vw);
     color : #555;
 }
 
@@ -134,7 +134,7 @@
 /* 가격 */
 .detail_price {
     color : #c28243;
-    font-size: 1.8rem;
+    font-size: min(1.8rem, 1.8vw);
     font-weight: bold;
     padding-bottom: 20px;
 }
@@ -149,7 +149,7 @@
 
 /* 구매버튼박스 */
 .detail_shopbtnbx button {
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     padding : 10px 30px;
     margin: 0 5px 30px;
     cursor: pointer;
@@ -173,7 +173,7 @@
     background-color: transparent;
     border : none;
     cursor : pointer;
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     padding: 0;
     margin : 0 10px;
 }
@@ -222,7 +222,7 @@
 }
 
 .desc_wrap p {
-    font-size: 2rem;
+    font-size: min(2rem, 2vw);
     text-align: center;
     color : #777;
     font-family: 'SUITE-Regular';
@@ -286,7 +286,7 @@
 .notes_img figcaption {
     text-align: center;
     padding-top : 10px;
-    font-size: 1.4rem;
+    font-size: min(1.4rem, 1.4vw);
     color : #aaa;
 }
 
@@ -295,14 +295,14 @@
 }
 
 .notes h4 {
-    font-size: 2.4rem;
+    font-size: min(2.4rem, 2.2vw);
     padding : 20px 0;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
 }
 
 .notes p {
-    font-size: 2rem;
+    font-size: min(2rem, 2vw);
     font-family: 'SUITE-Regular';
 }
 
@@ -348,7 +348,7 @@
 
 .story_p {
     text-align: center;
-    font-size: 2.8rem;
+    font-size: min(2.8rem, 3vw);
     color : #777;
     font-family: 'SUITE-Regular';
 }
@@ -391,6 +391,11 @@
 }
 
 /* 이미지 */
+.recommands_imgbx {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
 .recommands_imgbx figure {
     aspect-ratio: 1/1;
 }
@@ -404,28 +409,28 @@
 /* 설명 */
 /* 브랜드 */
 .recommands_brand {
-    font-size: 1.2rem;
+    font-size: min(1.2vw, 1.2rem);
     color : #777;
     padding-bottom: 5px;
 }
 
 /* 제품명 */
 .recommands_name {
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     padding-bottom: 20px;
 }
 
 /* 가격 */
 .recommands_price {
     color : #c28243;
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     font-weight: bold;
     padding-bottom: 10px;
 }
 
 /* 사이즈 선택 */
 .recommands_radiobtn {
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.4vw);
 }
 
 .recommands_radiobtn span+span {
@@ -435,13 +440,13 @@
 /* 하트 표시 */
 .recommands_like {
     position: absolute;
-    top: 0;
-    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .recommands_like button {
     background-color: transparent;
-    font-size: 1.2rem;
+    font-size: min(1.2rem, 1.2vw);
     padding: 1rem;
     border: none;
     cursor: pointer;
@@ -449,16 +454,18 @@
     border-radius: 50%;
     border: 1px solid #bbb;
     opacity: 0;
-    transition: opacity .2s ease-in-out;
+    transform: translateY(50%);
+    transition: all .4s ease-in-out;
 }
 
 .recommands_list ul>li:hover .recommands_like button {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .product_title {
     text-align: center;
-    font-size: 3rem;
+    font-size: min(3rem, 3vw);
     font-family: 'Nunito', sans-serif; 
     margin-bottom: 20px;
     overflow: hidden;
@@ -475,6 +482,41 @@
 .product_title.on span {
     transform: translateY(0);
     opacity: 1;
+}
+
+
+.product_bag {
+    opacity: 0;
+    margin-top: 20px;
+    transition: opacity .4s;
+}
+
+.recommands_list>ul>li:hover .product_bag {
+    opacity: 1;
+}
+
+.product_bag button {
+    position: relative;
+    padding : 0;
+    font-family: 'Nunito', sans-serif; 
+    font-size: min(1.6rem, 1.6vw);
+    background-color: transparent;
+    border : none;
+    cursor: pointer;
+}
+
+.product_bag button::after {
+    position: absolute;
+    content: '';
+    width : 100%;
+    height: 1px;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    transition: width .4s;
+}
+.product_bag button:hover::after {
+    width : 0;
 }
 
 

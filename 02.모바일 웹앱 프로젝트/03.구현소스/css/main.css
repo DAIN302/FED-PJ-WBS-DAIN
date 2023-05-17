@@ -311,7 +311,7 @@
 .match_perfume ul {
     padding: 2% 20% 0 20%;
     position: relative;
-    height: 40vh;
+    height: 35vh;
 }
 
 
@@ -335,12 +335,16 @@
 }
 
 .perfume_img figure, .perfume_img img {
-    height: 100%;
+    width: 100%;
     text-align: center;
 }
 
+
 .perfume_img figure {
     aspect-ratio: 1/1;
+}
+.perfume_img img {
+    object-fit: scale-down;
 }
 
 .perfume_txt ol {
@@ -348,8 +352,8 @@
     height: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10% 0;
+    /* justify-content: flex-start; */
+    gap: 5% 0;
 }
 
 .perfume_brand {
@@ -366,7 +370,7 @@
 }
 
 .perfume_family {
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.5vw);
     text-align: center;
     font-family: 'Nunito', sans-serif; 
 }
@@ -380,7 +384,7 @@
 .perfume_link a {
     display: inline-block;
     position: relative;
-    font-size: 1.4rem;
+    font-size: min(1.4rem, 1.5vw);
     margin-top: 100px;
 }
 

@@ -558,8 +558,8 @@
     }
 }
 /* 820px 사이즈 이하 미디어쿼리 끝 */
-/* 520px 사이즈 이하 미디어쿼리 시작 */
-@media screen and (max-width: 520px) {
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
     /* 상단 */
     .top {
         width: 100%;
@@ -610,4 +610,4 @@
         padding-top: 100px;
     }
 }
-/* 520px 사이즈 이하 미디어쿼리 끝 */
+/* 600px 사이즈 이하 미디어쿼리 끝 */

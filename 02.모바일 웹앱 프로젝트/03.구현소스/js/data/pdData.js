@@ -117,6 +117,10 @@ const productData = {
                         <img src="./images/sub/malone/bb_30.jpg" alt="향수" />
                       </figure>
                     </a>
+                    <!-- 하트 표시 -->
+                    <div class="recommands_like">
+                      <button class="fa-solid fa-heart"></button>
+                    </div>
                   </div>
                   <!-- 설명 -->
                   <div class="recommands_descbx">
@@ -140,9 +144,9 @@ const productData = {
                         <em class="fa-regular fa-circle"></em>100ml
                       </span>
                     </div>
-                    <!-- 하트 표시 -->
-                    <div class="recommands_like">
-                      <button class="fa-solid fa-heart"></button>
+                    <!-- 장바구니 -->
+                    <div class="product_bag">
+                      <button>Add To Bag</button>
                     </div>
                   </div>
                 </li>

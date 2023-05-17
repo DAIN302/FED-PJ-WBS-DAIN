@@ -107,7 +107,7 @@ const matchData = [
   {
     "family" : "Green",
     "color" : "rgb(116,192,103)",
-    "img" : "green.png",
+    "img" : "green.jpg",
     "brand" : "DIPTYQUE",
     "name" : "Philosykos Eau de Toilette", 
     "nm" : "no"

@@ -26,7 +26,7 @@
 .ctit {
     padding: 50px 0 20px;
     text-align: center;
-    font-size: 5.2rem;
+    font-size: min(5.2rem, 5vw);
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: center;
     gap: 0 3%;
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
 }
 
 .lnb li:first-child a {
@@ -81,7 +81,7 @@
 }
 
 .filter_btn button {
-    font-size: 2rem;
+    font-size: min(2rem, 2vw);
     
 }
 
@@ -90,6 +90,7 @@
     padding: 5px 0;
     text-align: center;
     width: 100px;
+    font-size: min(1.3rem, 1.3vw);
     cursor: pointer;
 }
 
@@ -112,7 +113,7 @@
 
 .filter_option ul li {
     padding: 5px;
-    font-size: 1.3rem;
+    font-size: min(1.3rem, 1.3vw);
 }
 
 .filter_option ul li:hover {
@@ -155,21 +156,21 @@
 /* 설명 */
 /* 브랜드 */
 .product_brand {
-    font-size: 1.2rem;
+    font-size: min(1.2vw, 1.2rem);
     color : #777;
     padding-bottom: 5px;
 }
 
 /* 제품명 */
 .product_name {
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     padding-bottom: 20px;
 }
 
 /* 가격 */
 .product_price {
     color : #c28243;
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     font-weight: bold;
     padding-bottom: 10px;
 }
@@ -184,7 +185,7 @@
 
 /* 사이즈 선택 */
 .product_radiobtn {
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.4vw);
 }
 
 .volchk, .volchk em {
@@ -213,7 +214,7 @@
 
 .product_like button {
     background-color: transparent;
-    font-size: 1.2rem;
+    font-size: min(1.2rem, 1.2vw);
     padding: 1rem;
     border: none;
     cursor: pointer;
@@ -244,7 +245,7 @@
     position: relative;
     padding : 0;
     font-family: 'Nunito', sans-serif; 
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     background-color: transparent;
     border : none;
     cursor: pointer;

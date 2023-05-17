@@ -3,13 +3,15 @@
 /* 미디어쿼리 */
 /* 1600px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1600px) {
-    
+    .match_wheel { 
+        height: 30vh;
+    }
 
 
 }
 /* 1600px 사이즈 이하 미디어쿼리 끝 */
-/* 1024px 사이즈 이하 미디어쿼리 시작 */
-@media screen and (max-width: 1024px) {
+/* 1200px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1200px) {
     /* 베스트 */
     .main_best_wrap {
         height: 60vh;
@@ -22,8 +24,13 @@
         justify-content: flex-start;
     }
 
+    .match_wheel { 
+        height: 25vh;
+    }
+    
+
 }
-/* 1024px 사이즈 이하 미디어쿼리 끝 */
+/* 1200px 사이즈 이하 미디어쿼리 끝 */
 /* 820px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 820px) {
     /* 베스트 */
@@ -41,17 +48,32 @@
     }
 
 
-    .best_perfume_sublink a {
+    .best_perfume_sublink a, .perfume_link a {
         margin-top: 0;
     }
 
-    .best_perfume_sublink a::before {
+    .best_perfume_sublink a::before, .perfume_link a::before {
         display: none;
+    }
+
+    .match_wheel { 
+        height: 20vh;
+    }
+
+    .match_perfume ul {
+        height: 20vh;
     }
 
 }
 /* 820px 사이즈 이하 미디어쿼리 끝 */
-/* 520px 사이즈 이하 미디어쿼리 시작 */
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
+    .match_wheel { 
+        height: 15vh;
+    }
+}
+
+/* 600px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 520px) {
     /* 베스트 */
     .main_best_wrap {
@@ -66,6 +88,10 @@
 
     .best_perfume_sublink a {
         margin-top: 30px;
+    }
+
+    .match_wheel { 
+        height: 12vh;
     }
 }
 /* 520px 사이즈 이하 미디어쿼리 끝 */
