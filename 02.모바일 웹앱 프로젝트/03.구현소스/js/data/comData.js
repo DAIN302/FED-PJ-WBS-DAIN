@@ -2,7 +2,7 @@ const comData = {
     tarea: `
     <header class="top">
         <!-- gnb -->
-        <div class="top_wrap">
+        <div class="top_wrap top_wrap1">
         <nav class="gnb">
             <ul>
             <li>
@@ -21,7 +21,7 @@ const comData = {
         </nav>
         </div>
         <!-- 로고 -->
-        <div class="top_wrap">
+        <div class="top_wrap top_wrap2">
         <h1 class="logo">
             <a href="#">
             <img src="./images/logo/logo.svg" alt="로고" />
@@ -29,7 +29,7 @@ const comData = {
         </h1>
         </div>
         <!-- 사이드메뉴 -->
-        <div class="top_wrap">
+        <div class="top_wrap top_wrap3">
         <ul class="icon_menu">
             <li>
             <a href="#" title="로그인">
@@ -143,6 +143,9 @@ const comData = {
             </form>
             </div>
         </aside>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
         </div>
     </header> 
     `,

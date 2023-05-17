@@ -1,10 +1,15 @@
 // 공통 기능 JS
-// 상단영역 관련 함수
+// 상단영역 관련 공통 함수
 function commonFn(){
     // 로고 클릭 시 index.html로 이동
     $(".top .logo a").click(function(e){
         e.preventDefault();
         location.href = "index.html";
+    })
+
+    $(".gnb>ul>li>a:not(:first)").click(function(e){
+        e.preventDefault();
+        alert("준비중입니다.")
     })
 
     // 서브메뉴 등장 -> shop 글씨 클릭했을때만
@@ -23,6 +28,11 @@ function commonFn(){
         closeMenu(".icon_sidebar");
     })
     
+    $(".icon_menu>li>a:not(:first)").click(function(e){
+        e.preventDefault();
+        alert("준비중입니다.")
+    })
+
     
     // 로그인 창 등장
     $(".icon_menu>li>a:first").click(function(e){
@@ -137,6 +147,45 @@ function commonFn(){
             $(this).addClass("active").next().removeClass("hidden").hide().slideDown(400);
         }
     })// click
+
+    // BEST, NEW 링크 기본기능 막기 및 알람메시지 띄우기
+    $(".sub_menu>li>a").click(function(e){
+        e.preventDefault();
+        alert("준비중입니다.")
+
+    })
+
+
+    // 스크롤 프로그레스바 
+    function scrollProgress(){
+        // 대상 선정
+        const progressBar = document.querySelector(".progress-bar")
+        // 윈도우 높이값
+        //const winH = window.innerHeight;
+        // 전체 문서 높이값
+        //const docH = document.body.clientHeight;
+        // 스크롤 한계값
+        //const scLimit = docH - winH
+        //console.log(docH)
+
+        window.addEventListener("scroll", ()=>{
+            let scTop = window.scrollY;
+            
+            let scHeight = document.documentElement.scrollHeight
+            let clHeigth = document.documentElement.clientHeight
+
+            let Sheight = scHeight - clHeigth
+
+            let pbHeight = (scTop / Sheight) * 100
+
+            progressBar.style.height = pbHeight + "%";
+            
+            //console.log(pbHeight)
+        })
+
+    }
+
+    scrollProgress();
 }
 
 // 용량 선택 기능 함수

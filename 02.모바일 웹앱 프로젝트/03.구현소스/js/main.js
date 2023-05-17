@@ -189,6 +189,28 @@ function newContBanner() {
             disableOnInteraction: false,
             pauseOnMouseEnter : true,
         },
+        breakpoints: {
+            // when window width is >= 200px
+            200: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            },
+            // when window width is >= 520px
+            520: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+            },
+            // when window width is >= 820px
+            820: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            },
+            // when window width is >= 1024px
+            820: {
+            slidesPerView: 3,
+            spaceBetween: 100,
+            },
+        }
     });
 } // newContBanner
 

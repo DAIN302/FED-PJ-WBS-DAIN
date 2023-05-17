@@ -124,19 +124,11 @@ function showTit(x){
     });
 }
 
-// 스크롤 시 하위메뉴 나타나기
+// 스크롤 시 요소 나타나기
 function scrollShow(obj) {
     console.log(obj.length)
-    // 화면높이값의 4/5구하기
+    // 화면높이값의 5/6구하기
     const hv = window.innerHeight/6*5;
-    // 윈도우 높이값
-    const winH = window.innerHeight;
-
-    // 전체 문서 높이값
-    const docH = document.body.clientHeight;
-
-    // 스크롤한계값
-    const scLimit = docH - winH
 
     // 등장액션 대상 위치값 리턴함수
     const retVal = ele => ele.getBoundingClientRect().top;

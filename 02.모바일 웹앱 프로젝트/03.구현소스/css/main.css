@@ -12,7 +12,6 @@
 /* 배너영역 - 스와이퍼 */
 .main_banner {
     position: relative;
-    /* padding-top: 120px; */
 }
 
 .main_banner .swiper {
@@ -57,7 +56,7 @@
 }
 
 .main_tit {
-    font-size: 6rem;
+    font-size: min(6rem, 6vw);
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     padding-bottom: 3rem;
@@ -65,7 +64,7 @@
 
 .main_best_wrap {
     padding-bottom: 15vh;
-    height: 65vh;
+    height: 75vh;
     display: flex;
 }
 
@@ -84,7 +83,6 @@
 .main_best_img figure img {
     position: absolute;
     width: 100%;
-    /* height: 100%; */
     object-fit: cover;
     transform: scale(1.2);
     top: 0;
@@ -109,12 +107,12 @@
 }
 
 .best_perfume_name {
-    font-size: 5rem;
+    font-size: min(5rem, 4.6vw);
     font-family: 'Nunito', sans-serif; 
 }
 
 .best_perfume_desc {
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.4vw);
     color : #777;
     font-family: 'SUITE-Regular';
 }
@@ -127,7 +125,7 @@
 .best_perfume_sublink a {
     display: inline-block;
     position: relative;
-    font-size: 1.4rem;
+    font-size: min(1.4rem, 1.5vw);
     margin-top: 120px;
     font-family: 'Nunito', sans-serif; 
 }
@@ -214,7 +212,8 @@
 .new_imgbx figure::after {
     position: absolute;
     content: 'Discover More';
-    font-size: 2rem;
+    text-align: center;
+    font-size: min(2rem, 1.8vw);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -233,23 +232,25 @@
 
 .new_txtbx {
     padding-top : 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
 }
 
 .new_txtbx h4 {
-    font-size: 1.4rem;
+    font-size: min(1.4rem, 1.4vw);
     color : #555;
     padding-bottom: 10px;
     font-family: 'Nunito', sans-serif; 
 }
 
 .new_txtbx h3 { 
-    font-size: 1.6rem;
+    font-size: min(1.6rem, 1.6vw);
     font-weight: bold;
     font-family: 'Nunito', sans-serif; 
 }
 
 .new_txtbx p {
-    font-size: 1.4rem;
+    font-size: min(1.4rem, 1.4vw);
     color : #777;
     padding-top: 10px;
     font-family: 'SUITE-Regular';
@@ -310,7 +311,7 @@
 .match_perfume ul {
     padding: 2% 20% 0 20%;
     position: relative;
-    height: 400px;
+    height: 40vh;
 }
 
 
@@ -352,14 +353,14 @@
 }
 
 .perfume_brand {
-    font-size: 2rem;
+    font-size: min(2rem, 2vw);
     color : #777;
     text-align: center;
     font-family: 'Nunito', sans-serif; 
 }
 
 .perfume_name {
-    font-size: 3rem;
+    font-size: min(3rem, 2.8vw);
     text-align: center;
     font-family: 'Nunito', sans-serif; 
 }
