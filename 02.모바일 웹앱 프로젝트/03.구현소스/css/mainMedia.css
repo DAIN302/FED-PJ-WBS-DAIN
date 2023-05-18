@@ -37,6 +37,10 @@
     .main_best_img figure {
         width: 55vw;
     }
+
+    .match_wheel { 
+        height: 20vh;
+    }
 }
 /* 820px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 820px) {
@@ -56,15 +60,11 @@
 
 
     .best_perfume_sublink a, .perfume_link a {
-        margin-top: 0;
+        margin-top: 20px;
     }
 
     .best_perfume_sublink a::before, .perfume_link a::before {
         display: none;
-    }
-
-    .match_wheel { 
-        height: 20vh;
     }
 
     .match_perfume ul {

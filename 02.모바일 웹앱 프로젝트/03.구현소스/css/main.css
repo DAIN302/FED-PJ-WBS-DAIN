@@ -112,7 +112,7 @@
 }
 
 .best_perfume_desc {
-    font-size: min(1.6rem, 1.4vw);
+    font-size: min(1.6rem, 2.2vw);
     color : #777;
     font-family: 'SUITE-Regular';
 }
@@ -125,7 +125,7 @@
 .best_perfume_sublink a {
     display: inline-block;
     position: relative;
-    font-size: min(1.4rem, 1.5vw);
+    font-size: min(1.4rem,2.2vw);
     margin-top: 120px;
     font-family: 'Nunito', sans-serif; 
 }
@@ -213,7 +213,7 @@
     position: absolute;
     content: 'Discover More';
     text-align: center;
-    font-size: min(2rem, 1.8vw);
+    font-size: min(2rem, 2.4vw);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -237,20 +237,20 @@
 }
 
 .new_txtbx h4 {
-    font-size: min(1.4rem, 1.4vw);
+    font-size: min(1.4rem, 2vw);
     color : #555;
     padding-bottom: 10px;
     font-family: 'Nunito', sans-serif; 
 }
 
 .new_txtbx h3 { 
-    font-size: min(1.6rem, 1.6vw);
+    font-size: min(1.6rem, 3vw);
     font-weight: bold;
     font-family: 'Nunito', sans-serif; 
 }
 
 .new_txtbx p {
-    font-size: min(1.4rem, 1.4vw);
+    font-size: min(1.4rem, 2.6vw);
     color : #777;
     padding-top: 10px;
     font-family: 'SUITE-Regular';
@@ -263,7 +263,7 @@
 
 .match_wheel {
     position: relative;
-    height: 35vh;
+    height: 40vh;
 
 }
 .match_rotate {
@@ -322,6 +322,7 @@
     transform: translateX(-50%);
     height: 100%;
     opacity: 0;
+    width: 80%;
     transition: opacity .6s ease-in-out;
 }
 
@@ -342,6 +343,7 @@
 
 .perfume_img figure {
     aspect-ratio: 1/1;
+    margin: 0 auto;
 }
 .perfume_img img {
     object-fit: scale-down;
@@ -364,13 +366,13 @@
 }
 
 .perfume_name {
-    font-size: min(3rem, 2.8vw);
+    font-size: min(3rem, 3.2vw);
     text-align: center;
     font-family: 'Nunito', sans-serif; 
 }
 
 .perfume_family {
-    font-size: min(1.6rem, 1.5vw);
+    font-size: min(1.6rem, 2.6vw);
     text-align: center;
     font-family: 'Nunito', sans-serif; 
 }
@@ -384,7 +386,7 @@
 .perfume_link a {
     display: inline-block;
     position: relative;
-    font-size: min(1.4rem, 1.5vw);
+    font-size: min(1.4rem, 2.2vw);
     margin-top: 100px;
 }
 
