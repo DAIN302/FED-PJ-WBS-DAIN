@@ -60,6 +60,7 @@ Vue.component("head-comp",{
                 })
             })
 
+            // 필터 텍스트 초기화
             $(".filter_value").find("button").text("인기상품순")
 
         }

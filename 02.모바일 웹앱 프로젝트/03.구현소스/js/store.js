@@ -91,47 +91,22 @@ const store = new Vuex.Store({
         dt.desc = dt.perfumeData[pm].desc
         dt.story = dt.perfumeData[pm].story
       },
-      // 낮은가격순으로 정렬
-      chgLowPrice(dt, pm) {
+      //  정렬 기능 메서드
+      sortList(dt, pm) {
         let tempData = Object.keys(dt.perfumeData).map(item => dt.perfumeData[item])
 
         function compare(key){
           return (a,b) =>(a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0))
         }
-        let comparePrice = tempData.sort(compare('compare'))
+        let comparePrice;
+        let liTxt = $(event.currentTarget).text()
 
-        dt.perfumeData = comparePrice;
-      },
-      // 높은가격순으로 정렬
-      chgHighPrice(dt, pm) {
-        let tempData = Object.keys(dt.perfumeData).map(item => dt.perfumeData[item])
-
-        function compare(key){
-          return (a,b) =>(a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0))
+        if(liTxt==="인기상품순"||liTxt==="낮은가격순") {
+          comparePrice = tempData.sort(compare(pm))
+        } 
+        else {
+          comparePrice = tempData.sort(compare(pm)).reverse()
         }
-        let comparePrice = tempData.sort(compare('compare')).reverse()
-
-        dt.perfumeData = comparePrice;
-      },
-      // 인기상품순으로 정렬
-      sortBestList(dt, pm) {
-        let tempData = Object.keys(dt.perfumeData).map(item => dt.perfumeData[item])
-
-        function compare(key){
-          return (a,b) =>(a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0))
-        }
-        let comparePrice = tempData.sort(compare('idx'))
-
-        dt.perfumeData = comparePrice;
-      },
-      // 신상품순으로 정렬
-      sortNewList(dt, pm) {
-        let tempData = Object.keys(dt.perfumeData).map(item => dt.perfumeData[item])
-
-        function compare(key){
-          return (a,b) =>(a[key] > b[key] ? 1 : (a[key] < b[key] ? -1 : 0))
-        }
-        let comparePrice = tempData.sort(compare('idx')).reverse()
 
         dt.perfumeData = comparePrice;
       },

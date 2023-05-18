@@ -20,10 +20,10 @@ const catData = {
             </div>
             <div class="filter_option">
             <ul>
-                <li class="option" v-on:click="$store.commit('sortBestList')">인기상품순</li>
-                <li class="option" v-on:click="$store.commit('sortNewList')">신상품순</li>
-                <li class="option" v-on:click="$store.commit('chgHighPrice')">높은가격순</li>
-                <li class="option" v-on:click="$store.commit('chgLowPrice')">낮은가격순</li>
+              <li class="option" v-on:click="$store.commit('sortList', 'idx')">인기상품순</li>
+              <li class="option" v-on:click="$store.commit('sortList', 'idx')">신상품순</li>
+              <li class="option" v-on:click="$store.commit('sortList', 'compare')">높은가격순</li>
+              <li class="option" v-on:click="$store.commit('sortList', 'compare')">낮은가격순</li>
             </ul>
             </div>
         </div>
@@ -96,10 +96,10 @@ const catData = {
             </div>
             <div class="filter_option">
             <ul>
-              <li class="option" v-on:click="$store.commit('sortBestList')">인기상품순</li>
-              <li class="option" v-on:click="$store.commit('sortNewList')">신상품순</li>
-              <li class="option" v-on:click="$store.commit('chgHighPrice')">높은가격순</li>
-              <li class="option" v-on:click="$store.commit('chgLowPrice')">낮은가격순</li>
+              <li class="option" v-on:click="$store.commit('sortList', 'idx')">인기상품순</li>
+              <li class="option" v-on:click="$store.commit('sortList', 'idx')">신상품순</li>
+              <li class="option" v-on:click="$store.commit('sortList', 'compare')">높은가격순</li>
+              <li class="option" v-on:click="$store.commit('sortList', 'compare')">낮은가격순</li>
             </ul>
             </div>
         </div>

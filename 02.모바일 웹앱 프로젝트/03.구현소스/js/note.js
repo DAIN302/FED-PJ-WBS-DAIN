@@ -64,6 +64,9 @@ Vue.component("notehead-comp",{
             let lnbImgName = $(".ctit_bgi").find("img").attr("src").split("_")[1].split(".")[0];
             console.log(lnbImgName);
             $(".ctit_bgi").find("img").attr("src", $(".ctit_bgi").find("img").attr("src").replace(lnbImgName, pml))
+
+            // 필터 텍스트 초기화
+            $(".filter_value").find("button").text("인기상품순")
         }
     }
 })
