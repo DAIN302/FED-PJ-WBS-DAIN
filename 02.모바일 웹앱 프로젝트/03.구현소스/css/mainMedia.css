@@ -71,6 +71,14 @@
     .match_wheel { 
         height: 15vh;
     }
+
+    .match_perfume ul {
+        padding: 2% 2% 0 2%;
+    }
+
+    .perfume_list {
+        width: 100%;
+    }
 }
 
 /* 600px 사이즈 이하 미디어쿼리 시작 */

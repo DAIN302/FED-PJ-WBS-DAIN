@@ -69,6 +69,11 @@ new Vue({
         scrollShow(notes);
         scrollShow(storyP);
         scrollShow(recommList);
+
+        // 기본기능 막기
+        $(".recommands_list a").click(function(e){
+            e.preventDefault();
+        })
     }
 })
 

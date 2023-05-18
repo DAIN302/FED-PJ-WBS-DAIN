@@ -310,6 +310,7 @@ const MatchVue = new Vue({
         // 휠 및 향수 리스트 기능 함수 호출
         matchWheel();
 
+        // 제품 상세 페이지 링크 연결
         const perfumeLink = document.querySelectorAll(".perfume_link a")
         perfumeLink.forEach(ele=>{
             ele.onclick = (e) => {

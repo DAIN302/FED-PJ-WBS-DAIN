@@ -46,9 +46,6 @@ const store = new Vuex.Store({
         dt.image = dt.perfumeData[pm].image
         // 경로 변경
         dt.br = dt.perfumeData[pm].br
-        // 클릭 시 이미지 변경
-        
-        // dt.perfumeData[pm].image = dt.perfumeData[pm].image.split("_")[0]+"_"+imgVol
       },
       // 카테고리 페이지의 lnb 클릭 시 해당되는 항목의 향수로 리스트 변경
       chgList(dt, pm){
