@@ -39,3 +39,17 @@ width: 0;
 height: 0;
 overflow: hidden;
 }
+
+
+ /* 스크롤바 디자인 */
+ body::-webkit-scrollbar {
+    width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color:var(--pcolor2);
+    border-radius: 5px;
+}
+body::-webkit-scrollbar-track {
+    /* 스크롤바 */
+    background-color:var(--pcolor);
+}
