@@ -522,6 +522,15 @@
         right : -110%;
     }
 
+    .overlay {
+        display: none;
+    }
+
+    .menu_media {
+        display: none;
+    }
+
+
     /* 하단 */
 
     .info {
