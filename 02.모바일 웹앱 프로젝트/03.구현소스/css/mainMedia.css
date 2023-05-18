@@ -85,6 +85,11 @@
         width: 100%;
         height: 70%;
     }
+
+    .match_btnbx {
+        width: 100%;
+    }
+
     .match_wheel { 
         height: 15vh;
     }
