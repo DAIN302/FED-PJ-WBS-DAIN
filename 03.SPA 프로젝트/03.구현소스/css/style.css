@@ -16,6 +16,11 @@ body {
     margin: 0 auto;
 }
 
+#intro {
+    position: fixed;
+    z-index: 999999;
+}
+
 /* 상단 */
 #top {
     position: fixed;
@@ -29,8 +34,9 @@ body {
 
 .top_wrap {
     display: flex;
-    /* justify-content: space-between; */
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
 }
 
 .logo {
@@ -67,6 +73,7 @@ body {
 
 .gnb ul {
     display: flex;
+    gap: 30px
 }
 
 /* 모바일
@@ -85,6 +92,16 @@ body {
 .gnb a {
     /* color :#fff;
     font-size: 4.8rem; */
+    display: inline-block;
+    font-size: 2rem;
+    padding : 10px 25px;
+    border-radius: 40px;
+    background-color: rgba(255,255,255,0.5);
+    transition: all .4s;
+}
+
+.gnb a:hover {
+    background-color: rgba(255,255,255,1);
 }
 
 .menu_exit {
@@ -93,6 +110,10 @@ body {
 /* 메인 */
 #cont {
     min-height: 1000px;
+}
+
+.build {
+    height: 100vh;
 }
 
 
