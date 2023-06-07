@@ -2,13 +2,49 @@
     {
         idx : 1,
         season : "봄",
+        bsrc : "봄건물.png",
         cha : "벚꽃맛쿠키",
-        img : "",
+        isrc : "벚꽃맛쿠키이미지.png",
         talk : "피크닉 하기 좋은날씨야~",
-        yes : "좋아~",
-        yesans : "와~ 재밌겠다~",
+        yes : "와~ 재밌겠다~",
         no : "싫어!",
-        noans : ["정말 안할꺼야?",""],
+        noans : ["",""],
         talk2 : "잘가~"
+    },
+    {
+        idx : 2,
+        season : "여름",
+        bsrc : "여름건물.png",
+        cha : "샤벳상어맛쿠키",
+        isrc : "샤벳상어맛쿠키이미지.png",
+        talk : "oOoooOOooOo",
+        yes : "와~ 재밌겠다~",
+        no : "싫어!",
+        noans : ["",""],
+        talk2 : "oOoo"
+    },
+    {
+        idx : 3,
+        season : "가을",
+        bsrc : "가을건물.png",
+        cha : "펌킨파이맛쿠키",
+        isrc : "펌킨파이맛쿠키이미지.png",
+        talk : "",
+        yes : "와~ 재밌겠다~",
+        no : "싫어!",
+        noans : ["",""],
+        talk2 : ""
+    },
+    {
+        idx : 4,
+        season : "겨울",
+        bsrc : "겨울건물.png",
+        cha : "목화맛쿠키",
+        isrc : "목화맛쿠키이미지.png",
+        talk : "",
+        yes : "와~ 재밌겠다~",
+        no : "싫어!",
+        noans : ["",""],
+        talk2 : ""
     },
 ]
