@@ -1,0 +1,32 @@
+<!-- 왕국 둘러보기 파트 -->
+            <!-- 
+            <section class="buildings">
+                <div class="building">
+                    <div class="building_img">
+                        <img src="./images/buildings/spring.webp" alt="건물">
+                    </div>
+                    <div class="building_event"></div>
+                </div>
+                <div class="building">
+                    <div class="building_img">
+                        <img src="./images/buildings/summer.webp" alt="건물">
+                    </div>
+                    <div class="building_event"></div>
+                </div>
+                <div class="building">
+                    <div class="building_img">
+                        <img src="./images/buildings/autumn.webp" alt="건물">
+                    </div>
+                    <div class="building_event"></div>
+                </div>
+                <div class="building">
+                    <div class="building_img">
+                        <img src="./images/buildings/winter.webp" alt="건물">
+                    </div>
+                    <div class="building_event"></div>
+                </div>
+            </section> -->
+            <!-- <div class="cookie">
+                <img class="brave" src="./images/characters/brave_walk.gif" alt="걷는쿠키">
+                <img class="brave" src="./images/characters/brave_run.gif" alt="뛰는쿠키">
+            </div> -->
