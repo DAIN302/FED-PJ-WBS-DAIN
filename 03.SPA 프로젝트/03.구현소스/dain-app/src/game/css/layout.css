@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+/* 레이아웃 CSS */
+
+.ibx {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* 상단 */
+#top {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.top { 
+    margin: 0 auto;
+    padding : 10px 10px 0 10px;
+}
+
+.top_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+.logo {
+    aspect-ratio: 106/55;
+    width: min(150px, 20vw);
+}
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu_btn {
+    display: none;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu_btn img{
+    width: 100%;
+    height: 100%;
+}
+
+.gnb {
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5); */
+}
+
+.gnb ul {
+    display: flex;
+    gap: 30px
+}
+
+/* 모바일
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+
+*/
+
+.mobile_menulogo{
+    display: none;
+}
+
+.gnb a {
+    /* color :#fff;
+    font-size: 4.8rem; */
+    display: inline-block;
+    font-size: 2rem;
+    padding : 10px 25px;
+    border-radius: 40px;
+    background-color: rgba(255,255,255,0.5);
+    transition: all .4s;
+}
+
+.gnb a:hover {
+    background-color: rgba(255,255,255,1);
+}
+
+.menu_exit {
+    display: none;
+}
+/* 메인 */
+#cont {
+    min-height: 1000px;
+
+}
+
+/* 하단 */
+#info {
+    background-color: rgb(25, 28, 36);
+}
+.bsns {
+    padding : 30px 0;
+}
+
+.bsns ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.bsns a{
+    display: inline-block;
+    font-size: 10px;
+    width: 65px;
+    height: 65px;
+}
+
+.blink {
+    padding : 10px 0;
+}
+
+.blink ul{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.blink li {
+    border : 1px solid #fff;
+    padding : 10px 20px;
+}
+
+.blink li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color : #fff;
+    font-size: 1.6rem;
+}
+
+
+.binfo {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 5px 0;
+    padding : 10px 0;
+}
+
+.binfo p{
+    color : #fff;
+    font-size: 1.6rem;
+}
+
+.bsns svg {
+    width: 100%;
+    height: 100%;
+}
+
+.blogo {
+    margin: 0 auto;
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+.blogo svg {
+    width: 100%;
+    height: 100%;
+}
