@@ -1,6 +1,10 @@
 @charset "utf-8";
-
 /* 레이아웃 CSS */
+
+@import url(reset.css);
+@import url(core.css);
+
+
 
 .ibx {
     max-width: 1300px;

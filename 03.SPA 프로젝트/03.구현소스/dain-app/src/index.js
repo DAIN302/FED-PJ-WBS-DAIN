@@ -4,19 +4,22 @@ import './index.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Layout from './game/Layout';
+import Kingdom from './game/pages/Kingdom';
+import Game from './game/pages/Game';
+import Characters from './game/pages/Characters';
 
 
 export default function App(){
   return(
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout/>}>
+          <Route path="/" element={<Layout />}>
             {/* 하위라우트 세팅 */}
             {/* path대신 index만 쓰면 첫페이지 */}
-            <Route index element={<Main/>} />
-            <Route path="kd" element={<aa />} />
-            <Route path="gm" element={<bb />} />
-            <Route path="ch" element={<cc />} />
+            <Route index element={<Kingdom/>} />
+            <Route path="kd" element={<Kingdom />} />
+            <Route path="gm" element={<Game />} />
+            <Route path="ch" element={<Characters />} />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -26,7 +29,7 @@ export default function App(){
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
+  <App />
 );
 
 
