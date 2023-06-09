@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .box {
+                position: relative;
+            }
+            .box__inner {
+            }
+
+            .box__svg, .box__shape {
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+            }
+
+            path, polygon {
+                fill: inherit;
+                stroke: inherit;
+                stroke-width: inherit;
+                transform: inherit;
+            }
+
+            .box__shape {
+                clip-path: polygon(100% 100%,94.85% 99.87%,89.78% 99.48%,84.78% 98.85%,79.85% 98%,75% 96.85%,70.26% 95.5%,65.62% 93.93%,61.08% 92.14%,56.65% 90.14%,52.33% 87.93%,48.15% 85.52%,44.09% 82.92%,40.17% 80.13%,36.39% 77.13%,32.76% 74%,29.29% 70.69%,26% 67.24%,22.86% 63.61%,19.86% 59.83%,17.07% 55.91%,14.47% 51.85%,12.06% 47.67%,9.86% 43.35%,7.86% 38.92%,6.07% 34.38%,4.5% 29.74%,3.15% 25%,2% 20.15%,1.12% 15.23%,.49% 10.23%,.13% 5.15%,0 0,62.5% 0,62.5% 1.93%,62.64% 3.83%,62.88% 5.71%,63.21% 7.56%,63.63% 9.37%,64.14% 11.15%,64.73% 12.89%,65.4% 14.6%,66.15% 16.26%,67% 17.87%,67.9% 19.45%,68.9% 20.97%,69.9% 22.44%,71.01% 23.85%,72.19% 25.21%,73.43% 26.52%,74.74% 27.76%,76.1% 28.94%,77.51% 30.05%,79% 31.1%,80.52% 32.1%,82.1% 33%,83.71% 33.83%,85.37% 34.58%,87.08% 35.25%,88.82% 35.84%,90.6% 36.35%,92.41% 36.77%,94.26% 37.1%,96.14% 37.34%,98.04% 37.48%,99.97% 37.48%,99.97% 100%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box has-overlay animate-in">
+            <div class="box__inner">
+                <svg
+                    class="box__svg"
+                    viewBox="0 0 500 500"
+                    width="100%"
+                    height="100%"
+                    preserveAspectRatio="none"
+                >
+                    <defs>
+                        <g class="pipes">
+                            <path
+                                id="stroke"
+                                d="M500 500C223.858 500 0 276.142 0 0h312.5c0 103.553 83.947 187.5 187.5 187.5V500z"
+                                fill="none"
+                                fill-rule="evenodd"
+                                vector-effect="non-scaling-stroke"
+                            ></path>
+                            <clipPath id="strokeClip">
+                                <use href="#stroke"></use>
+                            </clipPath>
+                        </g>
+                    </defs>
+                </svg>
+                <svg
+                    class="box__svg--no-pipe"
+                    viewBox="0 0 800 500"
+                    width="100%"
+                    height="100%"
+                    preserveAspectRatio="none"
+                >
+                    <defs>
+                        <polygon
+                            id="strokeBox"
+                            points="0 0, 800 0, 800 500, 0 500"
+                            vector-effect="non-scaling-stroke"
+                        ></polygon>
+                        <clipPath id="strokeClipBox">
+                            <use href="#strokeBox"></use>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <svg
+                    class="box__svg--no-pipe--vertical"
+                    viewBox="0 0 500 800"
+                    width="100%"
+                    height="100%"
+                    preserveAspectRatio="none"
+                >
+                    <defs>
+                        <polygon
+                            id="strokeBoxVertical"
+                            points="0 0, 500 0, 500 800, 0 800"
+                            vector-effect="non-scaling-stroke"
+                        ></polygon>
+                        <clipPath id="strokeClipBoxVertical">
+                            <use href="#strokeBoxVertical"></use>
+                        </clipPath>
+                    </defs>
+                </svg>
+
+                <div class="box__shape">
+                    <div class="box__backturn">
+                        <div class="box__hover">
+                            <div class="box__mask">
+                                <img
+                                    class="box__img"
+                                    src="https://atnoyualen.cloudimg.io/width/500/webp/https://2019.iad-lab.ch/uploads/Iad-lab_moodbild-9.jpg"
+                                    data-src="https://atnoyualen.cloudimg.io/width/500/webp/https://2019.iad-lab.ch/uploads/Iad-lab_moodbild-9.jpg"
+                                    data-srcset="https://atnoyualen.cloudimg.io/width/1000/webp/https://2019.iad-lab.ch/uploads/Iad-lab_moodbild-9.jpg 2x, https://atnoyualen.cloudimg.io/width/500/webp/https://2019.iad-lab.ch/uploads/Iad-lab_moodbild-9.jpg 1x"
+                                    alt="Newsfeed <br>Liveticker"
+                                    srcset="
+                                        https://atnoyualen.cloudimg.io/width/1000/webp/https://2019.iad-lab.ch/uploads/Iad-lab_moodbild-9.jpg 2x,
+                                        https://atnoyualen.cloudimg.io/width/500/webp/https://2019.iad-lab.ch/uploads/Iad-lab_moodbild-9.jpg  1x
+                                    "
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <svg
+                    class="box__stroke"
+                    viewBox="0 0 500 500"
+                    width="100%"
+                    height="100%"
+                >
+                    <use href="#stroke"></use>
+                </svg>
+                <svg
+                    class="box__stroke__active"
+                    viewBox="0 0 500 500"
+                    width="100%"
+                    height="100%"
+                >
+                    <use href="#stroke" clip-path="url(#strokeClip)"></use>
+                </svg>
+                <svg
+                    class="box__stroke__active--no-pipe"
+                    viewBox="0 0 800 500"
+                    width="100%"
+                    height="100%"
+                >
+                    <use
+                        href="#strokeBox"
+                        clip-path="url(#strokeClipBox)"
+                    ></use>
+                </svg>
+                <svg
+                    class="box__stroke__active--no-pipe--vertical"
+                    viewBox="0 0 500 800"
+                    width="100%"
+                    height="100%"
+                >
+                    <use
+                        href="#strokeBoxVertical"
+                        clip-path="url(#strokeClipBoxVertical)"
+                    ></use>
+                </svg>
+            </div>
+            <span class="box__label"> 8.11.2019 </span>
+            <div class="box__title__wrapper">
+                <h2 class="box__title" style="transform: rotate(-45deg)">
+                    <div
+                        aria-label="Newsfeed
+Liveticker"
+                        style="position: relative"
+                    >
+                        <span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.388184em)
+                                    rotate(19.769deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >N</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.283691em)
+                                    rotate(16.7549deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >e</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.397461em)
+                                    rotate(13.6992deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >w</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.262207em)
+                                    rotate(10.7399deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >s</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.163086em)
+                                    rotate(8.83199deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >f</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.291504em)
+                                    rotate(6.79266deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >e</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.291504em)
+                                    rotate(4.17723deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >e</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.299316em)
+                                    rotate(1.52676deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >d</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.115234em)
+                                    rotate(-0.332952deg);
+                                transform-origin: center -12.7719em;
+                            "
+                        >
+                        </span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.287598em)
+                                    rotate(-2.14009deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >L</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.138184em)
+                                    rotate(-4.05019deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >i</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.252441em)
+                                    rotate(-5.80256deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >v</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.284668em)
+                                    rotate(-8.21209deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >e</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.178711em)
+                                    rotate(-10.2908deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >t</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.138184em)
+                                    rotate(-11.7125deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >i</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.28125em)
+                                    rotate(-13.5941deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >c</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.258789em)
+                                    rotate(-16.0167deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >k</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.286621em)
+                                    rotate(-18.4635deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >e</span
+                        ><span
+                            style="
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                transform: translateX(-0.196289em)
+                                    rotate(-20.6299deg);
+                                transform-origin: center -12.7719em;
+                            "
+                            >r</span
+                        >
+                    </div>
+                </h2>
+            </div>
+
+            <!-- Content found! There will be an overlay. -->
+            <div class="box__overlay">
+                <div class="box__overlay__inner">
+                    <div class="box__overlay__content">
+                        <h3 class="box__overlay__content__title">
+                            Newsfeed <br />Liveticker
+                        </h3>
+                        <!--  -->
+                        <div class="box__overlay__content__content">
+                            <p>
+                                Diskutiere mit! Hashtag #iadlab auf
+                                <a
+                                    href="https://twitter.com/iadlab"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Twitter</a
+                                >
+                                und
+                                <a
+                                    href="https://instagram.com/iadlab"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Instagram</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="box__overlay__content">
+                        Oh no! Zurzeit kann der Feed nicht geladen werden. Bitte
+                        versuche es später erneut.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
