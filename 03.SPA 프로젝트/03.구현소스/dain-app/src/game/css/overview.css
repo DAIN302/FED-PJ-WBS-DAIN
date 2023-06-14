@@ -62,20 +62,30 @@
 
 .overview2 {
     padding-top: 40px;
+    margin-bottom: 100px;
 }
 
 .crown_img {
     width: 212px;
     margin : 0 auto;
+    padding-bottom: 40px;
 }
 
 .crown_img img{
     width: 100%;
 }
 
+.overview2_desc {
+    margin-bottom: 20px;
+}
+
 .overview2_desc p {
     text-align: center;
     font-size: 30px;
+}
+
+.overview2_desc2 {
+    margin-bottom: 30px;
 }
 
 .overview2_desc2 p {
