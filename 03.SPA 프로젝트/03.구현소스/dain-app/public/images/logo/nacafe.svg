@@ -1,0 +1,12 @@
+<svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="35" cy="35" r="35" fill="#3AAE38"></circle>
+    <g clip-path="url(#naver-cafe_svg__clip0)" fill="#fff">
+        <path d="M45.9 17c0 5.19-4.21 9.401-9.398 9.401H25.889c0-5.193 4.208-9.401 9.399-9.401H45.9z"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M49.46 30.767a6.535 6.535 0 016.538 6.54 6.538 6.538 0 01-6.537 6.536h-2.12c-1.977 5.394-7.16 9.242-13.24 9.242-7.788 0-14.101-6.312-14.101-14.1v-8.218h29.46zm-1.388 10.11h1.389a3.573 3.573 0 00-.002-7.146h-1.26v5.254c0 .641-.044 1.272-.127 1.892z"></path>
+    </g>
+    <defs>
+        <clipPath id="naver-cafe_svg__clip0">
+            <path fill="#fff" transform="translate(20 17)" d="M0 0h36v36.085H0z"></path>
+        </clipPath>
+    </defs>
+</svg>

@@ -7,6 +7,10 @@
     font-style: normal;
 }
 
+:root {
+    --tcolor : #FF5F00;
+}
+
 body *{
     font-family: 'CookieRun-Regular';
 }
