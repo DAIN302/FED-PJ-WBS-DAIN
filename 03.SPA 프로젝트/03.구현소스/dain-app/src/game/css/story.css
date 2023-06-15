@@ -1,7 +1,32 @@
 @charset "UTF-8";
 
 .story_cont { 
+    position: relative;
     width: 100%;
     height: 100vh;
     background: url(../../../public/images/story/gameStoryBackground.webp) center/cover;
+}
+
+.cloud_img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#backCloud {
+    z-index: 0;
+}
+
+#frontCloud {
+    z-index: 2;
+}
+
+.cloud_img img{
+    width: 100%;
+}
+
+.story_img figure {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
 }
