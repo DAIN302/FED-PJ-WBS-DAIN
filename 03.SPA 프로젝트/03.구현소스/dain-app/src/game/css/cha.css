@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.cha_wrap {
+    background-color: var(--bcolor);
+}
+
+.cha_circlelist {
+    border : 2px solid #C08D55;
+    border-radius: 50%;
+    width: 50%;
+}
+
+.circle_img {
+    width: 100px;
+    height: 100px;
+    background: url(../../../public/images/characters/cat/bg.png) center/cover;
+}
+
+.circle_img img {
+    width: 100%;
+    height: 100%;
+}

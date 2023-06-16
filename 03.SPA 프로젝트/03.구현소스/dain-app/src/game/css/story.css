@@ -25,8 +25,42 @@
     width: 100%;
 }
 
+.story_img {
+    position: absolute;
+    width: 60%;
+    height: 700px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
 .story_img figure {
     position: absolute;
     bottom: 0;
     z-index: 1;
 }
+
+#vanilla_img {
+    left: 50%;
+    bottom: 3%;
+    transform: translateX(-50%);
+}
+
+#hollyberry_img {
+    right : 0;
+}
+
+#cacao_img {
+    left: 0;
+}
+
+#lily_img {
+    left: -30%;
+}
+
+#cheese_img {
+    top: 0;
+    right: -30%;
+}
+
