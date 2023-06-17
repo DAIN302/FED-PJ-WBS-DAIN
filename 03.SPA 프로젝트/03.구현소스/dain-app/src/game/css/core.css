@@ -10,6 +10,8 @@
 :root {
     --tcolor : #FF5F00;
     --bcolor : #594D46;
+    --ccolor : #dbbf91;
+    --tcolor2 : #FFF3CD;
 }
 
 body *{

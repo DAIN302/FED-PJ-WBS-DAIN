@@ -1,13 +1,41 @@
 @charset "UTF-8";
 
-.cha_wrap {
+#character {
     background-color: var(--bcolor);
 }
 
+.cha_btn button {
+    background-color: transparent;
+    color: var(--tcolor2);
+    border: 2px solid var(--tcolor2);
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 20px;
+}
+
+.cha_btn ul {
+    display: flex;
+    justify-content: center;
+    gap: 0 20px;
+}
+
+.cha_tit {
+    color : var(--ccolor);
+    text-align: center;
+    font-size: 60px;
+    padding-top : 100px;
+}
+
 .cha_circlelist {
+    position: absolute;
     border : 2px solid #C08D55;
     border-radius: 50%;
     width: 50%;
+}
+
+.cha_circlelist li {
+    position: absolute;
 }
 
 .circle_img {
