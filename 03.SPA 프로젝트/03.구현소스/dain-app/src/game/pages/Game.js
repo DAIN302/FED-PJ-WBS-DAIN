@@ -3,6 +3,7 @@ import React from "react";
 import VideoIntro from "../modules/VideoIntro";
 import Overview from "../modules/Overview";
 import Story from "../modules/Story";
+import VideoTrailer from "../modules/VideoTrailer";
 
 const Game = () =>{
     return (
@@ -10,6 +11,7 @@ const Game = () =>{
             <VideoIntro />
             <Overview />
             <Story />
+            <VideoTrailer />
         </>
     )
 }

@@ -7,6 +7,18 @@
     background: url(../../../public/images/story/gameStoryBackground.webp) center/cover;
 }
 
+.story_desc {
+    color : var(--pcolor);
+    text-align: center;
+    padding-top: 200px;
+    font-size: 16px;
+}
+
+.story_desc p {
+    margin-bottom: 25px;
+    line-height: 2;
+}
+
 .cloud_img {
     position: absolute;
     bottom: 0;
@@ -28,9 +40,16 @@
 #backCloud {
     z-index: 0;
 }
+#backCloud img {
+    height: 420px;
+}
 
 #frontCloud {
     z-index: 2;
+}
+
+#frontCloud img {
+    height: 342px;
 }
 
 .cloud_img img{
