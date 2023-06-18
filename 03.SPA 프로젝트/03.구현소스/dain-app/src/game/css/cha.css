@@ -4,6 +4,10 @@
     background-color: var(--bcolor);
 }
 
+.cha_btn {
+    padding: 50px 0;
+}
+
 .cha_btn button {
     background-color: transparent;
     color: var(--tcolor2);
@@ -31,11 +35,15 @@
     position: absolute;
     border : 2px solid #C08D55;
     border-radius: 50%;
-    width: 50%;
+    width: 755px;
+    height: 755px;
+    left: calc(-755px/2);
 }
 
 .cha_circlelist li {
     position: absolute;
+    right: 0;
+    transform: rotate(0deg) translateX(-100px) rotate(0deg);
 }
 
 .circle_img {
@@ -47,4 +55,28 @@
 .circle_img img {
     width: 100%;
     height: 100%;
+}
+
+.cha_list {
+    position: relative;
+    text-align: center;
+    
+}
+
+.cha_sliderList {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* transform: translateX(-50%); */
+    display: flex;
+    opacity: 1;
+}
+
+.cha_sliderList.on {
+    opacity: 1;
+    z-index: 1;
+}
+
+.cha_sliderdesc {
+    color : var(--tcolor2)
 }

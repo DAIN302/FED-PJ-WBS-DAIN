@@ -13,6 +13,18 @@
     width: 100%;
 }
 
+.story_header {
+    position: relative;
+    height: 100px;
+}
+
+.story_split {
+    position: absolute;
+    font-size: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 #backCloud {
     z-index: 0;
 }
@@ -27,7 +39,7 @@
 
 .story_img {
     position: absolute;
-    width: 60%;
+    width: 1000px;
     height: 700px;
     bottom: 0;
     left: 50%;
@@ -45,22 +57,27 @@
     left: 50%;
     bottom: 3%;
     transform: translateX(-50%);
+    z-index: 2;
 }
 
 #hollyberry_img {
-    right : 0;
+    right : 105px;
+    bottom: 10%;
 }
 
 #cacao_img {
-    left: 0;
+    left: 155px;
+    bottom: 10%;
 }
 
 #lily_img {
-    left: -30%;
+    left: -30px;
+    bottom: 15%;
+    z-index: 0;
 }
 
 #cheese_img {
     top: 0;
-    right: -30%;
+    right: -120px;
 }
 
