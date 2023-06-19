@@ -2,11 +2,12 @@
 
 #character {
     background-color: var(--bcolor);
-    min-height: 1600px;
+    min-height: 1200px;
 }
 
 .cha_wrap { 
     overflow: hidden;
+    position: sticky;
 }
 
 .cha_btn {
@@ -39,7 +40,7 @@
 .cha_circle {
     position: absolute;
     overflow-x: hidden;
-    width: 800px;
+    width: 400px;
     height: 800px;
     right : 0;
 }
@@ -85,7 +86,7 @@
 .circle_img {
     width: var(--iwidth);
     height: var(--iheight);
-    background: url(../../../public/images/characters/cat/bg.png) center/cover;
+    background: url(../../../public/images/characters/cat/bg.png) no-repeat center/cover;
 }
 
 .circle_img img {
@@ -94,16 +95,21 @@
 }
 
 .cha_list {
-    position: relative;
-    
+    position: relative; 
+}
+
+.cha_card {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .cha_sliderList {
     position: absolute;
     top: 0;
     left: 0;
-    /* display: flex; */
+    display: flex;
     opacity: 0;
+    width: 80%;
 }
 
 .cha_sliderList.on {
@@ -113,8 +119,8 @@
 
 .cha_sliderList figure {
     position: absolute;
-    height: 698px;
-    left: -100px;
+    height: 680px;
+    left: 5%;
 }
 
 .cha_sliderList figure img {
@@ -122,5 +128,31 @@
 }
 
 .cha_sliderdesc {
-    color : var(--tcolor2)
+    color : var(--tcolor2);
+    position: absolute;
+    width: 30%;
+    left: 55%;
+}
+
+.cha_sliderdesc h4 {
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.cha_sliderdesc h3 {
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+.cha_sliderdesc button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.cha_sliderdesc p {
+    color : var(--pcolor);
+    font-size: 16px;
+    padding-top: 10px;
 }

@@ -1,9 +1,18 @@
 import React, {useState} from "react";
 import $ from "jquery"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeLow } from "@fortawesome/free-solid-svg-icons";
 
 import {cha_data} from "../data/cha";
 
 import "../css/cha.css"
+
+function scrollFn(){
+    $(()=>{
+        $(".cha_sliderList:first").addClass("on");
+        
+    })
+}
 
 function ChaCircle(props){
     const cCha_data = cha_data[props.cat]
@@ -29,7 +38,6 @@ function ChaCircle(props){
 function ChaList(props){
     const cCha_data = cha_data[props.cat]
 
-    $(".cha_sliderList:first").addClass("on");
     return(
         <>
             <section className="cha_list">
@@ -48,7 +56,9 @@ function ChaList(props){
                                         <h4>{v.cat}</h4>
                                         <h3>{v.name}</h3>
                                         <button>
-                                            <svg viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path clipRule="evenodd" d="M.473 20.899L20.1 1.27l19.628 19.628-19.628 19.628L.473 20.9z" stroke="#FFF3CD" strokeWidth="0.5"></path><path clipRule="evenodd" d="M37.66 26.238L24.886 39.014a8.938 8.938 0 00-9.602-.033L2.35 26.047a8.927 8.927 0 00-.307-9.99L14.705 3.396a8.924 8.924 0 0010.64-.151l12.74 12.74a8.935 8.935 0 00-.424 10.254z" stroke="#FFF3CD" strokeWidth="0.5"></path><path d="M22 13l-5 4h-4v6h4l5 4V13zM26.54 16.46a5 5 0 010 7.07" stroke="#FFF3CD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                            <span>
+                                                <FontAwesomeIcon icon={faVolumeLow} style={{color : "#FFF3CD"}}/>
+                                            </span>
                                         </button>
                                         <p>{v.desc}</p>
                                     </div>
@@ -109,6 +119,7 @@ function Cha(){
                     <ChaList cat={category}/>
                 </div>
             </section>
+            {scrollFn()}
         </>
     )
 }
