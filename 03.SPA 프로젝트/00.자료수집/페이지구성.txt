@@ -30,3 +30,5 @@
                 <img class="brave" src="./images/characters/brave_walk.gif" alt="걷는쿠키">
                 <img class="brave" src="./images/characters/brave_run.gif" alt="뛰는쿠키">
             </div> -->
+
+

@@ -23,3 +23,72 @@
     top: 0;
     background-color: rgba(0, 0, 0, 0.35);
 }
+
+.video_btn {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left : 50%;
+    transform: translate(-50% , -50%);
+    color : #fff;
+    text-align: center;
+}
+
+.video_btn h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.video_btn button {
+    color : #fff;
+    background-color: transparent;
+    border : 2px solid #fff;
+    border-radius: 30px;
+    padding : 5px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: .4s;
+}
+
+.video_btn button:hover {
+    background-color: #fff;
+    color : #222;
+}
+
+.trailer_box {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: #000;
+    display: none;
+}
+
+.trailer_box iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding : 60px 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+.trailer_box .cbtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border : none;
+    background-color: transparent;
+    color : #fff;
+    font-size: 60px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.trailer_box .cbtn:hover {
+    color : var(--tcolor);
+}

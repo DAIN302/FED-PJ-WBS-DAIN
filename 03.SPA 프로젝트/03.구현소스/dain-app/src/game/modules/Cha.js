@@ -13,7 +13,7 @@ function ChaCircle(props){
                 <ul className="cha_circlelist">
                     {
                         cCha_data.map((v,i)=>
-                            <li key={i}>
+                            <li key={i} className={"circle_cookie"+(i+1)}>
                                 <figure className="circle_img">
                                     <img src={v.isrc} alt={v.name} />
                                 </figure>
@@ -28,6 +28,8 @@ function ChaCircle(props){
 
 function ChaList(props){
     const cCha_data = cha_data[props.cat]
+
+    $(".cha_sliderList:first").addClass("on");
     return(
         <>
             <section className="cha_list">

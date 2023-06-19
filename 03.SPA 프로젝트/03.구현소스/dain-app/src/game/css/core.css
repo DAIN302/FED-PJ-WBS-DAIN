@@ -13,6 +13,8 @@
     --ccolor : #dbbf91;
     --tcolor2 : #FFF3CD;
     --pcolor : rgb(196, 168, 147);
+    --iwidth : 60px;
+    --iheigth : 60px;
 }
 
 body *{

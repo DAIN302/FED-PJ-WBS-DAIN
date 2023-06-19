@@ -25,6 +25,11 @@ function Story(){
             name : "cheese",
         },
     ]
+    const scroll_cont = () => {
+        $(window).scroll(function(){
+            console.log("gg")
+        })
+    }
     
     return(
         <>
@@ -64,6 +69,7 @@ function Story(){
                     </div>
                 </div>
             </section>
+            {scroll_cont()}
         </>
     )
 

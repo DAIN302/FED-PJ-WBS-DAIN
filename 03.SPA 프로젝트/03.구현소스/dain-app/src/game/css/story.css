@@ -5,6 +5,7 @@
     width: 100%;
     height: 100vh;
     background: url(../../../public/images/story/gameStoryBackground.webp) center/cover;
+    overflow: hidden;
 }
 
 .story_desc {
@@ -27,14 +28,16 @@
 
 .story_header {
     position: relative;
-    height: 100px;
+    height: 100vh;
+    clip-path: polygon(0px 0px, 100% 0px, 100% 50%, 0px 50%, 0px 50%, 100% 50%, 100% 100%, 0px 100%);
 }
 
 .story_split {
     position: absolute;
-    font-size: 6rem;
+    font-size: 200px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
 }
 
 #backCloud {
