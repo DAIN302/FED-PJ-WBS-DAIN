@@ -20,7 +20,7 @@ const Layout = () => {
                                 </li>
                                 <li><Link to="/kd">왕국 둘러보기</Link></li>
                                 <li><Link to="/gm">게임소개</Link></li>
-                                <li><Link to="/ch">캐릭터소개</Link></li>
+                                <li><Link to="/ch">캐릭터</Link></li>
                             </ul>
                             <button className="menu_exit">×</button>
                         </nav>

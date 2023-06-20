@@ -69,7 +69,7 @@ function Story(){
                     </div>
                 </div>
             </section>
-            {scroll_cont()}
+            { }
         </>
     )
 

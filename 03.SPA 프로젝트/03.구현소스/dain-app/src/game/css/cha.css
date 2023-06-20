@@ -6,12 +6,18 @@
 }
 
 .cha_wrap { 
-    overflow: hidden;
+    height: calc(100vh + 800px);
+}
+
+.cha_bx {
     position: sticky;
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
 
 .cha_btn {
-    padding: 50px 0;
+    padding: 100px 0 50px;
 }
 
 .cha_btn button {
@@ -54,11 +60,12 @@
     top: 5%;
     right: calc(-600px/2);
     transform: rotate(0deg);
+    transition: transform .5s;
 }
 
-.cha_circlelist li {
+.circle_cookie {
     position: absolute;
-    transform: rotate(0deg) translate(0px, 0px) rotate(0deg);
+    transition: .5s;
 }
 
 .circle_cookie1 {
@@ -117,14 +124,27 @@
     z-index: 1;
 }
 
-.cha_sliderList figure {
+.cha_sliderimg {
     position: absolute;
     height: 680px;
     left: 5%;
+    animation: chaMove 2.5s ease-in-out infinite;
 }
 
-.cha_sliderList figure img {
+.cha_sliderimg img {
     height: 100%;
+}
+
+@keyframes chaMove {
+    0% {
+        transform: translateY(1%);
+    }
+    50% {
+        transform: translateY(-1%);
+    }
+    100% {
+        transform: translateY(1%);
+    }
 }
 
 .cha_sliderdesc {

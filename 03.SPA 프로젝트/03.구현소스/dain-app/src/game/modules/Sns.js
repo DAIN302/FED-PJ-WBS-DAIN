@@ -41,4 +41,4 @@ function Sns(){
     )
 }
 
-export default Sns
+export default Sns;

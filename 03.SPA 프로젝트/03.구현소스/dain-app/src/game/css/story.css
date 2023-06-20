@@ -11,8 +11,10 @@
 .story_desc {
     color : var(--pcolor);
     text-align: center;
-    padding-top: 200px;
+    padding-top: 100px;
     font-size: 16px;
+    width: 405px;
+    margin: 0 auto;
 }
 
 .story_desc p {
@@ -76,30 +78,45 @@
 }
 
 #vanilla_img {
-    left: 50%;
+    left: calc(50% - 200px);
     bottom: 3%;
-    transform: translateX(-50%);
     z-index: 2;
+    animation: 5s ease-in-out 0s infinite normal none running storyAni;
 }
 
 #hollyberry_img {
     right : 105px;
     bottom: 10%;
+    animation: 5s ease-in-out 0.5s infinite normal none running storyAni;
 }
 
 #cacao_img {
     left: 155px;
     bottom: 10%;
+    animation: 5s ease-in-out 0.5s infinite normal none running storyAni;
 }
 
 #lily_img {
     left: -30px;
     bottom: 15%;
     z-index: 0;
+    animation: 5s ease-in-out 1s infinite normal none running storyAni;
 }
 
 #cheese_img {
     top: 0;
     right: -120px;
+    animation: 5s ease-in-out 1s infinite normal none running storyAni;
 }
 
+@keyframes storyAni {
+    0%{
+        transform: translateY(2%);
+    }
+    50%{
+        transform: translateY(-2%);
+    }
+    100%{
+        transform: translateY(2%);
+    }
+}
