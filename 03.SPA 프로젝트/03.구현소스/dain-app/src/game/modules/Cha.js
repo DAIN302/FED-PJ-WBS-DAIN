@@ -7,26 +7,12 @@ import {cha_data} from "../data/cha";
 
 import "../css/cha.css"
 
-// function scrollFn(){
-//     $(()=>{
-//         $(".cha_sliderList:first").addClass("on");
+function jqFn(){
+    $(()=>{
+        $(".cha_sliderList:first").addClass("on");
         
-//     })
-// }
-
-// function ScrollFn(){
-//     const moveCharacterList = () => {
-//         console.log("scroll")
-//     }
-    
-//     console.log(document.querySelector(".cha_wrap"))
-
-
-//     useEffect(()=>{
-//         window.addEventListener("scroll", moveCharacterList)
-//     })
-
-// }
+    })
+}
 
 function ChaCircle(props){
     const cCha_data = cha_data[props.cat]
@@ -52,6 +38,10 @@ function ChaCircle(props){
 function ChaList(props){
     const cCha_data = cha_data[props.cat]
 
+    const voicePlay = () => {
+        
+    }
+
     return(
         <>
             <section className="cha_list">
@@ -69,7 +59,7 @@ function ChaList(props){
                                     <div className="cha_sliderdesc">
                                         <h4>{v.cat}</h4>
                                         <h3>{v.name}</h3>
-                                        <button>
+                                        <button onClick={voicePlay}>
                                             <span>
                                                 <FontAwesomeIcon icon={faVolumeLow} style={{color : "#FFF3CD"}}/>
                                             </span>
@@ -112,62 +102,72 @@ function Cha(){
         let dataType = e.target.getAttribute("data-type")
         setCategory(dataType)
     }
-
-    const retVal = (x) => x.getBoundingClientRect().top;
-
-    const rotate = (num, x, y) => {
-        let rotateNum = 20 * num;
-        x.style.transform = `rotate(-${rotateNum}deg)`;
-        y.forEach(ele=>{
-            ele.style.transform = `rotate(${rotateNum}deg)`;
-        })
-    }
-
-    const chgSlide = (obj, num) => {
-         // 전체초기화
-         obj.forEach((ele)=>{
-            ele.classList.remove("on");
-        })
-
-        // 해당순번 li에 클래스 넣기
-        obj[num].classList.add("on");
-    }
-    
-    // 스크롤 시 캐릭터 이동 메서드 
-    const moveCharacterList = () => {
-        // 타겟박스
-        const chaWrap = document.querySelector(".cha_wrap")
-        // sticky 박스
-        const chaBx = document.querySelector(".cha_bx");
-
-        const chaCircle =  document.querySelector(".cha_circlelist");
-
-        const chaCircleList = document.querySelectorAll(".circle_cookie")
-
-        let tgpos = retVal(chaWrap)
-
-        let num = 0;
-        
-        if(tgpos <= -100 && tgpos > -200) {
-            num = 1    
-        }
-        else if(tgpos <= -200 && tgpos > -300) {
-            num = 2
-        }
-        else if(tgpos <= -300 && tgpos > -400) {
-            num = 3
-        }
-        else if(tgpos <= -400 && tgpos > -500) {
-            num = 4
-        }
-        else if (tgpos <= -500) {
-            num = 4
-        }
-
-        rotate(num, chaCircle, chaCircleList);
-    }
     
     useEffect(()=>{
+        console.log("gdgd")
+        // 타겟박스
+        const chaWrap = document.querySelector(".cha_wrap")
+            
+        const chaCircle =  document.querySelector(".cha_circlelist");
+        const chaCircleList = document.querySelectorAll(".circle_cookie")
+        const chaList = document.querySelectorAll(".cha_sliderList");
+
+        const retVal = (x) => x.getBoundingClientRect().top;
+
+        const rotate = (num, x, y) => {
+            let rotateNum = 20 * num;
+            x.style.transform = `rotate(-${rotateNum}deg)`;
+            y.forEach(ele=>{
+                ele.style.transform = `rotate(${rotateNum}deg)`;
+            })
+        }
+
+        const chgSlide = (obj, num) => {
+            // 전체초기화
+            obj.forEach((ele)=>{
+                ele.classList.remove("on");
+            })
+
+            // 해당순번 li에 클래스 넣기
+            obj[num].classList.add("on");
+        }
+        
+        
+        let tgpos = 0;
+        // 스크롤 시 캐릭터 목록 변환 메서드 
+        const moveCharacterList = () => {
+            tgpos = retVal(chaWrap)
+            console.log(tgpos)
+
+            let num = 0;
+
+            if(tgpos <= -400 && tgpos > -1000) {
+                num = 1    
+            }
+            else if(tgpos <= -1000 && tgpos > -1600) {
+                num = 2
+            }
+            else if(tgpos <= -1600 && tgpos > -2200) {
+                num = 3
+            }
+            else if(tgpos <= -2200 && tgpos > -2800) {
+                num = 4
+            }
+            else if (tgpos <= -2800) {
+                num = 4
+            }
+            console.log(num)
+
+            rotate(num, chaCircle, chaCircleList);
+            chgSlide(chaList, num);
+        }
+        
+        rotate(0, chaCircle, chaCircleList);
+        chgSlide(chaList, 0);
+
+        chaWrap.scrollTo(0,0);
+
+
         window.addEventListener("scroll", moveCharacterList)
     })
 
@@ -194,7 +194,7 @@ function Cha(){
                     </div>
                 </div>
             </section>
-            {}
+            { }
         </>
     )
 }
