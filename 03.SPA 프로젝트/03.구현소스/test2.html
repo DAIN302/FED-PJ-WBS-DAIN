@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("DOMContentLoaded",()=>{
+            const thumb = document.querySelector("#thumb")
+            const view_img = document.querySelector(".view_img img")
+
+            thumb.addEventListener("click", clickThumb)
+
+            function clickThumb(e){
+                e.preventDefault();
+                let att = e.target.getAttribute("data-view")
+                console.log(att)
+
+                view_img.setAttribute("src", att);
+            }
+
+        })
+    </script>
+</head>
+<body>
+    <a href="#" id="thumb">
+        <img src="./images/buildings/autumn.webp" data-view="./images/buildings/autumn.webp"/>
+    </a>
+    <div class="view_img">
+        <img src="" alt="" />
+    </div>
+</body>
+</html>
