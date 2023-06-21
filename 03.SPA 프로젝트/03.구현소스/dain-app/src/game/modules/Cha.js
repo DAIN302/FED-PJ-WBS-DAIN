@@ -45,9 +45,9 @@ function ChaList(props){
     return(
         <>
             <section className="cha_list">
-                <div className="cha_card">
+                {/* <div className="cha_card">
                     <img src="./images/characters/cat/card.png"/>
-                </div>
+                </div> */}
                 <div className="cha_slider">
                     <ul>
                         {
@@ -61,7 +61,7 @@ function ChaList(props){
                                         <h3>{v.name}</h3>
                                         <button onClick={voicePlay}>
                                             <span>
-                                                <FontAwesomeIcon icon={faVolumeLow} style={{color : "#FFF3CD"}}/>
+                                                <FontAwesomeIcon icon={faVolumeLow} style={{color : "#333"}}/>
                                             </span>
                                         </button>
                                         <p>{v.desc}</p>

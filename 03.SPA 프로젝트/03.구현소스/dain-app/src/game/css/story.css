@@ -30,16 +30,47 @@
 
 .story_header {
     position: relative;
-    height: 100vh;
-    clip-path: polygon(0px 0px, 100% 0px, 100% 50%, 0px 50%, 0px 50%, 100% 50%, 100% 100%, 0px 100%);
+    height: calc(100vh + 3000px);
+    /* clip-path: polygon(0px 0px, 100% 0px, 100% 50%, 0px 50%, 0px 50%, 100% 50%, 100% 100%, 0px 100%); */
 }
 
+.story_titbx {
+    position: sticky;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+.story_splitwrap {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #000;
+    clip-path: polygon(0px 0px, 100% 0px, 100% 50%, 0px 50%, 0px 50%, 100% 50%, 100% 100%, 0px 100%);
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.story_splitwrap2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
 .story_split {
     position: absolute;
-    font-size: 200px;
+    font-size: 300px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.story_split1 {
+    
 }
 
 #backCloud {

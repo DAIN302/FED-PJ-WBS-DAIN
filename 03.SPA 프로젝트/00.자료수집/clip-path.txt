@@ -1,0 +1,25 @@
+초기셋팅
+
+clip-path: 
+polygon
+(0px 0px, 100% 0px, 100% 50%, 0px 50%, 
+0px 50%, 100% 50%, 100% 100%, 0px 100%);
+transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+
+transform: 
+matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 214.656, 0, 1); 
+clip-path: 
+olygon
+(0px 0px, 100% 0px, 100% 49.7589%, 0px 49.7589%, 
+0px 50.2411%, 100% 50.2411%, 100% 100%, 0px 100%);
+->
+transform:
+ matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 934.656, 0, 1); 
+ clip-path: 
+ polygon
+ (0px 0px, 100% 0px, 100% 4.0786%, 0px 4.0786%, 
+ 0px 95.9214%, 100% 95.9214%, 100% 100%, 0px 100%);
+
+translate: 
+transform: translate3d(0px, -7.4295%, 0px);
+transform: translate3d(0px, 7.4295%, 0px);

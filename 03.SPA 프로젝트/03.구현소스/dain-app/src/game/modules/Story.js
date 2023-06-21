@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import $ from "jquery";
 import "../css/story.css"
+
 
 function Story(){
     const charater_img = [
@@ -25,18 +26,59 @@ function Story(){
             name : "cheese",
         },
     ]
-    const scroll_cont = () => {
-        $(window).scroll(function(){
-            console.log("gg")
-        })
-    }
+
+    useEffect(()=>{
+        const storyHeader = document.querySelector(".story_header");
+        const storyTit = document.querySelector(".story_titbx");
+        const storySplitWrap = document.querySelector(".story_splitwrap")
+        const storySplit = document.querySelectorAll(".story_split")
+
+        const retVal = (x) => x.getBoundingClientRect().top;
+
+        console.log(storyHeader.clientHeight);
+        
+        const changeStyle = (x, y) => {
+            x.style.clipPath = `
+            polygon(0px 0px, 100% 0px, 100% ${50-y}%, 0px ${50-y}%, 0px ${50+y}%, 100% ${50+y}%, 100% 100%, 0px 100%)
+            `
+        }
+
+        let tgpos = 0;
+        const openTitle = () =>{
+            tgpos = retVal(storyHeader)
+            // let scrollRatio = tgpos / (storyHeader.clientHeight-storyTit.clientHeight) * 100
+            let minusHeight = storyHeader.clientHeight-storyTit.clientHeight
+            let scrollRatio = (tgpos / minusHeight * 100)/2
+            console.log(scrollRatio)
+            if(tgpos < 0 && tgpos >= -(minusHeight)){
+                changeStyle(storySplitWrap, scrollRatio);
+                storySplitWrap.style.height = `${-scrollRatio*1.2}%`
+                storySplit[0].style.transform = `translate(-50%, -${50-scrollRatio}%)`
+                storySplit[1].style.transform = `translate(-50%, -${50+scrollRatio}%)`
+                // storyTit.style.transform = `
+                // matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 214.656, 0, 1)
+                // `
+            }
+            else if(tgpos < -(minusHeight)){
+                return;
+            }
+        }
+
+        window.addEventListener("scroll", openTitle);
+    })
+
     
     return(
         <>
             <section className="story_sec">
                 <div className="story_header">
-                   <div className="story_split">STORY</div> 
-                   <div className="story_split">STORY</div> 
+                    <div className="story_titbx">
+                        <div className="story_splitwrap"></div>
+                        <div className="story_splitwrap2">
+                            <div className="story_split stoty_split1">STORY</div> 
+                            <div className="story_split stoty_split2">STORY</div> 
+                        </div>
+                    </div>
                 </div>
                 <div className="story_cont">
                     <div className="story_desc">
