@@ -53,7 +53,7 @@ function ChaList(props){
                         {
                             cCha_data.map((v,i)=>
                                 <li key={i} className="cha_sliderList" data-index={i}>
-                                    <div className="cha_border">
+                                    <div className="cha_border" style={{backgroundImage : v.bgc}}>
                                         <figure className="cha_sliderimg">
                                             <img src={"./images/characters/cat/pot/"+v.ename+".png"}/>
                                         </figure>

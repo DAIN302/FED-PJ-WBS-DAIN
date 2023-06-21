@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+.features_header {
+    position: relative;
+    height: 100vh;
+}
+
 .features_split {
     position: absolute;
     font-size: 300px;
