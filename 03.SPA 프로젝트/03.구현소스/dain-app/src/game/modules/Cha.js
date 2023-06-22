@@ -45,9 +45,6 @@ function ChaList(props){
     return(
         <>
             <section className="cha_list">
-                {/* <div className="cha_card">
-                    <img src="./images/characters/cat/card.png"/>
-                </div> */}
                 <div className="cha_slider">
                     <ul>
                         {
@@ -118,9 +115,9 @@ function Cha(){
 
         const rotate = (num, x, y) => {
             let rotateNum = 20 * num;
-            x.style.transform = `rotate(-${rotateNum}deg)`;
+            x.style.transform = `rotate(${rotateNum}deg)`;
             y.forEach(ele=>{
-                ele.style.transform = `rotate(${rotateNum}deg)`;
+                ele.style.transform = `rotate(-${rotateNum}deg)`;
             })
         }
 
@@ -139,7 +136,7 @@ function Cha(){
         // 스크롤 시 캐릭터 목록 변환 메서드 
         const moveCharacterList = () => {
             tgpos = retVal(chaWrap)
-            console.log(tgpos)
+            // console.log(tgpos)
 
             let num = 0;
 

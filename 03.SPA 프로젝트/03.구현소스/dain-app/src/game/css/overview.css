@@ -103,3 +103,14 @@
     width: 100%;
     border-radius: 20px;
 }
+
+.overview_action {
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1),opacity 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateY(90px);
+}
+
+.overview_action.on {
+    opacity: 1;
+    transform: translateY(0);
+}

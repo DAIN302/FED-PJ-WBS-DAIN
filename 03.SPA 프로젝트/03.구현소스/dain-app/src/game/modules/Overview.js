@@ -54,18 +54,18 @@ function Overview(){
                     </div>
                 </div>
                 <div className="overview2">
-                    <figure className="crown_img">
+                    <figure className="crown_img overview_action">
                         <img src="./images/logo/crown.svg" alt="왕관이미지"/>
                     </figure>
-                    <div className="overview2_desc">
+                    <div className="overview2_desc overview_action">
                         <p>사랑스러운 쿠키들의 다양한 매력이 가득한</p>
                         <p>새로운 쿠키 세계가 여러분을 찾아갑니다.</p>
                     </div>
-                    <div className="overview2_desc2">
+                    <div className="overview2_desc2 overview_action">
                         <p>쿠키런: 킹덤은 마녀의 오븐을 탈출한 쿠키들을 도와 새로운 쿠키들의 왕국을 건설하는 소셜 RPG 게임입니다.</p>
                         <p>개성 있는 다양한 쿠키들과 함께 나만의 쿠키 왕국을 건설하고, 즐거운 순간을 함께 경험해보세요.</p>
                     </div>
-                    <figure className="overview2_img">
+                    <figure className="overview2_img overview_action">
                         <img src="./images/cbg.webp" alt="배경"/>
                     </figure>
                 </div>
