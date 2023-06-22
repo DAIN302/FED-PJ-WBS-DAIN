@@ -22,7 +22,7 @@ function VideoTrailer(){
     return(
         <>
             <section className="video_trailer">
-                <video id="mvid2" src="./images/media/trailer.mp4" autoPlay muted playsInline loop/>
+                <video id="mvid2" src="./images/media/trailer.mp4" muted playsInline loop/>
                 <span className="video_bg"></span>
                 <div className="video_btn">
                     <h3>쿠키들의 모험이 여러분을 기다리고 있어요!</h3>

@@ -30,7 +30,7 @@ function Sns(){
             {
                 sns_data.map((v,i)=>
                     <li key={i}>
-                        <a href={v.link}>
+                        <a href={v.link} target="_blank">
                             <img src={v.isrc} alt={v.name} />
                         </a>
                     </li>

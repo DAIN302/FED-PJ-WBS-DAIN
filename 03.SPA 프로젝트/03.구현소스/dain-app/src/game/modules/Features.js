@@ -27,7 +27,7 @@ function Features(){
                                             }
                                             <div className="features_vidbx">
                                                 <img src={"./images/media/"+v.psrc}/>
-                                                <video src={"./images/media/"+v.vsrc} autoPlay muted playsInline loop/>
+                                                <video className="features_video" src={"./images/media/"+v.vsrc} autoPlay muted playsInline loop/>
                                             </div>
                                         </div>
                                     )

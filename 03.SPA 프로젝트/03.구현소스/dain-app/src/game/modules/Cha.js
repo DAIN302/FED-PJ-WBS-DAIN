@@ -37,9 +37,15 @@ function ChaCircle(props){
 
 function ChaList(props){
     const cCha_data = cha_data[props.cat]
-
-    const voicePlay = () => {
+    const [voice, setVoice] = useState(cCha_data[0].ename)
+    const voicePlay = (e) => {
+        const voiceAudio = document.querySelectorAll(".cha_voice");
+        let btnIndex = e.currentTarget.getAttribute("data-index");
         
+        voiceAudio.forEach((ele,i)=>{
+            ele.pause();
+        })
+        voiceAudio[btnIndex].play();
     }
 
     return(
@@ -58,12 +64,13 @@ function ChaList(props){
                                     <div className="cha_sliderdesc">
                                         <h4>{v.cat}</h4>
                                         <h3>{v.name}</h3>
-                                        <button onClick={voicePlay}>
+                                        <button onClick={voicePlay} className="cha_voicebtn" data-index={i}>
                                             <span>
                                                 <FontAwesomeIcon icon={faVolumeLow} style={{color : "#333"}}/>
                                             </span>
                                         </button>
                                         <p>{v.desc}</p>
+                                        <audio className="cha_voice" src={"./images/characters/cat/audio/"+v.ename+".wav"} />
                                     </div>
                                 </li>
                             )
@@ -103,7 +110,6 @@ function Cha(){
     }
     
     useEffect(()=>{
-        console.log("gdgd")
         // 타겟박스
         const chaWrap = document.querySelector(".cha_wrap")
             
@@ -133,12 +139,13 @@ function Cha(){
         
         
         let tgpos = 0;
+        let num = 0;
         // 스크롤 시 캐릭터 목록 변환 메서드 
         const moveCharacterList = () => {
             tgpos = retVal(chaWrap)
             // console.log(tgpos)
 
-            let num = 0;
+            num = 0;
 
             if(tgpos <= -400 && tgpos > -1000) {
                 num = 1    
@@ -155,7 +162,6 @@ function Cha(){
             else if (tgpos <= -2800) {
                 num = 4
             }
-            console.log(num)
 
             rotate(num, chaCircle, chaCircleList);
             chgSlide(chaList, num);
