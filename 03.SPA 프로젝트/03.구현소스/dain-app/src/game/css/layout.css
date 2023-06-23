@@ -18,8 +18,10 @@
 }
 
 .top { 
+    position: relative;
     margin: 0 auto;
     padding : 10px 10px 0 10px;
+    box-sizing: border-box;
 }
 
 .top_wrap {
@@ -50,39 +52,29 @@
     width: 100%;
     height: 100%;
 }
-
-.gnb {
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(0,0,0,0.5); */
+.gnb_wrap {
+    height: 0;
+    overflow: hidden;
 }
 
-.gnb ul {
-    display: flex;
-    gap: 30px
-}
-
-/* 모바일
+.gnb_list {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-
-*/
+    right: 0;
+    top: 80px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
 
 .mobile_menulogo{
     display: none;
 }
 
 .gnb a {
-    /* color :#fff;
-    font-size: 4.8rem; */
     display: inline-block;
-    font-size: 2rem;
+    font-size: min(20px, 1.8vw);
     padding : 10px 25px;
     border-radius: 40px;
     background-color: rgba(255,255,255,0.5);
@@ -145,7 +137,6 @@
     color : #fff;
     font-size: 1.6rem;
 }
-
 
 .binfo {
     font-style: normal;

@@ -4,6 +4,12 @@ import { Link, Outlet } from "react-router-dom";
 
 import Sns from "./modules/Sns"
 const Layout = () => {
+    const showGnb = () => {
+        const gnbMenu = document.querySelector(".gnb_list").offsetHeight;
+        console.log(gnbMenu)
+        
+    }    
+
     return (
         <>
             {/* 1. 상단영역 */}
@@ -14,17 +20,19 @@ const Layout = () => {
                             <img src="./images/logo/logo_eng.png" alt="로고"/>
                         </h1>
                         <nav className="gnb">
-                            <ul>
-                                <li className="mobile_menulogo">
-                                    <img src="./images/logo/logo_ko.png" alt="로고" />
-                                </li>
-                                <li><Link to="/kd">왕국 둘러보기</Link></li>
-                                <li><Link to="/gm">게임소개</Link></li>
-                                <li><Link to="/ch">캐릭터</Link></li>
-                            </ul>
+                            <div className="gnb_wrap">
+                                <ul className="gnb_list">
+                                    <li className="mobile_menulogo">
+                                        <img src="./images/logo/logo_ko.png" alt="로고" />
+                                    </li>
+                                    <li><Link to="/kd">왕국 둘러보기</Link></li>
+                                    <li><Link to="/gm">게임소개</Link></li>
+                                    <li><Link to="/ch">캐릭터</Link></li>
+                                </ul>
+                            </div>
                             <button className="menu_exit">×</button>
                         </nav>
-                        <button className="menu_btn">
+                        <button className="menu_btn" onClick={showGnb}>
                             <img src="./images/logo/menu.svg" alt="메뉴버튼" />
                         </button>
                     </div>

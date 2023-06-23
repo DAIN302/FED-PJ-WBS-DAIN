@@ -1,8 +1,12 @@
 @charset "UTF-8";
 
 #character {
-    /* background-color: var(--bcolor); */
+    background: url(../../../public/images/back.jpg) no-repeat fixed center/cover;
     min-height: 1200px;
+}
+
+.character_bx {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .cha_wrap { 
@@ -26,7 +30,7 @@
     border : none;
     border-radius: 25px;
     background-color: var(--tcolor3);
-    font-size: 20px;
+    font-size: min(20px, 1.8vw);
     cursor: pointer;
     padding: 5px 20px;
 }
@@ -40,15 +44,15 @@
 .cha_tit {
     color : var(--tcolor);
     text-align: center;
-    font-size: 60px;
+    font-size: min(60px, 5.8vw);
     padding-top : 100px;
 }
 
 .cha_circle {
     position: absolute;
-    overflow-x: hidden;
-    aspect-ratio: 1/2;
+    overflow: hidden;
     width : 40vw;
+    height: 100vh;
     left : 0;
 }
 
@@ -60,7 +64,6 @@
     width : 35vw;
     top: 5%;
     left: calc(-40vw/2);
-    transform: rotate(0deg);
     transition: transform .5s;
 }
 
@@ -75,19 +78,19 @@
 }
 
 .circle_cookie2 {
-    right: -10px;
+    right: calc(3% - 30px);
     top : calc(31% - 30px);
 }
 .circle_cookie3 {
-    right: 55px;
+    right: calc(13% - 30px);
     top : calc(15% - 30px);
 }
 .circle_cookie4 {
-    right: 150px;
+    right: calc(28% - 30px);
     top : calc(5% - 30px);
 }
 .circle_cookie5 {
-    right: 250px;
+    right: calc(45% - 30px);
     top : -30px;
 }
 
@@ -162,12 +165,12 @@
 }
 
 .cha_sliderdesc h4 {
-    font-size: 20px;
+    font-size: min(20px, 2.2vw);
     padding: 10px 0;
 }
 
 .cha_sliderdesc h3 {
-    font-size: 40px;
+    font-size: min(40px, 3.8vw);
     padding-bottom: 10px;
 }
 
@@ -175,11 +178,11 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: min(20px, 1.8vw);
 }
 
 .cha_sliderdesc p {
     color : #333;
-    font-size: 16px;
+    font-size: min(16px, 1.6vw);
     padding-top: 10px;
 }

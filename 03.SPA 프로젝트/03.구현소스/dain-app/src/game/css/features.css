@@ -59,19 +59,19 @@
 }
 
 .features_tit {
-    font-size: 26px;
+    font-size: min(26px, 2.8vw);
     padding : 10px 0;
 }
 
 .features_desc {
-    font-size: 14px;
+    font-size: min(14px, 1.6vw);
     line-height: 2;
 }
 
 .features_vidbx {
     position: relative;
     width: 100%;
-    aspect-ratio: 773/437;
+    aspect-ratio: 700/350;
     margin-top: 20px;
 }
 
@@ -83,3 +83,23 @@
     object-fit: cover;
     border-radius: 20px;
 }
+
+.features_video { 
+    opacity: 0;
+}
+
+.features_video.on {
+    opacity: 1;
+}
+
+.features_action {
+    opacity: 0;
+    transform: translateY(90px);
+    transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s,opacity 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+}
+
+.features_action.on {
+    opacity: 1;
+    transform: translateY(0);
+}
+

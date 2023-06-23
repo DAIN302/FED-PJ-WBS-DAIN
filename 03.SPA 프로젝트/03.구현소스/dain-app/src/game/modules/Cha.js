@@ -3,6 +3,7 @@ import $ from "jquery"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVolumeLow } from "@fortawesome/free-solid-svg-icons";
 
+import ScrollIcon from "./ScrollIcon";
 import {cha_data} from "../data/cha";
 
 import "../css/cha.css"
@@ -30,6 +31,7 @@ function ChaCircle(props){
                         )
                     }
                 </ul>
+                <ScrollIcon />
             </div>
         </>
     )
@@ -37,12 +39,11 @@ function ChaCircle(props){
 
 function ChaList(props){
     const cCha_data = cha_data[props.cat]
-    const [voice, setVoice] = useState(cCha_data[0].ename)
     const voicePlay = (e) => {
         const voiceAudio = document.querySelectorAll(".cha_voice");
         let btnIndex = e.currentTarget.getAttribute("data-index");
         
-        voiceAudio.forEach((ele,i)=>{
+        voiceAudio.forEach((ele)=>{
             ele.pause();
         })
         voiceAudio[btnIndex].play();
@@ -172,30 +173,30 @@ function Cha(){
 
         chaWrap.scrollTo(0,0);
 
-
         window.addEventListener("scroll", moveCharacterList)
     })
 
     return(
         <>
-            
             <section id="character">
-                <h2 className="cha_tit">CHARACTERS</h2>
-                <div className="cha_wrap">
-                    <div className="cha_bx">
-                        <section className="cha_btn">
-                            <ul>
-                                {
-                                    catBtn.map((v,i)=>
-                                        <li key={i}>
-                                            <button data-type={v.type} onClick={changeCategory}>{v.name}</button>
-                                        </li>
-                                    )
-                                }
-                            </ul>
-                        </section>
-                        <ChaCircle cat={category}/>
-                        <ChaList cat={category}/>
+                <div className="character_bx ibx">
+                    <h2 className="cha_tit">CHARACTERS</h2>
+                    <div className="cha_wrap">
+                        <div className="cha_bx">
+                            <section className="cha_btn">
+                                <ul>
+                                    {
+                                        catBtn.map((v,i)=>
+                                            <li key={i}>
+                                                <button data-type={v.type} onClick={changeCategory}>{v.name}</button>
+                                            </li>
+                                        )
+                                    }
+                                </ul>
+                            </section>
+                            <ChaCircle cat={category}/>
+                            <ChaList cat={category}/>
+                        </div>
                     </div>
                 </div>
             </section>

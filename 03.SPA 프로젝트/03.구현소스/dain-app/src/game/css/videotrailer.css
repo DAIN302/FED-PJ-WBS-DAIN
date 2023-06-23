@@ -35,7 +35,7 @@
 }
 
 .video_btn h3 {
-    font-size: 30px;
+    font-size: min(30px, 2.8vw);
     margin-bottom: 20px;
 }
 
@@ -46,7 +46,7 @@
     border-radius: 30px;
     padding : 5px 20px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: min(24px, 2.2vw);
     transition: .4s;
 }
 

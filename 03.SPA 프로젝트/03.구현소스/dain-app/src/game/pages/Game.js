@@ -69,6 +69,8 @@ const Game = () =>{
         }
 
         const overAction = document.querySelectorAll(".overview_action");
+        const featuresAction = document.querySelectorAll(".features_action");
+        const contlist = document.querySelectorAll(".contlist");
 
         const hv = window.innerHeight/5*4;
 
@@ -85,13 +87,11 @@ const Game = () =>{
         const mvid2 = document.querySelector("#mvid2")
 
         let mvH = mvid2.clientHeight;
-        console.log(mvH/2)
         mvH = -(mvH/2)
 
         const videoPlay = x => {
             let videoPos = retVal(x);
-            console.log(hv, videoPos)
-            // console.log(videoPos);
+
             if(videoPos < hv && videoPos > mvH) {
                 x.play()
             }
@@ -100,10 +100,34 @@ const Game = () =>{
             }
         }
 
+        const featuresVideo = document.querySelectorAll(".features_video");
+        const hv2 = window.innerHeight/3*1;
+        const videoPlay2 = x => {
+            x.forEach(ele=>{
+                let videoPos = retVal(ele);
+                let mvH2 = ele.clientHeight;
+                mvH2 = -(mvH2)
+                
+                if(videoPos < hv2 && videoPos > mvH2) {
+                    ele.classList.add("on")
+                    ele.play();
+                }
+                else {
+                    ele.pause();
+                    ele.classList.remove("on");
+                }
+            })
+        }
+
+
+
         window.addEventListener("scroll", ()=>openTitle(storyHeader, storyTit, storySplitWrap, storySplit, storyCont));
         window.addEventListener("scroll", ()=>openTitle2(featuresHeader, featuresTit, featuresSplitWrap, featuresSplit, featuresCont)); 
         window.addEventListener("scroll", ()=>showIt(overAction))
-        window.addEventListener("scroll", ()=> videoPlay(mvid2))
+        window.addEventListener("scroll", ()=>showIt(featuresAction))
+        window.addEventListener("scroll", ()=>showIt(contlist))
+        window.addEventListener("scroll", ()=>videoPlay(mvid2))
+        window.addEventListener("scroll", ()=>videoPlay2(featuresVideo))
 
         
     })

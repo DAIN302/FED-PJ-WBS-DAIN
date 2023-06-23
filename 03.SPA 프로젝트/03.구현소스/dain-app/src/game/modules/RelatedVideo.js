@@ -43,7 +43,7 @@ function RelatedVideo(){
                     <ul className="related_contlist">
                     {
                         video_data.map((v,i)=>
-                            <li key={i}>
+                            <li key={i} className="contlist">
                                 <figure onClick={()=>showVid(v.vsrc)}>
                                     <img src={"./images/media/"+v.isrc} alt="동영상썸네일" />
                                     <span className="related_playicon">

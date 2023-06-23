@@ -19,10 +19,10 @@ function Features(){
                                 {
                                     fdata.map((v,i)=>
                                         <div key={i} className="features_contbx">
-                                            <h3 className="features_tit">{v.tit}</h3>
+                                            <h3 className="features_tit features_action">{v.tit}</h3>
                                             {
                                                 v.desc.split("^").map((v,i)=>
-                                                    <p key={i} className="features_desc">{v}</p>
+                                                    <p key={i} className="features_desc features_action">{v}</p>
                                                 )
                                             }
                                             <div className="features_vidbx">
