@@ -31,7 +31,8 @@
 
 .story_header {
     position: relative;
-    height: calc(100vh + 3000px);
+    /* height: calc(100vh + 3000px); */
+    height: 300vh;
 }
 
 .story_titbx {

@@ -3,15 +3,28 @@ import "./css/layout.css"
 import { Link, Outlet } from "react-router-dom";
 
 import Sns from "./modules/Sns"
+import ScrollTop from "./common/ScrollTop";
+
 const Layout = () => {
     const showGnb = () => {
+        const gnbWrap = document.querySelector(".gnb_wrap")
         const gnbMenu = document.querySelector(".gnb_list").offsetHeight;
-        console.log(gnbMenu)
         
+        gnbWrap.style.height = gnbMenu + "px";
+        gnbWrap.style.transition = "height .3s ease-in-out"
+
+        const closeMenu = () => {
+            if(gnbWrap.offsetHeight > 1) {
+                gnbWrap.style.height = "0";
+            }
+        }
+
+        document.addEventListener("click", closeMenu);
     }    
 
     return (
         <>
+            <ScrollTop />
             {/* 1. 상단영역 */}
             <div id="top">
                 <header className="top ibx">
@@ -22,12 +35,9 @@ const Layout = () => {
                         <nav className="gnb">
                             <div className="gnb_wrap">
                                 <ul className="gnb_list">
-                                    <li className="mobile_menulogo">
-                                        <img src="./images/logo/logo_ko.png" alt="로고" />
-                                    </li>
-                                    <li><Link to="/kd">왕국 둘러보기</Link></li>
                                     <li><Link to="/gm">게임소개</Link></li>
-                                    <li><Link to="/ch">캐릭터</Link></li>
+                                    <li><Link to="/ch">캐릭터소개</Link></li>
+                                    <li><Link to="/kd">왕국 둘러보기</Link></li>
                                 </ul>
                             </div>
                             <button className="menu_exit">×</button>

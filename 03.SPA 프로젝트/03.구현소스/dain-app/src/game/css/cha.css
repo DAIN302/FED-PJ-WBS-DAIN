@@ -21,7 +21,7 @@
 }
 
 .cha_btn {
-    padding: 100px 0 50px;
+    padding: 80px 0 50px;
 }
 
 .cha_btn button {
@@ -45,7 +45,7 @@
     color : var(--tcolor);
     text-align: center;
     font-size: min(60px, 5.8vw);
-    padding-top : 100px;
+    padding-top : 50px;
 }
 
 .cha_circle {

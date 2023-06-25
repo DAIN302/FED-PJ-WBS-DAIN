@@ -16,7 +16,7 @@ export default function App(){
           <Route path="/" element={<Layout />}>
             {/* 하위라우트 세팅 */}
             {/* path대신 index만 쓰면 첫페이지 */}
-            <Route index element={<Kingdom/>} />
+            <Route index element={<Game/>} />
             <Route path="kd" element={<Kingdom />} />
             <Route path="gm" element={<Game />} />
             <Route path="ch" element={<Characters />} />

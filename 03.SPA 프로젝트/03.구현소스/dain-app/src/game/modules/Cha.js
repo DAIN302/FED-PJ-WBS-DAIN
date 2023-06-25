@@ -8,13 +8,6 @@ import {cha_data} from "../data/cha";
 
 import "../css/cha.css"
 
-function jqFn(){
-    $(()=>{
-        $(".cha_sliderList:first").addClass("on");
-        
-    })
-}
-
 function ChaCircle(props){
     const cCha_data = cha_data[props.cat]
     return(
