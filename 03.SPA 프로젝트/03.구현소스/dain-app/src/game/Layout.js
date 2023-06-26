@@ -4,6 +4,8 @@ import { Link, Outlet } from "react-router-dom";
 
 import Sns from "./modules/Sns"
 import ScrollTop from "./common/ScrollTop";
+import Loading from "./modules/Loading";
+import { useState } from "react";
 
 const Layout = () => {
     const showGnb = () => {
@@ -22,9 +24,17 @@ const Layout = () => {
         document.addEventListener("click", closeMenu);
     }    
 
+    const [loading, setLoading] = useState(true);
+
+    setTimeout(() => {
+        setLoading(false);
+    }, 3000);
+
+
     return (
         <>
             <ScrollTop />
+            {loading ? <Loading /> : null }
             {/* 1. 상단영역 */}
             <div id="top">
                 <header className="top ibx">

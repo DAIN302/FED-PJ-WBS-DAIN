@@ -37,7 +37,7 @@ function Building(){
         },
         {
             season : "winter",
-            cat : "목화맛",
+            cat : "코코아맛",
         },
     ]
 
@@ -96,6 +96,14 @@ function Building(){
 function Talk(props){
     const sdata = talk_data[props.season]
 
+    const ansYes = () => {
+        
+    }
+
+    const ansNo = () => {
+
+    }
+
     return(
         <>
             <section className="cookie_talk">
@@ -110,12 +118,12 @@ function Talk(props){
                             </figure>
                         </div>
                         <div className="talk_bx">
-                            <div className="talk_name talk_name1">{sdata.name}</div>
+                            <div className="talk_name talk_name1" style={{backgroundColor : sdata.color}}>{sdata.name}</div>
                             <div className="talk_name talk_name2">용감한 쿠키</div>
-                            <div className="talk_wrap"></div>
+                            <div className="talk_wrap">{sdata.talk}</div>
                             <div className="talk_nextbtn">
-                                <button></button>
-                                <button></button>
+                                <button className="talk_yes" onClick={ansYes}>{sdata.yes}</button>
+                                <button className="talk_no" onClick={ansNo}>{sdata.no}</button>
                             </div>
                         </div>
                     </div>
