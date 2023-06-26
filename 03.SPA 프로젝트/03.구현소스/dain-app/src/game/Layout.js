@@ -30,7 +30,9 @@ const Layout = () => {
                 <header className="top ibx">
                     <div className="top_wrap">
                         <h1 className="logo">
-                            <img src="./images/logo/logo_eng.png" alt="로고"/>
+                            <Link to="/gm">
+                                <img src="./images/logo/logo_eng.png" alt="로고"/>
+                            </Link>
                         </h1>
                         <nav className="gnb">
                             <div className="gnb_wrap">

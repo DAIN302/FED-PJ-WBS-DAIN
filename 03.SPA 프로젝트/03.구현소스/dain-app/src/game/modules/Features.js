@@ -4,10 +4,6 @@ import fdata from "../data/features";
 import "../css/features.css"
 
 function Features(){
-    useEffect(()=>{
-
-    })
-
     return(
         <>
             <section className="features">

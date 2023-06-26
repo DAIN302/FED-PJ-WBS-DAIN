@@ -113,6 +113,7 @@
     position: absolute;
     top: 0;
     left: 20%;
+    height: 80vh;
     display: flex;
     opacity: 0;
     width: 80%;
@@ -206,6 +207,21 @@
     .cha_border {
         left: 0;
     }
+
+    .cha_btn ul {
+        flex-wrap: wrap;
+        gap: 10px 2.5%;
+        flex-direction: center;
+    }
+
+    .cha_btn ul li {
+        width: 45%;
+    }
+    
+    .cha_btn ul li:nth-child(1), .cha_btn ul li:nth-child(3){
+        text-align: right;
+    }
+
 
 
 }

@@ -1,8 +1,12 @@
 @charset "UTF-8";
 
 .kingdom_bg {
-    /* background: url(../../../public/images/bg.jpg) no-repeat fixed center/cover; */
-    background: url(../../../public/images/buildings/spring/bg.webp) no-repeat fixed center/cover;
+    background-image: url(../../../public/images/buildings/spring/bg.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transition: background-image .3s ease-out;
 }
 
 .move_bx {
@@ -10,7 +14,7 @@
 }
 
 .buildings_tgbx {
-    height: calc(100vh + 5000px);
+    height: calc(100vh + 6000px);
 }
 
 .buildings {
@@ -58,10 +62,14 @@
 .building_cookie {
     bottom: 0;
     left: calc(50% - 150px);
-    width : 40%;
+    width : 32%;
     transform: translateY(20%);
     opacity: 0;
     transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s,opacity 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+}
+
+.building:first-child .building_cookie {
+    width: 40%;
 }
 
 .building_cookie.on {
@@ -178,7 +186,7 @@
 .cookie {
     position: fixed;
     bottom: 5%;
-    left: 15%;
+    left: 20%;
     height: 12%;
     z-index: 999;
 }
@@ -188,10 +196,6 @@
 .brave {
     display: block;
     height: 100%;
-}
-
-.brave1 {
-    /* display: none; */
 }
 
 .cookie_msg {
@@ -239,7 +243,7 @@
 
 .talk_img {
     position: absolute;
-    bottom: 0;
+    bottom: 2%;
     width: 100%;
 }
 
@@ -254,7 +258,8 @@
 
 .talk_img2 {
     right: 0;
-    display: none;
+    transform: rotateY(180deg);
+    display : none;
 }
 
 .talk_img img{
@@ -299,6 +304,14 @@
     top: 20%;
     left: 5%;
 }
+
+.talk_nextbtn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 
 .close_talk {
     position: absolute;
