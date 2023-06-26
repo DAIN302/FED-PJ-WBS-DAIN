@@ -174,10 +174,9 @@
     padding-bottom: 10px;
 }
 
-.cha_sliderdesc button {
+.cha_voicebtn {
     background-color: transparent;
     border: none;
-    cursor: pointer;
     font-size: min(20px, 1.8vw);
 }
 
@@ -185,4 +184,28 @@
     color : #333;
     font-size: min(16px, 1.6vw);
     padding-top: 10px;
+}
+
+.cha_slidebtn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cha_slidebtn button {
+    font-size: min(30px, 2.8vw);
+    color : var(--tcolor3);
+}
+
+/* 1024px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+    .cha_circle {
+        display: none;
+    }
+
+    .cha_border {
+        left: 0;
+    }
+
+
 }

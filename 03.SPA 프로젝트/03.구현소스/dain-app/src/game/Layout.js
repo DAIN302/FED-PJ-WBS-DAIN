@@ -37,7 +37,7 @@ const Layout = () => {
                                 <ul className="gnb_list">
                                     <li><Link to="/gm">게임소개</Link></li>
                                     <li><Link to="/ch">캐릭터소개</Link></li>
-                                    <li><Link to="/kd">왕국 둘러보기</Link></li>
+                                    <li><Link to="/kd">쿠키 만나기</Link></li>
                                 </ul>
                             </div>
                             <button className="menu_exit">×</button>

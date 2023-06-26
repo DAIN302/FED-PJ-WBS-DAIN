@@ -10,14 +10,14 @@ function BraveCookie(){
             <div className="cookie">
                 <figure className="cookie_bx">
                     <img className="brave brave1" src="./images/characters/brave_run.gif" alt="뛰는쿠키" />
-                    <img className="brave brave2" src="./images/characters/brave.png" alt="쿠키" />
+                    {/* <img className="brave brave2" src="./images/characters/brave.png" alt="쿠키" /> */}
                 </figure>
-                <div className="cookie_msg">
+                {/* <div className="cookie_msg">
                     <p>
                     스크롤로 용감한 쿠키를 움직여주세요
-                    </p>
+                    </p> */}
                     {/* <ScrollIcon /> */}
-                </div>
+                {/* </div> */}
             </div>  
         </>
     )
@@ -51,41 +51,50 @@ function Building(){
         cookieTalk.fadeIn(300);
         cookieBg.style.backgroundImage = url;
 
+        // 임시 - 닫는 버튼
         $(".close_talk").click(function(){
             cookieTalk.fadeOut(300);
         })
     }
+
     return(
         <>
-            <div className="buildings">
-                {/* <div className="building1"></div> */}
-                {
-                    season.map((v,i)=>
-                        <div className="building" key={i}>
-                            <div className="building_bx">
-                                <div className="building_wrap">
-                                    <div className="building_img">
-                                        <figure className="building_build">
-                                            <img src={"./images/buildings/"+v.season+"/building.webp"} alt="건물"/>
-                                        </figure>
-                                        <figure className="building_cookie">
-                                            <img src={"./images/buildings/"+v.season+"/cookie.webp"} alt="캐릭터"/>
-                                        </figure>
-                                        <div className="building_btn">
-                                            <button onClick={()=>showTalk(v.season)}>{v.cat} 쿠키와 대화하기</button>
+            <div className="buildings_wrap">
+                <div className="buildings_tgbx">
+                    <div className="buildings">
+                        <ul>
+                        {
+                            season.map((v,i)=>
+                                <li className="building" key={i}>
+                                    <div className="building_bx">
+                                        <div className="building_wrap">
+                                            <div className="building_img">
+                                                <figure className="building_build">
+                                                    <img src={"./images/buildings/"+v.season+"/building.webp"} alt="건물"/>
+                                                </figure>
+                                                <figure className="building_cookie">
+                                                    <img src={"./images/buildings/"+v.season+"/cookie.webp"} alt="캐릭터"/>
+                                                </figure>
+                                                <div className="building_btn">
+                                                    <button onClick={()=>showTalk(v.season)}>{v.cat} 쿠키와 대화하기</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                }
+                                </li>
+                            )
+                        }
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <Talk />
         </>
     )
 }
 
 function Talk(props){
+
     return(
         <>
             <section className="cookie_talk">
@@ -123,13 +132,13 @@ function Move(props){
         const retVal = (x) => x.getBoundingClientRect().top;
 
         const brave = document.querySelectorAll(".brave");
-        const cookieMsg = document.querySelector(".cookie_msg");
+        // const cookieMsg = document.querySelector(".cookie_msg");
 
         // 스크롤 시 아이콘 감춤
         const changeBrave = () => {
-            brave[0].style.display = "block";
-            brave[1].style.display = "none";
-            cookieMsg.style.display = "none";
+            // brave[0].style.display = "block";
+            // brave[1].style.display = "none";
+            // cookieMsg.style.display = "none";
         }
 
         const cookie = document.querySelector(".cookie");
@@ -146,22 +155,26 @@ function Move(props){
             let ctop = winH * scTop / scLimit;
             let cleft = (buildH / buildW) * tgpos /100
             let temp = (scTop /scLimit) * 100;
-            console.log(temp);
-            
-            cookie.style.top = (ctop) + "px";
-            if(temp < 14 || temp > 36 && temp <= 58) {
-                cookie.style.transform = `rotateY(0deg)`;
-                // cookie.style.left = `calc(50% + ${-cleft*2}%)`;
-            }
-            else if(temp >= 14 || temp > 58 && temp <= 82) {
-                cookie.style.transform = `rotateY(180deg)`;
-                // cookie.style.left = `calc(50% + ${cleft*2}%)`;
-            }
-            else if (temp > 82) {
-                console.log("??")
-            }
+        
+            cookie.style.left = -tgpos + "px";
+        }
 
+        // 타켓박스
+        const buildingTg = document.querySelector(".buildings_tgbx")
+        // 스티키박스
+        const buildingSticky = document.querySelector(".buildings")
 
+        // 가로이동박스
+        const mvbx = buildingSticky.querySelector("ul")
+        const moveBuildings = () => {
+            let tgpos = retVal(buildingTg);
+            console.log(tgpos);
+
+            if (tgpos <= 0 && tgpos > -5000) {
+                mvbx.style.left = tgpos + "px";
+              } else if (tgpos > 0) {
+                mvbx.style.left = 0;
+              }
         }
 
         const showCookie = () => {
@@ -178,18 +191,19 @@ function Move(props){
             })
         }
 
-        window.addEventListener("scroll", changeBrave)
-        window.addEventListener("scroll", moveCookie)
+        // window.addEventListener("scroll", changeBrave)
+        // window.addEventListener("scroll", moveCookie)
         window.addEventListener("scroll", showCookie)
+        window.addEventListener("scroll", moveBuildings)
     })
 
     return(
         <>
             <section className="kingdom_bg">
                 <div className="move_bx ibx">
+                    {/* <div id="move_wrap"></div> */}
                     <BraveCookie />
                     <Building />  
-                    <Talk />
                 </div>
             </section>
         </>

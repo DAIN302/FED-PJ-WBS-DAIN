@@ -21,3 +21,9 @@
 body *{
     font-family: 'CookieRun-Regular';
 }
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}

@@ -1,49 +1,44 @@
 @charset "UTF-8";
 
 .kingdom_bg {
-    /* background: url(../../../public/images/bg.jpg) no-repeat fixed center/cover; */
-    background: url(../../../public/images/buildings/spring/bg.webp) no-repeat fixed center/cover;
+    background: url(../../../public/images/bg.jpg) no-repeat fixed center/cover;
 }
 
 .move_bx {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-.buildings_tgbx {
-    height: calc(100vh + 5000px);
-}
-
-.buildings {
-    position: sticky;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.buildings ul {
-    position: relative;
-    display: flex;
-    width : calc(100vw + 5000px);
-    height: 100%;
-    left: 0;
+.building1 {
+    height: 30vh;
 }
 
 .building {
     position: relative;
-    flex : 1;
-    height: 100%;
+    height:120vh;
 }
 
 .building_bx {
-    position: absolute;
-    bottom: 5%;
-    left: 40%;
+    position: sticky;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.building_wrap {
+    /* position: absolute; */
 }
 
 .building_img {
+    position: absolute;
     aspect-ratio: 1/1;
-    height: 45vh;
+    height: 30vh;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.building:nth-child(even) .building_img {
+    left: 0;
 }
 
 .building_img figure {
@@ -69,6 +64,11 @@
     transform: translateY(0);
 }
 
+.building:nth-child(even) .building_cookie {
+    left: auto;
+    right: 0;
+}
+
 .building_cookie img {
     width: 100%;
 }
@@ -88,6 +88,7 @@
 }
 
 .building_btn button {
+    /* border : 1px solid #000; */
     box-sizing: border-box;
     color: #fff;
 	background: -1.5px -2px/cover no-repeat radial-gradient(closest-side at 15% 30%, #fff 25%, transparent 30%), radial-gradient(farthest-corner at 250% 450%, #70dd5a 88%, #95ee5d 88%);
@@ -177,10 +178,11 @@
 
 .cookie {
     position: fixed;
-    bottom: 5%;
-    left: 15%;
-    height: 12%;
+    top: 10%;
+    left: calc(50% - 100px);
+    height: 7%;
     z-index: 999;
+    /* transform: rotateY(180deg); */
 }
 .cookie_bx {
     height: 100%;
@@ -191,7 +193,7 @@
 }
 
 .brave1 {
-    /* display: none; */
+    display: none;
 }
 
 .cookie_msg {

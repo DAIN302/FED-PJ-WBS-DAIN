@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import $ from "jquery"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolumeLow } from "@fortawesome/free-solid-svg-icons";
+import { faVolumeLow, faSortUp, faSortDown } from "@fortawesome/free-solid-svg-icons";
 
 import ScrollIcon from "./ScrollIcon";
 import {cha_data} from "../data/cha";
@@ -64,6 +64,18 @@ function ChaList(props){
                                             </span>
                                         </button>
                                         <p>{v.desc}</p>
+                                        <div className="cha_slidebtn">
+                                            <button className="up">
+                                                <span>
+                                                    <FontAwesomeIcon icon={faSortUp}/>
+                                                </span>
+                                            </button>
+                                            <button className="down">
+                                                <span>
+                                                    <FontAwesomeIcon icon={faSortDown}/>
+                                                </span>
+                                            </button>
+                                        </div>
                                         <audio className="cha_voice" src={"./images/characters/cat/audio/"+v.ename+".wav"} />
                                     </div>
                                 </li>
@@ -159,8 +171,30 @@ function Cha(){
 
             rotate(num, chaCircle, chaCircleList);
             chgSlide(chaList, num);
+            console.log(num)
         }
+
+        const slideChgBtn = document.querySelectorAll(".cha_slidebtn button")
+        slideChgBtn.forEach(ele=>{
+            ele.onclick = (e) => {
+                let up = ele.classList.contains("up")
+                
+                if(up){
+                    num--;
+                    if(num < 0) return;
+                }
+                else{
+                    num++;
+                    if(num > 4) return;
+                }
+
+                rotate(num, chaCircle, chaCircleList);
+                chgSlide(chaList, num);
+            }
+        })
+
         
+
         rotate(0, chaCircle, chaCircleList);
         chgSlide(chaList, 0);
 
