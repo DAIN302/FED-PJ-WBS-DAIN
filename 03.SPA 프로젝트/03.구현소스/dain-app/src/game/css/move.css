@@ -95,7 +95,7 @@
     transform: translate(-50%, 0);
 }
 
-.building_btn button, .talk_yes, .talk_no {
+.building_btn button, .talk_yes, .talk_no, .close_talk {
     box-sizing: border-box;
     color: #fff;
 	background: -1.5px -2px/cover no-repeat radial-gradient(closest-side at 15% 30%, #fff 25%, transparent 30%), radial-gradient(farthest-corner at 250% 450%, #70dd5a 88%, #95ee5d 88%);
@@ -187,7 +187,7 @@
 	border-right: 2px solid #c92a2a;
 }
 
-.building_btn button:hover {
+.building_btn button:hover, .talk_nextbtn button:hover {
     filter: brightness(.9);
 }
 
@@ -239,6 +239,7 @@
     left: 0;
     width: 100%;
     transform: translateY(-50%);
+    transition: background-image .3s ease-out;
 }
 
 .cookie_talkwrap {
@@ -261,9 +262,6 @@
     width: 35%;
 }
 
-.talk_img1 {
-}
-
 .talk_img2 {
     right: 0;
     transform: rotateY(180deg);
@@ -272,6 +270,16 @@
 
 .talk_img img{
     width: 100%;
+}
+
+.talk_img1 img {
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+
+.talk_img1 img:nth-child(2), .talk_img1 img:nth-child(3){
+    display: none;
 }
 
 .talk_bx {
@@ -287,6 +295,7 @@
     border: 1px solid #555;
     color : #555;
 }
+
 
 .talk_name {
     position: absolute;
@@ -321,9 +330,5 @@
 }
 
 .close_talk {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 60px;
-    cursor: pointer;
+    display: none;
 }

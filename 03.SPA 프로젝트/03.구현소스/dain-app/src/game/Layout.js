@@ -1,11 +1,13 @@
 // 레이아웃
 import "./css/layout.css"
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import $ from "jquery"
 
 import Sns from "./modules/Sns"
 import ScrollTop from "./common/ScrollTop";
 import Loading from "./modules/Loading";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import IntroPage from "./modules/IntroPage";
 
 const Layout = () => {
     const showGnb = () => {
@@ -24,17 +26,34 @@ const Layout = () => {
         document.addEventListener("click", closeMenu);
     }    
 
-    const [loading, setLoading] = useState(true);
+    const [intropage, setIntropage] = useState(true);
+    
+    useEffect(()=>{
+        const skipBtn = $(".intro_skipbtn button")
 
-    setTimeout(() => {
-        setLoading(false);
-    }, 3000);
+        let cookData = localStorage.getItem("cookierun")
+        skipBtn.click(function(){
+            localStorage.setItem("cookierun", 1)
+            cookData = localStorage.getItem("cookierun")
+            cookData == 1?setIntropage(false):setIntropage(true)
+        })
+        
+        cookData == 1?setIntropage(false):setIntropage(true)
+    }, [])
+
+
+    // const [loading, setLoading] = useState(true);
+
+    // setTimeout(() => {
+    //     setLoading(false);
+    // }, 3000);
 
 
     return (
         <>
             <ScrollTop />
-            {loading ? <Loading /> : null }
+            {intropage ? <IntroPage />: null}
+            {/* {loading ? <Loading /> : null } */}
             {/* 1. 상단영역 */}
             <div id="top">
                 <header className="top ibx">

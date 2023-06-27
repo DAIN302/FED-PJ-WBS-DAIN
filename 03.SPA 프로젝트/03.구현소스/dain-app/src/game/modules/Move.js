@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import $ from "jquery"
 
 import "../css/move.css"
-import ScrollIcon from "./ScrollIcon";
 import talk_data from "../data/talk";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 function BraveCookie(){
     return(
@@ -54,7 +50,24 @@ function Building(){
         // 임시 - 닫는 버튼
         $(".close_talk").click(function(){
             cookieTalk.fadeOut(300);
+            // 스크롤 기능 살리기
+            $("body").css({overflowY : "scroll"}).off("scroll touchmove mousewheel")
         })
+
+        // 스크롤 막기
+        $("body").css({overflow : "hidden"}).on("scroll touchmove mousewheel", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        })
+
+        // 버튼 다시 보이기
+        $(".talk_img").css({display : "block"}).next().css({display:"block"});
+        $(".talk_yes").css({display : "inline-block"});
+        $(".talk_no").css({display : "inline-block"});
+        $(".talk_img1").find("img").eq(0).css({display:"block"}).next().css({display :"none"}).next().css({display : "none"});
+        $(".talk_name").css({display:"block"});
+        $(".close_talk").css({display:"none"});
     }
 
     return(
@@ -95,13 +108,30 @@ function Building(){
 
 function Talk(props){
     const sdata = talk_data[props.season]
+    let url = `url(./images/buildings/${props.season}/bg2.webp)`
 
     const ansYes = () => {
-        
+        $(".talk_yes").css({display : "none"}).next().css({display : "none"})
+        $(".talk_img1").find("img").eq(0).css({display:"none"}).next().css({display :"none"}).next().css({display : "block"});
+        $(".talk_wrap").text(sdata.yesans)
+        setTimeout(() => {
+            $(".talk_img").fadeOut(500).next().fadeOut(500, ()=>{
+                $(".cookie_talkbx").css({backgroundImage : url})
+                setTimeout(() => {
+                    $(".talk_name").css({display:"none"});
+                    $(".talk_bx").fadeIn(500)
+                    $(".talk_wrap").text(sdata.yesans2)
+                    $(".close_talk").css({display:"inline-block"})
+                }, 1500);
+            });
+        }, 500);
     }
 
     const ansNo = () => {
-
+        $(".talk_img1").find("img").eq(0).css({display:"none"}).next().css({display :"block"});
+        $(".talk_no").css({display : "none"})
+        $(".talk_yes").text(sdata.yes[1])
+        $(".talk_wrap").text(sdata.noans)
     }
 
     return(
@@ -112,6 +142,8 @@ function Talk(props){
                         <div className="talk_img">
                             <figure className="talk_img1">
                                 <img src={"./images/buildings/"+props.season+"/1.png"}/>
+                                <img src={"./images/buildings/"+props.season+"/2.png"}/>
+                                <img src={"./images/buildings/"+props.season+"/3.png"}/>
                             </figure>
                             <figure className="talk_img2">
                                 <img src="./images/characters/1.png"/>
@@ -119,15 +151,14 @@ function Talk(props){
                         </div>
                         <div className="talk_bx">
                             <div className="talk_name talk_name1" style={{backgroundColor : sdata.color}}>{sdata.name}</div>
-                            <div className="talk_name talk_name2">용감한 쿠키</div>
                             <div className="talk_wrap">{sdata.talk}</div>
                             <div className="talk_nextbtn">
-                                <button className="talk_yes" onClick={ansYes}>{sdata.yes}</button>
+                                <button className="talk_yes" onClick={ansYes}>{sdata.yes[0]}</button>
                                 <button className="talk_no" onClick={ansNo}>{sdata.no}</button>
+                                <button className="close_talk">나가기</button>
                             </div>
                         </div>
                     </div>
-                    <div className="close_talk">×</div>
                 </div>
             </section>
         </>

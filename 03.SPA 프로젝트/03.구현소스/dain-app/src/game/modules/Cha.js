@@ -193,8 +193,6 @@ function Cha(){
             }
         })
 
-        
-
         rotate(0, chaCircle, chaCircleList);
         chgSlide(chaList, 0);
 

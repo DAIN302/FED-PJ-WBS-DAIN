@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+.intro_bx {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    z-index: 99999;
+    color : #fff;
+}
+
+.intro_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.intro_wrap.on {
+    opacity: 1;
+    z-index: 1;
+}
+
+.intro_image {
+    width: 80%;
+    margin: 0 auto;
+    aspect-ratio: 854 / 480;
+}
+
+.intro_image img {
+    width: 100%;
+    height: 100%;
+}
+
+.intro_desc{
+    margin-top: 20px;
+    /* text-align: center; */
+    font-size: min(20px, 2vw);
+}
+
+.intro_nextbtn {
+    box-sizing: border-box;
+    color: #fff;
+	background: -1.5px -2px/cover no-repeat radial-gradient(closest-side at 15% 30%, #fff 25%, transparent 30%), radial-gradient(farthest-corner at 250% 450%, #0EA7DD 88%, #3DB9E1 88%);
+	font-size: min(14px, 1.4vw);
+	font-weight: 700;
+	padding: 5px 10px;
+	margin: 5px;
+	border-top: 2px solid #54DAF2;
+    border-left: 2px solid #54DAF2;
+	border-bottom: 2px solid #046DB9;
+	border-right: 2px solid #046DB9;
+	border-radius: 100px;
+	box-shadow:
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057; 
+    text-shadow:
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        /* Long Shadow */
+        0 .01em .1em #000,
+        0 .1em .1em #000,
+        0 .1em .1em #000,
+        0 .1em .1em #000,
+        0 .1em .1em #000;
+        cursor: pointer;
+}
+
+.intro_nextbtn:hover {
+    filter: brightness(.9);
+}
+
+.intro_skipbtn {
+    position: absolute;
+    top: 1%;
+    right: 2%;
+}
+
+.intro_skipbtn button {
+    color : #fff;
+    font-weight: 700;
+    border : 3px solid #495057;
+    padding : 5px 10px;
+    font-size: min(16px, 1.8vw);
+    border-radius: 20px;
+}
