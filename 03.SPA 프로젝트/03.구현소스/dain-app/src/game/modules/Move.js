@@ -219,7 +219,6 @@ function Move(props){
                 mvbx.style.left = 0;
                 cookie.style.display = "block";
               } else if (tgpos <= -6000) {
-                console.log("ㅂㅇㅂㅇ")
                 cookie.style.display = "none";
               }
         }

@@ -108,6 +108,10 @@
     z-index: 1;
 }
 
+.story_img figure img {
+    width: 100%;
+}
+
 #vanilla_img {
     left: calc(50% - 200px);
     bottom: 3%;
@@ -149,5 +153,80 @@
     }
     100%{
         transform: translateY(2%);
+    }
+}
+
+/* 1024px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+    .story_desc {
+        padding-top: 0;
+    }
+    #backCloud img {
+        height: 380px;
+    }
+    #frontCloud img {
+        height: 280px;
+
+    }
+    .story_img {
+        width: 600px;
+        height: 400px;
+    }  
+    .story_img figure img{
+        transform: scale(0.8);
+    }
+
+    #hollyberry_img {
+        right : -30px;
+    }
+    
+    #cacao_img {
+        left: 80px;
+    }
+    
+    #lily_img {
+        left: -50px;
+    }
+    
+    #cheese_img {
+        right: -120px;
+    }
+}
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
+    #backCloud img {
+        height: 270px;
+    }
+    #frontCloud img {
+        height: 200px;
+    }
+
+    .story_img {
+        width: 300px;
+    }  
+    .story_img figure img{
+        transform: scale(0.5);
+    }
+
+    #vanilla_img {
+        bottom: 0;
+    }
+    #hollyberry_img {
+        bottom: 5%;
+        right : -70px;
+    }
+    
+    #cacao_img {
+        bottom: 0;
+        left: -70px;
+    }
+    
+    #lily_img {
+        bottom: 5%;
+        left: -180px;
+    }
+    
+    #cheese_img {
+        right: -180px;
     }
 }

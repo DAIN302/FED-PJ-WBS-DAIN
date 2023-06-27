@@ -30,13 +30,19 @@ const Layout = () => {
     
     useEffect(()=>{
         const skipBtn = $(".intro_skipbtn button")
-
+        const enterBtn = $(".intro_enterbtn button")
         let cookData = localStorage.getItem("cookierun")
-        skipBtn.click(function(){
-            localStorage.setItem("cookierun", 1)
-            cookData = localStorage.getItem("cookierun")
-            cookData == 1?setIntropage(false):setIntropage(true)
-        })
+
+        const skipFn = x => {
+            x.click(function(){
+                localStorage.setItem("cookierun", 1)
+                cookData = localStorage.getItem("cookierun")
+                cookData == 1?setIntropage(false):setIntropage(true)
+            })
+        }
+
+        skipFn(skipBtn);
+        skipFn(enterBtn);
         
         cookData == 1?setIntropage(false):setIntropage(true)
     }, [])

@@ -18,7 +18,6 @@
 
 .overview_img img {
     width: 100%;
-    height: 100%;
     border-radius: 20px;
 }
 
@@ -115,4 +114,17 @@
 .overview_action.on {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* 1024px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+    .store_list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .store_list>li {
+        width: 48%;
+        padding-bottom: 5px;
+        text-align: center;
+    }    
 }
