@@ -27,9 +27,6 @@ function Story(){
         },
     ]
 
-    
-
-    
     return(
         <>
             <section className="story_sec">

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Layout from './game/Layout';
 import Kingdom from './game/pages/Kingdom';
