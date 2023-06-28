@@ -222,6 +222,36 @@
         text-align: right;
     }
 
+    .cha_sliderList {
+        left: 10%;
+    }
 
+    .cha_sliderdesc {
+        width: 49%;
+    }
+}
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
+    .cha_sliderList {
+        display: block;
+        overflow: hidden;
+    }
+
+    .cha_border {
+        position: relative;
+        height: 50%;
+        width: min(50vw, 475px);
+    }
+
+    .cha_sliderimg {
+        left: -5%;
+        width: min(80vw, 877px);
+    }
+    
+    .cha_sliderdesc {
+        position: relative;
+        left: 0;
+        width: 80%;
+    }
 
 }

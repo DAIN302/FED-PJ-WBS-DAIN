@@ -4,6 +4,10 @@ import $ from "jquery"
 import "../css/move.css"
 import talk_data from "../data/talk";
 
+const retVal = (x) => x.getBoundingClientRect().top;
+const retValX = (x) => x.getBoundingClientRect().left;
+
+
 function BraveCookie(){
     return(
         <>
@@ -22,44 +26,48 @@ function Building(){
         {
             season : "spring",
             cat : "벚꽃맛",
+            talk : ""
         },
         {
             season : "summer",
             cat : "샤벳상어맛",
+            talk : ""
         },
         {
             season : "autumn",
             cat : "펌킨파이맛",
+            talk : ""
         },
         {
             season : "winter",
             cat : "코코아맛",
+            talk : ""
         },
     ]
 
-    const showTalk = (season) => {
-        const cookieTalk = $(".cookie_talk")
-        const cookieBg = document.querySelector(".cookie_talkbx")
-        let url = `url(./images/buildings/${season}/bg.webp)`
-
-        cookieTalk.fadeIn(300);
-        cookieBg.style.backgroundImage = url;
-
-        setSdt(season);
-
-        // 임시 - 닫는 버튼
-        $(".close_talk").click(function(){
-            cookieTalk.fadeOut(300);
-            // 스크롤 기능 살리기
-            $("body").css({overflowY : "scroll"}).off("scroll touchmove mousewheel")
-        })
-
-        // 스크롤 막기
+    const stopScroll = () => {
         $("body").css({overflow : "hidden"}).on("scroll touchmove mousewheel", function(e){
             e.preventDefault();
             e.stopPropagation();
             return false;
         })
+    }
+
+    const goScroll = () => {
+        $("body").css({overflowY : "scroll"}).off("scroll touchmove mousewheel")
+    }
+
+    const showTalk = (season) => {
+        const cookieBg = document.querySelector(".cookie_talkbx")
+        let url = `url(./images/buildings/${season}/bg.webp)`
+
+        $(".cookie_talk").fadeIn(300);
+        cookieBg.style.backgroundImage = url;
+
+        setSdt(season);
+
+        // 스크롤 막기
+        stopScroll()
 
         // 버튼 다시 보이기
         $(".talk_img").css({display : "block"}).next().css({display:"block"});
@@ -69,6 +77,33 @@ function Building(){
         $(".talk_name").css({display:"block"});
         $(".close_talk").css({display:"none"});
     }
+
+    useEffect(()=>{
+        const buildingPos = document.querySelectorAll(".building_bx")
+        const preTalk = document.querySelectorAll(".pretalk_btn")
+        window.addEventListener("scroll", ()=>{
+            buildingPos.forEach((ele, idx)=>{
+                let posX = retValX(ele)
+                
+                if(posX < 400 && posX > 350) {
+                    stopScroll()
+                    preTalk[idx].classList.add("on");
+                }
+                else {
+                    
+                }
+                
+            })
+        })
+        const cookieTalk = $(".cookie_talk")
+        // 닫는 버튼
+        $(".close_talk").click(function(){
+            cookieTalk.fadeOut(300);
+            // 스크롤 기능 살리기
+            goScroll() 
+            $(".pretalk_btn").removeClass("on")
+        })
+    })
 
     return(
         <>
@@ -91,6 +126,15 @@ function Building(){
                                                 <div className="building_btn">
                                                     <button onClick={()=>showTalk(v.season)}>{v.cat} 쿠키와 대화하기</button>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="pretalk_btn">
+                                        <div>
+                                            <p>{v.cat} 쿠키가 말을 걸어온다. 대화할까?</p>
+                                            <div className="pretalk_wrap">
+                                                <button onClick={()=>showTalk(v.season)}>{v.cat} 쿠키와 대화하기</button>
+                                                <button className="close_talk">대화하지 않기</button>
                                             </div>
                                         </div>
                                     </div>
@@ -170,11 +214,9 @@ function Move(props){
     const hv = winH/3*1;
     const ss = ["spring","summer","autumn","winter"]
     let snum = 0;
+    console.log(winH/2*1)
     
     useEffect(()=>{
-        const retVal = (x) => x.getBoundingClientRect().top;
-        const retValX = (x) => x.getBoundingClientRect().left;
-
         const cookie = document.querySelector(".cookie");
         const building = document.querySelector(".building");
         const buildings = document.querySelectorAll(".building");
@@ -182,7 +224,7 @@ function Move(props){
         
         let buildW = building.clientWidth;
 
-        console.log(buildW)
+        // console.log(buildW)
         // 타켓박스
         const buildingTg = document.querySelector(".buildings_tgbx")
         // 스티키박스
@@ -192,7 +234,7 @@ function Move(props){
         const mvbx = buildingSticky.querySelector("ul")
         const moveBuildings = () => {
             let tgpos = retVal(buildingTg);
-            console.log(tgpos);
+            // console.log(tgpos);
 
             if (tgpos <= 0 && tgpos > -6000) {
                 mvbx.style.left = tgpos + "px";

@@ -95,7 +95,7 @@
     transform: translate(-50%, 0);
 }
 
-.building_btn button, .talk_yes, .talk_no, .close_talk {
+.building_btn button, .talk_yes, .talk_no, .close_talk, .pretalk_btn button {
     box-sizing: border-box;
     color: #fff;
 	background: -1.5px -2px/cover no-repeat radial-gradient(closest-side at 15% 30%, #fff 25%, transparent 30%), radial-gradient(farthest-corner at 250% 450%, #70dd5a 88%, #95ee5d 88%);
@@ -179,7 +179,7 @@
         cursor: pointer;
 }
 
-.talk_no {
+.talk_no, .close_talk, .pretalk_btn .close_talk {
     background: -1.5px -2px/cover no-repeat radial-gradient(closest-side at 15% 30%, #fff 25%, transparent 30%), radial-gradient(farthest-corner at 250% 450%, #f03e3e 88%, #fa5252 88%);    
     border-top: 2px solid #ffa8a8;
     border-left: 2px solid #ffa8a8;
@@ -187,7 +187,7 @@
 	border-right: 2px solid #c92a2a;
 }
 
-.building_btn button:hover, .talk_nextbtn button:hover {
+.building_btn button:hover, .talk_nextbtn button:hover, .pretalk_btn button:hover {
     filter: brightness(.9);
 }
 
@@ -331,4 +331,83 @@
 
 .close_talk {
     display: none;
+}
+
+.pretalk_btn {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+.pretalk_btn.on {
+    display: block;
+}
+
+.pretalk_btn>div {
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.pretalk_btn p {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color : #fff;
+    font-size: min(16px, 1.6vw);
+    text-shadow:
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        0 0 .1em #000,
+        /* Long Shadow */
+        0 .01em .1em #000,
+        0 .1em .1em #000,
+        0 .1em .1em #000,
+        0 .1em .1em #000,
+        0 .1em .1em #000;
+}
+
+.pretalk_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pretalk_wrap .close_talk {
+    display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+    .talk_img figure {
+        width: 60%;
+    }
+
+    .talk_nextbtn {
+        bottom: -14%;
+    }
 }

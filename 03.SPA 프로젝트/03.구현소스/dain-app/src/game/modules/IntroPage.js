@@ -27,9 +27,10 @@ function IntroPage(){
         if(num > idata.length-1) {
             $(".intro_wrap").fadeOut(300);
             $(".intro_enterbtn").fadeIn(300);
+            $(".intro_skipbtn").fadeOut(300);
             return;
         }
-        console.log(num)
+        
         chgSlide(introWrap, num)    
     }
     

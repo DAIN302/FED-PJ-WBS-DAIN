@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Layout from './game/Layout';
 import Kingdom from './game/pages/Kingdom';
@@ -11,7 +11,7 @@ import Characters from './game/pages/Characters';
 
 export default function App(){
   return(
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             {/* 하위라우트 세팅 */}
@@ -22,7 +22,7 @@ export default function App(){
             <Route path="ch" element={<Characters />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
   )
 } /// App 컴포넌트
 

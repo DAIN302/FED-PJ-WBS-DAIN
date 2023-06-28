@@ -127,4 +127,32 @@
         padding-bottom: 5px;
         text-align: center;
     }    
+
+    .overview_wrap {
+        justify-content: space-between;
+    }
+
+    .overview_img {
+        width: 35%;
+        margin-right: 10px;
+    }
+}
+
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
+    .overview_wrap {
+        padding-bottom: 20px;
+    }
+
+    .overview2 {
+        margin-bottom: 20px;
+    }
+
+    .features_header {
+        height: 400vh;
+    }
+
+    .features_cont>div {
+        height: 60vh;
+    }
 }

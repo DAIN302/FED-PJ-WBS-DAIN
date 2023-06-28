@@ -54,7 +54,7 @@
 .gnb_wrap {
     position: absolute;
     height: 0;
-    width: 12%;
+    width: 140px;
     right: 0;
     top: 80px;
     overflow: hidden;
@@ -63,6 +63,7 @@
 .gnb_list {
     position: absolute;
     text-align: right;
+    right: 0;
     display: flex;
     flex-direction: column;
 }
@@ -111,8 +112,8 @@
 .bsns a{
     display: inline-block;
     font-size: 10px;
-    width: 65px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
 }
 
 .blink {
@@ -135,7 +136,7 @@
     width: 100%;
     height: 100%;
     color : #fff;
-    font-size: 1.6rem;
+    font-size: min(16px, 1.6vw);
 }
 
 .binfo {
@@ -149,7 +150,7 @@
 
 .binfo p{
     color : #fff;
-    font-size: 1.6rem;
+    font-size: min(16px, 1.6vw);
 }
 
 .bsns svg {
