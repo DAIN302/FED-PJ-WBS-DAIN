@@ -44,7 +44,7 @@
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
-    transition: .4s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .building_bx.on {

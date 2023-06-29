@@ -250,7 +250,7 @@ function Move(props){
             let tgpos = retVal(buildingTg);
             console.log(tgpos)
 
-            if (tgpos <= 0 && tgpos > -6000) {
+            if (tgpos < -10 && tgpos > -6000) {
                 mvbx.style.left = tgpos + "px";
                 cookie.style.display = "block";
                 brave[1].style.display = "none";
