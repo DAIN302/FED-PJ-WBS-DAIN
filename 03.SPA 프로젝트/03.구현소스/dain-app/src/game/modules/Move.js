@@ -94,6 +94,7 @@ function Building(){
     useEffect(()=>{
         const buildingPos = document.querySelectorAll(".building_bx")
         const preTalk = document.querySelectorAll(".pretalk_btn")
+
         window.addEventListener("scroll", ()=>{
             buildingPos.forEach((ele, idx)=>{
                 let posX = retValX(ele)
