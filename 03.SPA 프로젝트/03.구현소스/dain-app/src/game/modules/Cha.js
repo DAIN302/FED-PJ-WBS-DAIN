@@ -107,12 +107,38 @@ function Cha(){
             name : "악당쿠키"
         },
     ]
+    let tgpos = 0;
+    let num = 0;
 
     const [category, setCategory] = useState("ancient");
 
+    const rotate = (num, x, y) => {
+        let rotateNum = 20 * num;
+        x.style.transform = `rotate(${rotateNum}deg)`;
+        y.forEach(ele=>{
+            ele.style.transform = `rotate(-${rotateNum}deg)`;
+        })
+    }
+
+    const chgSlide = (obj, num) => {
+        // 전체초기화
+        obj.forEach((ele)=>{
+            ele.classList.remove("on");
+        })
+
+        // 해당순번 li에 클래스 넣기
+        obj[num].classList.add("on");
+    }
+
+    const retVal = (x) => x.getBoundingClientRect().top;
+
     const changeCategory = e => {
         let dataType = e.target.getAttribute("data-type")
+        const chaWrap = document.querySelector(".cha_wrap")
         setCategory(dataType)
+        num = 0;
+        tgpos = 0;
+        window.scrollTo(0,0)
     }
     
     useEffect(()=>{
@@ -123,55 +149,34 @@ function Cha(){
         const chaCircleList = document.querySelectorAll(".circle_cookie")
         const chaList = document.querySelectorAll(".cha_sliderList");
 
-        const retVal = (x) => x.getBoundingClientRect().top;
-
-        const rotate = (num, x, y) => {
-            let rotateNum = 20 * num;
-            x.style.transform = `rotate(${rotateNum}deg)`;
-            y.forEach(ele=>{
-                ele.style.transform = `rotate(-${rotateNum}deg)`;
-            })
-        }
-
-        const chgSlide = (obj, num) => {
-            // 전체초기화
-            obj.forEach((ele)=>{
-                ele.classList.remove("on");
-            })
-
-            // 해당순번 li에 클래스 넣기
-            obj[num].classList.add("on");
-        }
-        
-        
-        let tgpos = 0;
-        let num = 0;
         // 스크롤 시 캐릭터 목록 변환 메서드 
         const moveCharacterList = () => {
             tgpos = retVal(chaWrap)
-            // console.log(tgpos)
-
+            const winScroll = window.scrollY;
+            const wrapH = chaWrap.clientHeight;
+            const scRatio = winScroll / wrapH * 100
+            console.log(scRatio)
+                   
             num = 0;
 
-            if(tgpos <= -400 && tgpos > -1000) {
+            if(scRatio <= 30 && scRatio > 15) {
                 num = 1    
             }
-            else if(tgpos <= -1000 && tgpos > -1600) {
+            else if(scRatio <= 45 && scRatio > 30) {
                 num = 2
             }
-            else if(tgpos <= -1600 && tgpos > -2200) {
+            else if(scRatio <= 60 && scRatio > 45) {
                 num = 3
             }
-            else if(tgpos <= -2200 && tgpos > -2800) {
+            else if(scRatio <= 75 && scRatio > 60) {
                 num = 4
             }
-            else if (tgpos <= -2800) {
+            else if (scRatio > 75) {
                 num = 4
             }
 
             rotate(num, chaCircle, chaCircleList);
             chgSlide(chaList, num);
-            console.log(num)
         }
 
         const slideChgBtn = document.querySelectorAll(".cha_slidebtn button")
@@ -196,10 +201,8 @@ function Cha(){
         rotate(0, chaCircle, chaCircleList);
         chgSlide(chaList, 0);
 
-        chaWrap.scrollTo(0,0);
-
         window.addEventListener("scroll", moveCharacterList)
-    })
+    }, [])
 
     return(
         <>
