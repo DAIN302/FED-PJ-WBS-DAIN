@@ -3,6 +3,7 @@ import $ from "jquery"
 
 import "../css/move.css"
 import talk_data from "../data/talk";
+import ScrollIcon from "./ScrollIcon";
 
 const retVal = (x) => x.getBoundingClientRect().top;
 const retValX = (x) => x.getBoundingClientRect().left;
@@ -14,7 +15,9 @@ function BraveCookie(){
             <div className="cookie">
                 <figure className="cookie_bx">
                     <img className="brave brave1" src="./images/characters/brave_run.gif" alt="뛰는쿠키" />
+                    <img className="brave brave2" src="./images/characters/brave.png" alt="쿠키" />
                 </figure>
+                <ScrollIcon />
             </div>  
         </>
     )
@@ -22,6 +25,9 @@ function BraveCookie(){
 
 function Building(){
     const [sdt, setSdt] = useState("spring")
+    const winW = window.innerWidth;
+    const wv = winW/4*1;
+    console.log(wv)
     const season = [
         {
             season : "spring",
@@ -85,12 +91,12 @@ function Building(){
             buildingPos.forEach((ele, idx)=>{
                 let posX = retValX(ele)
                 
-                if(posX < 400 && posX > 350) {
+                if(posX < wv && posX > wv-30) {
                     stopScroll()
                     preTalk[idx].classList.add("on");
                 }
                 else {
-                    
+                    ele.classList.remove("on");
                 }
                 
             })
@@ -214,17 +220,17 @@ function Move(props){
     const hv = winH/3*1;
     const ss = ["spring","summer","autumn","winter"]
     let snum = 0;
-    console.log(winH/2*1)
     
     useEffect(()=>{
         const cookie = document.querySelector(".cookie");
         const building = document.querySelector(".building");
         const buildings = document.querySelectorAll(".building");
         const kbg = document.querySelector(".kingdom_bg")
+        const brave = document.querySelectorAll(".brave")
+        const mouseIcon = $(".cookie .mouse-wrap")
         
         let buildW = building.clientWidth;
 
-        // console.log(buildW)
         // 타켓박스
         const buildingTg = document.querySelector(".buildings_tgbx")
         // 스티키박스
@@ -234,11 +240,14 @@ function Move(props){
         const mvbx = buildingSticky.querySelector("ul")
         const moveBuildings = () => {
             let tgpos = retVal(buildingTg);
-            // console.log(tgpos);
 
             if (tgpos <= 0 && tgpos > -6000) {
                 mvbx.style.left = tgpos + "px";
                 cookie.style.display = "block";
+                brave[1].style.display = "none";
+                brave[0].style.display = "block";
+                mouseIcon.fadeOut(200);
+                
 
                 // 배경화면 바꾸기
                 if(tgpos > -buildW) {
