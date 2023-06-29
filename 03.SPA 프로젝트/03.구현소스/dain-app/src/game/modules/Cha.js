@@ -135,10 +135,11 @@ function Cha(){
     const changeCategory = e => {
         let dataType = e.target.getAttribute("data-type")
         const chaWrap = document.querySelector(".cha_wrap")
+        const chaTop = chaWrap.offsetTop;
         setCategory(dataType)
         num = 0;
         tgpos = 0;
-        window.scrollTo(0,0)
+        window.scrollTo(0,chaTop)
     }
     
     useEffect(()=>{
