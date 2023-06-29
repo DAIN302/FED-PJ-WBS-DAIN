@@ -18,7 +18,14 @@ function BraveCookie(){
                     <img className="brave brave2" src="./images/characters/brave.png" alt="쿠키" />
                 </figure>
                 <ScrollIcon />
+                <div className="cookie_startTalk">쿠키 친구들을 만나볼까?</div>
             </div>  
+            <div className="cookie2">
+                <figure className="cookie_bx">
+                    <img className="brave" src="./images/characters/brave2.png" alt="쿠키" />
+                </figure>
+                <div className="cookie_endTalk">와 재밌었다~ 안녕~~ 끝~~</div>
+            </div>
         </>
     )
 }
@@ -228,6 +235,7 @@ function Move(props){
         const kbg = document.querySelector(".kingdom_bg")
         const brave = document.querySelectorAll(".brave")
         const mouseIcon = $(".cookie .mouse-wrap")
+        const cookieTalkbx = document.querySelector(".cookie_startTalk")
         
         let buildW = building.clientWidth;
 
@@ -240,12 +248,14 @@ function Move(props){
         const mvbx = buildingSticky.querySelector("ul")
         const moveBuildings = () => {
             let tgpos = retVal(buildingTg);
+            console.log(tgpos)
 
             if (tgpos <= 0 && tgpos > -6000) {
                 mvbx.style.left = tgpos + "px";
                 cookie.style.display = "block";
                 brave[1].style.display = "none";
                 brave[0].style.display = "block";
+                cookieTalkbx.style.display = "none";
                 mouseIcon.fadeOut(200);
                 
 
@@ -265,13 +275,19 @@ function Move(props){
 
                 let url = `url(./images/buildings/${ss[snum]}/bg.webp)`;
                 kbg.style.backgroundImage = url;
+                $(".cookie2").css({display:"none"})
 
               } else if (tgpos > 0) {
                 mvbx.style.left = 0;
                 cookie.style.display = "block";
-              } else if (tgpos <= -6000) {
+                $(".cookie2").css({display:"none"})
+              } else if (tgpos <= -6000 && tgpos > -6200) {
                 cookie.style.display = "none";
+                $(".cookie2").fadeIn(300)
+              } else if(tgpos <= -6200) {
+                $(".cookie2").fadeOut(300)
               }
+              
         }
         
         let bW = -(buildW)
@@ -282,10 +298,17 @@ function Move(props){
                 
                 let buildCookie = ele.querySelector(".building_cookie");
                 let buildBtn = ele.querySelector(".building_btn");
+                let buildBx = ele.querySelector(".building_bx")
                 if(tgpos < hv && tgpos > bW) {
                     buildCookie.classList.add("on");
                     buildBtn.classList.add("on");
+                    buildBx.classList.add("on");
                 } 
+                else {
+                    buildCookie.classList.remove("on");
+                    buildBtn.classList.remove("on");
+                    buildBx.classList.remove("on");
+                }
             })
         }
 

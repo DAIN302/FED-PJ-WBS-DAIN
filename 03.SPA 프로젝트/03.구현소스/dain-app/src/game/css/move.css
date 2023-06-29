@@ -44,6 +44,12 @@
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
+    transition: .4s ease-in-out;
+}
+
+.building_bx.on {
+    bottom: 12%;
+    transform: translateX(-50%) scale(1.2);
 }
 
 .building_img {
@@ -196,8 +202,18 @@
     position: fixed;
     bottom: 5%;
     left: 20%;
-    height: 12%;
+    height: 15%;
     z-index: 999;
+}
+
+.cookie2 {
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    height: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    display: none;
 }
 .cookie_bx {
     height: 100%;
@@ -214,9 +230,61 @@
 }
 
 .cookie .mouse-wrap {
-    left: 100px;
+    left: -20%;
 }
 
+.cookie_startTalk, .cookie_endTalk {
+    position: absolute;
+    width: 120px;
+    font-size: 12px;
+    padding : 5px 10px;
+    top: -20%;
+    background-color: #fff; 
+    border-radius: 10px;  
+    box-shadow:
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057,
+		0 0 2px #495057;
+}
 
 .cookie_msg {
     font-size: min(20px, 1.4vw);
