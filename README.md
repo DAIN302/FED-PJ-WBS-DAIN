@@ -15,6 +15,6 @@ Vue.js 를 사용하여 향수 쇼핑몰 사이트(퍼퓸그라피) 구현
 
 ## 3차 주제 : 게임 소개 사이트
 React를 사용하여 게임 소개 사이트(쿠키런) 구현
-1. 주소 : [사이트바로가기](dain302.github.io/dain-react/)
+1. 주소 : [사이트바로가기](https://dain302.github.io/dain-react/)
 2. 가이드문서 : [문서바로가기](https://dain302.github.io/FED-PJ-WBS-DAIN/03.SPA%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/04.%EA%B0%80%EC%9D%B4%EB%93%9C%EB%AC%B8%EC%84%9C/3%EC%B0%A8%20%EA%B0%80%EC%9D%B4%EB%93%9C.pdf)
 
