@@ -1,5 +1,4 @@
 // 휠이벤트이동 JS - autoscroll.js
-
 window.addEventListener("DOMContentLoaded", scrollFn);
 
 function scrollFn() {
@@ -63,7 +62,7 @@ function scrollFn() {
     }
 
     // 메뉴 클릭 시 해당 위치로 이동
-    function movePg(seq, obj) {
+    function movePg(seq) {
         // 기본기능막기
         event.preventDefault();
         //페이지번호 업데이트
@@ -98,7 +97,6 @@ function scrollFn() {
             showTxt(pgnum);
         } 
         chgColor(pgnum);
-        console.log(pgnum);
         autoSlide(pgnum);
     }
 
@@ -112,7 +110,6 @@ function scrollFn() {
 
         // 2. 글자 변수 할당
         const txtTit = titStage.innerText;
-        console.log(txtTit);
         // 글자 초기화
         titStage.innerText = "";
         // 코드 저장 변수

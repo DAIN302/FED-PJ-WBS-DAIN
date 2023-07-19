@@ -1,7 +1,4 @@
 /// 달력 함수
-
-window.addEventListener("DOMContentLoaded", MakeCaledar);
-
 function MakeCaledar() {
     // 두자릿수 만들기 함수
     const addZero = x => x <10?"0"+x:x;
@@ -386,3 +383,5 @@ function MakeCaledar() {
         }
     }
 }
+
+export default MakeCaledar;

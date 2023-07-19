@@ -1,7 +1,10 @@
 // 메인페이지 JS - main.js
+import MakeCaledar from "./calendar.js";
 import { ddata, pdata } from "./data/mdata.js";
 
 mainFn();
+// 달력관련 함수호출
+MakeCaledar();
 
 function mainFn() {
     // 링크 이동
@@ -114,7 +117,6 @@ function mainFn() {
     // 3번 페이지(ROOM) li요소 넣어서 슬라이드 리스트 만들기
     // 대상 선정 -> .main_room_img 히위 ul
     const roomCont = document.querySelector(".main_room_img ul");
-    const ctnum = document.querySelector(".ctnum");
     function roomImgCont() {
         let hcode = "";
         for (let i = 1; i < 6; i++) {
@@ -131,7 +133,6 @@ function mainFn() {
 
     // 4번 페이지(DINING) li요소 넣어서 슬라이드 리스트 만들기
     const dCont = document.querySelector(".main_dining_img ul");
-    console.log(dCont);
     function dImgList() {
         let hcode = "";
         for (let x of ddata) {
@@ -150,42 +151,37 @@ function mainFn() {
     // 5번 페이지(ROOM PACKAGE) 요소 li 넣어서 슬라이드 리스트 만들기
     // 대상선정 -> .main_offer_cont 하위 ul
     const packCont = document.querySelector(".main_offer_cont .listbx");
-    // const packContMobile = document.querySelector(".main_offer_cont .listslide_mobile>ul");
-    // console.log(packContMobile);
     // 버튼
     const offerBtn = document.querySelectorAll(".main_offer_btn");
-    // console.log(offerBtn[1]);
 
     // 함수 기능 : packCont 내부에 객체 데이터를 이용해서 리스트 넣기
     function roomPack() {
-        // let mobileHcode = "";
         let hcode = "";
 
         hcode += "<ul>";
         for (let x in pdata) {
             let data = pdata[x];
-            console.log(x);
 
             hcode += `
-        <li>
-            <a href="#">
-                <div class="main_offer_contwrap">
-                    <figure>
-                        <img
-                            src="./images/main/offer/${data.img}"
-                            alt="패키지이미지"/>
-                    </figure>
-                    <h3>${data.tit}</h3>
-                    <h4>${data.subtit}</h4>
-                    <div class="main_offer_prd">
-                    <div class="main_offer_day">
-                        <span class="fa-solid fa-calendar-days"></span>
-                        <span>${data.stay}</span>
+            <li>
+                <a href="#">
+                    <div class="main_offer_contwrap">
+                        <figure>
+                            <img
+                                src="./images/main/offer/${data.img}"
+                                alt="패키지이미지"/>
+                        </figure>
+                        <h3>${data.tit}</h3>
+                        <h4>${data.subtit}</h4>
+                        <div class="main_offer_prd">
+                        <div class="main_offer_day">
+                            <span class="fa-solid fa-calendar-days"></span>
+                            <span>${data.stay}</span>
+                        </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
-            </a>
-         </li>
+                </a>
+            </li>
         `;
         } // for in.
         hcode += "</ul>";
@@ -199,7 +195,6 @@ function mainFn() {
     
     $(".main_offer_cont>.listbx>ul>li a").click(function (e) {
         e.preventDefault();
-        console.log(77);
     });
 
     // 변경대상
@@ -230,7 +225,6 @@ function mainFn() {
         if (seq) {
             packSlide.appendChild(packSlideLists[0]);
             // 50%-> px
-            console.log("dd:",sz,resultX);
             packSlide.style.left = -(sz-resultX)+"px";
             packSlide.style.transition = "none";
 
@@ -343,7 +337,6 @@ let resultX=0;
 
         // 부모박스 기준한 left 위치값 구하기
         let tgPoint = obj.parentElement.clientWidth * 1;
-        console.log(tgLeft, tgPoint);
 
         // 방향 판별
         // 왼쪽 이동(오른쪽 버튼)

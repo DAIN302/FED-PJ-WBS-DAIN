@@ -8,10 +8,8 @@ if(pm.indexOf("?")===-1) location.href="index.html";
 pm = pm.split("?")[1].split("=")[1];
 // pm값 특수문자 복원
 pm = decodeURIComponent(pm);
-console.log(pm);
 
-
-window.addEventListener("DOMContentLoaded", roomFn);
+roomFn();
 
 function roomFn() {
     const subRoomData = roomsData[pm];
@@ -30,7 +28,6 @@ function roomFn() {
     }
     
     
-    // console.log("gg");
     // (1) 기능 : 첫페이지의 아래 화살표 버튼 클릭 시 다음페이지로 이동
     // 대상선정 
     // 클릭 대상 : .sub_cont_btn span
