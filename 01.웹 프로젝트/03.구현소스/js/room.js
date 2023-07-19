@@ -1,4 +1,5 @@
 // 서브페이지 JS - lux.js
+import { rsdata, roomsData } from "./data/rdata.js";
 
 // 넘어온 url 받기
 let pm = location.href;

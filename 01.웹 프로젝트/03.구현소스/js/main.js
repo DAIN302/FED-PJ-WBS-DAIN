@@ -1,9 +1,9 @@
 // 메인페이지 JS - main.js
+import { ddata, pdata } from "./data/mdata.js";
 
-window.addEventListener("DOMContentLoaded", mainFn);
+mainFn();
 
 function mainFn() {
-
     // 링크 이동
     function linkMove() {
         // 서브페이지 이동 링크

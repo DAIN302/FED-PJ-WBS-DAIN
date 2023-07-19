@@ -1,6 +1,7 @@
 // 서브페이지 JS - rooms.js
+import { rdata } from "./data/rdata.js";
 
-window.addEventListener("DOMContentLoaded", roomsFn);
+roomsFn();
 
 function roomsFn() {
   // console.log("rooms");    
@@ -157,11 +158,9 @@ else{
   
       // 전체 문서 높이값
       const docH = document.body.clientHeight;
-      console.log("문서전체높이", docH); 
   
       // 스크롤한계값
       const scLimit = docH - winH
-      console.log("스크롤한계값", scLimit); 
   
       // 등장액션 대상 위치값 리턴함수
       const retVal = ele => ele.getBoundingClientRect().top;

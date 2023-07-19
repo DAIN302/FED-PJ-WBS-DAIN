@@ -1,5 +1,4 @@
 // 메인페이지 배열 및 객체 데이터 관련 JS - mdata.js
-
 // dining 데이터 배열
 const ddata = ["fa", "mi", "ja", "le", "la"];
 
@@ -48,3 +47,5 @@ const pdata = { // room package 데이터 객체
         stay : "23.02.05 ~ 23.06.30",
     },
 }
+
+export {ddata, pdata}
